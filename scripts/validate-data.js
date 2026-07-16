@@ -68,6 +68,8 @@ export function validateDataset({ fileName, records, sourceIds, type, schema }) 
     if (record.verificationStatus === 'verified' && record.confidence === 'unverified') errors.push(`${prefix}: verified status cannot use unverified confidence`);
     if (record.verificationStatus === 'conflicting' && (!record.verificationNote || record.verificationNote.trim().length < 3)) errors.push(`${prefix}: conflicting status requires a verificationNote`);
     if (record.isPlaceholder === true && ![record.title,record.summary,record.content,record.verificationNote].join(' ').includes('示範資料，非正式攻略內容')) errors.push(`${prefix}: placeholder records must include the required demo warning`);
+    if (type === 'character' && ['minor', 'major'].includes(record.spoilerLevel) && record.spoiler !== true) errors.push(`${prefix}: non-none spoilerLevel requires spoiler true`);
+    if (type === 'character' && record.spoiler === true && record.spoilerLevel === 'none') errors.push(`${prefix}: spoiler true requires non-none spoilerLevel`);
   });
   return errors;
 }
@@ -119,6 +121,37 @@ export function validateWalkthroughReferences(records) {
   for (const id of ids) visit(id);
   return errors;
 }
+export function validateCharacterReferences(characters, walkthrough) {
+  if (!Array.isArray(characters) || !Array.isArray(walkthrough)) return [];
+  const characterIds = new Set(characters.filter((record) => record && typeof record.id === 'string').map((record) => record.id));
+  const characterById = new Map(characters.filter((record) => record && typeof record.id === 'string').map((record) => [record.id, record]));
+  const walkthroughIds = new Set(walkthrough.filter((record) => record && typeof record.id === 'string').map((record) => record.id));
+  const referencedHosts = new Set();
+  const errors = [];
+  for (const character of characters) {
+    if (!character || typeof character.id !== 'string') continue;
+    const related = Array.isArray(character.relatedWalkthroughIds) ? character.relatedWalkthroughIds : [];
+    if (character.firstAppearanceWalkthroughId !== null && character.firstAppearanceWalkthroughId !== undefined) {
+      if (!walkthroughIds.has(character.firstAppearanceWalkthroughId)) errors.push(`characters.json [${character.id}]: unknown firstAppearanceWalkthroughId "${character.firstAppearanceWalkthroughId}"`);
+      if (!related.includes(character.firstAppearanceWalkthroughId)) errors.push(`characters.json [${character.id}]: firstAppearanceWalkthroughId must be included in relatedWalkthroughIds`);
+    }
+    for (const id of related) if (!walkthroughIds.has(id)) errors.push(`characters.json [${character.id}]: unknown relatedWalkthroughIds reference "${id}"`);
+  }
+  for (const step of walkthrough) {
+    if (!step || typeof step.id !== 'string') continue;
+    for (const id of Array.isArray(step.brainJackTargetIds) ? step.brainJackTargetIds : []) {
+      if (!characterIds.has(id)) errors.push(`walkthrough.json [${step.id}]: unknown brainJackTargetIds reference "${id}"`);
+      else {
+        referencedHosts.add(id);
+        if (characterById.get(id).brainJackStatus !== 'confirmed-host') errors.push(`walkthrough.json [${step.id}]: brainJackTargetIds "${id}" is not marked confirmed-host`);
+      }
+    }
+  }
+  for (const character of characters) {
+    if (character?.brainJackStatus === 'confirmed-host' && !referencedHosts.has(character.id)) errors.push(`characters.json [${character.id}]: confirmed-host is not referenced by any walkthrough brainJackTargetIds`);
+  }
+  return errors;
+}
 export function validateProject() {
   const errors = [];
   let sources = [];
@@ -126,15 +159,18 @@ export function validateProject() {
   const sourceSchema = loadJson(path.join(schemaDirectory, 'source.schema.json'));
   errors.push(...validateDataset({fileName:'sources.json',records:sources,sourceIds:new Set(),type:'source',schema:sourceSchema}));
   const sourceIds = new Set(sources.filter((source) => source && typeof source.id === 'string').map((source) => source.id));
+  const recordsByFile = new Map();
   for (const [fileName, config] of Object.entries(datasets)) {
     if (fileName === 'sources.json') continue;
     try {
       const records = loadJson(path.join(dataDirectory,fileName));
+      recordsByFile.set(fileName, records);
       errors.push(...validateDataset({fileName,records,sourceIds,type:config.type,schema:loadJson(path.join(schemaDirectory,config.schema))}));
       if (fileName === 'walkthrough.json') errors.push(...validateWalkthroughReferences(records));
     }
     catch (error) { errors.push(`${fileName}: cannot parse JSON or schema (${error.message})`); }
   }
+  errors.push(...validateCharacterReferences(recordsByFile.get('characters.json'), recordsByFile.get('walkthrough.json')));
   return errors;
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

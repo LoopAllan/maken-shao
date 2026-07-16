@@ -1,6 +1,6 @@
 # Maken Shao Complete Guide
 
-《Maken Shao（魔剣爻）》的可驗證、可維護繁體中文知識庫網站。v0.3 已提供官方來源支持的世界觀／系統資料，以及附來源與查證狀態的 PS2 日版流程骨架；角色、Boss、結局與 100% 細節仍依版本策略逐步建置。
+《Maken Shao（魔剣爻）》的可驗證、可維護繁體中文知識庫網站。v0.4 已提供官方來源支持的世界觀／系統、17 筆官方具名角色與 18 名交叉驗證可操作角色資料，以及附來源與查證狀態的 PS2 日版流程骨架；其餘角色、Boss、結局與 100% 細節仍依版本策略逐步建置。
 
 ## 原則
 
@@ -44,7 +44,7 @@ npm run check:js
 ## 新增資料
 
 1. 先在 `sources.json` 建立來源，依 `schemas/source.schema.json` 填寫，取得唯一小寫 kebab-case `id`。
-2. 在對應資料檔加入資料物件，所有 required 欄位都不可省略或為 `null`。
+2. 在對應資料檔加入資料物件；所有 required 欄位都不可省略。只有 Schema 明確允許 `null` 的欄位可使用 `null`。
 3. 僅使用 `maken-x-dreamcast`、`maken-shao-ps2`、`both-confirmed` 作為 `gameVersion`。
 4. 填入存在的 `sourceIds`；在 `verificationNote` 寫頁碼、章節、時間戳或其他可追溯定位資訊。
 5. 選擇受控的 `confidence` 與 `verificationStatus`，並填入真實 ISO 日期 `YYYY-MM-DD`。

@@ -21,7 +21,10 @@
 
 - `world.json`：`worldCategory`（v0.2 世界觀、版本脈絡與術語）
 - `systems.json`：`systemArea`（v0.2 系統資料與研究中機制）
-- `characters.json`：`role`
+- `characters.json`：`nameJa`、`nameLatin`、`role`、`characterType`、`affiliations`、`brainJackStatus`、`firstAppearanceWalkthroughId`、`relatedWalkthroughIds`、`spoilerLevel`
+  - `firstAppearanceWalkthroughId` 若非 `null`，必須同時存在於 `relatedWalkthroughIds`，且所有流程 ID 必須存在。
+  - `walkthrough.json[].brainJackTargetIds` 只能引用 `brainJackStatus: confirmed-host` 的已建立角色 ID；每個 confirmed host 也必須至少被一個流程節點反向引用。空陣列表示尚未建檔或尚未查證，不代表不存在。
+  - `spoilerLevel: major` 的角色由前端整張預設收合。
 - `walkthrough.json`：`sequence`、`area`、`routeId`、`routeTitle`、`objectives`、`prerequisites`、`anyOfPrerequisites`、`branchChoiceIds`、`bossIds`、`brainJackTargetIds`、`missable`、`spoilerLevel`
   - `sequence` 是流程圖的顯示拓撲順序；驗證器拒絕指向更早順序的分支。
   - `prerequisites` 表示必須全部成立的前置節點；`anyOfPrerequisites` 表示任一節點成立即可，用於匯合或多入口區域。

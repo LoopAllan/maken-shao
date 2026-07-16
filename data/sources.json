@@ -163,5 +163,38 @@
     "publicationDate": null,
     "accessedDate": "2026-07-16",
     "notes": "2001 年同期 PS2 專頁，明確區隔 DC 版並提供各區域簡短提示。不是完整流程；其《魔剣X》連結不得用來補 PS2 路線。"
+  },
+  {
+    "id": "atlus-maken-shao-characters-archive",
+    "title": "魔剣爻 - キャラクター紹介",
+    "sourceType": "official-website",
+    "publisherOrAuthor": "株式会社アトラス（Atlus）",
+    "sourceLevel": "official",
+    "url": "https://web.archive.org/web/20021222113246/http://www.atlus.co.jp/cs/game/pstation2/shao/chara.html",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "Atlus PS2 官方角色介紹保存頁。正文與角色名圖像可直接查證魔劍、相模桂、山城弘的名稱及官方角色設定；本站保存 17 張可對應具名角色的原始圖檔作離線引用，並在資料列、角色卡與研究紀錄保留來源與著作權註記。"
+  },
+  {
+    "id": "atlus-maken-shao-correlation-archive",
+    "title": "魔剣爻 - キャラクター相関図",
+    "sourceType": "official-website",
+    "publisherOrAuthor": "株式会社アトラス（Atlus）",
+    "sourceLevel": "official",
+    "url": "https://web.archive.org/web/20030405045529/http://www.atlus.co.jp/cs/game/pstation2/shao/correlation.html",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "Atlus PS2 官方角色相關圖保存頁。可查證封劍士一族、金澤總合學術研究所及三業會的官方組織說明；圖中未能由文字層可靠辨識的個別姓名不據此建檔。"
+  },
+  {
+    "id": "blue-violet-maken-shao-characters",
+    "title": "魔剣爻 キャラクター（ブレインジャックキャラクター）",
+    "sourceType": "other",
+    "publisherOrAuthor": "BLUE VIOLET",
+    "sourceLevel": "community",
+    "url": "https://blueviolet.ninja-web.net/game/maken/character.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "PS2《魔剣爻》社群角色頁，明列 18 名「ブレインジャックキャラクター」。只用於和其他 PS2 流程交叉確認可操作／Brain Jack 分類；不視為官方羅馬字或自由取得條件。"
   }
 ]

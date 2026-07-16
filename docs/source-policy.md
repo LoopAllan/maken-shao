@@ -18,6 +18,8 @@
 - 兩個版本都成立時才可填 `both-confirmed`，而且備註必須說明兩個版本各自的證據。
 - 有衝突時填 `conflicting`，逐一列出衝突來源；不得選擇性隱瞞。
 - 尚未有可靠證據時填 `not-verified` / `unverified`，明說「目前查無可靠來源」，不要補寫推測。
+- 角色 ID 只能在角色資料本身完成來源審查後建立；不得從流程散文中的人名自動 slugify 或建立無對應條目的假 ID。
+- `walkthrough.json[].brainJackTargetIds` 只能連至已建檔且標為 `confirmed-host` 的角色；取得／強制使用關係必須有 PS2 來源，並按劇透政策隱藏。
 
 ## 版權與引用
 

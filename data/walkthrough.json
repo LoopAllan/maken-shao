@@ -28,7 +28,10 @@
       "route-opening-lincardon"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "kei-sagami",
+      "andrei"
+    ],
     "missable": false,
     "spoilerLevel": "minor",
     "routeTitle": "共同開局",
@@ -66,7 +69,9 @@
       "route-early-taj-mahal"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "inaba-go"
+    ],
     "missable": false,
     "spoilerLevel": "major",
     "routeTitle": "共同開局",
@@ -105,7 +110,9 @@
       "route-convergence-moscow"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "lee-feichao"
+    ],
     "missable": true,
     "spoilerLevel": "major",
     "routeTitle": "香港早期分支",
@@ -142,7 +149,9 @@
       "route-convergence-moscow"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "sharja"
+    ],
     "missable": true,
     "spoilerLevel": "major",
     "routeTitle": "泰姬瑪哈陵早期分支",
@@ -225,7 +234,10 @@
       "route-convergence-lyon"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "akinas",
+      "barlinka"
+    ],
     "missable": false,
     "spoilerLevel": "major",
     "routeTitle": "伊斯坦堡方向",
@@ -264,7 +276,9 @@
       "route-convergence-lyon"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "ramrod"
+    ],
     "missable": false,
     "spoilerLevel": "major",
     "routeTitle": "倫敦方向",
@@ -301,7 +315,9 @@
     ],
     "branchChoiceIds": [],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "dal"
+    ],
     "missable": true,
     "spoilerLevel": "major",
     "routeTitle": "特蘭西瓦尼亞支線",
@@ -337,7 +353,9 @@
     ],
     "branchChoiceIds": [],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "margarete"
+    ],
     "missable": true,
     "spoilerLevel": "major",
     "routeTitle": "維也納支線",
@@ -378,7 +396,9 @@
       "route-endgame-lisbon"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "badelaire"
+    ],
     "missable": false,
     "spoilerLevel": "major",
     "routeTitle": "里昂匯合",
@@ -416,7 +436,11 @@
       "route-endgame-lisbon"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "smith",
+      "don-marcala",
+      "rei"
+    ],
     "missable": true,
     "spoilerLevel": "major",
     "routeTitle": "西西里支線",
@@ -454,7 +478,9 @@
       "route-endgame-brazil"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "kati"
+    ],
     "missable": false,
     "spoilerLevel": "major",
     "routeTitle": "里斯本終盤分歧",
@@ -499,7 +525,9 @@
       "route-ending-forbidden-city"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "kou-yamashiro"
+    ],
     "missable": false,
     "spoilerLevel": "major"
   },
@@ -539,7 +567,9 @@
       "route-ending-konron"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "yusuf"
+    ],
     "missable": true,
     "spoilerLevel": "major"
   },
@@ -578,7 +608,9 @@
       "route-ending-forbidden-city"
     ],
     "bossIds": [],
-    "brainJackTargetIds": [],
+    "brainJackTargetIds": [
+      "william"
+    ],
     "missable": true,
     "spoilerLevel": "major"
   },
