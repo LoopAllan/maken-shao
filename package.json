@@ -1,0 +1,12 @@
+{
+  "name": "maken-shao-guide",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "validate:data": "node scripts/validate-data.js",
+    "check:links": "node scripts/check-links.js",
+    "check:js": "node --check assets/js/app.js && node --check assets/js/data-loader.js && node --check assets/js/validator.js && node --check scripts/validate-data.js && node --check scripts/check-links.js"
+  }
+}
