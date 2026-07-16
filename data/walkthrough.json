@@ -1,0 +1,21 @@
+[
+  {
+    "title": "示範資料，非正式攻略內容：流程",
+    "summary": "示範資料，非正式攻略內容",
+    "content": "示範資料，非正式攻略內容。不得視為真實遊戲資訊或攻略。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "unknown",
+    "sourceIds": [
+      "demo-source"
+    ],
+    "confidence": "unverified",
+    "verificationStatus": "not-verified",
+    "verificationNote": "示範資料，非正式攻略內容；目前尚未查證。",
+    "lastVerified": "2026-07-15",
+    "isPlaceholder": true,
+    "spoiler": false,
+    "id": "demo-walkthrough",
+    "sequence": null,
+    "area": null
+  }
+]

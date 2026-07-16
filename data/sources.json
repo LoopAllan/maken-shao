@@ -1,0 +1,13 @@
+[
+  {
+    "id": "demo-source",
+    "title": "示範資料，非正式攻略內容：來源",
+    "sourceType": "official-website",
+    "publisherOrAuthor": "Demo Publisher",
+    "sourceLevel": "official",
+    "url": "https://example.invalid/maken-shao-demo",
+    "publicationDate": null,
+    "accessedDate": "2026-07-15",
+    "notes": "示範資料，非正式攻略內容。此來源只用於驗證資料結構。"
+  }
+]

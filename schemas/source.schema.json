@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "sourceType",
+    "publisherOrAuthor",
+    "sourceLevel",
+    "url",
+    "publicationDate",
+    "accessedDate",
+    "notes"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 300
+    },
+    "sourceType": {
+      "type": "string",
+      "enum": [
+        "official-guide",
+        "official-setting-book",
+        "official-website",
+        "developer-interview",
+        "gamefaqs",
+        "community-wiki",
+        "forum",
+        "other"
+      ]
+    },
+    "publisherOrAuthor": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 200
+    },
+    "sourceLevel": {
+      "type": "string",
+      "enum": [
+        "official",
+        "secondary",
+        "community"
+      ]
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "publicationDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "accessedDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 2000
+    }
+  }
+}
