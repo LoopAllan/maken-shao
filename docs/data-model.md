@@ -19,6 +19,8 @@
 
 ## 型別特有欄位
 
+- `world.json`：`worldCategory`（v0.2 世界觀、版本脈絡與術語）
+- `systems.json`：`systemArea`（v0.2 系統資料與研究中機制）
 - `characters.json`：`role`
 - `walkthrough.json`：`sequence`、`area`
 - `knowledge.json`：`category`

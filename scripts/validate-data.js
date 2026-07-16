@@ -5,8 +5,10 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataDirectory = path.join(root, 'data');
 const schemaDirectory = path.join(root, 'schemas');
-const datasets = {
+export const datasets = {
   'sources.json': { schema: 'source.schema.json', type: 'source' },
+  'world.json': { schema: 'world.schema.json', type: 'world' },
+  'systems.json': { schema: 'system.schema.json', type: 'system' },
   'characters.json': { schema: 'character.schema.json', type: 'character' },
   'walkthrough.json': { schema: 'walkthrough.schema.json', type: 'walkthrough' },
   'knowledge.json': { schema: 'knowledge.schema.json', type: 'knowledge' },
@@ -87,5 +89,5 @@ export function validateProject() {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const errors = validateProject();
   if (errors.length) { console.error(`Data validation failed (${errors.length} error(s)):`); errors.forEach((error) => console.error(`- ${error}`)); process.exitCode = 1; }
-  else console.log('Data validation passed: 7 data files and 6 schemas checked.');
+  else console.log(`Data validation passed: ${Object.keys(datasets).length} data files and ${Object.keys(datasets).length} schemas checked.`);
 }
