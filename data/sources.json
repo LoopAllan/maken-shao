@@ -86,5 +86,82 @@
     "publicationDate": "2001-07-07",
     "accessedDate": "2026-07-16",
     "notes": "出版社書目紀錄，ISBN 9784757705197。僅可證實官方攻略本的存在、出版資訊；未取得正文，不能據此推導攻略或設定細節。"
+  },
+  {
+    "id": "gamehyoron-maken-shao-route-table",
+    "title": "「魔剣爻」の攻略（ステージ分岐、エンディング等）",
+    "sourceType": "other",
+    "publisherOrAuthor": "ゲーム瓢論",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20160216213837/http://gamehyoron.com/kouryaku/maken/maken-b.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "PS2 日版社群分歧表；可定位開局、早期分歧、中盤解鎖、支線與終盤路線。另有 2016-02-16 Wayback 保存。非官方來源，所有具體路線仍標為交叉驗證或社群單一來源。"
+  },
+  {
+    "id": "gamehyoron-maken-shao-stage-index",
+    "title": "「魔剣爻」の攻略",
+    "sourceType": "other",
+    "publisherOrAuthor": "ゲーム瓢論",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20150503104344/http://gamehyoron.com/kouryaku/menu/maken.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "PS2《魔剣爻》社群攻略索引，直接列出序盤、中盤與終盤區域清單。清單可證明頁面涵蓋範圍，但不等同官方唯一順序。"
+  },
+  {
+    "id": "gamehyoron-maken-shao-midgame",
+    "title": "「魔剣爻」の攻略（中盤ステージ攻略）",
+    "sourceType": "other",
+    "publisherOrAuthor": "ゲーム瓢論",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20150709025813/http://gamehyoron.com/kouryaku/maken/maken-s2.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "PS2 日版社群中盤關卡攻略；與分歧表共同支持伊斯坦堡／雅典／梵蒂岡／里昂及倫敦／阿姆斯特丹兩條解鎖鏈。"
+  },
+  {
+    "id": "gamehyoron-maken-shao-endgame",
+    "title": "「魔剣爻」の攻略（終盤ステージ攻略）",
+    "sourceType": "other",
+    "publisherOrAuthor": "ゲーム瓢論",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20150709025813/http://gamehyoron.com/kouryaku/maken/maken-s3.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "PS2 日版社群終盤攻略；用於交叉確認紫禁城與崑崙是不同終盤，而非固定線性連續關卡。"
+  },
+  {
+    "id": "kentaro-maken-shao-early-chart",
+    "title": "魔剣爻・チャート式攻略～金沢研究所→リヨン～",
+    "sourceType": "other",
+    "publisherOrAuthor": "kentaro.ifdef.jp",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20050216152721/http://kentaro.ifdef.jp/v_date/maken.html",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "2005 年 Wayback 保存的 PS2 日版逐區流程；與ゲーム瓢論交叉驗證早期 Brain Jack 分歧、中盤解鎖及部分支線。"
+  },
+  {
+    "id": "kentaro-maken-shao-late-chart",
+    "title": "魔剣爻・チャート式攻略～リスボン→紫禁城～",
+    "sourceType": "other",
+    "publisherOrAuthor": "kentaro.ifdef.jp",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20050216152732/http://kentaro.ifdef.jp/v_date/maken2.html",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "2005 年 Wayback 保存的 PS2 日版終盤分歧攻略。終盤選項依先前擊倒陣營數量而變化；未實機複驗的精確回答組合不寫成已驗證事實。"
+  },
+  {
+    "id": "shoda-maken-shao-hints",
+    "title": "[PS2]魔剣爻特設ページ",
+    "sourceType": "other",
+    "publisherOrAuthor": "Shoda",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20010726172425/http://www.st.rim.or.jp/~shoda/tips/shao.html",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "2001 年同期 PS2 專頁，明確區隔 DC 版並提供各區域簡短提示。不是完整流程；其《魔剣X》連結不得用來補 PS2 路線。"
   }
 ]
