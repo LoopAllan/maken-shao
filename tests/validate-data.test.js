@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
-import { datasets, validateDataset, validateWalkthroughReferences } from '../scripts/validate-data.js';
+import { datasets, validateCharacterReferences, validateDataset, validateWalkthroughReferences } from '../scripts/validate-data.js';
 
 const validSource = {
   id: 'demo-source',
@@ -31,7 +31,16 @@ const validRecord = {
   lastVerified: '2026-07-15',
   isPlaceholder: true,
   spoiler: false,
-  role: null
+  nameJa: '示範角色',
+  nameLatin: null,
+  nameZhHant: '示範角色',
+  nameEn: 'Demo Character',
+  nameEnStatus: 'romanized',
+  imagePath: 'assets/images/characters/demo-character.gif',
+  imageAlt: '示範角色佔位圖',
+  imageKind: 'no-attributable-source',
+  imageSourceId: null,
+  role: null,
 };
 
 test('accepts a valid placeholder record and existing source reference', () => {
@@ -65,6 +74,38 @@ test('reports missing fields, invalid enum, duplicate IDs, unknown sources, and 
   assert.match(output, /lastVerified: must be a real YYYY-MM-DD date/i);
 });
 
+test('rejects spoilerLevel records that search would expose', () => {
+  const errors = validateDataset({
+    fileName: 'characters.json',
+    records: [
+      { ...validRecord, id: 'major-character', spoiler: false, spoilerLevel: 'major' },
+      { ...validRecord, id: 'minor-character', spoiler: false, spoilerLevel: 'minor' },
+      { ...validRecord, id: 'false-positive', spoiler: true, spoilerLevel: 'none' }
+    ],
+    sourceIds: new Set(['demo-source']),
+    type: 'character'
+  });
+  const output = errors.join('\n');
+  assert.match(output, /major-character.*non-none spoilerLevel requires spoiler true/i);
+  assert.match(output, /minor-character.*non-none spoilerLevel requires spoiler true/i);
+  assert.match(output, /false-positive.*spoiler true requires non-none spoilerLevel/i);
+});
+
+test('rejects incomplete character image metadata', () => {
+  const errors = validateDataset({
+    fileName: 'characters.json',
+    records: [
+      { ...validRecord, id: 'missing-alt', imagePath: 'assets/images/characters/demo-character.gif', imageAlt: null },
+      { ...validRecord, id: 'missing-path', imagePath: null, imageAlt: '示範角色圖' }
+    ],
+    sourceIds: new Set(['demo-source']),
+    type: 'character'
+  });
+  const output = errors.join('\n');
+  assert.match(output, /missing-alt.*imagePath and imageAlt must either both be present or both be null/i);
+  assert.match(output, /missing-path.*imagePath and imageAlt must either both be present or both be null/i);
+});
+
 test('registers world and systems datasets for v0.2 validation', () => {
   assert.deepEqual(datasets['world.json'], { schema: 'world.schema.json', type: 'world' });
   assert.deepEqual(datasets['systems.json'], { schema: 'system.schema.json', type: 'system' });
@@ -80,6 +121,105 @@ test('keeps v0.2 entries PS2-scoped and linked to registered official sources', 
   }
   assert.ok(world.every((record) => record.sourceIds.some((id) => sourceMap.get(id).sourceLevel === 'official')));
   assert.equal(systems.find((record) => record.id === 'maken-shao-psi-research-status').verificationStatus, 'not-verified');
+});
+
+test('requires v0.4 character identity, role, route, and spoiler fields', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const schema = JSON.parse(await readFile(path.join(root, 'schemas', 'character.schema.json'), 'utf8'));
+  for (const field of ['nameJa', 'nameLatin', 'nameZhHant', 'nameEn', 'nameEnStatus', 'imagePath', 'imageAlt', 'imageKind', 'imageSourceId', 'role', 'characterType', 'affiliations', 'brainJackStatus', 'firstAppearanceWalkthroughId', 'relatedWalkthroughIds', 'spoilerLevel']) {
+    assert.ok(schema.required.includes(field), `character schema requires ${field}`);
+  }
+  assert.deepEqual(schema.properties.spoilerLevel.enum, ['none', 'minor', 'major']);
+  assert.deepEqual(schema.properties.brainJackStatus.enum, ['player-entity', 'confirmed-host', 'not-a-host', 'not-verified']);
+});
+
+test('rejects unknown and inconsistent character walkthrough references', () => {
+  const characters = [{ id: 'character-one', firstAppearanceWalkthroughId: 'missing-first', relatedWalkthroughIds: ['step-one', 'missing-step'] }];
+  const walkthrough = [{ id: 'step-one', brainJackTargetIds: ['missing-character'] }];
+  const output = validateCharacterReferences(characters, walkthrough).join('\n');
+  assert.match(output, /character-one.*unknown firstAppearanceWalkthroughId "missing-first"/i);
+  assert.match(output, /character-one.*unknown relatedWalkthroughIds reference "missing-step"/i);
+  assert.match(output, /step-one.*unknown brainJackTargetIds reference "missing-character"/i);
+  assert.match(output, /character-one.*firstAppearanceWalkthroughId must be included in relatedWalkthroughIds/i);
+});
+
+test('requires reciprocal confirmed Brain Jack host links', () => {
+  const characters = [
+    { id: 'host-one', brainJackStatus: 'confirmed-host', firstAppearanceWalkthroughId: null, relatedWalkthroughIds: [] },
+    { id: 'support-one', brainJackStatus: 'not-verified', firstAppearanceWalkthroughId: null, relatedWalkthroughIds: [] }
+  ];
+  const walkthrough = [{ id: 'step-one', brainJackTargetIds: ['support-one'] }];
+  const output = validateCharacterReferences(characters, walkthrough).join('\n');
+  assert.match(output, /host-one.*confirmed-host is not referenced by any walkthrough brainJackTargetIds/i);
+  assert.match(output, /step-one.*support-one.*not marked confirmed-host/i);
+});
+
+test('ships the 17 officially named PS2 character-page entries in v0.4', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const [sources, characters, walkthrough] = await Promise.all(['sources.json', 'characters.json', 'walkthrough.json'].map(async (file) => JSON.parse(await readFile(path.join(root, 'data', file), 'utf8'))));
+  const sourceMap = new Map(sources.map((source) => [source.id, source]));
+  const byId = new Map(characters.map((record) => [record.id, record]));
+  const officialCharacters = characters.filter((record) => record.sourceIds.includes('atlus-maken-shao-characters-archive'));
+  assert.equal(officialCharacters.length, 17);
+  assert.equal(characters.length, 22);
+  for (const id of ['maken', 'kei-sagami', 'kou-yamashiro', 'jj-jones', 'hiromitsu-sagami', 'anne-miller', 'lee-feichao', 'kati', 'ramrod', 'badelaire', 'akinas', 'andrei', 'sharja', 'dal', 'margarete', 'don-marcala', 'rei', 'inaba-go', 'barlinka', 'smith', 'yusuf', 'william']) assert.ok(byId.has(id), `characters includes ${id}`);
+  assert.equal(characters.filter((record) => record.brainJackStatus === 'confirmed-host').length, 18);
+  assert.deepEqual(Object.fromEntries([...characters.reduce((counts, record) => counts.set(record.characterType, (counts.get(record.characterType) || 0) + 1), new Map()).entries()].sort()), { 'brain-jack-host': 3, core: 2, 'faction-member': 13, supporting: 4 });
+  assert.ok(characters.every((record) => record.gameVersion === 'maken-shao-ps2' && record.region === 'JP' && record.isPlaceholder === false));
+  assert.ok(characters.every((record) => record.sourceIds.every((id) => sourceMap.has(id))));
+  assert.ok(characters.every((record) => record.nameZhHant && record.nameJa && record.nameEn));
+  assert.ok(characters.every((record) => ['official', 'romanized'].includes(record.nameEnStatus)));
+  assert.ok(characters.every((record) => record.imagePath && record.imageAlt));
+  assert.equal(characters.filter((record) => record.imageKind === 'official-source').length, 17);
+  assert.equal(characters.filter((record) => record.imageKind === 'no-attributable-source').length, 5);
+  assert.ok(officialCharacters.every((record) => record.imageKind === 'official-source' && record.imageSourceId === 'atlus-maken-shao-characters-archive'));
+  const imageAssets = await Promise.all(characters.map((record) => readFile(path.join(root, record.imagePath))));
+  assert.ok(imageAssets.every((asset) => asset.byteLength > 300), 'every character image asset is present and non-trivial');
+  assert.equal(byId.get('inaba-go').imageKind, 'no-attributable-source');
+  assert.equal(byId.get('inaba-go').imageSourceId, null);
+  assert.equal(byId.get('lee-feichao').nameZhHant, '李飛扇');
+  assert.equal(byId.get('maken').nameEnStatus, 'official');
+  assert.equal(byId.get('kei-sagami').nameZhHant, '相模桂');
+  assert.deepEqual(walkthrough.find((step) => step.id === 'route-opening-kanazawa').brainJackTargetIds, ['kei-sagami', 'andrei']);
+  assert.deepEqual(validateCharacterReferences(characters, walkthrough), []);
+});
+
+test('character page declares v0.4 data and filters', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const [html, app] = await Promise.all([
+    readFile(path.join(root, 'pages', 'characters.html'), 'utf8'),
+    readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8')
+  ]);
+  assert.match(html, /data-content-file="characters\.json"/);
+  assert.match(html, /data-character-type-filter/);
+  assert.match(html, /data-brain-jack-filter/);
+  assert.match(app, /characterType/);
+  assert.match(app, /brainJackStatus/);
+  assert.match(app, /nameZhHant/);
+  assert.match(app, /nameEnStatus/);
+  assert.match(app, /character-portrait/);
+  assert.match(app, /const isMinor = item\.spoilerLevel === 'minor'/);
+  assert.match(app, /if \(!isMajor && !isMinor\) details\.open = true/);
+  assert.match(app, /站內中性佔位圖/);
+  assert.match(app, /展開角色細節與查證資料/);
+  assert.match(app, /沒有符合篩選條件的資料/);
+});
+
+test('keeps every major-card title inside its closed spoiler disclosure', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const app = await readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8');
+  assert.match(app, /const hiddenTitle = document\.createElement\('h2'\);/);
+  assert.match(app, /hiddenTitle\.textContent = '重大劇透內容（已隱藏）';/);
+  assert.match(app, /details\.append\(control, title, body\);/);
+  assert.match(app, /article\.append\(hiddenTitle, details\);/);
+});
+
+test('restores sourced walkthrough objectives in rendered card details', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const app = await readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8');
+  assert.match(app, /Array\.isArray\(item\.objectives\)/);
+  assert.match(app, /heading\.textContent = '已查證目標';/);
+  assert.match(app, /item\.objectives\.forEach/);
 });
 
 test('requires v0.3 walkthrough routing and objective fields', async () => {

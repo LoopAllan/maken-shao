@@ -17,7 +17,22 @@
     "lastVerified",
     "isPlaceholder",
     "spoiler",
-    "role"
+    "nameJa",
+    "nameLatin",
+    "nameZhHant",
+    "nameEn",
+    "nameEnStatus",
+    "imagePath",
+    "imageAlt",
+    "imageKind",
+    "imageSourceId",
+    "role",
+    "characterType",
+    "affiliations",
+    "brainJackStatus",
+    "firstAppearanceWalkthroughId",
+    "relatedWalkthroughIds",
+    "spoilerLevel"
   ],
   "properties": {
     "id": {
@@ -104,6 +119,116 @@
         "null"
       ],
       "maxLength": 120
+    },
+    "nameJa": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "nameLatin": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "nameZhHant": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "nameEn": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "nameEnStatus": {
+      "type": "string",
+      "enum": [
+        "official",
+        "romanized"
+      ]
+    },
+    "imagePath": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^assets/images/characters/[a-z0-9][a-z0-9-]{1,79}\\.(gif|jpg|jpeg|png|webp|svg)$"
+    },
+    "imageAlt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "characterType": {
+      "type": "string",
+      "enum": [
+        "core",
+        "brain-jack-host",
+        "supporting",
+        "faction-member",
+        "unknown"
+      ]
+    },
+    "affiliations": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      }
+    },
+    "brainJackStatus": {
+      "type": "string",
+      "enum": [
+        "player-entity",
+        "confirmed-host",
+        "not-a-host",
+        "not-verified"
+      ]
+    },
+    "firstAppearanceWalkthroughId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+    },
+    "relatedWalkthroughIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+      }
+    },
+    "spoilerLevel": {
+      "type": "string",
+      "enum": [
+        "none",
+        "minor",
+        "major"
+      ]
+    },
+    "imageKind": {
+      "type": "string",
+      "enum": [
+        "official-source",
+        "no-attributable-source"
+      ]
+    },
+    "imageSourceId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
     }
   }
 }
