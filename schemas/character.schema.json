@@ -26,6 +26,8 @@
     "imageAlt",
     "imageKind",
     "imageSourceId",
+    "imageSha256",
+    "imageOriginalUrl",
     "role",
     "characterType",
     "affiliations",
@@ -151,17 +153,11 @@
       ]
     },
     "imagePath": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "pattern": "^assets/images/characters/[a-z0-9][a-z0-9-]{1,79}\\.(gif|jpg|jpeg|png|webp|svg)$"
     },
     "imageAlt": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "string",
       "minLength": 1,
       "maxLength": 240
     },
@@ -229,6 +225,17 @@
         "null"
       ],
       "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+    },
+    "imageOriginalUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^https://web\\.archive\\.org/web/[0-9]{14}im_/http://www\\.atlus\\.co\\.jp/cs/game/pstation2/shao/chara_images/[A-Za-z0-9_.-]+$"
+    },
+    "imageSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
     }
   }
 }
