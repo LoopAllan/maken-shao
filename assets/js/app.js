@@ -96,7 +96,9 @@
     image.loading = 'lazy';
     image.decoding = 'async';
     const caption = document.createElement('figcaption');
-    caption.textContent = '圖像：Atlus《魔剣爻》官方角色介紹保存頁；僅作本離線資料庫的來源識別與引用。';
+    caption.textContent = item.imageKind === 'official-source'
+      ? '圖像：Atlus《魔剣爻》官方角色介紹保存頁；© ATLUS，僅作本離線資料庫的來源識別與引用。'
+      : '圖像：站內中性佔位圖；現有來源未提供可確證且可下載的角色圖，不代表角色外觀。';
     figure.append(image, caption);
     return figure;
   }
@@ -130,9 +132,9 @@
 
     const details = document.createElement('details');
     details.className = 'spoiler-content';
-    if (!isMajor) details.open = true;
+    if (!isMajor && !isMinor) details.open = true;
     const control = document.createElement('summary');
-    control.textContent = isMajor ? '展開角色細節與查證資料（重大劇透）' : (isMinor ? '展開角色細節與查證資料（輕微劇透）' : '收合角色細節與查證資料');
+    control.textContent = isMajor ? '展開重大劇透內容' : (isMinor ? '展開角色細節與查證資料（輕微劇透）' : '收合角色細節與查證資料');
     const body = document.createElement('div');
     body.className = 'card-detail-body';
     body.append(summary, characterImage(item));
@@ -140,15 +142,34 @@
       const { identity, note } = characterIdentity(item);
       body.append(identity, note);
     }
-    body.append(content, meta, sourceLinks(item, sourceMap, isMajor));
+    body.append(content, meta);
+    if (Array.isArray(item.objectives) && item.objectives.length) {
+      const heading = document.createElement('h3');
+      heading.textContent = '已查證目標';
+      const list = document.createElement('ul');
+      item.objectives.forEach((objective) => {
+        const row = document.createElement('li');
+        row.textContent = objective;
+        list.append(row);
+      });
+      body.append(heading, list);
+    }
+    body.append(sourceLinks(item, sourceMap, isMajor));
     if (item.verificationNote) {
       const verification = document.createElement('p');
       verification.className = 'verification-note';
       verification.textContent = `查證註記：${item.verificationNote}`;
       body.append(verification);
     }
-    details.append(control, body);
-    article.append(title, details);
+    if (isMajor) {
+      details.append(control, title, body);
+      const hiddenTitle = document.createElement('h2');
+      hiddenTitle.textContent = '重大劇透內容（已隱藏）';
+      article.append(hiddenTitle, details);
+    } else {
+      details.append(control, body);
+      article.append(title, details);
+    }
     return article;
   }
 

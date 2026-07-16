@@ -24,6 +24,8 @@
     "nameEnStatus",
     "imagePath",
     "imageAlt",
+    "imageKind",
+    "imageSourceId",
     "role",
     "characterType",
     "affiliations",
@@ -153,7 +155,7 @@
         "string",
         "null"
       ],
-      "pattern": "^assets/images/characters/[a-z0-9][a-z0-9-]{1,79}\\.(gif|jpg|jpeg|png|webp)$"
+      "pattern": "^assets/images/characters/[a-z0-9][a-z0-9-]{1,79}\\.(gif|jpg|jpeg|png|webp|svg)$"
     },
     "imageAlt": {
       "type": [
@@ -213,6 +215,20 @@
         "minor",
         "major"
       ]
+    },
+    "imageKind": {
+      "type": "string",
+      "enum": [
+        "official-source",
+        "no-attributable-source"
+      ]
+    },
+    "imageSourceId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
     }
   }
 }

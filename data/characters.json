@@ -33,7 +33,9 @@
     "nameEn": "Deus Ex Machina",
     "nameEnStatus": "official",
     "imagePath": "assets/images/characters/maken.gif",
-    "imageAlt": "魔劍（魔剣）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "魔劍（魔剣）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "kei-sagami",
@@ -71,7 +73,9 @@
     "nameEn": "Kei Sagami",
     "nameEnStatus": "official",
     "imagePath": "assets/images/characters/kei-sagami.gif",
-    "imageAlt": "相模桂（相模桂）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "相模桂（相模桂）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "kou-yamashiro",
@@ -108,7 +112,9 @@
     "nameEn": "Kou Yamashiro",
     "nameEnStatus": "official",
     "imagePath": "assets/images/characters/kou-yamashiro.gif",
-    "imageAlt": "山城弘（山城弘）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "山城弘（山城弘）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "jj-jones",
@@ -141,7 +147,9 @@
     "nameEn": "J.J. Jones",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/jj-jones.gif",
-    "imageAlt": "J.J. 瓊斯（J.J.ジョーンズ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "J.J. 瓊斯（J.J.ジョーンズ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "hiromitsu-sagami",
@@ -174,7 +182,9 @@
     "nameEn": "Hiromitsu Sagami",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/hiromitsu-sagami.gif",
-    "imageAlt": "相模廣光（相模広光）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "相模廣光（相模広光）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "anne-miller",
@@ -207,11 +217,13 @@
     "nameEn": "Anne Miller",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/anne-miller.gif",
-    "imageAlt": "安・米勒（アン・ミラー）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "安・米勒（アン・ミラー）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "lee-feichao",
-    "title": "李・飛超｜リー・フェイチャオ｜Lee Feichao",
+    "title": "李飛扇｜リー・フェイチャオ｜Lee Feichao",
     "summary": "官方「五大封劍士」之一。",
     "content": "官方角色頁將「リー・フェイチャオ」列入五大封劍士；本站目前只採用可直接辨識的姓名與分組，不推定可操作性或 Brain Jack 條件。",
     "nameJa": "リー・フェイチャオ",
@@ -242,11 +254,13 @@
       "route-early-taj-mahal"
     ],
     "brainJackStatus": "confirmed-host",
-    "nameZhHant": "李・飛超",
+    "nameZhHant": "李飛扇",
     "nameEn": "Lee Feichao",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/lee-feichao.jpg",
-    "imageAlt": "李・飛超（リー・フェイチャオ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "李飛扇（リー・フェイチャオ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "kati",
@@ -285,7 +299,9 @@
     "nameEn": "Kati",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/kati.jpg",
-    "imageAlt": "卡蒂（カティ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "卡蒂（カティ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "ramrod",
@@ -324,7 +340,9 @@
     "nameEn": "Ramrod",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/ramrod.jpg",
-    "imageAlt": "拉姆羅德（ラムロッド）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "拉姆羅德（ラムロッド）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "badelaire",
@@ -363,7 +381,9 @@
     "nameEn": "Badelaire",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/badelaire.jpg",
-    "imageAlt": "巴德萊爾（バデレール）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "巴德萊爾（バデレール）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "akinas",
@@ -401,7 +421,9 @@
     "nameEn": "Akinas",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/akinas.jpg",
-    "imageAlt": "阿基納斯（アキナス）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "阿基納斯（アキナス）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "andrei",
@@ -440,7 +462,9 @@
     "nameEn": "Andrei",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/andrei.jpg",
-    "imageAlt": "安德烈（アンドレイ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "安德烈（アンドレイ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "sharja",
@@ -479,7 +503,9 @@
     "nameEn": "Sharja",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/sharja.jpg",
-    "imageAlt": "沙爾嘉（シャージャ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "沙爾嘉（シャージャ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "dal",
@@ -518,7 +544,9 @@
     "nameEn": "Dal",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/dal.jpg",
-    "imageAlt": "達爾（ダル）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "達爾（ダル）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "margarete",
@@ -557,7 +585,9 @@
     "nameEn": "Margarete",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/margarete.jpg",
-    "imageAlt": "瑪格麗特（マルガレーテ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "瑪格麗特（マルガレーテ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "don-marcala",
@@ -596,7 +626,9 @@
     "nameEn": "Don Marcala",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/don-marcala.jpg",
-    "imageAlt": "唐・馬爾卡拉（ドン・マルカラ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "唐・馬爾卡拉（ドン・マルカラ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "rei",
@@ -635,7 +667,9 @@
     "nameEn": "Rei",
     "nameEnStatus": "romanized",
     "imagePath": "assets/images/characters/rei.jpg",
-    "imageAlt": "雷（レイ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁"
+    "imageAlt": "雷（レイ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
+    "imageKind": "official-source",
+    "imageSourceId": "atlus-maken-shao-characters-archive"
   },
   {
     "id": "inaba-go",
@@ -669,8 +703,10 @@
     "nameZhHant": "稻葉鄉",
     "nameEn": "Inaba Go",
     "nameEnStatus": "romanized",
-    "imagePath": null,
-    "imageAlt": null
+    "imagePath": "assets/images/characters/inaba-go.svg",
+    "imageAlt": "稻葉鄉（稲葉郷）站內角色佔位圖；現有來源未提供可確證角色圖",
+    "imageKind": "no-attributable-source",
+    "imageSourceId": null
   },
   {
     "id": "barlinka",
@@ -705,8 +741,10 @@
     "nameZhHant": "巴林卡",
     "nameEn": "Barlinka",
     "nameEnStatus": "romanized",
-    "imagePath": null,
-    "imageAlt": null
+    "imagePath": "assets/images/characters/barlinka.svg",
+    "imageAlt": "巴林卡（バーリンカ）站內角色佔位圖；現有來源未提供可確證角色圖",
+    "imageKind": "no-attributable-source",
+    "imageSourceId": null
   },
   {
     "id": "smith",
@@ -740,8 +778,10 @@
     "nameZhHant": "史密斯議員",
     "nameEn": "Smith",
     "nameEnStatus": "romanized",
-    "imagePath": null,
-    "imageAlt": null
+    "imagePath": "assets/images/characters/smith.svg",
+    "imageAlt": "史密斯議員（スミス）站內角色佔位圖；現有來源未提供可確證角色圖",
+    "imageKind": "no-attributable-source",
+    "imageSourceId": null
   },
   {
     "id": "yusuf",
@@ -778,8 +818,10 @@
     "nameZhHant": "優素福",
     "nameEn": "Yusuf",
     "nameEnStatus": "romanized",
-    "imagePath": null,
-    "imageAlt": null
+    "imagePath": "assets/images/characters/yusuf.svg",
+    "imageAlt": "優素福（ユースフ）站內角色佔位圖；現有來源未提供可確證角色圖",
+    "imageKind": "no-attributable-source",
+    "imageSourceId": null
   },
   {
     "id": "william",
@@ -817,7 +859,9 @@
     "nameZhHant": "威廉",
     "nameEn": "William",
     "nameEnStatus": "romanized",
-    "imagePath": null,
-    "imageAlt": null
+    "imagePath": "assets/images/characters/william.svg",
+    "imageAlt": "威廉（ウィリアム）站內角色佔位圖；現有來源未提供可確證角色圖",
+    "imageKind": "no-attributable-source",
+    "imageSourceId": null
   }
 ]

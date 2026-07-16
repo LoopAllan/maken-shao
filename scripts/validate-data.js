@@ -70,6 +70,15 @@ export function validateDataset({ fileName, records, sourceIds, type, schema }) 
     if (record.isPlaceholder === true && ![record.title,record.summary,record.content,record.verificationNote].join(' ').includes('示範資料，非正式攻略內容')) errors.push(`${prefix}: placeholder records must include the required demo warning`);
     if (type === 'character' && ['minor', 'major'].includes(record.spoilerLevel) && record.spoiler !== true) errors.push(`${prefix}: non-none spoilerLevel requires spoiler true`);
     if (type === 'character' && record.spoiler === true && record.spoilerLevel === 'none') errors.push(`${prefix}: spoiler true requires non-none spoilerLevel`);
+    if (type === 'character' && (record.imagePath === null) !== (record.imageAlt === null)) errors.push(`${prefix}: imagePath and imageAlt must either both be present or both be null`);
+    if (type === 'character' && record.imageKind === 'official-source') {
+      if (!record.imageSourceId) errors.push(`${prefix}: official-source requires imageSourceId`);
+      else {
+        if (!sourceIds.has(record.imageSourceId)) errors.push(`${prefix}: unknown imageSourceId "${record.imageSourceId}"`);
+        if (!Array.isArray(record.sourceIds) || !record.sourceIds.includes(record.imageSourceId)) errors.push(`${prefix}: imageSourceId must also appear in sourceIds`);
+      }
+    }
+    if (type === 'character' && record.imageKind === 'no-attributable-source' && record.imageSourceId !== null) errors.push(`${prefix}: no-attributable-source requires null imageSourceId`);
   });
   return errors;
 }
