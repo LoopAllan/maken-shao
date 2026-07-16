@@ -96,16 +96,28 @@
     image.loading = 'lazy';
     image.decoding = 'async';
     const caption = document.createElement('figcaption');
-    caption.textContent = item.imageKind === 'official-source'
-      ? '圖像：Atlus《魔剣爻》官方角色介紹保存頁；© ATLUS，僅作本離線資料庫的來源識別與引用。'
-      : '圖像：站內中性佔位圖；現有來源未提供可確證且可下載的角色圖，不代表角色外觀。';
+    if (item.imageKind === 'official-source') {
+      caption.append('圖像：Atlus《魔剣爻》官方角色介紹保存頁；© ATLUS，僅作本離線資料庫的來源識別與引用。');
+      if (item.imageOriginalUrl) {
+        caption.append(' ');
+        const sourceAsset = document.createElement('a');
+        sourceAsset.href = item.imageOriginalUrl;
+        sourceAsset.target = '_blank';
+        sourceAsset.rel = 'noopener noreferrer';
+        sourceAsset.textContent = '原始圖片資產';
+        caption.append(sourceAsset);
+      }
+    } else {
+      caption.textContent = '圖像：站內中性佔位圖；現有來源未提供可確證且可下載的角色圖，不代表角色外觀。';
+    }
     figure.append(image, caption);
     return figure;
   }
 
-  function renderContentCard(item, sourceMap) {
+  function renderContentCard(item, sourceMap, contentType) {
     const article = document.createElement('article');
     article.className = 'card';
+    const isCharacter = contentType === 'characters';
     const isMajor = item.spoilerLevel === 'major';
     const isMinor = item.spoilerLevel === 'minor';
     const title = document.createElement(isMajor ? 'h3' : 'h2');
@@ -134,11 +146,13 @@
     details.className = 'spoiler-content';
     if (!isMajor && !isMinor) details.open = true;
     const control = document.createElement('summary');
-    control.textContent = isMajor ? '展開重大劇透內容' : (isMinor ? '展開角色細節與查證資料（輕微劇透）' : '收合角色細節與查證資料');
+    const detailLabel = isCharacter ? '角色細節與查證資料' : '內容細節與查證資料';
+    control.textContent = isMajor ? '展開重大劇透內容' : (isMinor ? `展開${detailLabel}（輕微劇透）` : `收合${detailLabel}`);
     const body = document.createElement('div');
     body.className = 'card-detail-body';
-    body.append(summary, characterImage(item));
-    if (item.nameJa && item.nameZhHant && item.nameEn) {
+    body.append(summary);
+    if (isCharacter) body.append(characterImage(item));
+    if (isCharacter && item.nameJa && item.nameZhHant && item.nameEn) {
       const { identity, note } = characterIdentity(item);
       body.append(identity, note);
     }
@@ -259,18 +273,25 @@
         const status = statusFilter?.value || 'all';
         const characterType = characterTypeFilter?.value || 'all';
         const brainJackStatus = brainJackFilter?.value || 'all';
+        const contentType = file.replace(/\.json$/, '');
         const visible = items.filter((item) => (
           (route === 'all' || item.routeId === route)
           && (status === 'all' || item.verificationStatus === status)
           && (characterType === 'all' || item.characterType === characterType)
           && (brainJackStatus === 'all' || item.brainJackStatus === brainJackStatus)
-        )).sort((a, b) => a.title.localeCompare(b.title, 'zh-Hant'));
+        )).sort((a, b) => {
+          if (contentType === 'walkthrough') {
+            const sequenceDifference = (a.sequence ?? Number.MAX_SAFE_INTEGER) - (b.sequence ?? Number.MAX_SAFE_INTEGER);
+            if (sequenceDifference) return sequenceDifference;
+          }
+          return a.title.localeCompare(b.title, 'zh-Hant');
+        });
         contentTarget.replaceChildren();
         if (!visible.length) {
           contentTarget.textContent = '沒有符合篩選條件的資料。';
           return;
         }
-        visible.forEach((item) => contentTarget.append(renderContentCard(item, sourceMap)));
+        visible.forEach((item) => contentTarget.append(renderContentCard(item, sourceMap, contentType)));
       };
       populateRoutes();
       [routeFilter, spoilerRouteToggle, statusFilter, characterTypeFilter, brainJackFilter]

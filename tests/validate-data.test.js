@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -40,6 +41,8 @@ const validRecord = {
   imageAlt: '示範角色佔位圖',
   imageKind: 'no-attributable-source',
   imageSourceId: null,
+  imageOriginalUrl: null,
+  imageSha256: '0'.repeat(64),
   role: null,
 };
 
@@ -96,7 +99,8 @@ test('rejects incomplete character image metadata', () => {
     fileName: 'characters.json',
     records: [
       { ...validRecord, id: 'missing-alt', imagePath: 'assets/images/characters/demo-character.gif', imageAlt: null },
-      { ...validRecord, id: 'missing-path', imagePath: null, imageAlt: '示範角色圖' }
+      { ...validRecord, id: 'missing-path', imagePath: null, imageAlt: '示範角色圖' },
+      { ...validRecord, id: 'missing-source-url', imageKind: 'official-source', imageSourceId: 'demo-source', imageOriginalUrl: null }
     ],
     sourceIds: new Set(['demo-source']),
     type: 'character'
@@ -104,6 +108,7 @@ test('rejects incomplete character image metadata', () => {
   const output = errors.join('\n');
   assert.match(output, /missing-alt.*imagePath and imageAlt must either both be present or both be null/i);
   assert.match(output, /missing-path.*imagePath and imageAlt must either both be present or both be null/i);
+  assert.match(output, /missing-source-url.*official-source requires imageOriginalUrl/i);
 });
 
 test('registers world and systems datasets for v0.2 validation', () => {
@@ -126,11 +131,13 @@ test('keeps v0.2 entries PS2-scoped and linked to registered official sources', 
 test('requires v0.4 character identity, role, route, and spoiler fields', async () => {
   const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
   const schema = JSON.parse(await readFile(path.join(root, 'schemas', 'character.schema.json'), 'utf8'));
-  for (const field of ['nameJa', 'nameLatin', 'nameZhHant', 'nameEn', 'nameEnStatus', 'imagePath', 'imageAlt', 'imageKind', 'imageSourceId', 'role', 'characterType', 'affiliations', 'brainJackStatus', 'firstAppearanceWalkthroughId', 'relatedWalkthroughIds', 'spoilerLevel']) {
+  for (const field of ['nameJa', 'nameLatin', 'nameZhHant', 'nameEn', 'nameEnStatus', 'imagePath', 'imageAlt', 'imageKind', 'imageSourceId', 'imageOriginalUrl', 'imageSha256', 'role', 'characterType', 'affiliations', 'brainJackStatus', 'firstAppearanceWalkthroughId', 'relatedWalkthroughIds', 'spoilerLevel']) {
     assert.ok(schema.required.includes(field), `character schema requires ${field}`);
   }
   assert.deepEqual(schema.properties.spoilerLevel.enum, ['none', 'minor', 'major']);
   assert.deepEqual(schema.properties.brainJackStatus.enum, ['player-entity', 'confirmed-host', 'not-a-host', 'not-verified']);
+  assert.equal(schema.properties.imagePath.type, 'string');
+  assert.equal(schema.properties.imageAlt.type, 'string');
 });
 
 test('rejects unknown and inconsistent character walkthrough references', () => {
@@ -164,6 +171,7 @@ test('ships the 17 officially named PS2 character-page entries in v0.4', async (
   assert.equal(characters.length, 22);
   for (const id of ['maken', 'kei-sagami', 'kou-yamashiro', 'jj-jones', 'hiromitsu-sagami', 'anne-miller', 'lee-feichao', 'kati', 'ramrod', 'badelaire', 'akinas', 'andrei', 'sharja', 'dal', 'margarete', 'don-marcala', 'rei', 'inaba-go', 'barlinka', 'smith', 'yusuf', 'william']) assert.ok(byId.has(id), `characters includes ${id}`);
   assert.equal(characters.filter((record) => record.brainJackStatus === 'confirmed-host').length, 18);
+  assert.ok(characters.filter((record) => record.brainJackStatus === 'confirmed-host').every((record) => !/不推定可操作性|不足以把.*Brain Jack/.test(record.content)), 'confirmed hosts do not contradict their verified status in prose');
   assert.deepEqual(Object.fromEntries([...characters.reduce((counts, record) => counts.set(record.characterType, (counts.get(record.characterType) || 0) + 1), new Map()).entries()].sort()), { 'brain-jack-host': 3, core: 2, 'faction-member': 13, supporting: 4 });
   assert.ok(characters.every((record) => record.gameVersion === 'maken-shao-ps2' && record.region === 'JP' && record.isPlaceholder === false));
   assert.ok(characters.every((record) => record.sourceIds.every((id) => sourceMap.has(id))));
@@ -175,6 +183,9 @@ test('ships the 17 officially named PS2 character-page entries in v0.4', async (
   assert.ok(officialCharacters.every((record) => record.imageKind === 'official-source' && record.imageSourceId === 'atlus-maken-shao-characters-archive'));
   const imageAssets = await Promise.all(characters.map((record) => readFile(path.join(root, record.imagePath))));
   assert.ok(imageAssets.every((asset) => asset.byteLength > 300), 'every character image asset is present and non-trivial');
+  characters.forEach((record, index) => assert.equal(createHash('sha256').update(imageAssets[index]).digest('hex'), record.imageSha256, `${record.id} image checksum matches metadata`));
+  assert.ok(officialCharacters.every((record) => /^https:\/\/web\.archive\.org\/web\/.*\/http:\/\/www\.atlus\.co\.jp\/cs\/game\/pstation2\/shao\/chara_images\//.test(record.imageOriginalUrl)));
+  assert.ok(characters.filter((record) => record.imageKind === 'no-attributable-source').every((record) => record.imageOriginalUrl === null));
   assert.equal(byId.get('inaba-go').imageKind, 'no-attributable-source');
   assert.equal(byId.get('inaba-go').imageSourceId, null);
   assert.equal(byId.get('lee-feichao').nameZhHant, '李飛扇');
@@ -201,8 +212,21 @@ test('character page declares v0.4 data and filters', async () => {
   assert.match(app, /const isMinor = item\.spoilerLevel === 'minor'/);
   assert.match(app, /if \(!isMajor && !isMinor\) details\.open = true/);
   assert.match(app, /站內中性佔位圖/);
-  assert.match(app, /展開角色細節與查證資料/);
+  assert.match(app, /imageOriginalUrl/);
+  assert.match(app, /原始圖片資產/);
+  assert.match(app, /角色細節與查證資料/);
   assert.match(app, /沒有符合篩選條件的資料/);
+});
+
+test('keeps character-only UI out of walkthrough cards and preserves sequence order', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const app = await readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8');
+  assert.match(app, /const isCharacter = contentType === 'characters'/);
+  assert.match(app, /if \(isCharacter\) body\.append\(characterImage\(item\)\)/);
+  assert.match(app, /const detailLabel = isCharacter \? '角色細節與查證資料' : '內容細節與查證資料'/);
+  assert.match(app, /if \(contentType === 'walkthrough'\)/);
+  assert.match(app, /a\.sequence \?\? Number\.MAX_SAFE_INTEGER/);
+  assert.match(app, /renderContentCard\(item, sourceMap, contentType\)/);
 });
 
 test('keeps every major-card title inside its closed spoiler disclosure', async () => {

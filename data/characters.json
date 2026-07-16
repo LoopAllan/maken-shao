@@ -35,7 +35,9 @@
     "imagePath": "assets/images/characters/maken.gif",
     "imageAlt": "魔劍（魔剣）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "0a785e2d62c2e2fdd5b5f1e6e1ede00a156aa0b207f443805ea44cb612cf6e87",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/cKen_r2_c3.gif"
   },
   {
     "id": "kei-sagami",
@@ -75,13 +77,15 @@
     "imagePath": "assets/images/characters/kei-sagami.gif",
     "imageAlt": "相模桂（相模桂）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "0bf7b3321e39808794df61617c9bc750e765cb758c7c8577be01e557c933f7a6",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/cKei_r1_c1.gif"
   },
   {
     "id": "kou-yamashiro",
     "title": "山城弘｜山城弘｜Kou Yamashiro",
     "summary": "相模桂的青梅竹馬；在桂與魔劍離開後，為了幫助她而追蹤魔劍的行動。",
-    "content": "Atlus 官方角色頁描述山城弘是桂的青梅竹馬與富豪之子，對桂抱有好感；得知桂的 Image 可能被魔劍吸收後，他為幫助桂而在世界各地追蹤魔劍。現有來源不足以把他標為可 Brain Jack 宿主。",
+    "content": "Atlus 官方角色頁描述山城弘是桂的青梅竹馬與富豪之子，對桂抱有好感；得知桂的 Image 可能被魔劍吸收後，他為幫助桂而在世界各地追蹤魔劍。BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 後期流程另行交叉支持其特定路線可操作／Brain Jack 分類；這不表示能在任意時點自由取得。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
     "sourceIds": [
@@ -114,7 +118,9 @@
     "imagePath": "assets/images/characters/kou-yamashiro.gif",
     "imageAlt": "山城弘（山城弘）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "3341be2530994faa1d53c261853b15eeded437c266226e4cf5824d106d7d86b3",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/cKou_r1_c4.gif"
   },
   {
     "id": "jj-jones",
@@ -149,7 +155,9 @@
     "imagePath": "assets/images/characters/jj-jones.gif",
     "imageAlt": "J.J. 瓊斯（J.J.ジョーンズ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "5f13d0415bc37e7da036465437c3637b42f14c482cac1c568eb51716e28e045e",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/cJJ_r1_c1.gif"
   },
   {
     "id": "hiromitsu-sagami",
@@ -184,7 +192,9 @@
     "imagePath": "assets/images/characters/hiromitsu-sagami.gif",
     "imageAlt": "相模廣光（相模広光）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "ec8f418a6ef3a1fd080b92b1b762405c961373141fa5cc4d0cda83f7682ed0dc",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/cJJ_r1_c3.gif"
   },
   {
     "id": "anne-miller",
@@ -219,13 +229,15 @@
     "imagePath": "assets/images/characters/anne-miller.gif",
     "imageAlt": "安・米勒（アン・ミラー）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "63b05f1acee27004a1de86bda42e39ef3c9ddf2b84e571620e05c010c4438763",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/cJJ_r1_c4.gif"
   },
   {
     "id": "lee-feichao",
     "title": "李飛扇｜リー・フェイチャオ｜Lee Feichao",
     "summary": "官方「五大封劍士」之一。",
-    "content": "官方角色頁將「リー・フェイチャオ」列入五大封劍士；本站目前只採用可直接辨識的姓名與分組，不推定可操作性或 Brain Jack 條件。",
+    "content": "官方角色頁將「リー・フェイチャオ」列入五大封劍士；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "リー・フェイチャオ",
     "nameLatin": null,
     "role": "五大封劍士",
@@ -260,13 +272,15 @@
     "imagePath": "assets/images/characters/lee-feichao.jpg",
     "imageAlt": "李飛扇（リー・フェイチャオ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "12a9e36f24ce149a4c001c1febc050b6257e59c4afaf2cf275f4eaebed06f877",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/godai_r1_c1.jpg"
   },
   {
     "id": "kati",
     "title": "卡蒂｜カティ｜Kati",
     "summary": "官方「五大封劍士」之一。",
-    "content": "官方角色頁將「カティ」列入五大封劍士；本站目前只採用可直接辨識的姓名與分組，不推定可操作性或 Brain Jack 條件。",
+    "content": "官方角色頁將「カティ」列入五大封劍士；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "カティ",
     "nameLatin": null,
     "role": "五大封劍士",
@@ -301,13 +315,15 @@
     "imagePath": "assets/images/characters/kati.jpg",
     "imageAlt": "卡蒂（カティ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "cc878f2bfc8cfd19a2f209c96677dc1de72d65424305e51b93f4ee4b8c2eff8b",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/godai_r1_c2.jpg"
   },
   {
     "id": "ramrod",
     "title": "拉姆羅德｜ラムロッド｜Ramrod",
     "summary": "官方「五大封劍士」之一。",
-    "content": "官方角色頁將「ラムロッド」列入五大封劍士；本站目前只採用可直接辨識的姓名與分組，不推定可操作性或 Brain Jack 條件。",
+    "content": "官方角色頁將「ラムロッド」列入五大封劍士；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "ラムロッド",
     "nameLatin": null,
     "role": "五大封劍士",
@@ -342,13 +358,15 @@
     "imagePath": "assets/images/characters/ramrod.jpg",
     "imageAlt": "拉姆羅德（ラムロッド）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "f243f21007e26ee49a44eab72f7e3dde3c340f172a076d4efb5ad32431bf1c55",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/godai_r1_c3.jpg"
   },
   {
     "id": "badelaire",
     "title": "巴德萊爾｜バデレール｜Badelaire",
     "summary": "官方「五大封劍士」之一。",
-    "content": "官方角色頁將「バデレール」列入五大封劍士；本站目前只採用可直接辨識的姓名與分組，不推定可操作性或 Brain Jack 條件。",
+    "content": "官方角色頁將「バデレール」列入五大封劍士；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "バデレール",
     "nameLatin": null,
     "role": "五大封劍士",
@@ -383,13 +401,15 @@
     "imagePath": "assets/images/characters/badelaire.jpg",
     "imageAlt": "巴德萊爾（バデレール）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "fe0d5902810896286b11265b650b01204d3530014f44ec78ea0e2b082454ae9c",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/godai_r1_c4.jpg"
   },
   {
     "id": "akinas",
     "title": "阿基納斯｜アキナス｜Akinas",
     "summary": "官方「五大封劍士」之一。",
-    "content": "官方角色頁將「アキナス」列入五大封劍士；本站目前只採用可直接辨識的姓名與分組，不推定可操作性或 Brain Jack 條件。",
+    "content": "官方角色頁將「アキナス」列入五大封劍士；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "アキナス",
     "nameLatin": null,
     "role": "五大封劍士",
@@ -423,13 +443,15 @@
     "imagePath": "assets/images/characters/akinas.jpg",
     "imageAlt": "阿基納斯（アキナス）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "7d6b8033755ad04630e17d339b51e20016b54dd82aa6d288673b43aad7156b6f",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/godai_r1_c5.jpg"
   },
   {
     "id": "andrei",
     "title": "安德烈｜アンドレイ｜Andrei",
     "summary": "官方公開姓名的「八卦」成員。",
-    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開アンドレイ姓名；不以此推定路線、可操作性或 Brain Jack 條件。",
+    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開アンドレイ姓名；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "アンドレイ",
     "nameLatin": null,
     "role": "八卦成員",
@@ -464,13 +486,15 @@
     "imagePath": "assets/images/characters/andrei.jpg",
     "imageAlt": "安德烈（アンドレイ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "ffd600ba01a0820db7dcfb2e0ee319b31f36c7e4c3a1f838ec9976b00b5af231",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/hachi_r1_c1.jpg"
   },
   {
     "id": "sharja",
     "title": "沙爾嘉｜シャージャ｜Sharja",
     "summary": "官方公開姓名的「八卦」成員。",
-    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開シャージャ姓名；不以此推定路線、可操作性或 Brain Jack 條件。",
+    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開シャージャ姓名；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "シャージャ",
     "nameLatin": null,
     "role": "八卦成員",
@@ -505,13 +529,15 @@
     "imagePath": "assets/images/characters/sharja.jpg",
     "imageAlt": "沙爾嘉（シャージャ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "19cec7ba266279469aa63f2b04605b94edaf7535ee069b37f93f86878f733e1e",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/hachi_r1_c2.jpg"
   },
   {
     "id": "dal",
     "title": "達爾｜ダル｜Dal",
     "summary": "官方公開姓名的「八卦」成員。",
-    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開ダル姓名；不以此推定路線、可操作性或 Brain Jack 條件。",
+    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開ダル姓名；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "ダル",
     "nameLatin": null,
     "role": "八卦成員",
@@ -546,13 +572,15 @@
     "imagePath": "assets/images/characters/dal.jpg",
     "imageAlt": "達爾（ダル）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "17a06b225fa9249cc5698040b578126efed018d34bbd4514eb58cabc3ddd223e",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/hachi_r1_c3.jpg"
   },
   {
     "id": "margarete",
     "title": "瑪格麗特｜マルガレーテ｜Margarete",
     "summary": "官方公開姓名的「八卦」成員。",
-    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開マルガレーテ姓名；不以此推定路線、可操作性或 Brain Jack 條件。",
+    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開マルガレーテ姓名；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "マルガレーテ",
     "nameLatin": null,
     "role": "八卦成員",
@@ -587,13 +615,15 @@
     "imagePath": "assets/images/characters/margarete.jpg",
     "imageAlt": "瑪格麗特（マルガレーテ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "ec29beb2fc65b3fff8219df7ed2c00cb7d51d73268e2c02a5701b85f8d6e17e9",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/hachi_r1_c4.jpg"
   },
   {
     "id": "don-marcala",
     "title": "唐・馬爾卡拉｜ドン・マルカラ｜Don Marcala",
     "summary": "官方公開姓名的「八卦」成員。",
-    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開ドン・マルカラ姓名；不以此推定路線、可操作性或 Brain Jack 條件。",
+    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開ドン・マルカラ姓名；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "ドン・マルカラ",
     "nameLatin": null,
     "role": "八卦成員",
@@ -628,13 +658,15 @@
     "imagePath": "assets/images/characters/don-marcala.jpg",
     "imageAlt": "唐・馬爾卡拉（ドン・マルカラ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "3bd2166c1b54109a51c41650ce276402b90db858d75fa561c446d6ebfb9b9da9",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/hachi_r2_c1.jpg"
   },
   {
     "id": "rei",
     "title": "雷｜レイ｜Rei",
     "summary": "官方公開姓名的「八卦」成員。",
-    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開レイ姓名；不以此推定路線、可操作性或 Brain Jack 條件。",
+    "content": "Atlus 官方頁在三業會幹部「八卦」欄公開レイ姓名；BLUE VIOLET 角色表與 GAME瓢論／Kentaro 的 PS2 流程另行交叉支持其可操作／Brain Jack 分類及首次取得節點；這不表示能在任意時點自由取得。",
     "nameJa": "レイ",
     "nameLatin": null,
     "role": "八卦成員",
@@ -669,7 +701,9 @@
     "imagePath": "assets/images/characters/rei.jpg",
     "imageAlt": "雷（レイ）角色圖；Atlus《魔剣爻》官方角色介紹保存頁",
     "imageKind": "official-source",
-    "imageSourceId": "atlus-maken-shao-characters-archive"
+    "imageSourceId": "atlus-maken-shao-characters-archive",
+    "imageSha256": "942aeaa715cb9076b118705fac68e8c20cf963a10de5656a57375f907da6e805",
+    "imageOriginalUrl": "https://web.archive.org/web/20021222113246im_/http://www.atlus.co.jp/cs/game/pstation2/shao/chara_images/hachi_r2_c2.jpg"
   },
   {
     "id": "inaba-go",
@@ -706,7 +740,9 @@
     "imagePath": "assets/images/characters/inaba-go.svg",
     "imageAlt": "稻葉鄉（稲葉郷）站內角色佔位圖；現有來源未提供可確證角色圖",
     "imageKind": "no-attributable-source",
-    "imageSourceId": null
+    "imageSourceId": null,
+    "imageSha256": "c4ee85044f1dcce5a54d5227aadb9d4b75e5834e41ab4de409134ac1bff17ccd",
+    "imageOriginalUrl": null
   },
   {
     "id": "barlinka",
@@ -744,7 +780,9 @@
     "imagePath": "assets/images/characters/barlinka.svg",
     "imageAlt": "巴林卡（バーリンカ）站內角色佔位圖；現有來源未提供可確證角色圖",
     "imageKind": "no-attributable-source",
-    "imageSourceId": null
+    "imageSourceId": null,
+    "imageSha256": "d17f52ed5ea0fc9bee4f999f3b75d072765b5502d532436232442b3f60eb1842",
+    "imageOriginalUrl": null
   },
   {
     "id": "smith",
@@ -781,7 +819,9 @@
     "imagePath": "assets/images/characters/smith.svg",
     "imageAlt": "史密斯議員（スミス）站內角色佔位圖；現有來源未提供可確證角色圖",
     "imageKind": "no-attributable-source",
-    "imageSourceId": null
+    "imageSourceId": null,
+    "imageSha256": "e0c7b6f172fcf0d31eb5499dc4b677a137f2618bdead4f489f6c767e98f41a74",
+    "imageOriginalUrl": null
   },
   {
     "id": "yusuf",
@@ -821,7 +861,9 @@
     "imagePath": "assets/images/characters/yusuf.svg",
     "imageAlt": "優素福（ユースフ）站內角色佔位圖；現有來源未提供可確證角色圖",
     "imageKind": "no-attributable-source",
-    "imageSourceId": null
+    "imageSourceId": null,
+    "imageSha256": "a81269595330920c12689613d1b958daa9fe3c3090c0c5c974890a68db0aa043",
+    "imageOriginalUrl": null
   },
   {
     "id": "william",
@@ -862,6 +904,8 @@
     "imagePath": "assets/images/characters/william.svg",
     "imageAlt": "威廉（ウィリアム）站內角色佔位圖；現有來源未提供可確證角色圖",
     "imageKind": "no-attributable-source",
-    "imageSourceId": null
+    "imageSourceId": null,
+    "imageSha256": "0fec6448666158a9491e50cc8905c544bf758df4b8b3a143bc3ef36f27692381",
+    "imageOriginalUrl": null
   }
 ]

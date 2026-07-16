@@ -77,8 +77,12 @@ export function validateDataset({ fileName, records, sourceIds, type, schema }) 
         if (!sourceIds.has(record.imageSourceId)) errors.push(`${prefix}: unknown imageSourceId "${record.imageSourceId}"`);
         if (!Array.isArray(record.sourceIds) || !record.sourceIds.includes(record.imageSourceId)) errors.push(`${prefix}: imageSourceId must also appear in sourceIds`);
       }
+      if (!record.imageOriginalUrl) errors.push(`${prefix}: official-source requires imageOriginalUrl`);
     }
-    if (type === 'character' && record.imageKind === 'no-attributable-source' && record.imageSourceId !== null) errors.push(`${prefix}: no-attributable-source requires null imageSourceId`);
+    if (type === 'character' && record.imageKind === 'no-attributable-source') {
+      if (record.imageSourceId !== null) errors.push(`${prefix}: no-attributable-source requires null imageSourceId`);
+      if (record.imageOriginalUrl !== null) errors.push(`${prefix}: no-attributable-source requires null imageOriginalUrl`);
+    }
   });
   return errors;
 }
