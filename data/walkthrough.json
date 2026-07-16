@@ -1,21 +1,658 @@
 [
   {
-    "title": "示範資料，非正式攻略內容：流程",
-    "summary": "示範資料，非正式攻略內容",
-    "content": "示範資料，非正式攻略內容。不得視為真實遊戲資訊或攻略。",
+    "id": "route-opening-kanazawa",
+    "title": "開局：金澤研究所",
+    "summary": "兩份 PS2 日版社群流程將金澤研究所列為固定開局，並由此接續林卡頓。",
+    "content": "社群分歧表記載開局使用相模桂，在金澤研究所的流程中擊敗／Brain Jack 八卦安德烈後，接著由安德烈進入林卡頓。本網站尚未以日版官方攻略本正文或實機逐步複驗，因此只呈現解鎖骨架，不重製原攻略細節。",
     "gameVersion": "maken-shao-ps2",
-    "region": "unknown",
+    "region": "JP",
     "sourceIds": [
-      "demo-source"
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart"
     ],
-    "confidence": "unverified",
-    "verificationStatus": "not-verified",
-    "verificationNote": "示範資料，非正式攻略內容；目前尚未查證。",
-    "lastVerified": "2026-07-15",
-    "isPlaceholder": true,
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "兩份獨立 PS2 日版社群流程一致；官方網站僅證實分歧概念，未提供可讀關卡順序表。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
     "spoiler": false,
-    "id": "demo-walkthrough",
-    "sequence": null,
-    "area": null
+    "sequence": 1,
+    "area": "金澤研究所",
+    "routeId": "common-opening",
+    "objectives": [
+      "以相模桂開始",
+      "完成金澤研究所後進入林卡頓"
+    ],
+    "prerequisites": [],
+    "branchChoiceIds": [
+      "route-opening-lincardon"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": false,
+    "spoilerLevel": "minor",
+    "routeTitle": "共同開局",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-opening-lincardon",
+    "title": "開局分歧：林卡頓",
+    "summary": "林卡頓為固定第二段；結尾是否 Brain Jack 稻葉鄉，會決定先進香港或泰姬瑪哈陵。",
+    "content": "ゲーム瓢論分歧表與 Kentaro 流程均記載：Brain Jack 稻葉鄉後前往香港；若不 Brain Jack，則由安德烈前往泰姬瑪哈陵。這是 PS2 日版社群資料的交叉結果，非 Dreamcast 流程。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "分歧由兩份社群攻略交叉印證；Brain Jack 對象尚未連到角色圖鑑，待 v0.4 建立正式角色 ID。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 2,
+    "area": "林卡頓（リンカードン）",
+    "routeId": "common-opening",
+    "objectives": [
+      "完成固定的林卡頓流程",
+      "依是否 Brain Jack 稻葉鄉進入不同早期區域"
+    ],
+    "prerequisites": [
+      "route-opening-kanazawa"
+    ],
+    "branchChoiceIds": [
+      "route-early-hong-kong",
+      "route-early-taj-mahal"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": false,
+    "spoilerLevel": "major",
+    "routeTitle": "共同開局",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-early-hong-kong",
+    "title": "早期路線：香港",
+    "summary": "Brain Jack 稻葉鄉後進入香港；是否接受李飛扇的委託，會影響泰姬瑪哈陵是否在此分支開啟。",
+    "content": "兩份社群流程記載，接受李飛扇委託並 Brain Jack 後會前往泰姬瑪哈陵；拒絕委託則不從此處開啟泰姬瑪哈陵，可直接往莫斯科。Shoda 的 PS2 提示頁另以香港為可攻略區域並建議在此 Brain Jack 飛扇，但不提供完整分歧表。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "shoda-maken-shao-hints"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "解鎖關係由兩份社群流程一致支持；委託文字、逐場戰鬥與精確操作尚未實機複驗。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 3,
+    "area": "香港",
+    "routeId": "early-hong-kong",
+    "objectives": [
+      "完成香港區域",
+      "決定是否接受李飛扇委託"
+    ],
+    "prerequisites": [
+      "route-opening-lincardon"
+    ],
+    "branchChoiceIds": [
+      "route-early-taj-mahal",
+      "route-convergence-moscow"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": true,
+    "spoilerLevel": "major",
+    "routeTitle": "香港早期分支",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-early-taj-mahal",
+    "title": "早期路線：泰姬瑪哈陵",
+    "summary": "由林卡頓直接進入時，安德烈無法進入沙爾嘉的房間；可先往莫斯科，之後取得李飛扇再重訪此區。",
+    "content": "兩份 PS2 日版社群流程顯示：林卡頓未 Brain Jack 稻葉鄉時可由安德烈直接前往泰姬瑪哈陵，但此時不能進入沙爾嘉的房間，不能視為完成全部區域內容。玩家可先推進至莫斯科、開啟香港並取得李飛扇，再重訪泰姬瑪哈陵處理該部分；香港接受李飛扇委託也會導向此區。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "shoda-maken-shao-hints"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "直接進入限制、莫斯科後開啟香港及李飛扇重訪流程由兩份 PS2 社群流程交叉支持；區域內逐步戰鬥仍待實機驗證。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 4,
+    "area": "泰姬瑪哈陵（タージマハル）",
+    "routeId": "early-taj-mahal",
+    "objectives": [
+      "由林卡頓直接進入時先完成可進入部分",
+      "前往莫斯科並開啟香港",
+      "取得李飛扇後重訪泰姬瑪哈陵處理沙爾嘉區域"
+    ],
+    "prerequisites": [],
+    "branchChoiceIds": [
+      "route-convergence-moscow"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": true,
+    "spoilerLevel": "major",
+    "routeTitle": "泰姬瑪哈陵早期分支",
+    "anyOfPrerequisites": [
+      "route-opening-lincardon",
+      "route-early-hong-kong"
+    ]
+  },
+  {
+    "id": "route-convergence-moscow",
+    "title": "早期匯合：莫斯科",
+    "summary": "香港／泰姬瑪哈陵的早期分支在莫斯科匯合；通關後開啟伊斯坦堡與倫敦方向。",
+    "content": "ゲーム瓢論分歧表記載兩條早期路線在莫斯科匯合。莫斯科通關後開啟伊斯坦堡與倫敦；若早期未進香港，也會在此後開啟香港。此後除金澤研究所與林卡頓外，可返回已通關區域。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-stage-index",
+      "shoda-maken-shao-hints",
+      "kentaro-maken-shao-early-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "莫斯科後開啟伊斯坦堡、倫敦，以及未造訪時補開香港，由ゲーム瓢論與 Kentaro 兩份 PS2 日版流程一致支持。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 5,
+    "area": "莫斯科",
+    "routeId": "common-midgame",
+    "objectives": [
+      "完成莫斯科",
+      "開啟伊斯坦堡與倫敦方向"
+    ],
+    "prerequisites": [],
+    "branchChoiceIds": [
+      "route-mid-istanbul-chain",
+      "route-mid-london-chain"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": false,
+    "spoilerLevel": "major",
+    "routeTitle": "莫斯科匯合",
+    "anyOfPrerequisites": [
+      "route-early-hong-kong",
+      "route-early-taj-mahal"
+    ]
+  },
+  {
+    "id": "route-mid-istanbul-chain",
+    "title": "中盤方向 A：伊斯坦堡至首次梵蒂岡",
+    "summary": "社群分歧表記錄的解鎖鏈為伊斯坦堡 → 雅典 → 首次梵蒂岡；必須再完成倫敦／阿姆斯特丹方向，才進入里昂。",
+    "content": "這是解鎖關係摘要，不代表可選支線都必須完成。雅典若以不戰鬥方式 Brain Jack 阿納基斯，可重訪伊斯坦堡取得另一個可選分支；進入里昂則需同時完成首次梵蒂岡與阿姆斯特丹兩條主鏈。精確戰鬥與對話步驟未在本條目重製。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-midgame",
+      "kentaro-maken-shao-early-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "中盤解鎖鏈與阿納基斯條件由兩個社群站點交叉支持；尚未以官方攻略本內頁或實機旗標複驗。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 6,
+    "area": "伊斯坦堡 → 雅典 → 梵蒂岡（首次）",
+    "routeId": "mid-istanbul",
+    "objectives": [
+      "依序開啟雅典與首次梵蒂岡",
+      "視選擇開啟阿納基斯支線"
+    ],
+    "prerequisites": [
+      "route-convergence-moscow"
+    ],
+    "branchChoiceIds": [
+      "route-optional-transylvania",
+      "route-convergence-lyon"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": false,
+    "spoilerLevel": "major",
+    "routeTitle": "伊斯坦堡方向",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-mid-london-chain",
+    "title": "中盤方向 B：倫敦至阿姆斯特丹",
+    "summary": "另一條社群解鎖鏈為倫敦 → 阿姆斯特丹；必須再完成伊斯坦堡／首次梵蒂岡方向，才進入里昂。",
+    "content": "阿姆斯特丹若選擇不戰鬥並 Brain Jack 拉姆羅德，資料記錄會開啟維也納支線；若與其戰鬥，該支線不開啟。進入里昂仍需同時完成首次梵蒂岡與阿姆斯特丹兩條主鏈。這是 PS2 日版社群流程的交叉結果。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-midgame",
+      "kentaro-maken-shao-early-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "倫敦／阿姆斯特丹／里昂鏈與維也納條件由兩個社群站點一致支持；逐步操作與戰鬥尚未實機複驗。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 6,
+    "area": "倫敦 → 阿姆斯特丹",
+    "routeId": "mid-london",
+    "objectives": [
+      "依序開啟阿姆斯特丹",
+      "視選擇開啟維也納支線"
+    ],
+    "prerequisites": [
+      "route-convergence-moscow"
+    ],
+    "branchChoiceIds": [
+      "route-optional-vienna",
+      "route-convergence-lyon"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": false,
+    "spoilerLevel": "major",
+    "routeTitle": "倫敦方向",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-optional-transylvania",
+    "title": "可選支線：特蘭西瓦尼亞",
+    "summary": "雅典不戰鬥 Brain Jack 阿納基斯，再以阿納基斯重訪伊斯坦堡並 Brain Jack 巴林卡，可開啟此支線。",
+    "content": "兩份社群流程一致記錄這組支線條件；若在雅典與阿納基斯戰鬥，資料顯示此路線不會開啟。Shoda 提示頁另以阿納基斯為特蘭西瓦尼亞的建議角色，但未提供完整分歧表。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "shoda-maken-shao-hints"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "支線解鎖條件由兩份社群流程交叉支持；角色正式 ID、區域內步驟與報酬待後續階段。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 7,
+    "area": "特蘭西瓦尼亞（トランシルバニア）",
+    "routeId": "optional-transylvania",
+    "objectives": [
+      "在雅典取得阿納基斯",
+      "重訪伊斯坦堡取得巴林卡",
+      "開啟特蘭西瓦尼亞"
+    ],
+    "prerequisites": [
+      "route-mid-istanbul-chain"
+    ],
+    "branchChoiceIds": [],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": true,
+    "spoilerLevel": "major",
+    "routeTitle": "特蘭西瓦尼亞支線",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-optional-vienna",
+    "title": "可選支線：維也納",
+    "summary": "在阿姆斯特丹不戰鬥 Brain Jack 拉姆羅德後，社群流程記錄會開啟維也納。",
+    "content": "若改為與拉姆羅德戰鬥，資料顯示維也納不會開啟。Shoda 的提示頁另記載先以拉姆羅德解除鎖定後再重試區域的社群建議；本網站不把該建議升格為官方最優解。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "shoda-maken-shao-hints"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "開啟條件由兩份社群流程一致支持；實機旗標與所有替代進入方式尚未驗證。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 7,
+    "area": "維也納（ウィーン）",
+    "routeId": "optional-vienna",
+    "objectives": [
+      "在阿姆斯特丹取得拉姆羅德",
+      "開啟維也納"
+    ],
+    "prerequisites": [
+      "route-mid-london-chain"
+    ],
+    "branchChoiceIds": [],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": true,
+    "spoilerLevel": "major",
+    "routeTitle": "維也納支線",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-convergence-lyon",
+    "title": "中盤匯合：里昂至里斯本",
+    "summary": "完成伊斯坦堡至首次梵蒂岡，以及倫敦至阿姆斯特丹兩條主鏈後，才進入里昂；里昂通關後開啟里斯本。",
+    "content": "社群流程另記錄：在里昂取得巴德雷爾後，可重訪倫敦取得史密斯議員，進而開啟西西里與後續梵蒂岡支線。這些是可選內容，不是進入里斯本的固定必要步驟。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-midgame",
+      "kentaro-maken-shao-early-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "Kentaro 明記首次梵蒂岡與阿姆斯特丹都完成後進入里昂；里斯本解鎖及西西里支線由兩個社群站點交叉支持，可選支線不作主線前置。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 8,
+    "area": "里昂 → 里斯本",
+    "routeId": "common-endgame-entry",
+    "objectives": [
+      "完成里昂",
+      "開啟里斯本",
+      "視需要處理西西里支線"
+    ],
+    "prerequisites": [
+      "route-mid-istanbul-chain",
+      "route-mid-london-chain"
+    ],
+    "branchChoiceIds": [
+      "route-optional-sicily",
+      "route-endgame-lisbon"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": false,
+    "spoilerLevel": "major",
+    "routeTitle": "里昂匯合",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-optional-sicily",
+    "title": "可選支線：西西里與梵蒂岡追加區域",
+    "summary": "里昂取得巴德雷爾後重訪倫敦、取得史密斯議員，可開啟西西里；後續再影響梵蒂岡的可進入區域。",
+    "content": "社群資料記錄，在西西里可 Brain Jack 唐・馬爾卡拉，之後可用其開啟梵蒂岡的八卦雷區域。這一鏈包含多個可錯過條件，尚未連到角色圖鑑或逐步實機驗證。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "兩份社群流程交叉支持支線鏈；角色名稱翻譯、旗標與區域內具體步驟待 v0.4／v0.5。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 9,
+    "area": "倫敦（重訪）→ 西西里 → 梵蒂岡（追加）",
+    "routeId": "optional-sicily",
+    "objectives": [
+      "取得巴德雷爾",
+      "重訪倫敦取得史密斯議員",
+      "開啟西西里與梵蒂岡追加區域"
+    ],
+    "prerequisites": [
+      "route-convergence-lyon"
+    ],
+    "branchChoiceIds": [
+      "route-endgame-lisbon"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": true,
+    "spoilerLevel": "major",
+    "routeTitle": "西西里支線",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-endgame-lisbon",
+    "title": "終盤分歧：里斯本",
+    "summary": "社群流程將里斯本列為終盤分歧點；先前擊倒的陣營數量與回答組合會影響後續進入麥加、巴西、華盛頓或崑崙的路線。",
+    "content": "Kentaro 終盤流程列出多組回答與陣營數量條件，但本網站尚未實機複驗每一組旗標，因此不把完整回答表翻印為確定攻略。可安全確認的是：終盤不是固定線性順序，並存在通往紫禁城與崑崙的不同終點路線。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-endgame",
+      "kentaro-maken-shao-late-chart",
+      "atlus-maken-shao-index-archive"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "Atlus 官方僅確認選擇導致多種終局；具體終盤節點由兩份社群流程交叉支持，精確回答組合仍待實機驗證。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 10,
+    "area": "里斯本 → 麥加／巴西／華盛頓",
+    "routeId": "endgame-branch",
+    "objectives": [
+      "完成里斯本",
+      "依先前路線狀態與回答進入麥加或巴西方向"
+    ],
+    "prerequisites": [],
+    "branchChoiceIds": [
+      "route-endgame-mecca",
+      "route-endgame-brazil"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": false,
+    "spoilerLevel": "major",
+    "routeTitle": "里斯本終盤分歧",
+    "anyOfPrerequisites": [
+      "route-convergence-lyon",
+      "route-optional-sicily"
+    ]
+  },
+  {
+    "id": "route-endgame-brazil",
+    "title": "終盤節點：巴西",
+    "summary": "里斯本或麥加後的部分條件會進入巴西；之後可能前往華盛頓，也存在直接通往紫禁城的路徑。",
+    "content": "終盤資料包含巴西後前往華盛頓的路徑，也包含跳過華盛頓、直接往紫禁城的分支。因此本網站不把華盛頓設定為紫禁城的固定必要前置。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-endgame",
+      "kentaro-maken-shao-late-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "巴西的多個入口及其華盛頓／紫禁城出口由社群終盤表交叉支持；旗標仍待實機驗證。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 11,
+    "area": "巴西",
+    "routeId": "endgame-brazil",
+    "routeTitle": "巴西終盤節點",
+    "objectives": [
+      "完成巴西路段",
+      "依路線狀態選擇華盛頓或紫禁城方向"
+    ],
+    "prerequisites": [],
+    "anyOfPrerequisites": [
+      "route-endgame-lisbon",
+      "route-endgame-mecca"
+    ],
+    "branchChoiceIds": [
+      "route-endgame-washington",
+      "route-ending-forbidden-city"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": false,
+    "spoilerLevel": "major"
+  },
+  {
+    "id": "route-endgame-mecca",
+    "title": "終盤節點：麥加",
+    "summary": "里斯本後的部分條件會進入麥加；此處的回答與先前狀態可再導向巴西、華盛頓或崑崙。",
+    "content": "社群終盤流程顯示麥加不是唯一固定終點，而是條件節點。部分路線由麥加接巴西，部分回答導向華盛頓；特定分支可進入崑崙。精確回答組合未實機複驗，因此不在本條目列為必然公式。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-endgame",
+      "kentaro-maken-shao-late-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "兩份社群站點支持麥加為條件節點；精確回答與陣營計數仍待實機驗證。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 11,
+    "area": "麥加（メッカ）",
+    "routeId": "endgame-mecca",
+    "routeTitle": "麥加終盤節點",
+    "objectives": [
+      "確認目前路線狀態",
+      "依回答進入後續終盤方向"
+    ],
+    "prerequisites": [
+      "route-endgame-lisbon"
+    ],
+    "anyOfPrerequisites": [],
+    "branchChoiceIds": [
+      "route-endgame-brazil",
+      "route-endgame-washington",
+      "route-ending-konron"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": true,
+    "spoilerLevel": "major"
+  },
+  {
+    "id": "route-endgame-washington",
+    "title": "終盤節點：華盛頓",
+    "summary": "麥加或巴西的部分分支會進入華盛頓；完成後可前往紫禁城。",
+    "content": "華盛頓是紫禁城的其中一條入口，但不是唯一入口，因為社群終盤表亦記錄巴西直達紫禁城的路徑。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-endgame",
+      "kentaro-maken-shao-late-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "華盛頓入口與紫禁城出口由兩份社群流程支持；不可反推所有紫禁城路線都必經華盛頓。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 12,
+    "area": "華盛頓",
+    "routeId": "endgame-washington",
+    "routeTitle": "華盛頓終盤節點",
+    "objectives": [
+      "完成華盛頓路段",
+      "前往紫禁城方向"
+    ],
+    "prerequisites": [],
+    "anyOfPrerequisites": [
+      "route-endgame-mecca",
+      "route-endgame-brazil"
+    ],
+    "branchChoiceIds": [
+      "route-ending-forbidden-city"
+    ],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": true,
+    "spoilerLevel": "major"
+  },
+  {
+    "id": "route-ending-konron",
+    "title": "終點路線：崑崙",
+    "summary": "Kentaro 終盤流程記錄，在特定麥加分支選項後可前往崑崙，而不是固定進入華盛頓／紫禁城。",
+    "content": "社群資料將崑崙終戰對手記為李護手，並與紫禁城的天尊流星路線分開。精確回答條件會受到先前陣營擊倒數量影響，尚未實機複驗，故本頁只保留分支存在與終點區隔。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-endgame",
+      "kentaro-maken-shao-late-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "兩份社群來源交叉確認崑崙為獨立終點；精確旗標、結局名稱與 Boss 資料待實機／官方攻略本正文。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 12,
+    "area": "麥加 → 崑崙（コンロン）",
+    "routeId": "ending-konron",
+    "objectives": [
+      "在符合條件的麥加分支選擇崑崙方向",
+      "前往崑崙終點"
+    ],
+    "prerequisites": [
+      "route-endgame-mecca"
+    ],
+    "branchChoiceIds": [],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": true,
+    "spoilerLevel": "major",
+    "routeTitle": "崑崙終點",
+    "anyOfPrerequisites": []
+  },
+  {
+    "id": "route-ending-forbidden-city",
+    "title": "終點路線：紫禁城",
+    "summary": "紫禁城是終盤之一，可由華盛頓進入，也存在從巴西直接前往、跳過華盛頓的條件路徑。",
+    "content": "社群終盤表把紫禁城與崑崙視為不同終點，並記錄至少兩個入口家族：華盛頓後前往紫禁城，以及巴西後直接前往紫禁城。兩份來源將此處終戰對手記為天尊流星；Boss ID 留待正式 Boss 資料建立。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "gamehyoron-maken-shao-endgame",
+      "kentaro-maken-shao-late-chart"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "紫禁城的兩種入口家族與終點區隔由社群終盤表交叉支持；精確旗標、結局名稱與戰鬥策略保留至 v0.5。",
+    "lastVerified": "2026-07-16",
+    "isPlaceholder": false,
+    "spoiler": true,
+    "sequence": 13,
+    "area": "紫禁城",
+    "routeId": "ending-forbidden-city",
+    "objectives": [
+      "由華盛頓或符合條件的巴西分支進入紫禁城",
+      "完成紫禁城終點"
+    ],
+    "prerequisites": [],
+    "branchChoiceIds": [],
+    "bossIds": [],
+    "brainJackTargetIds": [],
+    "missable": false,
+    "spoilerLevel": "major",
+    "routeTitle": "紫禁城終點",
+    "anyOfPrerequisites": [
+      "route-endgame-brazil",
+      "route-endgame-washington"
+    ]
   }
 ]

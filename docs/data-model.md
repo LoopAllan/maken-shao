@@ -22,7 +22,12 @@
 - `world.json`：`worldCategory`（v0.2 世界觀、版本脈絡與術語）
 - `systems.json`：`systemArea`（v0.2 系統資料與研究中機制）
 - `characters.json`：`role`
-- `walkthrough.json`：`sequence`、`area`
+- `walkthrough.json`：`sequence`、`area`、`routeId`、`routeTitle`、`objectives`、`prerequisites`、`anyOfPrerequisites`、`branchChoiceIds`、`bossIds`、`brainJackTargetIds`、`missable`、`spoilerLevel`
+  - `sequence` 是流程圖的顯示拓撲順序；驗證器拒絕指向更早順序的分支。
+  - `prerequisites` 表示必須全部成立的前置節點；`anyOfPrerequisites` 表示任一節點成立即可，用於匯合或多入口區域。
+  - 每個 `branchChoiceIds` 目標必須反向宣告來源為必要或任一前置，並接受未知 ID、重複引用、自我引用與前置循環檢查。
+  - `bossIds`／`brainJackTargetIds` 可為空，表示對應正式資料尚未建立，而不是「遊戲中不存在」。
+  - `spoilerLevel` 限定 `none`、`minor`、`major`；重大劇透的標題、摘要、區域、條件與正文由前端整體預設收合。
 - `knowledge.json`：`category`
 - `endings.json`：`endingType`
 - `bosses.json`：`location`

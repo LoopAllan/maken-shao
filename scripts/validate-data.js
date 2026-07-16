@@ -72,6 +72,53 @@ export function validateDataset({ fileName, records, sourceIds, type, schema }) 
   return errors;
 }
 function loadJson(filePath) { return JSON.parse(fs.readFileSync(filePath, 'utf8')); }
+export function validateWalkthroughReferences(records) {
+  if (!Array.isArray(records)) return [];
+  const byId = new Map(records.filter((record) => record && typeof record.id === 'string').map((record) => [record.id, record]));
+  const ids = new Set(byId.keys());
+  const errors = [];
+  const graph = new Map();
+  for (const record of records) {
+    if (!record || typeof record.id !== 'string') continue;
+    const dependencies = [...(Array.isArray(record.prerequisites) ? record.prerequisites : []), ...(Array.isArray(record.anyOfPrerequisites) ? record.anyOfPrerequisites : [])];
+    graph.set(record.id, dependencies.filter((reference) => ids.has(reference) && reference !== record.id));
+    for (const field of ['prerequisites', 'anyOfPrerequisites', 'branchChoiceIds']) {
+      if (!Array.isArray(record[field])) continue;
+      if (new Set(record[field]).size !== record[field].length) errors.push(`walkthrough.json [${record.id}]: ${field} contains duplicate references`);
+      for (const reference of record[field]) {
+        if (!ids.has(reference)) errors.push(`walkthrough.json [${record.id}]: unknown ${field} reference "${reference}"`);
+        if (field !== 'branchChoiceIds' && reference === record.id) errors.push(`walkthrough.json [${record.id}]: ${field} cannot reference itself`);
+      }
+    }
+    const required = Array.isArray(record.prerequisites) ? record.prerequisites : [];
+    const alternatives = Array.isArray(record.anyOfPrerequisites) ? record.anyOfPrerequisites : [];
+    for (const reference of required) if (alternatives.includes(reference)) errors.push(`walkthrough.json [${record.id}]: prerequisite "${reference}" cannot also appear in anyOfPrerequisites`);
+    for (const predecessorId of [...required, ...alternatives]) {
+      const predecessor = byId.get(predecessorId);
+      if (!predecessor) continue;
+      const outgoing = Array.isArray(predecessor.branchChoiceIds) ? predecessor.branchChoiceIds : [];
+      if (!outgoing.includes(record.id)) errors.push(`walkthrough.json [${record.id}]: prerequisite "${predecessorId}" does not declare this step as a branch target`);
+      if (Number.isInteger(predecessor.sequence) && Number.isInteger(record.sequence) && record.sequence < predecessor.sequence) errors.push(`walkthrough.json [${record.id}]: prerequisite "${predecessorId}" has a later sequence`);
+    }
+    for (const targetId of Array.isArray(record.branchChoiceIds) ? record.branchChoiceIds : []) {
+      const target = byId.get(targetId);
+      if (!target) continue;
+      const incoming = [...(Array.isArray(target.prerequisites) ? target.prerequisites : []), ...(Array.isArray(target.anyOfPrerequisites) ? target.anyOfPrerequisites : [])];
+      if (!incoming.includes(record.id)) errors.push(`walkthrough.json [${record.id}]: branch target "${targetId}" does not declare this step as a prerequisite`);
+      if (Number.isInteger(record.sequence) && Number.isInteger(target.sequence) && target.sequence < record.sequence) errors.push(`walkthrough.json [${record.id}]: branch target "${targetId}" has an earlier sequence`);
+    }
+  }
+  const state = new Map();
+  const visit = (id, path = []) => {
+    if (state.get(id) === 1) { errors.push(`walkthrough.json: prerequisite cycle detected (${[...path, id].join(' -> ')})`); return; }
+    if (state.get(id) === 2) return;
+    state.set(id, 1);
+    for (const dependency of graph.get(id) || []) visit(dependency, [...path, id]);
+    state.set(id, 2);
+  };
+  for (const id of ids) visit(id);
+  return errors;
+}
 export function validateProject() {
   const errors = [];
   let sources = [];
@@ -81,7 +128,11 @@ export function validateProject() {
   const sourceIds = new Set(sources.filter((source) => source && typeof source.id === 'string').map((source) => source.id));
   for (const [fileName, config] of Object.entries(datasets)) {
     if (fileName === 'sources.json') continue;
-    try { errors.push(...validateDataset({fileName,records:loadJson(path.join(dataDirectory,fileName)),sourceIds,type:config.type,schema:loadJson(path.join(schemaDirectory,config.schema))})); }
+    try {
+      const records = loadJson(path.join(dataDirectory,fileName));
+      errors.push(...validateDataset({fileName,records,sourceIds,type:config.type,schema:loadJson(path.join(schemaDirectory,config.schema))}));
+      if (fileName === 'walkthrough.json') errors.push(...validateWalkthroughReferences(records));
+    }
     catch (error) { errors.push(`${fileName}: cannot parse JSON or schema (${error.message})`); }
   }
   return errors;
