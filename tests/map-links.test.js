@@ -59,4 +59,7 @@ test('links explicit Kanazawa stage contexts without leaking across repeated men
   const second = mixed.indexOf('金澤研究所', first + 1);
   assert.equal(shouldLinkMapMention(mixed, 'kanazawa-research-institute', null, first, first + '金澤研究所'.length), false);
   assert.equal(shouldLinkMapMention(mixed, 'kanazawa-research-institute', null, second, second + '金澤研究所'.length), true);
+  const metadata = '區域：金澤研究所';
+  const metadataStart = metadata.indexOf('金澤研究所');
+  assert.equal(shouldLinkMapMention(metadata, 'kanazawa-research-institute', null, metadataStart, metadataStart + '金澤研究所'.length), true);
 });

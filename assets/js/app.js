@@ -58,15 +58,30 @@
       const node = walker.currentNode;
       if (node.nodeValue.trim() && !node.parentElement?.closest(excluded)) nodes.push(node);
     }
+    const textContextFor = (node) => {
+      const root = node.parentElement;
+      if (!root) return { text: node.nodeValue, offset: 0 };
+      const textWalker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      let offset = 0;
+      while (textWalker.nextNode()) {
+        const current = textWalker.currentNode;
+        if (current === node) return { text: root.textContent, offset };
+        offset += current.nodeValue.length;
+      }
+      return { text: node.nodeValue, offset: 0 };
+    };
     nodes.forEach((node) => {
       const segments = window.MakenMaps.segmentMapMentions(node.nodeValue, context.aliases);
       if (!segments.some((segment) => segment.mapId)) return;
       const ownMapId = node.parentElement?.closest('.map-card[data-map-id]')?.dataset.mapId;
+      const mentionContext = textContextFor(node);
       const fragment = document.createDocumentFragment();
       let offset = 0;
       segments.forEach((segment) => {
         const end = offset + segment.text.length;
-        if (!window.MakenMaps.shouldLinkMapMention(node.nodeValue, segment.mapId, ownMapId, offset, end)) {
+        const contextStart = mentionContext.offset + offset;
+        const contextEnd = mentionContext.offset + end;
+        if (!window.MakenMaps.shouldLinkMapMention(mentionContext.text, segment.mapId, ownMapId, contextStart, contextEnd)) {
           fragment.append(segment.text);
           offset = end;
           return;
