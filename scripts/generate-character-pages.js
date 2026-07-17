@@ -4,7 +4,17 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const characters = JSON.parse(fs.readFileSync(path.join(root, 'data', 'characters.json'), 'utf8'));
+const details = JSON.parse(fs.readFileSync(path.join(root, 'data', 'character-details.json'), 'utf8'));
 const outputDirectory = path.join(root, 'pages', 'characters');
+const characterIds = new Set(characters.map((character) => character.id));
+const detailById = new Map(details.map((detail) => [detail.id, detail]));
+
+for (const detail of details) {
+  for (const prerequisiteId of detail.prerequisiteCharacterIds || []) {
+    if (prerequisiteId === detail.id) throw new Error(`Character ${detail.id} cannot require itself.`);
+    if (!characterIds.has(prerequisiteId)) throw new Error(`Character ${detail.id} has unknown prerequisite character ${prerequisiteId}.`);
+  }
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -50,6 +60,7 @@ function page(character) {
 fs.mkdirSync(outputDirectory, { recursive: true });
 const expected = new Set();
 for (const character of characters) {
+  if (!detailById.has(character.id)) throw new Error(`Missing character detail for ${character.id}.`);
   const fileName = `${character.id}.html`;
   expected.add(fileName);
   fs.writeFileSync(path.join(outputDirectory, fileName), page(character));

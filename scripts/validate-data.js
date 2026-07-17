@@ -222,6 +222,10 @@ export function validateCharacterDetailReferences(details, characters, walkthrou
     if (character?.brainJackStatus === 'confirmed-host' && !detail.acquisition) errors.push(`character-details.json [${detail.id}]: confirmed-host requires acquisition data`);
     if (character?.brainJackStatus === 'confirmed-host' && !detail.techniques?.length) errors.push(`character-details.json [${detail.id}]: confirmed-host requires techniques`);
     if (character && character.brainJackStatus !== 'confirmed-host' && (detail.acquisition || detail.techniques?.length)) errors.push(`character-details.json [${detail.id}]: acquisition and techniques require confirmed-host evidence`);
+    for (const prerequisiteId of detail.prerequisiteCharacterIds || []) {
+      if (prerequisiteId === detail.id) errors.push(`character-details.json [${detail.id}]: character cannot require itself`);
+      else if (!characterIds.has(prerequisiteId)) errors.push(`character-details.json [${detail.id}]: unknown prerequisite character "${prerequisiteId}"`);
+    }
     const acquisition = detail.acquisition;
     if (acquisition) {
       for (const id of acquisition.walkthroughIds || []) if (!walkthroughIds.has(id)) errors.push(`character-details.json [${detail.id}]: unknown acquisition walkthroughId "${id}"`);

@@ -32,9 +32,11 @@ test('global search indexes full records and links every result to its rendered 
   }
 });
 
-test('character detail renderer derives same-map obtainable character lists from maps data', async () => {
+test('character detail renderer reverse-lists characters that directly require the current character', async () => {
   const app = await readFile(path.join(root, 'assets/js/app.js'), 'utf8');
-  assert.match(app, /maps\.filter\(\(map\) => map\.obtainableCharacterIds\.includes\(id\)\)/);
-  assert.match(app, /同一地圖可獲得角色/);
-  assert.match(app, /不表示可在任意時點同時取得/);
+  assert.match(app, /details\.filter\(\(candidate\) => candidate\.prerequisiteCharacterIds\.includes\(id\)\)/);
+  assert.match(app, /需要此角色作為前置的角色/);
+  assert.match(app, /直接前置/);
+  assert.doesNotMatch(app, /同一地圖可獲得角色/);
+  assert.doesNotMatch(app, /maps\.filter\(\(map\) => map\.obtainableCharacterIds\.includes\(id\)\)/);
 });

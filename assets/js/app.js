@@ -779,10 +779,9 @@
     if (!target) return;
     const id = target.dataset.characterDetailId;
     try {
-      const [context, walkthrough, maps, sources] = await Promise.all([
+      const [context, walkthrough, sources] = await Promise.all([
         getCharacterContext(),
         window.MakenData.loadJson(basePath, 'walkthrough.json'),
-        window.MakenData.loadJson(basePath, 'maps.json'),
         window.MakenData.loadJson(basePath, 'sources.json')
       ]);
       const { characters, details } = context;
@@ -839,39 +838,35 @@
         target.append(section);
       }
 
-      const acquisitionMaps = maps.filter((map) => map.obtainableCharacterIds.includes(id));
-      if (acquisitionMaps.length) {
-        const section = document.createElement('section');
-        section.className = 'card character-detail-section';
-        const heading = document.createElement('h2');
-        heading.textContent = '同一地圖可獲得角色';
-        const explanation = document.createElement('p');
-        explanation.textContent = '以下依地圖資料列出可在與本角色相同地圖中獲得的角色；這是地圖的可獲得角色清單，不表示可在任意時點同時取得。';
-        section.append(heading, explanation);
-        acquisitionMaps.forEach((map) => {
-          const mapHeading = document.createElement('h3');
-          const mapLink = document.createElement('a');
-          mapLink.href = mapHref(map.id);
-          mapLink.textContent = map.title;
-          decorateMapLink(mapLink, map.id);
-          mapHeading.append(mapLink);
-          const list = document.createElement('ul');
-          map.obtainableCharacterIds.forEach((characterId) => {
-            const listedCharacter = characters.find((item) => item.id === characterId);
-            const row = document.createElement('li');
-            if (listedCharacter) {
-              const link = document.createElement('a');
-              link.href = characterDetailHref(listedCharacter.id);
-              link.textContent = listedCharacter.title;
-              decorateCharacterLink(link, listedCharacter.id);
-              row.append(link);
-            } else row.textContent = characterId;
-            list.append(row);
-          });
-          section.append(mapHeading, list);
+      const prerequisiteDependents = details.filter((candidate) => candidate.prerequisiteCharacterIds.includes(id));
+      const prerequisiteSection = document.createElement('section');
+      prerequisiteSection.className = 'card character-detail-section';
+      const prerequisiteHeading = document.createElement('h2');
+      prerequisiteHeading.textContent = '需要此角色作為前置的角色';
+      const prerequisiteExplanation = document.createElement('p');
+      prerequisiteExplanation.textContent = '以下反向列出取得條件中明確把本角色列為直接前置的角色；只表示直接前置，不代表角色位於同一地圖。';
+      prerequisiteSection.append(prerequisiteHeading, prerequisiteExplanation);
+      if (prerequisiteDependents.length) {
+        const list = document.createElement('ul');
+        prerequisiteDependents.forEach((dependentDetail) => {
+          const dependentCharacter = characters.find((candidate) => candidate.id === dependentDetail.id);
+          const row = document.createElement('li');
+          if (dependentCharacter) {
+            const link = document.createElement('a');
+            link.href = characterDetailHref(dependentCharacter.id);
+            link.textContent = dependentCharacter.title;
+            decorateCharacterLink(link, dependentCharacter.id);
+            row.append(link);
+          } else row.textContent = dependentDetail.id;
+          list.append(row);
         });
-        target.append(section);
+        prerequisiteSection.append(list);
+      } else {
+        const empty = document.createElement('p');
+        empty.textContent = '目前沒有已查證角色以此角色作為直接前置。';
+        prerequisiteSection.append(empty);
       }
+      target.append(prerequisiteSection);
 
       if (detail.techniques.length) {
         const section = document.createElement('section');

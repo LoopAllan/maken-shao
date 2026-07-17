@@ -327,6 +327,9 @@ test('ships one validated detail record and static page for every character', as
   assert.match(app, /className = 'character-nav-toggle'/);
   assert.match(app, /className = 'character-detail-navigation'/);
   assert.match(app, /data-character-detail-id/);
+  assert.match(generator, /character-details\.json/);
+  assert.match(generator, /prerequisiteCharacterIds/);
+  assert.match(generator, /unknown prerequisite character/);
   assert.match(generator, /Generated \$\{characters\.length\} character detail pages/);
 });
 
@@ -362,12 +365,29 @@ test('provides sourced acquisition routes and 81 synchronization-gated moves for
   assert.match(sources.find((source) => source.id === 'atlus-maken-shao-system-page3-archive').notes, /支配率.*シンクロ率/);
 });
 
+test('stores direct character prerequisites for reverse dependent lookups', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const details = JSON.parse(await readFile(path.join(root, 'data', 'character-details.json'), 'utf8'));
+  assert.ok(details.every((record) => Array.isArray(record.prerequisiteCharacterIds)));
+  const prerequisites = Object.fromEntries(details.map((record) => [record.id, record.prerequisiteCharacterIds]));
+  assert.deepEqual(prerequisites.andrei, ['kei-sagami']);
+  assert.deepEqual(prerequisites.sharja, ['lee-fei-shan']);
+  assert.deepEqual(prerequisites.margarete, ['ramrod']);
+  assert.deepEqual(prerequisites['don-marcala'], ['badelaire', 'smith']);
+  assert.deepEqual(prerequisites.dal, ['barlinka']);
+  assert.deepEqual(prerequisites.rei, ['don-marcala']);
+  assert.deepEqual(prerequisites.smith, ['badelaire']);
+  assert.deepEqual(prerequisites.barlinka, ['akinas']);
+});
+
 test('rejects missing, duplicate, and inconsistent character detail references', () => {
   const characters = [{ id: 'one' }, { id: 'two' }];
   const walkthrough = [{ id: 'route-one' }];
-  const details = [{ id: 'one', sourceIds: ['source-one'], acquisition: { walkthroughIds: ['missing-route'], sourceIds: ['missing-source'] }, techniques: [{ nameJa: '技', media: [{ sourceId: 'missing-media' }] }], techniqueSources: [] }, { id: 'one', sourceIds: [], acquisition: null, techniques: [], techniqueSources: [] }];
+  const details = [{ id: 'one', prerequisiteCharacterIds: ['missing-character', 'one'], sourceIds: ['source-one'], acquisition: { walkthroughIds: ['missing-route'], sourceIds: ['missing-source'] }, techniques: [{ nameJa: '技', media: [{ sourceId: 'missing-media' }] }], techniqueSources: [] }, { id: 'one', prerequisiteCharacterIds: [], sourceIds: [], acquisition: null, techniques: [], techniqueSources: [] }];
   const output = validateCharacterDetailReferences(details, characters, walkthrough).join('\n');
   assert.match(output, /duplicate detail record "one"/i);
+  assert.match(output, /unknown prerequisite character "missing-character"/i);
+  assert.match(output, /cannot require itself/i);
   assert.match(output, /unknown acquisition walkthroughId "missing-route"/i);
   assert.match(output, /acquisition sourceId "missing-source" must also appear in sourceIds/i);
   assert.match(output, /techniques require techniqueSources/i);
