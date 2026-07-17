@@ -78,7 +78,12 @@
       "kei-sagami",
       "lee-feichao"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "山城弘",
+      "Kou Yamashiro",
+      "弘"
+    ]
   },
   {
     "id": "kei-sagami",
@@ -164,7 +169,12 @@
       "kou-yamashiro",
       "mr-meteor"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "相模桂",
+      "Kei Sagami",
+      "桂"
+    ]
   },
   {
     "id": "maken",
@@ -258,7 +268,13 @@
       "pan-gu",
       "anne-miller"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "魔劍",
+      "魔剣",
+      "Deus Ex Machina",
+      "Maken"
+    ]
   },
   {
     "id": "kati",
@@ -342,7 +358,14 @@
       "mr-meteor",
       "yusuf"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "卡蒂",
+      "カティ",
+      "Kati",
+      "封劍士卡蒂",
+      "封剣士カティ"
+    ]
   },
   {
     "id": "badelaire",
@@ -425,7 +448,16 @@
       "don-marcala",
       "smith"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "巴德萊爾",
+      "バデレール",
+      "Badelaire",
+      "巴德雷爾",
+      "バルデール",
+      "封劍士巴德萊爾",
+      "封剣士バデレール"
+    ]
   },
   {
     "id": "ramrod",
@@ -509,7 +541,14 @@
       "margarete",
       "maken"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "拉姆羅德",
+      "ラムロッド",
+      "Ramrod",
+      "封劍士拉姆羅德",
+      "封剣士ラムロッド"
+    ]
   },
   {
     "id": "lee-fu-sho",
@@ -586,7 +625,14 @@
       "lee-feichao",
       "lee-fei-shan"
     ],
-    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch"
+    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch",
+    "linkAliases": [
+      "李護手",
+      "リー・フーシュウ",
+      "Lee Fu Sho",
+      "封劍士李護手",
+      "封剣士リー・フーシュウ"
+    ]
   },
   {
     "id": "lee-fei-shan",
@@ -671,7 +717,15 @@
       "kati",
       "sharja"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "李飛扇",
+      "李 飛扇",
+      "Lee Fei Shan",
+      "封劍士李飛扇",
+      "封剣士李 飛扇",
+      "飛扇"
+    ]
   },
   {
     "id": "lee-feichao",
@@ -755,7 +809,15 @@
       "maken",
       "andrei"
     ],
-    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch"
+    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch",
+    "linkAliases": [
+      "李飛超",
+      "リー・フェイチャオ",
+      "Lee Fei Chao",
+      "封劍士李飛超",
+      "封剣士リー・フェイチャオ",
+      "飛超"
+    ]
   },
   {
     "id": "akinas",
@@ -834,7 +896,15 @@
     "imageContentType": "game-screenshot",
     "wikiNavigationGroup": "playable",
     "wikiLinkedCharacterIds": [],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "阿基納斯",
+      "アキナス",
+      "Akinas",
+      "アナキス",
+      "封劍士阿基納斯",
+      "封剣士アキナス"
+    ]
   },
   {
     "id": "yusuf",
@@ -919,7 +989,14 @@
       "kati",
       "maken"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "優素福",
+      "ユースフ",
+      "Yusuf",
+      "八卦優素福",
+      "八卦ユースフ"
+    ]
   },
   {
     "id": "don-marcala",
@@ -1006,7 +1083,14 @@
       "badelaire",
       "maken"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "唐・馬爾卡拉",
+      "ドン・マルカラ",
+      "Don Marcala",
+      "八卦唐・馬爾卡拉",
+      "八卦ドン・マルカラ"
+    ]
   },
   {
     "id": "william",
@@ -1094,7 +1178,14 @@
       "rei",
       "lee-fei-shan"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "威廉",
+      "ウィリアム",
+      "William",
+      "八卦威廉",
+      "八卦ウィリアム"
+    ]
   },
   {
     "id": "andrei",
@@ -1186,7 +1277,14 @@
       "ramrod",
       "william"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "安德烈",
+      "アンドレイ",
+      "Andrei",
+      "八卦安德烈",
+      "八卦アンドレイ"
+    ]
   },
   {
     "id": "sharja",
@@ -1273,7 +1371,14 @@
       "maken",
       "andrei"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "沙爾嘉",
+      "シャージャ",
+      "Sharja",
+      "八卦沙爾嘉",
+      "八卦シャージャ"
+    ]
   },
   {
     "id": "margarete",
@@ -1357,7 +1462,14 @@
     "wikiLinkedCharacterIds": [
       "smith"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "瑪格麗特",
+      "マルガレーテ",
+      "Margarete",
+      "八卦瑪格麗特",
+      "八卦マルガレーテ"
+    ]
   },
   {
     "id": "dal",
@@ -1441,7 +1553,14 @@
     "wikiLinkedCharacterIds": [
       "barlinka"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "達爾",
+      "ダル",
+      "Dal",
+      "八卦達爾",
+      "八卦ダル"
+    ]
   },
   {
     "id": "rei",
@@ -1529,7 +1648,14 @@
       "anne-miller",
       "don-marcala"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "雷",
+      "レイ",
+      "Rei",
+      "八卦雷",
+      "八卦レイ"
+    ]
   },
   {
     "id": "ryu-kashin",
@@ -1609,7 +1735,13 @@
       "mr-meteor",
       "william"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "劉嘉伸",
+      "劉 嘉伸（リュウ カシン）",
+      "Ryu Kashin",
+      "劉 嘉伸"
+    ]
   },
   {
     "id": "pan-gu",
@@ -1688,7 +1820,11 @@
       "mr-meteor",
       "ryu-kashin"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "盤古",
+      "Pan-Gu"
+    ]
   },
   {
     "id": "mr-meteor",
@@ -1773,7 +1909,13 @@
       "hiromitsu-sagami",
       "kei-sagami"
     ],
-    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch"
+    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch",
+    "linkAliases": [
+      "天尊流星",
+      "天尊流星（てんそんりゅうせい）",
+      "Mr. Meteor",
+      "流星"
+    ]
   },
   {
     "id": "jj-jones",
@@ -1850,7 +1992,12 @@
       "maken",
       "anne-miller"
     ],
-    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch"
+    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch",
+    "linkAliases": [
+      "J.J. 瓊斯",
+      "J.J.ジョーンズ",
+      "J.J. Jones"
+    ]
   },
   {
     "id": "smith",
@@ -1932,7 +2079,12 @@
       "maken",
       "william"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "史密斯議員",
+      "スミス",
+      "Smith"
+    ]
   },
   {
     "id": "anne-miller",
@@ -2010,7 +2162,12 @@
       "jj-jones",
       "kei-sagami"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "安・米勒",
+      "アン・ミラー",
+      "Anne Miller"
+    ]
   },
   {
     "id": "barlinka",
@@ -2092,7 +2249,13 @@
       "akinas",
       "maken"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "巴林卡",
+      "バーリンカ",
+      "Barlinka",
+      "Bahlinka"
+    ]
   },
   {
     "id": "hiromitsu-sagami",
@@ -2173,7 +2336,12 @@
       "dr-dublin-guiness",
       "andrei"
     ],
-    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch"
+    "imageSourceVerification": "api-metadata-only-current-cdn-byte-mismatch",
+    "linkAliases": [
+      "相模廣光",
+      "相模広光",
+      "Hiromitsu Sagami"
+    ]
   },
   {
     "id": "inaba-go",
@@ -2253,7 +2421,12 @@
       "andrei",
       "kei-sagami"
     ],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "稻葉鄉",
+      "稲葉郷",
+      "Inaba Go"
+    ]
   },
   {
     "id": "dr-dublin-guiness",
@@ -2326,6 +2499,14 @@
     "imageContentType": "game-card",
     "wikiNavigationGroup": "non-playable",
     "wikiLinkedCharacterIds": [],
-    "imageSourceVerification": "exact-retrieval-verified"
+    "imageSourceVerification": "exact-retrieval-verified",
+    "linkAliases": [
+      "都柏林・吉尼斯博士",
+      "ダブリン・ギネス",
+      "Dr. Dublin Guiness",
+      "吉尼斯博士",
+      "ギネス博士",
+      "Dublin Guinness"
+    ]
   }
 ]

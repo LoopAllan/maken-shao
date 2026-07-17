@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -10,6 +11,7 @@ export const datasets = {
   'world.json': { schema: 'world.schema.json', type: 'world' },
   'systems.json': { schema: 'system.schema.json', type: 'system' },
   'characters.json': { schema: 'character.schema.json', type: 'character' },
+  'character-details.json': { schema: 'character-detail.schema.json', type: 'character-detail' },
   'walkthrough.json': { schema: 'walkthrough.schema.json', type: 'walkthrough' },
   'knowledge.json': { schema: 'knowledge.schema.json', type: 'knowledge' },
   'endings.json': { schema: 'ending.schema.json', type: 'ending' },
@@ -27,6 +29,20 @@ function allowsType(schema, value) {
   const types = Array.isArray(schema.type) ? schema.type : [schema.type];
   return types.some((type) => (type === 'null' && value === null) || (type === 'array' && Array.isArray(value)) || (type === 'integer' && Number.isInteger(value)) || (type === typeof value && !Array.isArray(value)));
 }
+function isAbsoluteHttpUri(value) {
+  if (typeof value !== 'string' || /[\p{White_Space}\p{C}\\]/u.test(value) || !/^https?:\/\/[^/?#\s]+/i.test(value)) return false;
+  const authority = value.slice(value.indexOf('://') + 3).split(/[/?#]/u, 1)[0];
+  if (authority.includes('@')) return false;
+  try {
+    const parsed = new URL(value);
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:')
+      && Boolean(parsed.hostname)
+      && !parsed.username
+      && !parsed.password;
+  } catch {
+    return false;
+  }
+}
 function validateValue({ schema, value, label, errors }) {
   if (!allowsType(schema, value)) { errors.push(`${label}: expected ${[].concat(schema.type).join(' or ')}, received ${value === null ? 'null' : typeof value}`); return; }
   if (value === null) return;
@@ -38,7 +54,7 @@ function validateValue({ schema, value, label, errors }) {
     if (schema.pattern && !(new RegExp(schema.pattern)).test(value)) errors.push(`${label}: does not match required pattern`);
     if (schema.format === 'date' && !isRealDate(value)) errors.push(`${label}: must be a real YYYY-MM-DD date`);
     if (schema.format === 'date-time' && (!isoDateTime.test(value) || Number.isNaN(Date.parse(value)))) errors.push(`${label}: must be a valid UTC ISO 8601 date-time`);
-    if (schema.format === 'uri' && !/^https?:\/\//.test(value)) errors.push(`${label}: must be an absolute http(s) URI`);
+    if (schema.format === 'uri' && !isAbsoluteHttpUri(value)) errors.push(`${label}: must be an absolute http(s) URI`);
   }
   if (typeof value === 'number' && schema.minimum !== undefined && value < schema.minimum) errors.push(`${label}: must be at least ${schema.minimum}`);
   if (typeof value === 'number' && schema.maximum !== undefined && value > schema.maximum) errors.push(`${label}: must be at most ${schema.maximum}`);
@@ -188,6 +204,54 @@ export function validateCharacterReferences(characters, walkthrough) {
   }
   return errors;
 }
+export function validateCharacterDetailReferences(details, characters, walkthrough) {
+  if (!Array.isArray(details) || !Array.isArray(characters) || !Array.isArray(walkthrough)) return [];
+  const characterRecords = characters.filter((record) => record && typeof record.id === 'string');
+  const characterIds = new Set(characterRecords.map((record) => record.id));
+  const characterById = new Map(characterRecords.map((record) => [record.id, record]));
+  const walkthroughIds = new Set(walkthrough.filter((record) => record && typeof record.id === 'string').map((record) => record.id));
+  const detailIds = new Set();
+  const errors = [];
+  for (const detail of details) {
+    if (!detail || typeof detail.id !== 'string') continue;
+    if (detailIds.has(detail.id)) errors.push(`character-details.json: duplicate detail record "${detail.id}"`);
+    detailIds.add(detail.id);
+    if (!characterIds.has(detail.id)) errors.push(`character-details.json [${detail.id}]: unknown character id`);
+    const character = characterById.get(detail.id);
+    if (character?.brainJackStatus === 'confirmed-host' && !detail.acquisition) errors.push(`character-details.json [${detail.id}]: confirmed-host requires acquisition data`);
+    if (character?.brainJackStatus === 'confirmed-host' && !detail.techniques?.length) errors.push(`character-details.json [${detail.id}]: confirmed-host requires techniques`);
+    if (character && character.brainJackStatus !== 'confirmed-host' && (detail.acquisition || detail.techniques?.length)) errors.push(`character-details.json [${detail.id}]: acquisition and techniques require confirmed-host evidence`);
+    const acquisition = detail.acquisition;
+    if (acquisition) {
+      for (const id of acquisition.walkthroughIds || []) if (!walkthroughIds.has(id)) errors.push(`character-details.json [${detail.id}]: unknown acquisition walkthroughId "${id}"`);
+      for (const id of acquisition.sourceIds || []) if (!detail.sourceIds?.includes(id)) errors.push(`character-details.json [${detail.id}]: acquisition sourceId "${id}" must also appear in sourceIds`);
+    }
+    for (const source of detail.techniqueSources || []) if (!detail.sourceIds?.includes(source.sourceId)) errors.push(`character-details.json [${detail.id}]: technique sourceId "${source.sourceId}" must also appear in sourceIds`);
+    for (const technique of detail.techniques || []) for (const media of technique.media || []) if (!detail.sourceIds?.includes(media.sourceId)) errors.push(`character-details.json [${detail.id}]: media sourceId "${media.sourceId}" must also appear in sourceIds`);
+    if (detail.techniques?.length && !detail.techniqueSources?.length) errors.push(`character-details.json [${detail.id}]: techniques require techniqueSources`);
+    if (!detail.techniques?.length && detail.techniqueSources?.length) errors.push(`character-details.json [${detail.id}]: techniqueSources require at least one technique`);
+  }
+  for (const id of characterIds) if (!detailIds.has(id)) errors.push(`character-details.json: missing detail record for character "${id}"`);
+  return errors;
+}
+export function validateTechniqueMediaFiles(details, projectRoot = root) {
+  if (!Array.isArray(details)) return [];
+  const errors = [];
+  const techniqueRoot = path.resolve(projectRoot, 'assets/images/techniques');
+  for (const detail of details) for (const technique of detail?.techniques || []) for (const media of technique.media || []) {
+    if (typeof media.path !== 'string') continue;
+    const filePath = path.resolve(projectRoot, media.path);
+    const label = `character-details.json [${detail.id}] technique "${technique.nameJa}" media`;
+    if (!filePath.startsWith(`${techniqueRoot}${path.sep}`)) { errors.push(`${label}: path must remain inside assets/images/techniques`); continue; }
+    if (!fs.existsSync(filePath)) { errors.push(`${label}: missing local file "${media.path}"`); continue; }
+    const bytes = fs.readFileSync(filePath);
+    if (bytes.length !== media.archiveBytes) errors.push(`${label}: archiveBytes ${media.archiveBytes} does not match local file length ${bytes.length}`);
+    const sha256 = createHash('sha256').update(bytes).digest('hex');
+    if (sha256 !== media.sha256) errors.push(`${label}: sha256 does not match local file`);
+  }
+  return errors;
+}
+
 export function validateProject() {
   const errors = [];
   let sources = [];
@@ -207,6 +271,8 @@ export function validateProject() {
     catch (error) { errors.push(`${fileName}: cannot parse JSON or schema (${error.message})`); }
   }
   errors.push(...validateCharacterReferences(recordsByFile.get('characters.json'), recordsByFile.get('walkthrough.json')));
+  errors.push(...validateCharacterDetailReferences(recordsByFile.get('character-details.json'), recordsByFile.get('characters.json'), recordsByFile.get('walkthrough.json')));
+  errors.push(...validateTechniqueMediaFiles(recordsByFile.get('character-details.json')));
   return errors;
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
