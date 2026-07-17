@@ -16,7 +16,6 @@
     "verificationNote",
     "lastVerified",
     "isPlaceholder",
-    "spoiler",
     "nameJa",
     "nameLatin",
     "nameZhHant",
@@ -34,7 +33,31 @@
     "brainJackStatus",
     "firstAppearanceWalkthroughId",
     "relatedWalkthroughIds",
-    "spoilerLevel"
+    "characterGroup",
+    "wikiNavigationGroup",
+    "wikiLinkedCharacterIds",
+    "tags",
+    "age",
+    "occupation",
+    "communityReferences",
+    "imageFilePageUrl",
+    "imageUploader",
+    "imageSourceSha1",
+    "imageRightsNote",
+    "imageVersionNote",
+    "imageUploadedAt",
+    "imageDownloadUrl",
+    "imageSourceMime",
+    "imageSourceWidth",
+    "imageSourceHeight",
+    "imageSourceBytes",
+    "imageSourceVerification",
+    "imageLocalMime",
+    "imageUnderlyingSource",
+    "imageArtist",
+    "imageLicense",
+    "imageReuseStatus",
+    "imageContentType"
   ],
   "properties": {
     "id": {
@@ -109,12 +132,6 @@
         "null"
       ]
     },
-    "spoiler": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
     "role": {
       "type": [
         "string",
@@ -149,7 +166,8 @@
       "type": "string",
       "enum": [
         "official",
-        "romanized"
+        "romanized",
+        "community"
       ]
     },
     "imagePath": {
@@ -204,18 +222,13 @@
         "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
       }
     },
-    "spoilerLevel": {
-      "type": "string",
-      "enum": [
-        "none",
-        "minor",
-        "major"
-      ]
-    },
     "imageKind": {
       "type": "string",
       "enum": [
         "official-source",
+        "community-source-game-capture",
+        "community-source-artwork",
+        "community-source-card",
         "no-attributable-source"
       ]
     },
@@ -231,11 +244,197 @@
         "string",
         "null"
       ],
-      "pattern": "^https://web\\.archive\\.org/web/[0-9]{14}im_/http://www\\.atlus\\.co\\.jp/cs/game/pstation2/shao/chara_images/[A-Za-z0-9_.-]+$"
+      "pattern": "^https://(web\\.archive\\.org/web/[0-9]{14}im_/http://www\\.atlus\\.co\\.jp/cs/game/pstation2/shao/chara_images/[A-Za-z0-9_.-]+|static\\.wikia\\.nocookie\\.net/megamitensei/images/.+)$"
     },
     "imageSha256": {
       "type": "string",
       "pattern": "^[a-f0-9]{64}$"
+    },
+    "characterGroup": {
+      "type": "string",
+      "enum": [
+        "main",
+        "fukenshi",
+        "hakke",
+        "hostile",
+        "npc",
+        "other"
+      ]
+    },
+    "wikiNavigationGroup": {
+      "type": "string",
+      "enum": [
+        "playable",
+        "non-playable"
+      ]
+    },
+    "wikiLinkedCharacterIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 60
+      }
+    },
+    "age": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 99999
+    },
+    "occupation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "communityReferences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sourceId",
+          "pageTitle",
+          "pageUrl",
+          "revisionId",
+          "revisionTimestamp",
+          "accessedDate",
+          "note"
+        ],
+        "properties": {
+          "sourceId": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+          },
+          "pageTitle": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "pageUrl": {
+            "type": "string",
+            "pattern": "^https://megamitensei\\.fandom\\.com/wiki/.+$"
+          },
+          "revisionId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "revisionTimestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "accessedDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "note": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 1000
+          }
+        }
+      }
+    },
+    "imageFilePageUrl": {
+      "type": "string",
+      "pattern": "^https://megamitensei\\.fandom\\.com/wiki/File:.+$"
+    },
+    "imageUploader": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "imageSourceSha1": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "imageRightsNote": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 1000
+    },
+    "imageVersionNote": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 1000
+    },
+    "imageUploadedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "imageDownloadUrl": {
+      "type": "string",
+      "pattern": "^https://static\\.wikia\\.nocookie\\.net/megamitensei/images/.+/revision/latest(?:/scale-to-width-down/640)?\\?cb=[0-9]+$"
+    },
+    "imageSourceMime": {
+      "type": "string",
+      "enum": [
+        "image/png",
+        "image/jpeg"
+      ]
+    },
+    "imageSourceWidth": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "imageSourceHeight": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "imageSourceBytes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "imageSourceVerification": {
+      "type": "string",
+      "enum": [
+        "exact-retrieval-verified",
+        "api-metadata-only-current-cdn-byte-mismatch"
+      ]
+    },
+    "imageLocalMime": {
+      "type": "string",
+      "const": "image/webp"
+    },
+    "imageUnderlyingSource": {
+      "type": "string",
+      "const": "unknown"
+    },
+    "imageArtist": {
+      "type": "string",
+      "const": "unknown"
+    },
+    "imageLicense": {
+      "type": "string",
+      "const": "not-supplied"
+    },
+    "imageReuseStatus": {
+      "type": "string",
+      "const": "copyrighted-reference-use-only-no-redistribution-license-claimed"
+    },
+    "imageContentType": {
+      "type": "string",
+      "enum": [
+        "game-screenshot",
+        "game-card",
+        "character-artwork"
+      ]
     }
   }
 }

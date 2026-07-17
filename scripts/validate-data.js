@@ -16,6 +16,7 @@ export const datasets = {
   'bosses.json': { schema: 'boss.schema.json', type: 'boss' }
 };
 const isoDate = /^\d{4}-\d{2}-\d{2}$/;
+const isoDateTime = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/;
 function isRealDate(value) {
   if (typeof value !== 'string' || !isoDate.test(value)) return false;
   const [year, month, day] = value.split('-').map(Number);
@@ -29,18 +30,27 @@ function allowsType(schema, value) {
 function validateValue({ schema, value, label, errors }) {
   if (!allowsType(schema, value)) { errors.push(`${label}: expected ${[].concat(schema.type).join(' or ')}, received ${value === null ? 'null' : typeof value}`); return; }
   if (value === null) return;
+  if (schema.const !== undefined && value !== schema.const) errors.push(`${label}: must equal ${JSON.stringify(schema.const)}`);
   if (schema.enum && !schema.enum.includes(value)) errors.push(`${label}: invalid enum value "${value}"; allowed: ${schema.enum.join(', ')}`);
   if (typeof value === 'string') {
     if (schema.minLength && value.length < schema.minLength) errors.push(`${label}: must be at least ${schema.minLength} characters`);
     if (schema.maxLength && value.length > schema.maxLength) errors.push(`${label}: must be at most ${schema.maxLength} characters`);
     if (schema.pattern && !(new RegExp(schema.pattern)).test(value)) errors.push(`${label}: does not match required pattern`);
     if (schema.format === 'date' && !isRealDate(value)) errors.push(`${label}: must be a real YYYY-MM-DD date`);
+    if (schema.format === 'date-time' && (!isoDateTime.test(value) || Number.isNaN(Date.parse(value)))) errors.push(`${label}: must be a valid UTC ISO 8601 date-time`);
     if (schema.format === 'uri' && !/^https?:\/\//.test(value)) errors.push(`${label}: must be an absolute http(s) URI`);
   }
   if (typeof value === 'number' && schema.minimum !== undefined && value < schema.minimum) errors.push(`${label}: must be at least ${schema.minimum}`);
+  if (typeof value === 'number' && schema.maximum !== undefined && value > schema.maximum) errors.push(`${label}: must be at most ${schema.maximum}`);
   if (Array.isArray(value)) {
     if (schema.minItems && value.length < schema.minItems) errors.push(`${label}: must contain at least ${schema.minItems} item(s)`);
+    if (schema.uniqueItems === true && new Set(value.map((item) => JSON.stringify(item))).size !== value.length) errors.push(`${label}: must contain unique items`);
     value.forEach((item, index) => schema.items && validateValue({ schema: schema.items, value: item, label: `${label}[${index}]`, errors }));
+  }
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    for (const field of schema.required || []) if (!(field in value)) errors.push(`${label}: missing required field "${field}"`);
+    for (const [field, fieldSchema] of Object.entries(schema.properties || {})) if (field in value) validateValue({ schema: fieldSchema, value: value[field], label: `${label}.${field}`, errors });
+    if (schema.additionalProperties === false) for (const field of Object.keys(value)) if (!(field in (schema.properties || {}))) errors.push(`${label}: unexpected field "${field}"`);
   }
 }
 export function validateDataset({ fileName, records, sourceIds, type, schema }) {
@@ -68,8 +78,6 @@ export function validateDataset({ fileName, records, sourceIds, type, schema }) 
     if (record.verificationStatus === 'verified' && record.confidence === 'unverified') errors.push(`${prefix}: verified status cannot use unverified confidence`);
     if (record.verificationStatus === 'conflicting' && (!record.verificationNote || record.verificationNote.trim().length < 3)) errors.push(`${prefix}: conflicting status requires a verificationNote`);
     if (record.isPlaceholder === true && ![record.title,record.summary,record.content,record.verificationNote].join(' ').includes('示範資料，非正式攻略內容')) errors.push(`${prefix}: placeholder records must include the required demo warning`);
-    if (type === 'character' && ['minor', 'major'].includes(record.spoilerLevel) && record.spoiler !== true) errors.push(`${prefix}: non-none spoilerLevel requires spoiler true`);
-    if (type === 'character' && record.spoiler === true && record.spoilerLevel === 'none') errors.push(`${prefix}: spoiler true requires non-none spoilerLevel`);
     if (type === 'character' && (record.imagePath === null) !== (record.imageAlt === null)) errors.push(`${prefix}: imagePath and imageAlt must either both be present or both be null`);
     if (type === 'character' && record.imageKind === 'official-source') {
       if (!record.imageSourceId) errors.push(`${prefix}: official-source requires imageSourceId`);
@@ -78,6 +86,17 @@ export function validateDataset({ fileName, records, sourceIds, type, schema }) 
         if (!Array.isArray(record.sourceIds) || !record.sourceIds.includes(record.imageSourceId)) errors.push(`${prefix}: imageSourceId must also appear in sourceIds`);
       }
       if (!record.imageOriginalUrl) errors.push(`${prefix}: official-source requires imageOriginalUrl`);
+    }
+    if (type === 'character' && typeof record.imageKind === 'string' && record.imageKind.startsWith('community-source-')) {
+      if (!record.imageSourceId || !sourceIds.has(record.imageSourceId)) errors.push(`${prefix}: community image requires a registered imageSourceId`);
+      if (!Array.isArray(record.sourceIds) || !record.sourceIds.includes(record.imageSourceId)) errors.push(`${prefix}: imageSourceId must also appear in sourceIds`);
+      if (!record.imageOriginalUrl || !record.imageFilePageUrl || !record.imageUploader || !record.imageUploadedAt || !record.imageSourceSha1) errors.push(`${prefix}: community image requires complete Fandom provenance`);
+    }
+    if (type === 'character' && Array.isArray(record.communityReferences)) {
+      record.communityReferences.forEach((reference, referenceIndex) => {
+        if (!reference || !sourceIds.has(reference.sourceId)) errors.push(`${prefix}: communityReferences[${referenceIndex}] has an unknown sourceId`);
+        else if (!Array.isArray(record.sourceIds) || !record.sourceIds.includes(reference.sourceId)) errors.push(`${prefix}: communityReferences[${referenceIndex}].sourceId must also appear in sourceIds`);
+      });
     }
     if (type === 'character' && record.imageKind === 'no-attributable-source') {
       if (record.imageSourceId !== null) errors.push(`${prefix}: no-attributable-source requires null imageSourceId`);
@@ -149,6 +168,10 @@ export function validateCharacterReferences(characters, walkthrough) {
       if (!related.includes(character.firstAppearanceWalkthroughId)) errors.push(`characters.json [${character.id}]: firstAppearanceWalkthroughId must be included in relatedWalkthroughIds`);
     }
     for (const id of related) if (!walkthroughIds.has(id)) errors.push(`characters.json [${character.id}]: unknown relatedWalkthroughIds reference "${id}"`);
+    for (const id of Array.isArray(character.wikiLinkedCharacterIds) ? character.wikiLinkedCharacterIds : []) {
+      if (!characterIds.has(id)) errors.push(`characters.json [${character.id}]: unknown wikiLinkedCharacterIds reference "${id}"`);
+      if (id === character.id) errors.push(`characters.json [${character.id}]: wikiLinkedCharacterIds cannot reference itself`);
+    }
   }
   for (const step of walkthrough) {
     if (!step || typeof step.id !== 'string') continue;

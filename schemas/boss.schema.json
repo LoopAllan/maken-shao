@@ -16,7 +16,6 @@
     "verificationNote",
     "lastVerified",
     "isPlaceholder",
-    "spoiler",
     "location"
   ],
   "properties": {
@@ -87,12 +86,6 @@
       "format": "date"
     },
     "isPlaceholder": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
-    "spoiler": {
       "type": [
         "boolean",
         "null"

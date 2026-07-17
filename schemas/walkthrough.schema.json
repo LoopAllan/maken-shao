@@ -16,7 +16,6 @@
     "verificationNote",
     "lastVerified",
     "isPlaceholder",
-    "spoiler",
     "sequence",
     "area",
     "routeId",
@@ -27,8 +26,7 @@
     "branchChoiceIds",
     "bossIds",
     "brainJackTargetIds",
-    "missable",
-    "spoilerLevel"
+    "missable"
   ],
   "properties": {
     "id": {
@@ -103,12 +101,6 @@
         "null"
       ]
     },
-    "spoiler": {
-      "type": [
-        "boolean",
-        "null"
-      ]
-    },
     "sequence": {
       "type": [
         "integer",
@@ -135,32 +127,49 @@
     "objectives": {
       "type": "array",
       "minItems": 1,
-      "items": { "type": "string", "minLength": 1, "maxLength": 500 }
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500
+      }
     },
     "prerequisites": {
       "type": "array",
-      "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" }
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+      }
     },
     "anyOfPrerequisites": {
       "type": "array",
-      "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" }
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+      }
     },
     "branchChoiceIds": {
       "type": "array",
-      "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" }
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+      }
     },
     "bossIds": {
       "type": "array",
-      "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" }
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+      }
     },
     "brainJackTargetIds": {
       "type": "array",
-      "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" }
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+      }
     },
-    "missable": { "type": "boolean" },
-    "spoilerLevel": {
-      "type": "string",
-      "enum": ["none", "minor", "major"]
+    "missable": {
+      "type": "boolean"
     }
   }
 }

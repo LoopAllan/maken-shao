@@ -6,13 +6,14 @@
     "content": "本作的官方日文名稱為「魔剣爻」。Atlus 的保存產品頁列出「プレイステーション2専用」、「発売：2001年6月7日」及「ジャンル：アクションアドベンチャー」。同頁將其描述為把 1999 年《魔剣X》的世界觀與遊戲性進一步昇華的作品；這裡不把它稱為未經限定的續作。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
-    "sourceIds": ["atlus-maken-shao-index-archive"],
+    "sourceIds": [
+      "atlus-maken-shao-index-archive"
+    ],
     "confidence": "official",
     "verificationStatus": "verified",
     "verificationNote": "Atlus PS2 官方產品頁的 Internet Archive 保存版；原始網址已失效，但保存頁的標題、產品資訊與 ©ATLUS 1999, 2001 可辨識。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "worldCategory": "version-context"
   },
   {
@@ -22,13 +23,14 @@
     "content": "Atlus 的產品頁以「プレイヤー＝魔剣」介紹本作，並說明這把劍反向利用人類。頁面亦明示故事會依玩家選擇迎向多種終局。這是作品的官方概念介紹，而非本網站對個別路線或結局條件的攻略說明。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
-    "sourceIds": ["atlus-maken-shao-index-archive"],
+    "sourceIds": [
+      "atlus-maken-shao-index-archive"
+    ],
     "confidence": "official",
     "verificationStatus": "verified",
     "verificationNote": "Atlus PS2 官方產品頁直接陳述。為避免劇透，本網站不在本條目延伸各個終局內容或條件。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "worldCategory": "overview"
   },
   {
@@ -38,13 +40,14 @@
     "content": "此處保留 Image／イマージュ 原文，以免過度簡化為單一的「靈魂」概念。Atlus 的故事頁把它稱為「自己の鏡像、証明された精神世界」，並以人類（實際上是其腦）與精神世界的連結加以說明。這是世界觀術語；它不等同於系統頁的 Image Point（イマージュポイント）。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
-    "sourceIds": ["atlus-maken-shao-story-archive"],
+    "sourceIds": [
+      "atlus-maken-shao-story-archive"
+    ],
     "confidence": "official",
     "verificationStatus": "verified",
     "verificationNote": "Atlus PS2 官方故事頁的 Internet Archive 保存版。翻譯採近義轉述並保留日文術語，避免取代原文的技術／精神性涵義。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "worldCategory": "terminology"
   },
   {
@@ -54,13 +57,14 @@
     "content": "Atlus 的故事頁將金澤總合學術研究所定位為 Image 研究機構，並說明魔劍專案意在以 Image 治療精神疾病。本條目只記錄官方公開的前提，不推演未經來源支持的組織、事件或角色關係。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
-    "sourceIds": ["atlus-maken-shao-story-archive"],
+    "sourceIds": [
+      "atlus-maken-shao-story-archive"
+    ],
     "confidence": "official",
     "verificationStatus": "verified",
     "verificationNote": "Atlus PS2 官方故事頁的 Internet Archive 保存版。僅採用該頁明示的研究所與專案目的。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "worldCategory": "setting"
   }
 ]
