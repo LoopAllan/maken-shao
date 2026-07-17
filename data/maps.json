@@ -1,0 +1,2920 @@
+[
+  {
+    "id": "kanazawa-research-institute",
+    "sequence": 1,
+    "title": "金澤研究所｜金沢研究所｜Kanazawa Research Institute",
+    "nameZhHant": "金澤研究所",
+    "nameJa": "金沢研究所",
+    "nameEn": "Kanazawa Research Institute",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "金澤研究所",
+      "金澤綜合研究所",
+      "金沢研究所",
+      "金沢総合研究所",
+      "金沢総合学術研究所",
+      "Kanazawa Research Institute",
+      "Kanazawa Scientific Research Lab"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "固定開局與教學地圖；擊敗八卦安德烈後，魔劍切換宿主並前往林卡頓。",
+    "story": "魔劍以相模桂開始行動，在研究所事故後迎戰八卦安德烈；完成後取得安德烈。",
+    "structure": "單向研究設施流程，依序出現 Bazooka、Claw 與安德烈戰。",
+    "requiredMapIds": [],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "固定開局，沒有前置地圖。",
+    "obtainableCharacterIds": [
+      "kei-sagami",
+      "andrei"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "火箭筒兵",
+        "nameJa": "バズーカ",
+        "nameEn": "Bazooka",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      },
+      {
+        "nameZhHant": "爪兵",
+        "nameJa": "クロウ",
+        "nameEn": "Claw",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      },
+      {
+        "nameZhHant": "八卦安德烈",
+        "nameJa": "八卦アンドレイ",
+        "nameEn": "Hakke Andrei",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-opening-kanazawa"
+    ],
+    "sourceIds": [
+      "atlus-maken-shao-index-archive",
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-earlygame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/kanazawa-research-institute-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中金澤研究所的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Kanazawa_Research_Institute",
+        "mapPageRevisionId": 450949,
+        "fileTitle": "File:Maken X Kanazawa map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Kanazawa_map.png",
+        "fileRevisionId": 450943,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/c/c8/Maken_X_Kanazawa_map.png/revision/latest?cb=20220214021037",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 32796,
+        "sha256": "d86a8e5ec5111385b27bd49a66d7534a26492cae1f0a0f4776e0418b86acb3ba",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 53643,
+        "sourceSha1": "2ad346aadd877fb372bdc9883ac8ff94a8b13773",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T02:10:37Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Kanazawa Research Institute 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/c/c8/Maken_X_Kanazawa_map.png/revision/latest?cb=20220214021037"
+      },
+      {
+        "path": "assets/images/maps/kanazawa-research-institute-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中金澤研究所的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Kanazawa_Research_Institute",
+        "mapPageRevisionId": 450949,
+        "fileTitle": "File:Maken X Kanazawa.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Kanazawa.png",
+        "fileRevisionId": 450936,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/f/fe/Maken_X_Kanazawa.png/revision/latest?cb=20220214020716",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 17720,
+        "sha256": "12635a36f69f05688e744e504da353b601a8197f8b00366c99cd911bc22f53af",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 415684,
+        "sourceSha1": "e3e3934da1eedc10c0514f854dec2b66f2d9d133",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T02:07:16Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Kanazawa Research Institute 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/f/fe/Maken_X_Kanazawa.png/revision/latest/scale-to-width-down/640?cb=20220214020716"
+      }
+    ]
+  },
+  {
+    "id": "linkardon",
+    "sequence": 2,
+    "title": "林卡頓｜リンカードン｜Linkardon",
+    "nameZhHant": "林卡頓",
+    "nameJa": "リンカードン",
+    "nameEn": "Linkardon",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "林卡頓",
+      "リンカードン",
+      "Linkardon",
+      "Rhincodon"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "固定第二張地圖；是否 Brain Jack 稻葉鄉會改變香港／泰姬瑪哈陵的早期入口。",
+    "story": "安德烈進入飛行器；結尾可取得稻葉鄉，或保留安德烈走另一條早期路線。",
+    "structure": "近似單一路徑的飛行器內部，包含大量射擊敵人、四名 Bazooka 的房間與限時事件。",
+    "requiredMapIds": [
+      "kanazawa-research-institute"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "完成金澤研究所後固定進入。",
+    "obtainableCharacterIds": [
+      "inaba-go"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "火箭筒兵",
+        "nameJa": "バズーカ",
+        "nameEn": "Bazooka",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-opening-lincardon"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-earlygame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/linkardon-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中林卡頓的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Rhincodon",
+        "mapPageRevisionId": 451090,
+        "fileTitle": "File:Maken X Rhincodon location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Rhincodon_location.png",
+        "fileRevisionId": 451065,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/9/9a/Maken_X_Rhincodon_location.png/revision/latest?cb=20220214094904",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 19352,
+        "sha256": "5df7e4f2b3f0847e092298ab6d66179c4b2dc7b13975d28aba4480e4621d3efe",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 352932,
+        "sourceSha1": "ab092fe616757226ae4bc15a9bf4c2c84f05ad8b",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:49:04Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Linkardon 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/9/9a/Maken_X_Rhincodon_location.png/revision/latest/scale-to-width-down/640?cb=20220214094904"
+      },
+      {
+        "path": "assets/images/maps/linkardon-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中林卡頓的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Rhincodon",
+        "mapPageRevisionId": 451090,
+        "fileTitle": "File:Maken X Rhincodon map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Rhincodon_map.png",
+        "fileRevisionId": 451104,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/4/41/Maken_X_Rhincodon_map.png/revision/latest?cb=20220214100627",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 30588,
+        "sha256": "866bffb27a7ce42749958de76c0764429d14d440f1b31819f2f41ee5c62f0711",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 50008,
+        "sourceSha1": "952fb9f7db131b35f1420b3953cd7c9d2fe86f4a",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:06:27Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Linkardon 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/4/41/Maken_X_Rhincodon_map.png/revision/latest?cb=20220214100627"
+      },
+      {
+        "path": "assets/images/maps/linkardon-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中林卡頓的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Rhincodon",
+        "mapPageRevisionId": 451090,
+        "fileTitle": "File:Maken X Rhincodon.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Rhincodon.png",
+        "fileRevisionId": 450989,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/0c/Maken_X_Rhincodon.png/revision/latest?cb=20220214092911",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 34364,
+        "sha256": "09af764c47ca6ecf2205939bb8d26cdcae201cb8bdcaa66aed24af7fa0b27c1a",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 552242,
+        "sourceSha1": "bd5a5ea2dcbb20fbbc1d1bd75bf3613325af533a",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:29:11Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Linkardon 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/0c/Maken_X_Rhincodon.png/revision/latest/scale-to-width-down/640?cb=20220214092911"
+      }
+    ]
+  },
+  {
+    "id": "hong-kong",
+    "sequence": 3,
+    "title": "香港｜香港｜Hong Kong",
+    "nameZhHant": "香港",
+    "nameJa": "香港",
+    "nameEn": "Hong Kong",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "香港",
+      "Hong Kong",
+      "ホンコン"
+    ],
+    "mapType": "optional",
+    "isMainMap": false,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "李飛扇委託與泰姬瑪哈陵支線入口；安德烈早期路線可在莫斯科後補開。",
+    "story": "稻葉鄉路線在此遇見李飛扇；是否接受委託決定是否接往泰姬瑪哈陵。",
+    "structure": "城市路段；可核實的具名戰鬥配置僅包括終段三名 Rollerblade。",
+    "requiredMapIds": [],
+    "anyOfRequiredMapIds": [
+      "linkardon",
+      "moscow"
+    ],
+    "unlockNote": "林卡頓取得稻葉鄉可立即進入；若早期未進入，完成莫斯科後補開。",
+    "obtainableCharacterIds": [
+      "lee-fei-shan"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "滾輪兵",
+        "nameJa": "ローラーブレード",
+        "nameEn": "Rollerblade",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-early-hong-kong"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-earlygame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/hong-kong-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中香港的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Hong_Kong",
+        "mapPageRevisionId": 592819,
+        "fileTitle": "File:Maken X Hong Kong location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Hong_Kong_location.png",
+        "fileRevisionId": 451058,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/3/33/Maken_X_Hong_Kong_location.png/revision/latest?cb=20220214094658",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 22496,
+        "sha256": "dc417fb672080040bd07918f682f12c44eb03176127ac9118014fba44129c5bd",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 355523,
+        "sourceSha1": "a515c6290e5ffe1b11839dd95ff8ac9ea072509d",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:46:58Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Hong Kong 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/3/33/Maken_X_Hong_Kong_location.png/revision/latest/scale-to-width-down/640?cb=20220214094658"
+      },
+      {
+        "path": "assets/images/maps/hong-kong-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中香港的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Hong_Kong",
+        "mapPageRevisionId": 592819,
+        "fileTitle": "File:Maken X Hong Kong map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Hong_Kong_map.png",
+        "fileRevisionId": 451095,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a2/Maken_X_Hong_Kong_map.png/revision/latest?cb=20220214100408",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 34142,
+        "sha256": "f3a69da6766047bf2229e6d33cb8772885be663dfee66ba6dcacf62e0b4b7802",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 57428,
+        "sourceSha1": "9991bfc1cca997b194aa7dfdcd5f88daf8aed835",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:04:08Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Hong Kong 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a2/Maken_X_Hong_Kong_map.png/revision/latest?cb=20220214100408"
+      },
+      {
+        "path": "assets/images/maps/hong-kong-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中香港的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Hong_Kong",
+        "mapPageRevisionId": 592819,
+        "fileTitle": "File:Maken X Hong Kong.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Hong_Kong.png",
+        "fileRevisionId": 450981,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/4/48/Maken_X_Hong_Kong.png/revision/latest?cb=20220214092639",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 25396,
+        "sha256": "78ee5b0078e185466507b886187694a3ceba3c42730eff9a39ef436ed773eb42",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 453695,
+        "sourceSha1": "8e8099438e0d0a6e172e4ecd5071aeafe3bd21d9",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:26:39Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Hong Kong 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/4/48/Maken_X_Hong_Kong.png/revision/latest/scale-to-width-down/640?cb=20220214092639"
+      }
+    ]
+  },
+  {
+    "id": "taj-mahal",
+    "sequence": 4,
+    "title": "泰姬瑪哈陵｜タージマハル｜Taj Mahal",
+    "nameZhHant": "泰姬瑪哈陵",
+    "nameJa": "タージマハル",
+    "nameEn": "Taj Mahal",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "泰姬瑪哈陵",
+      "泰姬陵",
+      "タージマハル",
+      "Taj Mahal"
+    ],
+    "mapType": "optional",
+    "isMainMap": false,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "沙爾嘉所在的早期條件地圖；由安德烈先到時無法開啟 Boss 房。",
+    "story": "可由林卡頓的安德烈路線直接迫降，或接受李飛扇委託後進入；取得李飛扇才能處理沙爾嘉區域。",
+    "structure": "以濕婆步兵為此地獨有的一般敵；Boss 房有角色門鎖，可能需要重訪。",
+    "requiredMapIds": [],
+    "anyOfRequiredMapIds": [
+      "linkardon",
+      "hong-kong"
+    ],
+    "unlockNote": "林卡頓不取得稻葉鄉可直接進入，或由香港接受李飛扇委託進入；Boss 房另需李飛扇。",
+    "obtainableCharacterIds": [
+      "sharja"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "濕婆步兵",
+        "nameJa": "シヴァ歩兵",
+        "nameEn": "Shiva Infantry",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      },
+      {
+        "nameZhHant": "沙爾嘉",
+        "nameJa": "シャージャ",
+        "nameEn": "Sharja",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-early-taj-mahal"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-earlygame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/taj-mahal-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中泰姬瑪哈陵的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Taj_Mahal",
+        "mapPageRevisionId": 472870,
+        "fileTitle": "File:Maken X Taj Mahal location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Taj_Mahal_location.png",
+        "fileRevisionId": 451066,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/5c/Maken_X_Taj_Mahal_location.png/revision/latest?cb=20220214094918",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 27326,
+        "sha256": "42851ac9fce5c6c62a7a2d93ef1e6cad4dae57ac1c2d3c8233755411d13958df",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 435529,
+        "sourceSha1": "555e98510adaa88c251ff8bea5df0c6ad7eedc6a",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:49:18Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Taj Mahal 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/5c/Maken_X_Taj_Mahal_location.png/revision/latest/scale-to-width-down/640?cb=20220214094918"
+      },
+      {
+        "path": "assets/images/maps/taj-mahal-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中泰姬瑪哈陵的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Taj_Mahal",
+        "mapPageRevisionId": 472870,
+        "fileTitle": "File:Maken X Taj Mahal map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Taj_Mahal_map.png",
+        "fileRevisionId": 451105,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/3/3e/Maken_X_Taj_Mahal_map.png/revision/latest?cb=20220214100639",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 33992,
+        "sha256": "e2366f204c53b180eb96dae60b7c3c2252d858be273f188c7377de544ce51a03",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 55468,
+        "sourceSha1": "0f3acd87c63495d36b767077bdf02d69c6023b09",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:06:39Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Taj Mahal 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/3/3e/Maken_X_Taj_Mahal_map.png/revision/latest?cb=20220214100639"
+      },
+      {
+        "path": "assets/images/maps/taj-mahal-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中泰姬瑪哈陵的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Taj_Mahal",
+        "mapPageRevisionId": 472870,
+        "fileTitle": "File:Maken X Taj Mahal.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Taj_Mahal.png",
+        "fileRevisionId": 450991,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/4/40/Maken_X_Taj_Mahal.png/revision/latest?cb=20220214092945",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 40080,
+        "sha256": "b784c05e73a078a4973e7295b34d3d447c755b154f96a119d5cba42fa3811b3f",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 653642,
+        "sourceSha1": "16b10b3290ae430ffaffa1a3198c309e9d79617d",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:29:45Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Taj Mahal 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/4/40/Maken_X_Taj_Mahal.png/revision/latest/scale-to-width-down/640?cb=20220214092945"
+      }
+    ]
+  },
+  {
+    "id": "moscow",
+    "sequence": 5,
+    "title": "莫斯科｜モスクワ｜Moscow",
+    "nameZhHant": "莫斯科",
+    "nameJa": "モスクワ",
+    "nameEn": "Moscow",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "莫斯科",
+      "モスクワ",
+      "Moscow"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "早期分支匯合點；完成後開啟伊斯坦堡與倫敦，並補開尚未造訪的香港。",
+    "story": "香港拒絕委託或完成泰姬瑪哈陵可到達；此後流程分成兩條中盤主鏈。",
+    "structure": "城市與馬戲團帳篷路段，首次引入 Cannon，後段有 Rollerblade 與 Grenade。",
+    "requiredMapIds": [],
+    "anyOfRequiredMapIds": [
+      "hong-kong",
+      "taj-mahal"
+    ],
+    "unlockNote": "香港或泰姬瑪哈陵任一路線可到達；完成後同時開啟伊斯坦堡與倫敦。",
+    "obtainableCharacterIds": [],
+    "enemies": [
+      {
+        "nameZhHant": "加農炮兵",
+        "nameJa": "キャノン",
+        "nameEn": "Cannon",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      },
+      {
+        "nameZhHant": "滾輪兵",
+        "nameJa": "ローラーブレード",
+        "nameEn": "Rollerblade",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      },
+      {
+        "nameZhHant": "榴彈兵",
+        "nameJa": "グレネード",
+        "nameEn": "Grenade",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-earlygame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-convergence-moscow"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-earlygame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/moscow-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中莫斯科的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Moscow",
+        "mapPageRevisionId": 454228,
+        "fileTitle": "File:Maken X Moscow location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Moscow_location.png",
+        "fileRevisionId": 451064,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/6/61/Maken_X_Moscow_location.png/revision/latest?cb=20220214094849",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 21644,
+        "sha256": "0ec0e1bd393c9812563e758835407a8b1b41091bb91fea413cba9f578aebdbdf",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 522,
+        "sourceBytes": 442532,
+        "sourceSha1": "29a2607444675b8496ca524fdc4428cb711b1036",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:48:49Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Moscow 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/6/61/Maken_X_Moscow_location.png/revision/latest/scale-to-width-down/640?cb=20220214094849"
+      },
+      {
+        "path": "assets/images/maps/moscow-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中莫斯科的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Moscow",
+        "mapPageRevisionId": 454228,
+        "fileTitle": "File:Maken X Moscow map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Moscow_map.png",
+        "fileRevisionId": 451102,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/79/Maken_X_Moscow_map.png/revision/latest?cb=20220214100550",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 27272,
+        "sha256": "389b301be7fa6ff1e40785a0cb68daf07e79137a8a7bd7dc4cee2333a2d30d2c",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 45274,
+        "sourceSha1": "9894b68d63b22dfcc3a0d05dd286e3ee41fa43f9",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:05:50Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Moscow 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/79/Maken_X_Moscow_map.png/revision/latest?cb=20220214100550"
+      },
+      {
+        "path": "assets/images/maps/moscow-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中莫斯科的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Moscow",
+        "mapPageRevisionId": 454228,
+        "fileTitle": "File:Maken X Moscow.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Moscow.png",
+        "fileRevisionId": 450988,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/c/c0/Maken_X_Moscow.png/revision/latest?cb=20220214092855",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 29518,
+        "sha256": "4e62b1236bf97ad52624e703fd1c457f2ff5f7fce6d8e8c30a12eb449c8905f0",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 515377,
+        "sourceSha1": "287db13f8437a7047727fd02fb0b4b898a17f9e4",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:28:55Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Moscow 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/c/c0/Maken_X_Moscow.png/revision/latest/scale-to-width-down/640?cb=20220214092855"
+      }
+    ]
+  },
+  {
+    "id": "istanbul",
+    "sequence": 6,
+    "title": "伊斯坦堡｜イスタンブール｜Istanbul",
+    "nameZhHant": "伊斯坦堡",
+    "nameJa": "イスタンブール",
+    "nameEn": "Istanbul",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "伊斯坦堡",
+      "伊斯坦布爾",
+      "イスタンブール",
+      "Istanbul"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "中盤東線起點；首次完成開啟雅典，以阿基納斯重訪可取得巴林卡。",
+    "story": "先完成通往雅典的主線內容；若在雅典和平取得阿基納斯，可重訪處理巴林卡支線。",
+    "structure": "首次配置機械蟲與 Golem；重訪配置 Golem 與 Sword Breaker。",
+    "requiredMapIds": [
+      "moscow"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "完成莫斯科後開啟；巴林卡內容另需和平取得阿基納斯並以他重訪。",
+    "obtainableCharacterIds": [
+      "barlinka"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "機械蟲",
+        "nameJa": "メカ虫",
+        "nameEn": null,
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "魔像",
+        "nameJa": "ゴーレム",
+        "nameEn": "Golem",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "破劍兵",
+        "nameJa": "ソードブレイカー",
+        "nameEn": "Sword Breaker",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-mid-istanbul-chain"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-midgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/istanbul-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中伊斯坦堡的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Istanbul",
+        "mapPageRevisionId": 455130,
+        "fileTitle": "File:Maken X Istanbul location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Istanbul_location.png",
+        "fileRevisionId": 451059,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/58/Maken_X_Istanbul_location.png/revision/latest?cb=20220214094715",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 27902,
+        "sha256": "ea41703ea284c74e561c7bbd155bc3ae9030627ff21b4d3f17476177cf02b67f",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 456410,
+        "sourceSha1": "3ab7f541fed469d5e8278fb373429c3afffa39b7",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:47:15Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Istanbul 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/58/Maken_X_Istanbul_location.png/revision/latest/scale-to-width-down/640?cb=20220214094715"
+      },
+      {
+        "path": "assets/images/maps/istanbul-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中伊斯坦堡的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Istanbul",
+        "mapPageRevisionId": 455130,
+        "fileTitle": "File:Maken X Istanbul map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Istanbul_map.png",
+        "fileRevisionId": 451096,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b0/Maken_X_Istanbul_map.png/revision/latest?cb=20220214100420",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 37204,
+        "sha256": "d66ff5d7a02f8aae38b1b660c54de6068b4ce59b753aa77bd3fd571d119c9715",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 62443,
+        "sourceSha1": "26cd8be6a8b799224137bddc25d8176160ccfc43",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:04:20Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Istanbul 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b0/Maken_X_Istanbul_map.png/revision/latest?cb=20220214100420"
+      },
+      {
+        "path": "assets/images/maps/istanbul-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中伊斯坦堡的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Istanbul",
+        "mapPageRevisionId": 455130,
+        "fileTitle": "File:Maken X Istanbul.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Istanbul.png",
+        "fileRevisionId": 450982,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/3/3f/Maken_X_Istanbul.png/revision/latest?cb=20220214092655",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 26562,
+        "sha256": "8821e93d7c8d2a1c027b5dc43b7e05895dc02be739f33d7c34d15217a7eb600b",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 507136,
+        "sourceSha1": "57daf55f30fe8143b7356c143eec83ae39410d64",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:26:55Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Istanbul 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/3/3f/Maken_X_Istanbul.png/revision/latest/scale-to-width-down/640?cb=20220214092655"
+      }
+    ]
+  },
+  {
+    "id": "athens",
+    "sequence": 7,
+    "title": "雅典｜アテネ｜Athens",
+    "nameZhHant": "雅典",
+    "nameJa": "アテネ",
+    "nameEn": "Athens",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "雅典",
+      "アテネ",
+      "Athens"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "中盤東線節點；完成後開啟梵蒂岡，取得阿基納斯的方式會影響特蘭西瓦尼亞支線。",
+    "story": "與阿基納斯的問答可和平或經戰鬥取得他；只有和平結果可繼續巴林卡支線。",
+    "structure": "包含 Iron Maiden、機械蟲與地面下降段落，終段為阿基納斯戰或和平事件。",
+    "requiredMapIds": [
+      "istanbul"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "完成伊斯坦堡首次流程後開啟；和平取得阿基納斯是特蘭西瓦尼亞支線旗標。",
+    "obtainableCharacterIds": [
+      "akinas"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "鐵處女",
+        "nameJa": "アイアンメイデン",
+        "nameEn": "Iron Maiden",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "機械蟲",
+        "nameJa": "メカ虫",
+        "nameEn": null,
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "阿基納斯",
+        "nameJa": "アキナス",
+        "nameEn": "Akinas",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-mid-istanbul-chain"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-midgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/athens-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中雅典的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Athens",
+        "mapPageRevisionId": 455131,
+        "fileTitle": "File:Maken X Athens location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Athens_location.png",
+        "fileRevisionId": 451056,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/1/1c/Maken_X_Athens_location.png/revision/latest?cb=20220214094623",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 27120,
+        "sha256": "21c405ec7d73c4af7b9b413305efcf1b2e021e7893f9dcdb7470256c915ae714",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 460756,
+        "sourceSha1": "7816ed0b5b09ea28e2ca7508015f72cf9d1a84ec",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:46:23Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Athens 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/1/1c/Maken_X_Athens_location.png/revision/latest/scale-to-width-down/640?cb=20220214094623"
+      },
+      {
+        "path": "assets/images/maps/athens-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中雅典的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Athens",
+        "mapPageRevisionId": 455131,
+        "fileTitle": "File:Maken X Athens map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Athens_map.png",
+        "fileRevisionId": 451093,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b9/Maken_X_Athens_map.png/revision/latest?cb=20220214100342",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 31854,
+        "sha256": "3023240920e57577feb404f888a7ae6ef72dc150928d82fe71eec62773f1260c",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 53638,
+        "sourceSha1": "09064430b9f1c19e625fc9515b8713c1b37ff06b",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:03:42Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Athens 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b9/Maken_X_Athens_map.png/revision/latest?cb=20220214100342"
+      },
+      {
+        "path": "assets/images/maps/athens-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中雅典的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Athens",
+        "mapPageRevisionId": 455131,
+        "fileTitle": "File:Maken X Athens.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Athens.png",
+        "fileRevisionId": 450979,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/0a/Maken_X_Athens.png/revision/latest?cb=20220214092557",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 33708,
+        "sha256": "19a8a659a026c5cf8536cab627c9d2d40b79356a0bdc1b1cbfa95733e3d8c8af",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 563234,
+        "sourceSha1": "5dffc363be4a75b29ab54ed0cbe06d2677716e4e",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:25:57Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Athens 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/0a/Maken_X_Athens.png/revision/latest/scale-to-width-down/640?cb=20220214092557"
+      }
+    ]
+  },
+  {
+    "id": "transylvania",
+    "sequence": 8,
+    "title": "特蘭西瓦尼亞｜トランシルバニア｜Transylvania",
+    "nameZhHant": "特蘭西瓦尼亞",
+    "nameJa": "トランシルバニア",
+    "nameEn": "Transylvania",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "特蘭西瓦尼亞",
+      "外西凡尼亞",
+      "トランシルバニア",
+      "Transylvania"
+    ],
+    "mapType": "optional",
+    "isMainMap": false,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "由阿基納斯、巴林卡條件鏈開啟的可選支線，終點為八卦達爾。",
+    "story": "和平取得阿基納斯後重訪伊斯坦堡取得巴林卡，才會出現此地圖。",
+    "structure": "以 Golem、Iron Maiden 的近中距離戰鬥為主，終段迎戰達爾。",
+    "requiredMapIds": [
+      "athens",
+      "istanbul"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "需在雅典和平取得阿基納斯，再以阿基納斯重訪伊斯坦堡並取得巴林卡。",
+    "obtainableCharacterIds": [
+      "dal"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "魔像",
+        "nameJa": "ゴーレム",
+        "nameEn": "Golem",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "鐵處女",
+        "nameJa": "アイアンメイデン",
+        "nameEn": "Iron Maiden",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "達爾",
+        "nameJa": "ダル",
+        "nameEn": "Dal",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-optional-transylvania"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-midgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/transylvania-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中特蘭西瓦尼亞的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Transylvania",
+        "mapPageRevisionId": 455128,
+        "fileTitle": "File:Maken X Transylvania location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Transylvania_location.png",
+        "fileRevisionId": 451067,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b3/Maken_X_Transylvania_location.png/revision/latest?cb=20220214094935",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 29630,
+        "sha256": "e0441ab1914860c4194de123b8977282ba61f2beae03ed86740d5125f08e852c",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 486687,
+        "sourceSha1": "6a10804ac9b0c9d869cbfa3fb2d2506d2bd64d59",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:49:35Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Transylvania 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b3/Maken_X_Transylvania_location.png/revision/latest/scale-to-width-down/640?cb=20220214094935"
+      },
+      {
+        "path": "assets/images/maps/transylvania-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中特蘭西瓦尼亞的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Transylvania",
+        "mapPageRevisionId": 455128,
+        "fileTitle": "File:Maken X Transylvania map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Transylvania_map.png",
+        "fileRevisionId": 451106,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/55/Maken_X_Transylvania_map.png/revision/latest?cb=20220214100651",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 36208,
+        "sha256": "a5d8e9ece0342e2f0fcf88becd30fce45ce2e4d523706c5b521fa6faf874951d",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 59345,
+        "sourceSha1": "357c2e2855fa6616bb9cd6dcf743adc507e316c5",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:06:51Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Transylvania 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/55/Maken_X_Transylvania_map.png/revision/latest?cb=20220214100651"
+      },
+      {
+        "path": "assets/images/maps/transylvania-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中特蘭西瓦尼亞的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Transylvania",
+        "mapPageRevisionId": 455128,
+        "fileTitle": "File:Maken X Transylvania.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Transylvania.png",
+        "fileRevisionId": 450992,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a3/Maken_X_Transylvania.png/revision/latest?cb=20220214093002",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 24664,
+        "sha256": "e77dd929a8b242b4ce5d41ec3621678a35126a7afd989e76b198e68b144adaba",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 492277,
+        "sourceSha1": "93cb8aacb352f9255cc21f8c34ce66404c0188f5",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:30:02Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Transylvania 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a3/Maken_X_Transylvania.png/revision/latest/scale-to-width-down/640?cb=20220214093002"
+      }
+    ]
+  },
+  {
+    "id": "london",
+    "sequence": 9,
+    "title": "倫敦｜ロンドン｜London",
+    "nameZhHant": "倫敦",
+    "nameJa": "ロンドン",
+    "nameEn": "London",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "倫敦",
+      "ロンドン",
+      "London"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "中盤西線起點；首次完成開啟阿姆斯特丹，以巴德萊爾重訪可取得史密斯。",
+    "story": "首次推進西線；里昂取得巴德萊爾後可重訪開啟史密斯房與西西里支線。",
+    "structure": "BS 改造男兵與犬兵構成主要敵群；重訪使用同一地圖與新增門鎖內容。",
+    "requiredMapIds": [
+      "moscow"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "完成莫斯科後開啟；史密斯內容另需里昂取得巴德萊爾並以他重訪。",
+    "obtainableCharacterIds": [
+      "smith"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "BS 改造兵・男",
+        "nameJa": "BS改造兵・男",
+        "nameEn": "B.S. Modified Soldier (Male)",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "BS 改造兵・犬",
+        "nameJa": "BS改造兵・犬",
+        "nameEn": "B.S. Modified Soldier (Dog)",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-mid-london-chain",
+      "route-optional-sicily"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-midgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/london-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中倫敦的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/London",
+        "mapPageRevisionId": 455321,
+        "fileTitle": "File:Maken X London location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_London_location.png",
+        "fileRevisionId": 451061,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/76/Maken_X_London_location.png/revision/latest?cb=20220214094806",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 21318,
+        "sha256": "9c02b6b916bba429a14fba207c211832b083a4d5dd175d3d82b439d736fe1263",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 396449,
+        "sourceSha1": "291c7931b8ca1600081665b40537a105bf16028d",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:48:06Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 London 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/76/Maken_X_London_location.png/revision/latest/scale-to-width-down/640?cb=20220214094806"
+      },
+      {
+        "path": "assets/images/maps/london-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中倫敦的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/London",
+        "mapPageRevisionId": 455321,
+        "fileTitle": "File:Maken X London map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_London_map.png",
+        "fileRevisionId": 451099,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/7e/Maken_X_London_map.png/revision/latest?cb=20220214100508",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 42784,
+        "sha256": "83624fc704f24f309b4fa3f44f0f6590c9307dbb5888aea7f7de6d8e9d8c9364",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 69739,
+        "sourceSha1": "d68a02e03b83bac934310530101935c5e7221140",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:05:08Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 London 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/7e/Maken_X_London_map.png/revision/latest?cb=20220214100508"
+      },
+      {
+        "path": "assets/images/maps/london-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中倫敦的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/London",
+        "mapPageRevisionId": 455321,
+        "fileTitle": "File:Maken X London.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_London.png",
+        "fileRevisionId": 450985,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/e/e2/Maken_X_London.png/revision/latest?cb=20220214092759",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 33006,
+        "sha256": "fcb8f7797aa88c9c7a1b3788947d82bfef36a44e0b6ec6189f0548c2c5576a47",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 566417,
+        "sourceSha1": "569f58e261a0a71d781f217c9fc9a9723a9970ac",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:27:59Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 London 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/e/e2/Maken_X_London.png/revision/latest/scale-to-width-down/640?cb=20220214092759"
+      }
+    ]
+  },
+  {
+    "id": "amsterdam",
+    "sequence": 10,
+    "title": "阿姆斯特丹｜アムステルダム｜Amsterdam",
+    "nameZhHant": "阿姆斯特丹",
+    "nameJa": "アムステルダム",
+    "nameEn": "Amsterdam",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "阿姆斯特丹",
+      "アムステルダム",
+      "Amsterdam"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "中盤西線末端；無論和平或戰鬥取得拉姆羅德都可滿足里昂主線，但只有和平結果開啟維也納。",
+    "story": "拉姆羅德的問答決定是否交戰；取得他是西線結果，和平取得另保留維也納支線。",
+    "structure": "BS 改造男兵、犬兵、女兵混合配置，終段為拉姆羅德事件。",
+    "requiredMapIds": [
+      "london"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "完成倫敦首次流程後開啟；和平取得拉姆羅德才會開啟維也納。",
+    "obtainableCharacterIds": [
+      "ramrod"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "BS 改造兵・男",
+        "nameJa": "BS改造兵・男",
+        "nameEn": "B.S. Modified Soldier (Male)",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "BS 改造兵・犬",
+        "nameJa": "BS改造兵・犬",
+        "nameEn": "B.S. Modified Soldier (Dog)",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "BS 改造兵・女",
+        "nameJa": "BS改造兵・女",
+        "nameEn": "B.S. Modified Soldier (Female)",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "拉姆羅德",
+        "nameJa": "ラムロッド",
+        "nameEn": "Ramrod",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-mid-london-chain"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-midgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/amsterdam-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中阿姆斯特丹的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Amsterdam",
+        "mapPageRevisionId": 455322,
+        "fileTitle": "File:Maken X Amsterdam location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Amsterdam_location.png",
+        "fileRevisionId": 451055,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a9/Maken_X_Amsterdam_location.png/revision/latest?cb=20220214094602",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 24020,
+        "sha256": "8425c3a91ddbe8e8e28a02305b55f8bc495601df85489566f8ace8b17501d6b8",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 410453,
+        "sourceSha1": "885182b5fe7c493f3f0d814ba95801c811a1bba6",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:46:02Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Amsterdam 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a9/Maken_X_Amsterdam_location.png/revision/latest/scale-to-width-down/640?cb=20220214094602"
+      },
+      {
+        "path": "assets/images/maps/amsterdam-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中阿姆斯特丹的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Amsterdam",
+        "mapPageRevisionId": 455322,
+        "fileTitle": "File:Maken X Amsterdam map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Amsterdam_map.png",
+        "fileRevisionId": 451092,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b0/Maken_X_Amsterdam_map.png/revision/latest?cb=20220214100326",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 36486,
+        "sha256": "e422728eac81d5a2621bb192ced08d437f6281dd5b8d2c112211926a412c525a",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 59744,
+        "sourceSha1": "023b8c627a0f68ebaf054be0429103b75db21ad4",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:03:26Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Amsterdam 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b0/Maken_X_Amsterdam_map.png/revision/latest?cb=20220214100326"
+      },
+      {
+        "path": "assets/images/maps/amsterdam-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中阿姆斯特丹的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Amsterdam",
+        "mapPageRevisionId": 455322,
+        "fileTitle": "File:Maken X Amsterdam.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Amsterdam.png",
+        "fileRevisionId": 450978,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/01/Maken_X_Amsterdam.png/revision/latest?cb=20220214092542",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 29552,
+        "sha256": "d2410ca371091425e125d05b132442c83b384bebda4a324bc0f93f06ff64c964",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 534009,
+        "sourceSha1": "226bc801d977cc9ff1a462f504e514d273e5f7ff",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:25:42Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Amsterdam 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/01/Maken_X_Amsterdam.png/revision/latest/scale-to-width-down/640?cb=20220214092542"
+      }
+    ]
+  },
+  {
+    "id": "vienna",
+    "sequence": 11,
+    "title": "維也納｜ウィーン｜Vienna",
+    "nameZhHant": "維也納",
+    "nameJa": "ウィーン",
+    "nameEn": "Vienna",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "維也納",
+      "ウィーン",
+      "Vienna"
+    ],
+    "mapType": "optional",
+    "isMainMap": false,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "獨立可選支線；和平取得拉姆羅德後開啟，終點為八卦瑪格麗特。",
+    "story": "拉姆羅德與瑪格麗特的角色事件；若阿姆斯特丹與拉姆羅德交戰，此圖不會開啟。",
+    "structure": "大量 BS 改造犬、女兵與 BS 木馬後接瑪格麗特戰；途中門鎖需拉姆羅德。",
+    "requiredMapIds": [
+      "amsterdam"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "需在阿姆斯特丹以 YES 或 NO→NO 和平取得拉姆羅德；入口門需拉姆羅德。",
+    "obtainableCharacterIds": [
+      "margarete"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "BS 改造兵・犬",
+        "nameJa": "BS改造兵・犬",
+        "nameEn": "B.S. Modified Soldier (Dog)",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "BS 改造兵・女",
+        "nameJa": "BS改造兵・女",
+        "nameEn": "B.S. Modified Soldier (Female)",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "BS 木馬",
+        "nameJa": "BS木馬",
+        "nameEn": "B.S. Wooden Horse",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "瑪格麗特",
+        "nameJa": "マルガレーテ",
+        "nameEn": "Margarete",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-optional-vienna"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-midgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/vienna-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中維也納的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Vienna",
+        "mapPageRevisionId": 451125,
+        "fileTitle": "File:Maken X Vienna location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Vienna_location.png",
+        "fileRevisionId": 451069,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/4/41/Maken_X_Vienna_location.png/revision/latest?cb=20220214095009",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 28374,
+        "sha256": "cf74cfa1d127d6131b29931f5a4a6270cfc3d2617c96e5e870545b4910f95050",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 472706,
+        "sourceSha1": "72867455296193f648e787e77af0a047215c2f84",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:50:09Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Vienna 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/4/41/Maken_X_Vienna_location.png/revision/latest/scale-to-width-down/640?cb=20220214095009"
+      },
+      {
+        "path": "assets/images/maps/vienna-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中維也納的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Vienna",
+        "mapPageRevisionId": 451125,
+        "fileTitle": "File:Maken X Vienna map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Vienna_map.png",
+        "fileRevisionId": 451108,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/f/fc/Maken_X_Vienna_map.png/revision/latest?cb=20220214100713",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 31506,
+        "sha256": "fc09687bbf643371625bda415be322d3d8e69fd342c8aaf5d0f6f3d0eb6bbf11",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 51822,
+        "sourceSha1": "7bfe3eb7ad7ddf50c8d5152487a1f3bbd233ea95",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:07:13Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Vienna 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/f/fc/Maken_X_Vienna_map.png/revision/latest?cb=20220214100713"
+      },
+      {
+        "path": "assets/images/maps/vienna-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中維也納的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Vienna",
+        "mapPageRevisionId": 451125,
+        "fileTitle": "File:Maken X Vienna.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Vienna.png",
+        "fileRevisionId": 450994,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/8/80/Maken_X_Vienna.png/revision/latest?cb=20220214093034",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 38902,
+        "sha256": "0ea355f27fb729e07fc6ed0e7b6d05e165c9cdc9ea2bf2da67dae61e62cf7c35",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 609149,
+        "sourceSha1": "6cef731437592bb1dbcc6c1021cd13cb893b981d",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:30:34Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Vienna 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/8/80/Maken_X_Vienna.png/revision/latest/scale-to-width-down/640?cb=20220214093034"
+      }
+    ]
+  },
+  {
+    "id": "lyon",
+    "sequence": 12,
+    "title": "里昂｜リヨン｜Lyon",
+    "nameZhHant": "里昂",
+    "nameJa": "リヨン",
+    "nameEn": "Lyon",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "里昂",
+      "リヨン",
+      "Lyon"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "完成阿姆斯特丹與首次梵蒂岡兩條主鏈後進入的中盤匯合點；完成後開啟里斯本。",
+    "story": "在此取得封劍士巴德萊爾；他也是重訪倫敦、開啟西西里支線的必要宿主。",
+    "structure": "Moss Gang 與 Bazooka 為主要敵人，路段多次要求反彈射擊，終段為巴德萊爾事件。",
+    "requiredMapIds": [
+      "amsterdam",
+      "vatican"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "必須完成阿姆斯特丹與梵蒂岡首次流程；維也納、特蘭西瓦尼亞不是必要前置。",
+    "obtainableCharacterIds": [
+      "badelaire"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "蛾幫成員",
+        "nameJa": "モスギャング",
+        "nameEn": "Moss Gang",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "火箭筒兵",
+        "nameJa": "バズーカ",
+        "nameEn": "Bazooka",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "巴德萊爾",
+        "nameJa": "バデレール",
+        "nameEn": "Badelaire",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-convergence-lyon"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-midgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/lyon-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中里昂的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Lyon",
+        "mapPageRevisionId": 455125,
+        "fileTitle": "File:Maken X Lyon location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Lyon_location.png",
+        "fileRevisionId": 451062,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/3/3c/Maken_X_Lyon_location.png/revision/latest?cb=20220214094820",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 21638,
+        "sha256": "4175913e53d462d063f34825bd340eb713b53fb7355dc48e92a3590d827e71e2",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 382345,
+        "sourceSha1": "155be0e458b6c6dc50dcc71990eadd7baca52efc",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:48:20Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Lyon 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/3/3c/Maken_X_Lyon_location.png/revision/latest/scale-to-width-down/640?cb=20220214094820"
+      },
+      {
+        "path": "assets/images/maps/lyon-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中里昂的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Lyon",
+        "mapPageRevisionId": 455125,
+        "fileTitle": "File:Maken X Lyon map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Lyon_map.png",
+        "fileRevisionId": 451100,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/0c/Maken_X_Lyon_map.png/revision/latest?cb=20220214100522",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 38348,
+        "sha256": "6626aea8ebc4b11448f14a86c9f334758e95b21bfe8cfe93cb5ac4c87ddb1be7",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 63580,
+        "sourceSha1": "4da1b504ea795b60fb508e0ba055b58ce1749e1e",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:05:22Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Lyon 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/0c/Maken_X_Lyon_map.png/revision/latest?cb=20220214100522"
+      },
+      {
+        "path": "assets/images/maps/lyon-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中里昂的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Lyon",
+        "mapPageRevisionId": 455125,
+        "fileTitle": "File:Maken X Lyon.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Lyon.png",
+        "fileRevisionId": 450986,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/0d/Maken_X_Lyon.png/revision/latest?cb=20220214092811",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 30608,
+        "sha256": "3474e85af839edd6c9c954996575bf1aec61c75054f47d72f3e8b7039fb5de60",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 605524,
+        "sourceSha1": "ad69601abf71c87a845796415fdde69446afdfe7",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:28:11Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Lyon 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/0d/Maken_X_Lyon.png/revision/latest/scale-to-width-down/640?cb=20220214092811"
+      }
+    ]
+  },
+  {
+    "id": "sicily",
+    "sequence": 13,
+    "title": "西西里｜シシリー｜Sicily",
+    "nameZhHant": "西西里",
+    "nameJa": "シシリー",
+    "nameEn": "Sicily",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "西西里",
+      "西西里島",
+      "シシリー",
+      "Sicily"
+    ],
+    "mapType": "optional",
+    "isMainMap": false,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "由巴德萊爾重訪倫敦並取得史密斯後開啟的可選支線。",
+    "story": "終段擊敗並取得唐・馬爾卡拉；其宿主可在梵蒂岡打開雷的追加區域。",
+    "structure": "來源只把一般戰稱為雜兵戰，未提供可安全列名的一般敵；終段為馬爾卡拉。",
+    "requiredMapIds": [
+      "lyon",
+      "london"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "需在里昂取得巴德萊爾，以他重訪倫敦並取得史密斯；首道門仍需巴德萊爾。",
+    "obtainableCharacterIds": [
+      "don-marcala"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "唐・馬爾卡拉",
+        "nameJa": "ドン・マルカラ",
+        "nameEn": "Don Marcala",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-optional-sicily"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-midgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/sicily-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中西西里的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Sicily",
+        "mapPageRevisionId": 472724,
+        "fileTitle": "File:Maken X Sicily map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Sicily_map.png",
+        "fileRevisionId": 451103,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/2/2b/Maken_X_Sicily_map.png/revision/latest?cb=20220214100606",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 38580,
+        "sha256": "0e9fcb7dbf292d00a2c2189a5da4aadf1d2be850bc2cb48feb0e17f45fee6f0f",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 63471,
+        "sourceSha1": "7d3b20d214951bdee27b246ecbbd552f1124663a",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:06:06Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Sicily 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/2/2b/Maken_X_Sicily_map.png/revision/latest?cb=20220214100606"
+      },
+      {
+        "path": "assets/images/maps/sicily-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中西西里的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Sicily",
+        "mapPageRevisionId": 472724,
+        "fileTitle": "File:Maken X Sicily.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Sicily.png",
+        "fileRevisionId": 450990,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/5c/Maken_X_Sicily.png/revision/latest?cb=20220214092931",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 23696,
+        "sha256": "91f013357e8c1a6a87366f2e5eba2eff504bb3098a234d7f71b95529a66ea89f",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 445716,
+        "sourceSha1": "2748cd60927d5b28d43a9ab99ae0c68ec857bab9",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:29:31Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Sicily 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/5c/Maken_X_Sicily.png/revision/latest/scale-to-width-down/640?cb=20220214092931"
+      }
+    ]
+  },
+  {
+    "id": "vatican",
+    "sequence": 14,
+    "title": "梵蒂岡｜バチカン｜Vatican",
+    "nameZhHant": "梵蒂岡",
+    "nameJa": "バチカン",
+    "nameEn": "Vatican",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "梵蒂岡",
+      "梵蒂岡城",
+      "バチカン",
+      "Vatican",
+      "Vatican City"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "中盤東線末端；首次短程完成是進入里昂的必要條件，雷的房間則是可選追加內容。",
+    "story": "首次到訪可直接完成主線；取得唐・馬爾卡拉後重訪，才可開啟雷的房間並取得他。",
+    "structure": "一般敵僅明列少量 Messiah 狂信者；追加區域終段為雷，戰中亦會召喚狂信者。",
+    "requiredMapIds": [
+      "athens"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "完成雅典後開啟；雷的追加 Boss 區另需在西西里取得唐・馬爾卡拉並以他開門。",
+    "obtainableCharacterIds": [
+      "rei"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "彌賽亞狂信者",
+        "nameJa": "メシア狂信者",
+        "nameEn": "Messianic Believer",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      },
+      {
+        "nameZhHant": "雷",
+        "nameJa": "レイ",
+        "nameEn": "Rei",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-midgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-mid-istanbul-chain",
+      "route-optional-sicily"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-midgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/vatican-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中梵蒂岡的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Vatican_City",
+        "mapPageRevisionId": 452106,
+        "fileTitle": "File:Maken X Vatican location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Vatican_location.png",
+        "fileRevisionId": 451068,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/d/d9/Maken_X_Vatican_location.png/revision/latest?cb=20220214094949",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 28482,
+        "sha256": "92008b818920dd805d21e6732b8a4bbec483b7d6d826a48ec32245fd5f1453d7",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 452362,
+        "sourceSha1": "f1d90cc99fc01a6c202adda27a67c63f61aed03d",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:49:49Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Vatican 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/d/d9/Maken_X_Vatican_location.png/revision/latest/scale-to-width-down/640?cb=20220214094949"
+      },
+      {
+        "path": "assets/images/maps/vatican-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中梵蒂岡的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Vatican_City",
+        "mapPageRevisionId": 452106,
+        "fileTitle": "File:Maken X Vatican map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Vatican_map.png",
+        "fileRevisionId": 451107,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/1/12/Maken_X_Vatican_map.png/revision/latest?cb=20220214100703",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 36310,
+        "sha256": "948a0007b51149037e9010f0d3d04171e36248fac3f659d988a512ee98f5b5ba",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 61202,
+        "sourceSha1": "cfa215b3f87a005156e47c8c91f625e999d98f86",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:07:03Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Vatican 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/1/12/Maken_X_Vatican_map.png/revision/latest?cb=20220214100703"
+      },
+      {
+        "path": "assets/images/maps/vatican-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中梵蒂岡的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Vatican_City",
+        "mapPageRevisionId": 452106,
+        "fileTitle": "File:Maken X Vatican.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Vatican.png",
+        "fileRevisionId": 450993,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/e/e1/Maken_X_Vatican.png/revision/latest?cb=20220214093018",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 27396,
+        "sha256": "bdafb0f333d4deae36b1737a1214a4b7d7bb97b9e014f03497ec10a39630d959",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 534290,
+        "sourceSha1": "f6a80b8ec4b49f6db9ae460bfe396b73a1f1922a",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:30:18Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Vatican 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/e/e1/Maken_X_Vatican.png/revision/latest/scale-to-width-down/640?cb=20220214093018"
+      }
+    ]
+  },
+  {
+    "id": "lisbon",
+    "sequence": 15,
+    "title": "里斯本｜リスボン｜Lisbon",
+    "nameZhHant": "里斯本",
+    "nameJa": "リスボン",
+    "nameEn": "Lisbon",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "里斯本",
+      "リスボン",
+      "Lisbon"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "終盤總分歧點；先前擊倒陣營與兩段回答會分流至麥加或巴西。",
+    "story": "特定路線會連戰山城弘與卡蒂，之後可取得卡蒂；進入終盤也會鎖定先前未取得的角色。",
+    "structure": "混合重現 BS 改造男兵、Cannon、Bazooka、Grenade；Boss 組合依路線而異。",
+    "requiredMapIds": [
+      "lyon"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "完成里昂後開啟；西西里與其他可選支線不是必要前置。",
+    "obtainableCharacterIds": [
+      "kati"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "BS 改造兵・男",
+        "nameJa": "BS改造兵・男",
+        "nameEn": "B.S. Modified Soldier (Male)",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "加農炮兵",
+        "nameJa": "キャノン",
+        "nameEn": "Cannon",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "火箭筒兵",
+        "nameJa": "バズーカ",
+        "nameEn": "Bazooka",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "榴彈兵",
+        "nameJa": "グレネード",
+        "nameEn": "Grenade",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "山城弘",
+        "nameJa": "コウ",
+        "nameEn": "Kou Yamashiro",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "卡蒂",
+        "nameJa": "カティ",
+        "nameEn": "Kati",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-endgame-lisbon"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-endgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-late-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/lisbon-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中里斯本的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Lisbon",
+        "mapPageRevisionId": 452138,
+        "fileTitle": "File:Maken X Lisbon map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Lisbon_map.png",
+        "fileRevisionId": 451098,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/9/96/Maken_X_Lisbon_map.png/revision/latest?cb=20220214100458",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 36050,
+        "sha256": "94f3fad6fe0fad23074b564abc0d2023675e9cd36b43099996b1f9ec764aaf2e",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 58324,
+        "sourceSha1": "5f4688d782b5601888e2741b55deff86068abfb8",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:04:58Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Lisbon 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/9/96/Maken_X_Lisbon_map.png/revision/latest?cb=20220214100458"
+      },
+      {
+        "path": "assets/images/maps/lisbon-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中里斯本的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Lisbon",
+        "mapPageRevisionId": 452138,
+        "fileTitle": "File:Maken X Lisbon.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Lisbon.png",
+        "fileRevisionId": 450984,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b1/Maken_X_Lisbon.png/revision/latest?cb=20220214092743",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 26306,
+        "sha256": "38da3410ad81e8205599815a5f91660a9ebd34b27a1e2f8a1d868fb8c2e2ccb6",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 523572,
+        "sourceSha1": "cd2542e22d47da87e3a6af17d38a6d5da0bcb871",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:27:43Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Lisbon 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b1/Maken_X_Lisbon.png/revision/latest/scale-to-width-down/640?cb=20220214092743"
+      }
+    ]
+  },
+  {
+    "id": "mecca",
+    "sequence": 16,
+    "title": "麥加｜メッカ｜Mecca",
+    "nameZhHant": "麥加",
+    "nameJa": "メッカ",
+    "nameEn": "Mecca",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "麥加",
+      "メッカ",
+      "Mecca",
+      "麥加（1）",
+      "麥加（2）",
+      "メッカ（1）",
+      "メッカ（2）"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "具有兩種劇情旗標的同一張終盤地圖；後續可分流巴西、華盛頓或崑崙。",
+    "story": "路線狀態決定尤瑟夫事件；部分分支戰後可取得他，特定回答則不戰鬥並轉往崑崙。",
+    "structure": "兩種旗標共用地圖與 Motor-Buraq 配置；尤瑟夫 Boss 戰是否發生取決於分支。",
+    "requiredMapIds": [
+      "lisbon"
+    ],
+    "anyOfRequiredMapIds": [],
+    "unlockNote": "由里斯本依陣營擊倒數與回答組合進入；「麥加（1）／（2）」是同圖不同事件狀態。",
+    "obtainableCharacterIds": [
+      "yusuf"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "摩托布拉克",
+        "nameJa": "モーターブラーク",
+        "nameEn": "Motor-Buraq",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "優素福",
+        "nameJa": "ユースフ",
+        "nameEn": "Yusuf",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-endgame-mecca"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-endgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-late-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/mecca-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中麥加的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Mecca",
+        "mapPageRevisionId": 455134,
+        "fileTitle": "File:Maken X Mecca location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Mecca_location.png",
+        "fileRevisionId": 451063,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/09/Maken_X_Mecca_location.png/revision/latest?cb=20220214094834",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 24598,
+        "sha256": "df35b616c5fb33a3ff4dee377e80be518afcbe472361d501c2a52d07300a2247",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 384666,
+        "sourceSha1": "c032d928fa9f0a8a20faaa0427269c350bf3e383",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:48:34Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Mecca 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/0/09/Maken_X_Mecca_location.png/revision/latest/scale-to-width-down/640?cb=20220214094834"
+      },
+      {
+        "path": "assets/images/maps/mecca-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中麥加的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Mecca",
+        "mapPageRevisionId": 455134,
+        "fileTitle": "File:Maken X Mecca map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Mecca_map.png",
+        "fileRevisionId": 451101,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/6/63/Maken_X_Mecca_map.png/revision/latest?cb=20220214100538",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 32730,
+        "sha256": "0cb179f6e45d9fa7dd62ca82d5d24e7ec1bef26e31634c6346596f239b921a5b",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 53247,
+        "sourceSha1": "94affc40dae0654154befa09d47ab3fbd721cf39",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:05:38Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Mecca 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/6/63/Maken_X_Mecca_map.png/revision/latest?cb=20220214100538"
+      },
+      {
+        "path": "assets/images/maps/mecca-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中麥加的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Mecca",
+        "mapPageRevisionId": 455134,
+        "fileTitle": "File:Maken X Mecca.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Mecca.png",
+        "fileRevisionId": 450987,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/2/2b/Maken_X_Mecca.png/revision/latest?cb=20220214092827",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 34440,
+        "sha256": "a28b6570da5a948b0c52df5a2b3bb963b00db675fa5448ccae3eaae71f97c1f6",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 589787,
+        "sourceSha1": "38d22d9db76afb71a523d1ed6f5c02e1a500b4ee",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:28:27Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Mecca 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/2/2b/Maken_X_Mecca.png/revision/latest/scale-to-width-down/640?cb=20220214092827"
+      }
+    ]
+  },
+  {
+    "id": "brazil",
+    "sequence": 17,
+    "title": "巴西｜ブラジル｜Brazil",
+    "nameZhHant": "巴西",
+    "nameJa": "ブラジル",
+    "nameEn": "Brazil",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "巴西",
+      "ブラジル",
+      "Brazil",
+      "巴西（1）",
+      "巴西（2）",
+      "巴西（3）",
+      "ブラジル（1）",
+      "ブラジル（2）",
+      "ブラジル（3）"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "具有三種事件旗標的同一張終盤地圖；出口可通往華盛頓或直接進入紫禁城。",
+    "story": "吉尼斯博士的問答與路線狀態決定山城弘或卡蒂事件，以及是否跳過華盛頓。",
+    "structure": "三種旗標共用一般敵攻略；Amazon、Iron Bow、Shadow Leg 與不可破壞的浮遊機雷構成主要障礙。",
+    "requiredMapIds": [],
+    "anyOfRequiredMapIds": [
+      "lisbon",
+      "mecca"
+    ],
+    "unlockNote": "可由里斯本直接進入或經麥加進入；「巴西（1）／（2）／（3）」是同圖不同事件狀態。",
+    "obtainableCharacterIds": [
+      "kou-yamashiro",
+      "kati"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "亞馬遜女戰士",
+        "nameJa": "アマゾン",
+        "nameEn": "Amazon",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "鐵弓",
+        "nameJa": "鉄弓",
+        "nameEn": "Iron Bow",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "影腳",
+        "nameJa": "影脚",
+        "nameEn": "Shadow Leg",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "浮遊機雷",
+        "nameJa": "浮遊機雷",
+        "nameEn": null,
+        "type": "hazard",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "卡蒂",
+        "nameJa": "カティ",
+        "nameEn": "Kati",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-endgame-brazil"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-endgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-late-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/brazil-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中巴西的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Amazon_(location)",
+        "mapPageRevisionId": 452113,
+        "fileTitle": "File:Maken X Amazon location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Amazon_location.png",
+        "fileRevisionId": 451054,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b3/Maken_X_Amazon_location.png/revision/latest?cb=20220214094544",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 25536,
+        "sha256": "1bd6a0f49819f1ef3dc4eec07a5b1418a296ad6d4ea1f67bf2d28240251eb730",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 444155,
+        "sourceSha1": "9be0e047f4bcd67afb2c5a9c079abaab09cb14ba",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:45:44Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Brazil 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/b/b3/Maken_X_Amazon_location.png/revision/latest/scale-to-width-down/640?cb=20220214094544"
+      },
+      {
+        "path": "assets/images/maps/brazil-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中巴西的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Amazon_(location)",
+        "mapPageRevisionId": 452113,
+        "fileTitle": "File:Maken X Amazon map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Amazon_map.png",
+        "fileRevisionId": 451091,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/51/Maken_X_Amazon_map.png/revision/latest?cb=20220214100312",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 37732,
+        "sha256": "393bee81b5f1edd235e0a55550d6bbf9dcbae6408b841e3dc093c4575ae0e6d3",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 61757,
+        "sourceSha1": "0aa6b0f9d98ef9bc06b649d726e34bac4c35a78f",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:03:12Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Brazil 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/5/51/Maken_X_Amazon_map.png/revision/latest?cb=20220214100312"
+      },
+      {
+        "path": "assets/images/maps/brazil-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中巴西的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Amazon_(location)",
+        "mapPageRevisionId": 452113,
+        "fileTitle": "File:Maken X Amazon.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Amazon.png",
+        "fileRevisionId": 450977,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/6/60/Maken_X_Amazon.png/revision/latest?cb=20220214092527",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 39954,
+        "sha256": "c72e0129c180ccb88d1ed1fef881decc39c8f2812707fd74b4eddef94fcd4651",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 598724,
+        "sourceSha1": "2a98050baf1afc4356a5340c29cdbed3facca03f",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:25:27Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Brazil 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/6/60/Maken_X_Amazon.png/revision/latest/scale-to-width-down/640?cb=20220214092527"
+      }
+    ]
+  },
+  {
+    "id": "washington",
+    "sequence": 18,
+    "title": "華盛頓｜ワシントン｜Washington",
+    "nameZhHant": "華盛頓",
+    "nameJa": "ワシントン",
+    "nameEn": "Washington",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "華盛頓",
+      "ワシントン",
+      "Washington"
+    ],
+    "mapType": "main",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "紫禁城前的條件節點；可由多個麥加／巴西分支到達，但並非所有紫禁城路線都必經。",
+    "story": "在此迎戰並取得八卦威廉，完成後前往紫禁城。",
+    "structure": "一般敵只有 X-66；威廉第一階段沿用相近攻擊方式，之後進入 Boss 後續階段。",
+    "requiredMapIds": [],
+    "anyOfRequiredMapIds": [
+      "mecca",
+      "brazil"
+    ],
+    "unlockNote": "由麥加或巴西的特定終盤分支進入；完成後開啟紫禁城。",
+    "obtainableCharacterIds": [
+      "william"
+    ],
+    "enemies": [
+      {
+        "nameZhHant": "X-66",
+        "nameJa": "X-66",
+        "nameEn": "X-66",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "威廉",
+        "nameJa": "ウィリアム",
+        "nameEn": "William",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-endgame-washington"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-endgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-late-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/washington-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中華盛頓的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Washington",
+        "mapPageRevisionId": 452140,
+        "fileTitle": "File:Maken X Washington location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Washington_location.png",
+        "fileRevisionId": 451070,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/9/91/Maken_X_Washington_location.png/revision/latest?cb=20220214095024",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 24526,
+        "sha256": "3c0763dab87b1d6f765c90c586b6bda296587608a420a4f338a90d52dc289fd4",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 400460,
+        "sourceSha1": "7ec5d0b8e6a5e0e66bb152c2e69d7c8556b87fdb",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:50:24Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Washington 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/9/91/Maken_X_Washington_location.png/revision/latest/scale-to-width-down/640?cb=20220214095024"
+      },
+      {
+        "path": "assets/images/maps/washington-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中華盛頓的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Washington",
+        "mapPageRevisionId": 452140,
+        "fileTitle": "File:Maken X Washington map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Washington_map.png",
+        "fileRevisionId": 451109,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a5/Maken_X_Washington_map.png/revision/latest?cb=20220214100726",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 23570,
+        "sha256": "30dea9256e43d9ebadbf9c7bf5aafe975009c07dc8ff69d4afff86d33c03e9f4",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 41050,
+        "sourceSha1": "3a1f4cf682160a77a76f7fb059336cd82b4245a4",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:07:26Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Washington 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a5/Maken_X_Washington_map.png/revision/latest?cb=20220214100726"
+      },
+      {
+        "path": "assets/images/maps/washington-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中華盛頓的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/Washington",
+        "mapPageRevisionId": 452140,
+        "fileTitle": "File:Maken X Washington.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Washington.png",
+        "fileRevisionId": 450995,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/f/fe/Maken_X_Washington.png/revision/latest?cb=20220214093053",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 28780,
+        "sha256": "289ca8eb9496f86f5c4e3fd893a93b96c6399e4d16471bcfbd0d8f4a8d0d7d45",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 492677,
+        "sourceSha1": "22ecbce9a63aa6cd93a286b2ca5dacee2a615a56",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:30:53Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Washington 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/f/fe/Maken_X_Washington.png/revision/latest/scale-to-width-down/640?cb=20220214093053"
+      }
+    ]
+  },
+  {
+    "id": "forbidden-city",
+    "sequence": 19,
+    "title": "紫禁城｜紫禁城｜Forbidden City",
+    "nameZhHant": "紫禁城",
+    "nameJa": "紫禁城",
+    "nameEn": "Forbidden City",
+    "nameEnStatus": "geographic-or-romanized",
+    "linkAliases": [
+      "紫禁城",
+      "Forbidden City",
+      "The Forbidden City"
+    ],
+    "mapType": "ending",
+    "isMainMap": true,
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "lastVerified": "2026-07-17",
+    "summary": "終盤終點之一；可由華盛頓進入，也有從巴西直接抵達、跳過華盛頓的路線。",
+    "story": "路線狀態會改變山城弘事件、強制宿主與天尊流星終戰／提案，但仍屬同一張地圖。",
+    "structure": "配置 Bazooka、Grenade、Dancer 與描述性的鳥型轟炸機；Boss 可包含山城弘與天尊流星。",
+    "requiredMapIds": [],
+    "anyOfRequiredMapIds": [
+      "washington",
+      "brazil"
+    ],
+    "unlockNote": "完成華盛頓，或由巴西（1）的特定回答強制取得山城弘後直達。",
+    "obtainableCharacterIds": [],
+    "enemies": [
+      {
+        "nameZhHant": "火箭筒兵",
+        "nameJa": "バズーカ",
+        "nameEn": "Bazooka",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "榴彈兵",
+        "nameJa": "グレネード",
+        "nameEn": "Grenade",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "舞者",
+        "nameJa": "ダンサー",
+        "nameEn": "Dancer",
+        "type": "standard-enemy",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "鳥型轟炸機",
+        "nameJa": "鳥型爆撃機",
+        "nameEn": null,
+        "type": "hazard",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "山城弘",
+        "nameJa": "コウ",
+        "nameEn": "Kou Yamashiro",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      },
+      {
+        "nameZhHant": "天尊流星",
+        "nameJa": "天尊流星",
+        "nameEn": "Mr. Meteor",
+        "type": "boss",
+        "sourceIds": [
+          "gamehyoron-maken-shao-endgame"
+        ]
+      }
+    ],
+    "walkthroughIds": [
+      "route-ending-forbidden-city"
+    ],
+    "sourceIds": [
+      "gamehyoron-maken-shao-stage-index",
+      "gamehyoron-maken-shao-endgame",
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-late-chart",
+      "megaten-wiki-maken-x-locations"
+    ],
+    "images": [
+      {
+        "path": "assets/images/maps/forbidden-city-globe-marker.webp",
+        "alt": "Dreamcast《Maken X》中紫禁城的地球儀地圖點畫面",
+        "kind": "globe-marker",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/The_Forbidden_City",
+        "mapPageRevisionId": 592820,
+        "fileTitle": "File:Maken X China location.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_China_location.png",
+        "fileRevisionId": 451057,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/d/d4/Maken_X_China_location.png/revision/latest?cb=20220214094638",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 326,
+        "bytes": 30044,
+        "sha256": "a5bcbaa4733636d1ce6c8d722b5d8f3f79939aa90db7e6f51f630e1b58175c47",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 521,
+        "sourceBytes": 483385,
+        "sourceSha1": "2597c687f5446946689a61d33bb8c9253248ac88",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:46:38Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Forbidden City 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/d/d4/Maken_X_China_location.png/revision/latest/scale-to-width-down/640?cb=20220214094638"
+      },
+      {
+        "path": "assets/images/maps/forbidden-city-map-structure.webp",
+        "alt": "Dreamcast《Maken X》中紫禁城的Stage Preview 地圖構造畫面",
+        "kind": "map-structure",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/The_Forbidden_City",
+        "mapPageRevisionId": 592820,
+        "fileTitle": "File:Maken X China map.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_China_map.png",
+        "fileRevisionId": 451094,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/9/9a/Maken_X_China_map.png/revision/latest?cb=20220214100354",
+        "mime": "image/webp",
+        "width": 512,
+        "height": 256,
+        "bytes": 41596,
+        "sha256": "785c2ef3596dd961f8316dbc6098636bad636615a759d24c2678cf3b83fbbde8",
+        "sourceMime": "image/png",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "sourceBytes": 70831,
+        "sourceSha1": "2299fb90089dc22c7e02146416268133c304cbf8",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T10:03:54Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Forbidden City 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/9/9a/Maken_X_China_map.png/revision/latest?cb=20220214100354"
+      },
+      {
+        "path": "assets/images/maps/forbidden-city-landmark-gameplay.webp",
+        "alt": "Dreamcast《Maken X》中紫禁城的標誌性遊戲場景畫面",
+        "kind": "landmark-gameplay",
+        "sourceId": "megaten-wiki-maken-x-locations",
+        "sourcePageUrl": "https://megamitensei.fandom.com/wiki/The_Forbidden_City",
+        "mapPageRevisionId": 592820,
+        "fileTitle": "File:Maken X Forbidden City.png",
+        "filePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken_X_Forbidden_City.png",
+        "fileRevisionId": 450980,
+        "originalUrl": "https://static.wikia.nocookie.net/megamitensei/images/8/82/Maken_X_Forbidden_City.png/revision/latest?cb=20220214092620",
+        "mime": "image/webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 17068,
+        "sha256": "9abb11c41c82508ca3d20dabaa1d433d1f77c8cd9648a9484b1529cefaaac7c6",
+        "sourceMime": "image/png",
+        "sourceWidth": 1024,
+        "sourceHeight": 576,
+        "sourceBytes": 411755,
+        "sourceSha1": "449ca1c9a477ab30877b7a6ed3e6d4ca7660d2b7",
+        "sourceUploader": "Doctor of Faces",
+        "sourceUploadedAt": "2022-02-14T09:26:20Z",
+        "gameVersionScope": "maken-x-dreamcast",
+        "associationNote": "MegaTen Wiki 的地圖頁將此檔列為 Forbidden City 的《Maken X》Dreamcast 地點圖片。只用於跨版本視覺介紹；PS2 日版的劇情、前置條件、角色與敵人均由各自的日版來源核實。",
+        "rightsNote": "遊戲畫面著作權屬原權利人；Wiki 檔案頁沒有提供明確再散布授權。本站依使用者指定，以縮至最長邊 640px 的 WebP、完整來源與權利警語作地圖辨識及評論，不主張圖像權利或自由再散布授權。",
+        "derivativeUrl": "https://static.wikia.nocookie.net/megamitensei/images/8/82/Maken_X_Forbidden_City.png/revision/latest/scale-to-width-down/640?cb=20220214092620"
+      }
+    ]
+  }
+]

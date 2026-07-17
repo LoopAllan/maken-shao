@@ -130,6 +130,13 @@ test('registers world and systems datasets for v0.2 validation', () => {
   assert.deepEqual(datasets['systems.json'], { schema: 'system.schema.json', type: 'system' });
 });
 
+test('registers maps in validation and site-wide search datasets', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  assert.deepEqual(datasets['maps.json'], { schema: 'map.schema.json', type: 'map' });
+  const loader = await readFile(path.join(root, 'assets/js/data-loader.js'), 'utf8');
+  assert.match(loader, /datasets\s*=\s*\[[^\]]*['"]maps['"]/);
+});
+
 test('keeps v0.2 entries PS2-scoped and linked to registered official sources', async () => {
   const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
   const [sources, world, systems] = await Promise.all(['sources.json', 'world.json', 'systems.json'].map(async (file) => JSON.parse(await readFile(path.join(root, 'data', file), 'utf8'))));
@@ -399,7 +406,7 @@ test('keeps character-only UI out of walkthrough cards and preserves sequence or
   const app = await readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8');
   assert.match(app, /const isCharacter = contentType === 'characters'/);
   assert.match(app, /if \(isCharacter\) article\.append\(characterImage\(item\)\)/);
-  assert.match(app, /if \(contentType === 'walkthrough'\)/);
+  assert.match(app, /if \(contentType === 'walkthrough' \|\| contentType === 'maps'\)/);
   assert.match(app, /a\.sequence \?\? Number\.MAX_SAFE_INTEGER/);
   assert.match(app, /renderContentCard\(item, sourceMap, contentType, itemMap\)/);
 });

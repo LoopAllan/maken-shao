@@ -13,6 +13,7 @@ export const datasets = {
   'characters.json': { schema: 'character.schema.json', type: 'character' },
   'character-details.json': { schema: 'character-detail.schema.json', type: 'character-detail' },
   'walkthrough.json': { schema: 'walkthrough.schema.json', type: 'walkthrough' },
+  'maps.json': { schema: 'map.schema.json', type: 'map' },
   'knowledge.json': { schema: 'knowledge.schema.json', type: 'knowledge' },
   'endings.json': { schema: 'ending.schema.json', type: 'ending' },
   'bosses.json': { schema: 'boss.schema.json', type: 'boss' }
@@ -252,6 +253,82 @@ export function validateTechniqueMediaFiles(details, projectRoot = root) {
   return errors;
 }
 
+export function validateMapReferences(maps, characters, walkthrough, sources) {
+  if (![maps, characters, walkthrough, sources].every(Array.isArray)) return [];
+  const errors = [];
+  const mapIds = new Set(maps.map((map) => map.id));
+  const characterIds = new Set(characters.map((character) => character.id));
+  const walkthroughIds = new Set(walkthrough.map((record) => record.id));
+  const sourceIds = new Set(sources.map((source) => source.id));
+  maps.forEach((map) => {
+    [...(map.requiredMapIds || []), ...(map.anyOfRequiredMapIds || [])].forEach((id) => {
+      if (id === map.id) errors.push(`maps.json [${map.id}]: map cannot require itself`);
+      else if (!mapIds.has(id)) errors.push(`maps.json [${map.id}]: unknown prerequisite map "${id}"`);
+    });
+    (map.walkthroughIds || []).forEach((id) => {
+      if (!walkthroughIds.has(id)) errors.push(`maps.json [${map.id}]: unknown walkthrough "${id}"`);
+    });
+    (map.obtainableCharacterIds || []).forEach((id) => {
+      if (!characterIds.has(id)) errors.push(`maps.json [${map.id}]: unknown obtainable character "${id}"`);
+    });
+    (map.enemies || []).forEach((enemy) => (enemy.sourceIds || []).forEach((id) => {
+      if (!sourceIds.has(id)) errors.push(`maps.json [${map.id}]: enemy ${enemy.nameJa} uses unknown source "${id}"`);
+    }));
+    (map.images || []).forEach((media) => {
+      if (!sourceIds.has(media.sourceId)) errors.push(`maps.json [${map.id}]: image uses unknown source "${media.sourceId}"`);
+      if (!map.sourceIds?.includes(media.sourceId)) errors.push(`maps.json [${map.id}]: image sourceId "${media.sourceId}" must also appear in map sourceIds`);
+    });
+  });
+  return errors;
+}
+
+function webpDimensions(bytes) {
+  if (bytes.length < 30 || bytes.toString('ascii', 0, 4) !== 'RIFF' || bytes.toString('ascii', 8, 12) !== 'WEBP') return null;
+  const chunk = bytes.toString('ascii', 12, 16);
+  if (chunk === 'VP8X') return { width: 1 + bytes.readUIntLE(24, 3), height: 1 + bytes.readUIntLE(27, 3) };
+  if (chunk === 'VP8L') {
+    const packed = bytes.readUInt32LE(21);
+    return { width: 1 + (packed & 0x3fff), height: 1 + ((packed >>> 14) & 0x3fff) };
+  }
+  if (chunk === 'VP8 ') {
+    const marker = bytes.indexOf(Buffer.from([0x9d, 0x01, 0x2a]), 20);
+    if (marker < 0 || marker + 7 > bytes.length) return null;
+    return { width: bytes.readUInt16LE(marker + 3) & 0x3fff, height: bytes.readUInt16LE(marker + 5) & 0x3fff };
+  }
+  return null;
+}
+
+export function validateMapMediaFiles(maps, projectRoot = root) {
+  if (!Array.isArray(maps)) return [];
+  const errors = [];
+  const mediaRoot = path.resolve(projectRoot, 'assets/images/maps');
+  const seenPaths = new Set();
+  const seenDerivativeUrls = new Set();
+  maps.forEach((map) => (map.images || []).forEach((media) => {
+    if (seenPaths.has(media.path)) errors.push(`maps.json [${map.id}]: duplicate image path ${media.path}`);
+    else seenPaths.add(media.path);
+    if (seenDerivativeUrls.has(media.derivativeUrl)) errors.push(`maps.json [${map.id}]: duplicate derivativeUrl ${media.derivativeUrl}`);
+    else seenDerivativeUrls.add(media.derivativeUrl);
+    const resolved = path.resolve(projectRoot, media.path || '');
+    if (resolved !== mediaRoot && !resolved.startsWith(`${mediaRoot}${path.sep}`)) {
+      errors.push(`maps.json [${map.id}]: image path escapes assets/images/maps (${media.path})`);
+      return;
+    }
+    if (!fs.existsSync(resolved)) {
+      errors.push(`maps.json [${map.id}]: missing image file ${media.path}`);
+      return;
+    }
+    const bytes = fs.readFileSync(resolved);
+    if (bytes.length !== media.bytes) errors.push(`maps.json [${map.id}]: image ${media.path} bytes ${media.bytes} does not match local file length ${bytes.length}`);
+    const dimensions = webpDimensions(bytes);
+    if (!dimensions) errors.push(`maps.json [${map.id}]: image ${media.path} is not a valid WebP with readable dimensions`);
+    else if (dimensions.width !== media.width || dimensions.height !== media.height) errors.push(`maps.json [${map.id}]: image ${media.path} dimensions ${media.width}×${media.height} do not match WebP ${dimensions.width}×${dimensions.height}`);
+    const digest = createHash('sha256').update(bytes).digest('hex');
+    if (digest !== media.sha256) errors.push(`maps.json [${map.id}]: image ${media.path} SHA-256 mismatch`);
+  }));
+  return errors;
+}
+
 export function validateProject() {
   const errors = [];
   let sources = [];
@@ -273,6 +350,8 @@ export function validateProject() {
   errors.push(...validateCharacterReferences(recordsByFile.get('characters.json'), recordsByFile.get('walkthrough.json')));
   errors.push(...validateCharacterDetailReferences(recordsByFile.get('character-details.json'), recordsByFile.get('characters.json'), recordsByFile.get('walkthrough.json')));
   errors.push(...validateTechniqueMediaFiles(recordsByFile.get('character-details.json')));
+  errors.push(...validateMapReferences(recordsByFile.get('maps.json'), recordsByFile.get('characters.json'), recordsByFile.get('walkthrough.json'), sources));
+  errors.push(...validateMapMediaFiles(recordsByFile.get('maps.json')));
   return errors;
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
