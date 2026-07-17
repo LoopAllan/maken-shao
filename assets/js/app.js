@@ -22,6 +22,122 @@
     setTheme(theme);
   });
 
+  function characterDetailHref(id) {
+    return `${basePath}/pages/characters/${encodeURIComponent(id)}.html`;
+  }
+
+  let characterContextPromise;
+  function getCharacterContext() {
+    if (!characterContextPromise) {
+      characterContextPromise = Promise.all([
+        window.MakenData.loadJson(basePath, 'characters.json'),
+        window.MakenData.loadJson(basePath, 'character-details.json')
+      ]).then(([characters, details]) => ({
+        characters,
+        details,
+        characterMap: new Map(characters.map((character) => [character.id, character])),
+        aliases: window.MakenCharacters.buildCharacterAliasEntries(characters),
+        protectedTerms: [...new Set([...details.flatMap((detail) => detail.techniques.map((technique) => technique.nameJa)), '魔剣爻', 'Maken Shao', 'Maken X', '魔剣X'])]
+      }));
+    }
+    return characterContextPromise;
+  }
+
+  function decorateCharacterLink(link, characterId) {
+    link.classList.add('character-link');
+    link.dataset.characterId = characterId;
+    return link;
+  }
+
+  async function linkCharacterMentions(root) {
+    if (!root) return;
+    const context = await getCharacterContext();
+    const excluded = 'a, button, input, select, textarea, script, style, code, pre, .metadata, [data-no-character-links], [data-character-page-title], .technique-table';
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (node.nodeValue.trim() && !node.parentElement?.closest(excluded)) nodes.push(node);
+    }
+    nodes.forEach((node) => {
+      const segments = window.MakenCharacters.segmentCharacterMentions(node.nodeValue, context.aliases, context.protectedTerms);
+      if (!segments.some((segment) => segment.characterId)) return;
+      const fragment = document.createDocumentFragment();
+      segments.forEach((segment) => {
+        if (!segment.characterId) {
+          fragment.append(segment.text);
+          return;
+        }
+        const link = document.createElement('a');
+        link.href = characterDetailHref(segment.characterId);
+        link.textContent = segment.text;
+        decorateCharacterLink(link, segment.characterId);
+        fragment.append(link);
+      });
+      node.replaceWith(fragment);
+    });
+  }
+
+  function initializeCharacterPreviews() {
+    const preview = document.createElement('aside');
+    preview.id = 'character-preview-card';
+    preview.className = 'character-preview-card';
+    preview.setAttribute('role', 'tooltip');
+    preview.hidden = true;
+    const image = document.createElement('img');
+    const body = document.createElement('div');
+    const title = document.createElement('strong');
+    const names = document.createElement('span');
+    const summary = document.createElement('p');
+    body.append(title, names, summary);
+    preview.append(image, body);
+    document.body.append(preview);
+    let activeLink = null;
+    let context;
+    getCharacterContext().then((value) => { context = value; });
+
+    const position = (link) => {
+      const bounds = link.getBoundingClientRect();
+      const width = Math.min(336, window.innerWidth - 24);
+      preview.style.width = `${width}px`;
+      const left = Math.max(12, Math.min(bounds.left, window.innerWidth - width - 12));
+      const estimatedHeight = 176;
+      const top = bounds.bottom + estimatedHeight + 12 < window.innerHeight ? bounds.bottom + 8 : Math.max(12, bounds.top - estimatedHeight - 8);
+      preview.style.left = `${Math.round(left)}px`;
+      preview.style.top = `${Math.round(top)}px`;
+    };
+    const show = async (link) => {
+      context ||= await getCharacterContext();
+      const character = context.characterMap.get(link.dataset.characterId);
+      if (!character || !character.imagePath) return;
+      if (activeLink && activeLink !== link) activeLink.removeAttribute('aria-describedby');
+      activeLink = link;
+      image.src = `${basePath}/${character.imagePath}`;
+      image.alt = character.imageAlt;
+      title.textContent = character.nameZhHant;
+      names.textContent = `${character.nameJa}｜${character.nameEn}`;
+      summary.textContent = character.summary;
+      preview.hidden = false;
+      link.setAttribute('aria-describedby', preview.id);
+      position(link);
+    };
+    const hide = (link) => {
+      if (link && activeLink !== link) return;
+      activeLink?.removeAttribute('aria-describedby');
+      activeLink = null;
+      preview.hidden = true;
+      image.removeAttribute('src');
+    };
+    const characterLink = (event) => event.target.closest?.('a.character-link[data-character-id]');
+    document.addEventListener('pointerenter', (event) => { const link = characterLink(event); if (link) show(link); }, true);
+    document.addEventListener('pointerleave', (event) => { const link = characterLink(event); if (link) hide(link); }, true);
+    document.addEventListener('focusin', (event) => { const link = characterLink(event); if (link) show(link); });
+    document.addEventListener('focusout', (event) => { const link = characterLink(event); if (link) hide(link); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hide(); });
+    window.addEventListener('scroll', () => { if (activeLink) position(activeLink); }, { passive: true });
+    window.addEventListener('resize', () => { if (activeLink) position(activeLink); });
+  }
+
   function badge(text) {
     const item = document.createElement('li');
     item.className = 'badge';
@@ -117,11 +233,20 @@
   function renderContentCard(item, sourceMap, contentType, itemMap) {
     const article = document.createElement('article');
     article.className = 'card';
+    article.id = `record-${item.id}`;
     article.dataset.recordId = item.id;
     const isCharacter = contentType === 'characters';
     if (isCharacter && item.characterGroup) article.dataset.characterGroup = item.characterGroup;
     const title = document.createElement('h2');
-    title.textContent = item.title;
+    if (isCharacter) {
+      const detailLink = document.createElement('a');
+      detailLink.href = characterDetailHref(item.id);
+      detailLink.textContent = item.title;
+      decorateCharacterLink(detailLink, item.id);
+      title.append(detailLink);
+    } else {
+      title.textContent = item.title;
+    }
     const summary = document.createElement('p');
     summary.textContent = item.summary;
     const content = document.createElement('p');
@@ -172,7 +297,13 @@
       item.wikiLinkedCharacterIds.forEach((id) => {
         const target = itemMap?.get(id);
         const row = document.createElement('li');
-        row.textContent = target ? `${target.nameZhHant}｜${target.nameEn}` : id;
+        if (target) {
+          const link = document.createElement('a');
+          link.href = characterDetailHref(target.id);
+          link.textContent = `${target.nameZhHant}｜${target.nameEn}`;
+          decorateCharacterLink(link, target.id);
+          row.append(link);
+        } else row.textContent = id;
         list.append(row);
       });
       article.append(heading, list);
@@ -230,6 +361,7 @@
         article.append(heading, description);
         results.append(article);
       });
+      await linkCharacterMentions(results);
     } catch (error) {
       results.textContent = '資料無法載入。直接以 file:// 開啟時，請改用本機靜態伺服器。';
       console.warn(error);
@@ -240,6 +372,245 @@
   document.querySelector('[data-search-input]')?.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') search();
   });
+
+  async function loadCharacterSidebar() {
+    const encyclopediaLink = [...document.querySelectorAll('.sidebar a')].find((link) => link.getAttribute('href')?.endsWith('characters.html'));
+    if (!encyclopediaLink || encyclopediaLink.parentElement?.querySelector('[data-character-subnav]')) return;
+    try {
+      const { characters } = await getCharacterContext();
+      const parent = encyclopediaLink.parentElement;
+      const currentId = document.querySelector('[data-character-detail-id]')?.dataset.characterDetailId || null;
+      const expanded = Boolean(currentId);
+      const heading = document.createElement('div');
+      heading.className = 'character-nav-heading';
+      encyclopediaLink.before(heading);
+      heading.append(encyclopediaLink);
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'character-nav-toggle';
+      button.setAttribute('aria-expanded', String(expanded));
+      button.setAttribute('aria-controls', 'character-detail-navigation');
+      button.textContent = expanded ? '收合角色詳細頁' : '展開角色詳細頁';
+      heading.append(button);
+      const list = document.createElement('ul');
+      list.id = 'character-detail-navigation';
+      list.className = 'character-detail-navigation';
+      list.dataset.characterSubnav = '';
+      list.hidden = !expanded;
+      [...characters].sort((a, b) => a.nameZhHant.localeCompare(b.nameZhHant, 'zh-Hant')).forEach((character) => {
+        const row = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = characterDetailHref(character.id);
+        link.textContent = character.nameZhHant;
+        decorateCharacterLink(link, character.id);
+        if (character.id === currentId) link.setAttribute('aria-current', 'page');
+        row.append(link);
+        list.append(row);
+      });
+      parent.append(list);
+      button.addEventListener('click', () => {
+        const next = button.getAttribute('aria-expanded') !== 'true';
+        button.setAttribute('aria-expanded', String(next));
+        button.textContent = next ? '收合角色詳細頁' : '展開角色詳細頁';
+        list.hidden = !next;
+      });
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+
+  async function loadCharacterDetail() {
+    const target = document.querySelector('[data-character-detail-id]');
+    if (!target) return;
+    const id = target.dataset.characterDetailId;
+    try {
+      const [context, walkthrough, sources] = await Promise.all([
+        getCharacterContext(),
+        window.MakenData.loadJson(basePath, 'walkthrough.json'),
+        window.MakenData.loadJson(basePath, 'sources.json')
+      ]);
+      const { characters, details } = context;
+      const character = characters.find((item) => item.id === id);
+      const detail = details.find((item) => item.id === id);
+      if (!character || !detail) throw new Error(`Unknown character detail: ${id}`);
+      const sourceMap = new Map(sources.map((source) => [source.id, source]));
+      const walkthroughMap = new Map(walkthrough.map((step) => [step.id, step]));
+      const pageTitle = document.querySelector('[data-character-page-title]');
+      if (pageTitle) pageTitle.textContent = character.title;
+      document.title = `${character.nameZhHant}｜角色詳細頁｜魔剣爻離線攻略`;
+      target.replaceChildren();
+
+      const overview = document.createElement('div');
+      overview.className = 'card character-detail-overview';
+      const summary = document.createElement('p');
+      summary.className = 'lead';
+      summary.textContent = character.summary;
+      overview.append(summary, characterImage(character));
+      const { identity, note } = characterIdentity(character);
+      overview.append(identity, note);
+      const profile = document.createElement('p');
+      profile.textContent = character.content;
+      overview.append(profile, sourceLinks(character, sourceMap));
+      target.append(overview);
+
+      if (detail.acquisition) {
+        const section = document.createElement('section');
+        section.className = 'card character-detail-section';
+        const heading = document.createElement('h2');
+        heading.textContent = '獲取條件、方式與流程';
+        const method = document.createElement('p');
+        method.className = 'lead';
+        method.textContent = detail.acquisition.method;
+        const steps = document.createElement('ol');
+        detail.acquisition.steps.forEach((text) => {
+          const row = document.createElement('li');
+          row.textContent = text;
+          steps.append(row);
+        });
+        const routesHeading = document.createElement('h3');
+        routesHeading.textContent = '對應流程節點';
+        const routes = document.createElement('ul');
+        detail.acquisition.walkthroughIds.forEach((walkthroughId) => {
+          const step = walkthroughMap.get(walkthroughId);
+          const row = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `${basePath}/pages/walkthrough.html#record-${encodeURIComponent(walkthroughId)}`;
+          link.textContent = step?.title || walkthroughId;
+          row.append(link);
+          routes.append(row);
+        });
+        section.append(heading, method, steps, routesHeading, routes, sourceLinks(detail.acquisition, sourceMap));
+        target.append(section);
+      }
+
+      if (detail.techniques.length) {
+        const section = document.createElement('section');
+        section.className = 'card character-detail-section';
+        const heading = document.createElement('h2');
+        heading.textContent = '角色招式與取得同步率';
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-scroll';
+        const table = document.createElement('table');
+        table.className = 'technique-table';
+        const caption = document.createElement('caption');
+        caption.textContent = `${character.nameZhHant}招式取得率對照`;
+        const head = document.createElement('thead');
+        const headRow = document.createElement('tr');
+        ['招式（日文）', '取得率／同步率', '類型', '指令'].forEach((label) => {
+          const cell = document.createElement('th');
+          cell.scope = 'col';
+          cell.textContent = label;
+          headRow.append(cell);
+        });
+        head.append(headRow);
+        const body = document.createElement('tbody');
+        detail.techniques.forEach((technique) => {
+          const row = document.createElement('tr');
+          [technique.nameJa, `${technique.acquisitionRatePercent}%`, technique.typeJa, technique.command || '—'].forEach((text, index) => {
+            const cell = document.createElement(index === 0 ? 'th' : 'td');
+            if (index === 0) cell.scope = 'row';
+            cell.textContent = text;
+            row.append(cell);
+          });
+          body.append(row);
+        });
+        table.append(caption, head, body);
+        wrapper.append(table);
+        const layout = document.createElement('div');
+        layout.className = 'technique-layout';
+        layout.append(wrapper);
+        const techniquesWithMedia = detail.techniques.filter((technique) => technique.media.length);
+        if (techniquesWithMedia.length) {
+          const gallery = document.createElement('aside');
+          gallery.className = 'technique-media-gallery';
+          gallery.setAttribute('aria-label', `${character.nameZhHant}招式畫面`);
+          techniquesWithMedia.forEach((technique) => {
+            const figure = document.createElement('figure');
+            const mediaHeading = document.createElement('h3');
+            mediaHeading.textContent = technique.nameJa;
+            const frames = document.createElement('div');
+            frames.className = 'technique-media-frames';
+            technique.media.forEach((media) => {
+              const link = document.createElement('a');
+              link.href = media.archiveUrl;
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+              const image = document.createElement('img');
+              image.src = `${basePath}/${media.path}`;
+              image.alt = media.alt;
+              image.loading = 'lazy';
+              image.decoding = 'async';
+              link.append(image);
+              frames.append(link);
+            });
+            const caption = document.createElement('figcaption');
+            const media = technique.media[0];
+            const appendProvenanceLink = (label, url) => {
+              const line = document.createElement('div');
+              line.append(`${label}：`);
+              const link = document.createElement('a');
+              link.href = url;
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+              link.textContent = url;
+              line.append(link);
+              caption.append(line);
+            };
+            const sourceTitle = document.createElement('div');
+            const source = document.createElement('a');
+            source.href = media.sourcePageUrl;
+            source.target = '_blank';
+            source.rel = 'noopener noreferrer';
+            source.textContent = sourceMap.get(media.sourceId)?.title || '招式畫面來源';
+            sourceTitle.append('來源關聯：', source, `（${media.kind}）`);
+            caption.append(sourceTitle);
+            appendProvenanceLink('來源頁', media.sourcePageUrl);
+            appendProvenanceLink('原始資產 URL', media.originalUrl);
+            appendProvenanceLink('Wayback 保存資產 URL', media.archiveUrl);
+            const integrity = document.createElement('div');
+            integrity.textContent = `Wayback 保存檔案：${media.archiveBytes.toLocaleString('en-US')} bytes｜SHA-256：${media.sha256}`;
+            const rights = document.createElement('div');
+            rights.textContent = `權利註記：${media.rightsNote}`;
+            caption.append(integrity, rights);
+            figure.append(mediaHeading, frames, caption);
+            gallery.append(figure);
+          });
+          layout.append(gallery);
+        }
+        section.append(heading, layout);
+        detail.techniqueSources.forEach((source) => {
+          const citation = document.createElement('p');
+          citation.className = 'source-note';
+          const link = document.createElement('a');
+          link.href = source.url;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = sourceMap.get(source.sourceId)?.title || '招式資料來源';
+          citation.append(link, `｜${source.scope}`);
+          section.append(citation);
+        });
+        target.append(section);
+      }
+
+      const navigation = document.createElement('nav');
+      navigation.className = 'character-detail-pager';
+      navigation.setAttribute('aria-label', '角色詳細頁導覽');
+      const index = characters.findIndex((item) => item.id === id);
+      const links = [[characters[(index - 1 + characters.length) % characters.length], '上一位'], [characters[(index + 1) % characters.length], '下一位']];
+      links.forEach(([item, label]) => {
+        const link = document.createElement('a');
+        link.href = characterDetailHref(item.id);
+        link.textContent = `${label}：${item.nameZhHant}`;
+        decorateCharacterLink(link, item.id);
+        navigation.append(link);
+      });
+      target.append(navigation);
+      await linkCharacterMentions(target);
+    } catch (error) {
+      target.replaceChildren();
+      console.warn(error);
+    }
+  }
 
   async function loadPageContent() {
     if (!contentTarget) return;
@@ -320,6 +691,7 @@
           return;
         }
         visible.forEach((item) => contentTarget.append(renderContentCard(item, sourceMap, contentType, itemMap)));
+        linkCharacterMentions(contentTarget);
       };
       if (contentType === 'characters' && tabList) {
         const groupLabels = new Map([['all', '全部'], ['main', '主要角色'], ['fukenshi', '封劍士'], ['hakke', '八卦'], ['hostile', '敵對'], ['npc', 'NPC'], ['other', '其他']]);
@@ -413,12 +785,17 @@
         article.append(title, metadata, description);
         sourceList.append(article);
       });
+      await linkCharacterMentions(sourceList);
     } catch (error) {
       sourceList.textContent = '來源清單無法載入。直接以 file:// 開啟時，請改用本機靜態伺服器。';
       console.warn(error);
     }
   }
 
+  initializeCharacterPreviews();
+  linkCharacterMentions(document.querySelector('main'));
+  loadCharacterSidebar();
+  loadCharacterDetail();
   loadPageContent();
   loadSourceList();
   document.querySelector('[data-back-to-top]')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));

@@ -1,0 +1,1392 @@
+[
+  {
+    "id": "kou-yamashiro",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-late-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-4"
+    ],
+    "acquisition": {
+      "title": "終盤回答後強制 Brain Jack",
+      "method": "在封劍士側的巴西（1）分支，對吉尼斯博士回答 YES，流程會強制切換至山城弘。",
+      "steps": [
+        "先前擊倒較多八卦，並在里斯本回答 YES→NO，進入巴西（1）分支。",
+        "在巴西（1）對吉尼斯博士的問題回答 YES。",
+        "流程會強制 Brain Jack 山城弘並前往紫禁城。"
+      ],
+      "walkthroughIds": [
+        "route-endgame-mecca",
+        "route-endgame-brazil",
+        "route-ending-forbidden-city"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-late-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "面打ち",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "突き",
+        "acquisitionRatePercent": 40,
+        "typeJa": "打撃",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "大突",
+        "acquisitionRatePercent": 100,
+        "typeJa": "打撃",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-4",
+        "url": "https://web.archive.org/web/20160616134947id_/http://gamehyoron.com/kouryaku/maken/maken-c4.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "kei-sagami",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-1"
+    ],
+    "acquisition": {
+      "title": "開局強制使用",
+      "method": "在金澤研究所以相模桂開始遊戲。",
+      "steps": [
+        "開始金澤研究所流程時自動使用相模桂。",
+        "擊敗八卦安德烈後，流程會切換至安德烈；一般流程中不再自由切回相模桂。"
+      ],
+      "walkthroughIds": [
+        "route-opening-kanazawa"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "三段斬り",
+        "acquisitionRatePercent": 0,
+        "typeJa": "連打",
+        "command": "□□□",
+        "media": []
+      },
+      {
+        "nameJa": "寿星突き",
+        "acquisitionRatePercent": 50,
+        "typeJa": "打撃",
+        "command": "↓↑＋□",
+        "media": [
+          {
+            "path": "assets/images/techniques/kei-sagami/jusei-zuki-action.jpg",
+            "alt": "Atlus 官方 PS2《魔剣爻》相模桂在實戰中向敵人突進／刺擊的寿星突き畫面",
+            "kind": "official-technique-action-frame",
+            "sourceId": "atlus-maken-shao-system-page3-archive",
+            "sourcePageUrl": "https://web.archive.org/web/20021222222915/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+            "originalUrl": "http://www.atlus.co.jp:80/cs/game/pstation2/shao/gmsys3_images/image09.jpg",
+            "archiveUrl": "https://web.archive.org/web/20040210154056im_/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3_images/image09.jpg",
+            "archiveBytes": 21787,
+            "sha256": "1858f99263129f7a6103c0d27b85e1d5e15065f59b8dfa911681b18f37d1e153",
+            "rightsNote": "Atlus 官方 PS2 遊戲畫面；僅作附來源的招式辨識與評論引用，不主張再散布授權。"
+          }
+        ]
+      },
+      {
+        "nameJa": "マキナクオーク",
+        "acquisitionRatePercent": 100,
+        "typeJa": "回転",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-1",
+        "url": "https://web.archive.org/web/20160616134923id_/http://gamehyoron.com/kouryaku/maken/maken-c1.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "maken",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  },
+  {
+    "id": "kati",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-late-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-4"
+    ],
+    "acquisition": {
+      "title": "里斯本後多分支戰鬥取得",
+      "method": "依里斯本後的陣營與回答，可在里斯本連戰或巴西分支擊敗卡蒂後取得。",
+      "steps": [
+        "若先前擊倒較多封劍士，里斯本回答不是 NO→YES 時，與山城弘、卡蒂連戰，戰後可 Brain Jack 卡蒂。",
+        "另一條巴西（3）分支中，對吉尼斯博士回答 YES 後與卡蒂戰鬥，戰後可 Brain Jack。"
+      ],
+      "walkthroughIds": [
+        "route-endgame-lisbon",
+        "route-endgame-brazil"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-late-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "散星陣",
+        "acquisitionRatePercent": 0,
+        "typeJa": "連打",
+        "command": "□□□",
+        "media": []
+      },
+      {
+        "nameJa": "蛇突",
+        "acquisitionRatePercent": 20,
+        "typeJa": "打撃",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "真裏斬",
+        "acquisitionRatePercent": 50,
+        "typeJa": "後方攻撃",
+        "command": "↑↓＋□",
+        "media": []
+      },
+      {
+        "nameJa": "烈火弾",
+        "acquisitionRatePercent": 80,
+        "typeJa": "突進",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "破魔炎星華",
+        "acquisitionRatePercent": 100,
+        "typeJa": "飛び道具",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-4",
+        "url": "https://web.archive.org/web/20160616134947id_/http://gamehyoron.com/kouryaku/maken/maken-c4.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "badelaire",
+    "sourceIds": [
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-3"
+    ],
+    "acquisition": {
+      "title": "里昂問答／戰鬥分支",
+      "method": "里昂回答 YES 或 NO→NO 可免戰取得；NO→YES 則戰後取得。",
+      "steps": [
+        "完成阿姆斯特丹與首次梵蒂岡以開啟里昂。",
+        "在里昂找到巴德萊爾。",
+        "回答 YES 或 NO→NO：免戰 Brain Jack。",
+        "回答 NO→YES：擊敗巴德萊爾後 Brain Jack。"
+      ],
+      "walkthroughIds": [
+        "route-convergence-lyon",
+        "route-optional-sicily"
+      ],
+      "sourceIds": [
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "パルチザン",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "デスサイクロン",
+        "acquisitionRatePercent": 20,
+        "typeJa": "打撃",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "トルネードキック",
+        "acquisitionRatePercent": 40,
+        "typeJa": "後方攻撃",
+        "command": "↑↓＋□",
+        "media": []
+      },
+      {
+        "nameJa": "メガストライク",
+        "acquisitionRatePercent": 70,
+        "typeJa": "突進",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "サンダーボルト",
+        "acquisitionRatePercent": 100,
+        "typeJa": "全体攻撃",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-3",
+        "url": "https://web.archive.org/web/20160616115554id_/http://gamehyoron.com/kouryaku/maken/maken-c3.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "ramrod",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-2"
+    ],
+    "acquisition": {
+      "title": "阿姆斯特丹問答／戰鬥分支",
+      "method": "回答 YES 或 NO→NO 可免戰取得；NO→YES 則戰後取得。",
+      "steps": [
+        "完成倫敦以開啟阿姆斯特丹。",
+        "回答 YES 或 NO→NO：不戰鬥即可 Brain Jack，並開啟維也納。",
+        "回答 NO→YES：擊敗拉姆羅德後 Brain Jack，但維也納與瑪格麗特將無法取得。"
+      ],
+      "walkthroughIds": [
+        "route-mid-london-chain",
+        "route-optional-vienna"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "一文字",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "居合松風",
+        "acquisitionRatePercent": 6,
+        "typeJa": "突進",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "月光",
+        "acquisitionRatePercent": 40,
+        "typeJa": "打撃",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "龍尾",
+        "acquisitionRatePercent": 70,
+        "typeJa": "後方攻撃",
+        "command": "↑↓＋□",
+        "media": []
+      },
+      {
+        "nameJa": "氷晶剣",
+        "acquisitionRatePercent": 100,
+        "typeJa": "飛び道具（氷結効果）",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-2",
+        "url": "https://web.archive.org/web/20160616134942id_/http://gamehyoron.com/kouryaku/maken/maken-c2.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "lee-fu-sho",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  },
+  {
+    "id": "lee-fei-shan",
+    "sourceIds": [
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-1"
+    ],
+    "acquisition": {
+      "title": "香港委託分支",
+      "method": "在香港接受李飛扇的委託，或拒絕委託後攻擊她，即可 Brain Jack。",
+      "steps": [
+        "先在林卡頓選擇稻葉鄉以進入香港。",
+        "到達李飛扇房間。",
+        "接受委託即可取得；若先拒絕，需攻擊李飛扇後才能 Brain Jack。",
+        "若拒絕後直接離開，泰姬瑪哈陵不會出現。"
+      ],
+      "walkthroughIds": [
+        "route-early-hong-kong",
+        "route-early-taj-mahal"
+      ],
+      "sourceIds": [
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "連扇華",
+        "acquisitionRatePercent": 0,
+        "typeJa": "連打",
+        "command": "□□□",
+        "media": []
+      },
+      {
+        "nameJa": "双破斬",
+        "acquisitionRatePercent": 25,
+        "typeJa": "打撃",
+        "command": "ロック中に↓＋□",
+        "media": []
+      },
+      {
+        "nameJa": "扇風六連斬",
+        "acquisitionRatePercent": 60,
+        "typeJa": "連打",
+        "command": "↓↑＋□□□□□□",
+        "media": []
+      },
+      {
+        "nameJa": "舞姫乱舞",
+        "acquisitionRatePercent": 100,
+        "typeJa": "打撃",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-1",
+        "url": "https://web.archive.org/web/20160616134923id_/http://gamehyoron.com/kouryaku/maken/maken-c1.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "lee-feichao",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  },
+  {
+    "id": "akinas",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-2"
+    ],
+    "acquisition": {
+      "title": "雅典問答／戰鬥分支",
+      "method": "雅典回答 YES 或 NO→NO 可免戰取得；回答 NO→YES 則戰後取得。",
+      "steps": [
+        "完成伊斯坦堡以開啟雅典。",
+        "在雅典找到阿基納斯。",
+        "回答 YES 或 NO→NO：不戰鬥即可 Brain Jack。",
+        "回答 NO→YES：擊敗阿基納斯後 Brain Jack，但會封閉巴林卡與特蘭西瓦尼亞路線。"
+      ],
+      "walkthroughIds": [
+        "route-mid-istanbul-chain"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "クロスニードル",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "スパイラルパイク",
+        "acquisitionRatePercent": 30,
+        "typeJa": "打撃",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "疾駆の旋",
+        "acquisitionRatePercent": 60,
+        "typeJa": "突進",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "ゼヒュロスの風",
+        "acquisitionRatePercent": 100,
+        "typeJa": "飛び道具",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-2",
+        "url": "https://web.archive.org/web/20160616134942id_/http://gamehyoron.com/kouryaku/maken/maken-c2.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "yusuf",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-late-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-4"
+    ],
+    "acquisition": {
+      "title": "麥加（2）問答後戰鬥",
+      "method": "在反封劍士側進入麥加（2），對優素福回答 NO，戰鬥後取得。",
+      "steps": [
+        "由里斯本的反封劍士側分支進入麥加（2）。",
+        "對優素福的問題回答 NO。",
+        "擊敗優素福後 Brain Jack，之後前往華盛頓；回答 YES 則前往崑崙且不取得。"
+      ],
+      "walkthroughIds": [
+        "route-endgame-lisbon",
+        "route-endgame-mecca",
+        "route-endgame-washington"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-late-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "斬首刀",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "斬首刀二段",
+        "acquisitionRatePercent": 10,
+        "typeJa": "連打",
+        "command": "↑＋□□",
+        "media": []
+      },
+      {
+        "nameJa": "亡者の手",
+        "acquisitionRatePercent": 35,
+        "typeJa": "打撃",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "地獄車",
+        "acquisitionRatePercent": 60,
+        "typeJa": "回転",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "第三の危機",
+        "acquisitionRatePercent": 100,
+        "typeJa": "飛び道具連打",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-4",
+        "url": "https://web.archive.org/web/20160616134947id_/http://gamehyoron.com/kouryaku/maken/maken-c4.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "don-marcala",
+    "sourceIds": [
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-3"
+    ],
+    "acquisition": {
+      "title": "巴德萊爾與史密斯前置的西西里 Boss",
+      "method": "以巴德萊爾進入西西里並解除門鎖，擊敗唐・馬爾卡拉後取得。",
+      "steps": [
+        "取得巴德萊爾與史密斯議員以開啟西西里。",
+        "首次以巴德萊爾進入西西里並解除門鎖。",
+        "擊敗八卦唐・馬爾卡拉後 Brain Jack。",
+        "取得後可開啟梵蒂岡 Boss 房。"
+      ],
+      "walkthroughIds": [
+        "route-optional-sicily"
+      ],
+      "sourceIds": [
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "デスカット",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "ビクトリーダイブ",
+        "acquisitionRatePercent": 4,
+        "typeJa": "突進",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "ドン・ヒップ",
+        "acquisitionRatePercent": 40,
+        "typeJa": "後方攻撃",
+        "command": "↑↓＋□",
+        "media": []
+      },
+      {
+        "nameJa": "トライアックス",
+        "acquisitionRatePercent": 70,
+        "typeJa": "連打",
+        "command": "↑＋□□□",
+        "media": []
+      },
+      {
+        "nameJa": "パペットボンバー",
+        "acquisitionRatePercent": 100,
+        "typeJa": "飛び道具",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-3",
+        "url": "https://web.archive.org/web/20160616115554id_/http://gamehyoron.com/kouryaku/maken/maken-c3.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "william",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-late-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-4"
+    ],
+    "acquisition": {
+      "title": "華盛頓 Boss 戰後取得",
+      "method": "進入華盛頓並擊敗八卦威廉，之後可用威廉前往紫禁城。",
+      "steps": [
+        "從麥加或巴西的相應分支進入華盛頓。",
+        "完成區域並擊敗八卦威廉。",
+        "戰後 Brain Jack 威廉，前往紫禁城。"
+      ],
+      "walkthroughIds": [
+        "route-endgame-washington",
+        "route-ending-forbidden-city"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-late-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "ワシントンジャブ",
+        "acquisitionRatePercent": 0,
+        "typeJa": "連打",
+        "command": "□□",
+        "media": []
+      },
+      {
+        "nameJa": "マイアミラッシュ",
+        "acquisitionRatePercent": 10,
+        "typeJa": "連打",
+        "command": "↑＋□□□□",
+        "media": []
+      },
+      {
+        "nameJa": "ジーザスアッパー",
+        "acquisitionRatePercent": 60,
+        "typeJa": "突進",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "プレジデントST",
+        "acquisitionRatePercent": 100,
+        "typeJa": "突進",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-4",
+        "url": "https://web.archive.org/web/20160616134947id_/http://gamehyoron.com/kouryaku/maken/maken-c4.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "andrei",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-1"
+    ],
+    "acquisition": {
+      "title": "關卡 Boss 後強制切換",
+      "method": "在金澤研究所擊敗八卦安德烈，完成後 Brain Jack 並以他進入林卡頓。",
+      "steps": [
+        "完成金澤研究所並擊敗安德烈。",
+        "關卡結束後 Brain Jack 安德烈。",
+        "以安德烈進入林卡頓；若之後選擇稻葉鄉，安德烈將不再可 Brain Jack。"
+      ],
+      "walkthroughIds": [
+        "route-opening-kanazawa",
+        "route-opening-lincardon"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "スマッシュオペ",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "エキサイトメス",
+        "acquisitionRatePercent": 10,
+        "typeJa": "打撃",
+        "command": "↓＋□",
+        "media": []
+      },
+      {
+        "nameJa": "ローリングスワン",
+        "acquisitionRatePercent": 30,
+        "typeJa": "回転",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "チカティロダンス",
+        "acquisitionRatePercent": 65,
+        "typeJa": "突進",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "メスバルカン",
+        "acquisitionRatePercent": 100,
+        "typeJa": "飛び道具",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-1",
+        "url": "https://web.archive.org/web/20160616134923id_/http://gamehyoron.com/kouryaku/maken/maken-c1.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "sharja",
+    "sourceIds": [
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-1"
+    ],
+    "acquisition": {
+      "title": "泰姬瑪哈陵重訪 Boss",
+      "method": "先取得李飛扇，再於泰姬瑪哈陵解除安全裝置並擊敗沙爾嘉。",
+      "steps": [
+        "取得李飛扇。",
+        "以李飛扇進入或重訪泰姬瑪哈陵。",
+        "解除通往沙爾嘉房間的安全裝置。",
+        "擊敗沙爾嘉後 Brain Jack。"
+      ],
+      "walkthroughIds": [
+        "route-early-taj-mahal"
+      ],
+      "sourceIds": [
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "ジャマダハル",
+        "acquisitionRatePercent": 0,
+        "typeJa": "連打",
+        "command": "□□",
+        "media": []
+      },
+      {
+        "nameJa": "マハラタックル",
+        "acquisitionRatePercent": 15,
+        "typeJa": "突進",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "スピンマウル",
+        "acquisitionRatePercent": 30,
+        "typeJa": "回転",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "バグナウ",
+        "acquisitionRatePercent": 60,
+        "typeJa": "連打",
+        "command": "↑＋□□□□□□",
+        "media": []
+      },
+      {
+        "nameJa": "ジャハンリング",
+        "acquisitionRatePercent": 100,
+        "typeJa": "飛び道具",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-1",
+        "url": "https://web.archive.org/web/20160616134923id_/http://gamehyoron.com/kouryaku/maken/maken-c1.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "margarete",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-2"
+    ],
+    "acquisition": {
+      "title": "拉姆羅德免戰分支後的維也納 Boss",
+      "method": "讓拉姆羅德免戰加入並開啟維也納，再擊敗瑪格麗特。",
+      "steps": [
+        "在阿姆斯特丹以 YES 或 NO→NO 取得拉姆羅德並開啟維也納。",
+        "進入維也納。",
+        "擊敗八卦瑪格麗特後 Brain Jack。"
+      ],
+      "walkthroughIds": [
+        "route-optional-vienna"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "ハイルキック",
+        "acquisitionRatePercent": 0,
+        "typeJa": "連打",
+        "command": "□□",
+        "media": []
+      },
+      {
+        "nameJa": "チェーンヒール",
+        "acquisitionRatePercent": 25,
+        "typeJa": "連打",
+        "command": "↑＋□□□□",
+        "media": []
+      },
+      {
+        "nameJa": "ギロチンヒール",
+        "acquisitionRatePercent": 50,
+        "typeJa": "打撃",
+        "command": "ジャンプ中に□",
+        "media": []
+      },
+      {
+        "nameJa": "ハーケンロッド",
+        "acquisitionRatePercent": 75,
+        "typeJa": "打撃",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "クルップファイア",
+        "acquisitionRatePercent": 100,
+        "typeJa": "飛び道具",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-2",
+        "url": "https://web.archive.org/web/20160616134942id_/http://gamehyoron.com/kouryaku/maken/maken-c2.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "dal",
+    "sourceIds": [
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-2"
+    ],
+    "acquisition": {
+      "title": "巴林卡前置支線 Boss",
+      "method": "取得巴林卡後開啟特蘭西瓦尼亞；完成該區 Boss 戰後取得達爾。",
+      "steps": [
+        "取得阿基納斯與巴林卡。",
+        "進入新開啟的特蘭西瓦尼亞。",
+        "擊敗八卦達爾後 Brain Jack。"
+      ],
+      "walkthroughIds": [
+        "route-optional-transylvania"
+      ],
+      "sourceIds": [
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "パイルスターブ",
+        "acquisitionRatePercent": 0,
+        "typeJa": "連打",
+        "command": "□□",
+        "media": []
+      },
+      {
+        "nameJa": "ストックショット",
+        "acquisitionRatePercent": 30,
+        "typeJa": "打撃",
+        "command": "ロック中に↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "ツェペッシュ",
+        "acquisitionRatePercent": 60,
+        "typeJa": "連打",
+        "command": "↑＋□□□□□",
+        "media": []
+      },
+      {
+        "nameJa": "ウラドウィルス",
+        "acquisitionRatePercent": 100,
+        "typeJa": "石化",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-2",
+        "url": "https://web.archive.org/web/20160616134942id_/http://gamehyoron.com/kouryaku/maken/maken-c2.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "rei",
+    "sourceIds": [
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-3"
+    ],
+    "acquisition": {
+      "title": "唐・馬爾卡拉前置的梵蒂岡 Boss",
+      "method": "取得唐・馬爾卡拉後，重訪梵蒂岡並進入 Boss 房擊敗雷。",
+      "steps": [
+        "在西西里取得唐・馬爾卡拉。",
+        "重訪梵蒂岡並打開原先無法進入的 Boss 房。",
+        "擊敗八卦雷後 Brain Jack。"
+      ],
+      "walkthroughIds": [
+        "route-optional-sicily"
+      ],
+      "sourceIds": [
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "デスサイズ",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "デスサイズエンド",
+        "acquisitionRatePercent": 10,
+        "typeJa": "連打",
+        "command": "↑＋□□□",
+        "media": []
+      },
+      {
+        "nameJa": "エンゼルキッス",
+        "acquisitionRatePercent": 25,
+        "typeJa": "突進",
+        "command": "ジャンプ中に□",
+        "media": []
+      },
+      {
+        "nameJa": "チフォージュの宴",
+        "acquisitionRatePercent": 50,
+        "typeJa": "回転",
+        "command": "ジャンプ中に□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "ピュセルの祝福",
+        "acquisitionRatePercent": 100,
+        "typeJa": "体力回復",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-3",
+        "url": "https://web.archive.org/web/20160616115554id_/http://gamehyoron.com/kouryaku/maken/maken-c3.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "ryu-kashin",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  },
+  {
+    "id": "pan-gu",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  },
+  {
+    "id": "mr-meteor",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  },
+  {
+    "id": "jj-jones",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  },
+  {
+    "id": "smith",
+    "sourceIds": [
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-3"
+    ],
+    "acquisition": {
+      "title": "巴德萊爾前置與倫敦重訪",
+      "method": "取得巴德萊爾後，以他重訪倫敦即可 Brain Jack 史密斯議員。",
+      "steps": [
+        "先在里昂取得巴德萊爾。",
+        "以巴德萊爾重訪倫敦。",
+        "找到並 Brain Jack 史密斯議員。",
+        "取得後開啟西西里。"
+      ],
+      "walkthroughIds": [
+        "route-optional-sicily"
+      ],
+      "sourceIds": [
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "ハンマーアタック",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "スピンスミス",
+        "acquisitionRatePercent": 1,
+        "typeJa": "回転",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "ハンマーショット",
+        "acquisitionRatePercent": 30,
+        "typeJa": "打撃",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "ローリングスミス",
+        "acquisitionRatePercent": 60,
+        "typeJa": "回転",
+        "command": "□＋×～□□□□",
+        "media": []
+      },
+      {
+        "nameJa": "バーサク",
+        "acquisitionRatePercent": 100,
+        "typeJa": "攻撃力上昇",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-3",
+        "url": "https://web.archive.org/web/20160616115554id_/http://gamehyoron.com/kouryaku/maken/maken-c3.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "anne-miller",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  },
+  {
+    "id": "barlinka",
+    "sourceIds": [
+      "gamehyoron-maken-shao-route-table",
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-2"
+    ],
+    "acquisition": {
+      "title": "阿基納斯前置與伊斯坦堡重訪",
+      "method": "以免戰路線取得阿基納斯後，用他重訪伊斯坦堡即可找到並 Brain Jack 巴林卡。",
+      "steps": [
+        "在雅典以 YES 或 NO→NO 取得阿基納斯，避免戰鬥封閉支線。",
+        "以阿基納斯重訪伊斯坦堡。",
+        "進入巴林卡所在房間並 Brain Jack。",
+        "取得後開啟特蘭西瓦尼亞。"
+      ],
+      "walkthroughIds": [
+        "route-mid-istanbul-chain",
+        "route-optional-transylvania"
+      ],
+      "sourceIds": [
+        "gamehyoron-maken-shao-route-table",
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "薙ぎ払い",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "一刀両断",
+        "acquisitionRatePercent": 5,
+        "typeJa": "打撃",
+        "command": "↓↑＋□",
+        "media": []
+      },
+      {
+        "nameJa": "回転斬り",
+        "acquisitionRatePercent": 60,
+        "typeJa": "回転",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "咳払い",
+        "acquisitionRatePercent": 100,
+        "typeJa": "石化",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-2",
+        "url": "https://web.archive.org/web/20160616134942id_/http://gamehyoron.com/kouryaku/maken/maken-c2.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "hiromitsu-sagami",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  },
+  {
+    "id": "inaba-go",
+    "sourceIds": [
+      "kentaro-maken-shao-early-chart",
+      "atlus-maken-shao-system-page3-archive",
+      "gamehyoron-maken-shao-characters-1"
+    ],
+    "acquisition": {
+      "title": "林卡頓末段選擇",
+      "method": "林卡頓末段會出現是否 Brain Jack 稻葉鄉的選項。",
+      "steps": [
+        "完成林卡頓至飛行員稻葉鄉所在位置。",
+        "選擇 Brain Jack 稻葉鄉後，以稻葉鄉前往香港。",
+        "若不選擇，將維持安德烈並前往泰姬瑪哈陵，之後無法再取得稻葉鄉。"
+      ],
+      "walkthroughIds": [
+        "route-opening-lincardon",
+        "route-early-hong-kong",
+        "route-early-taj-mahal"
+      ],
+      "sourceIds": [
+        "kentaro-maken-shao-early-chart"
+      ]
+    },
+    "techniques": [
+      {
+        "nameJa": "稲葉スマッシュ",
+        "acquisitionRatePercent": 0,
+        "typeJa": "打撃",
+        "command": "□",
+        "media": []
+      },
+      {
+        "nameJa": "感電突き",
+        "acquisitionRatePercent": 4,
+        "typeJa": "打撃",
+        "command": "↓＋□",
+        "media": []
+      },
+      {
+        "nameJa": "三連猛打",
+        "acquisitionRatePercent": 30,
+        "typeJa": "連打",
+        "command": "↑＋□□□",
+        "media": []
+      },
+      {
+        "nameJa": "落雷",
+        "acquisitionRatePercent": 60,
+        "typeJa": "飛び道具",
+        "command": "□＋×",
+        "media": []
+      },
+      {
+        "nameJa": "稲葉百雷",
+        "acquisitionRatePercent": 100,
+        "typeJa": "全体攻撃",
+        "command": "□溜め",
+        "media": []
+      }
+    ],
+    "techniqueSources": [
+      {
+        "sourceId": "atlus-maken-shao-system-page3-archive",
+        "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
+        "accessedDate": "2026-07-17",
+        "scope": "支配率（シンクロ率）與技能習得機制"
+      },
+      {
+        "sourceId": "gamehyoron-maken-shao-characters-1",
+        "url": "https://web.archive.org/web/20160616134923id_/http://gamehyoron.com/kouryaku/maken/maken-c1.htm",
+        "accessedDate": "2026-07-17",
+        "scope": "角色招式、習得支配率、類型與指令"
+      }
+    ]
+  },
+  {
+    "id": "dr-dublin-guiness",
+    "sourceIds": [],
+    "acquisition": null,
+    "techniques": [],
+    "techniqueSources": []
+  }
+]

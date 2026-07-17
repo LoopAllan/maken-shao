@@ -20,4 +20,38 @@ main { min-width:0; padding:clamp(1.25rem,4vw,3rem); }.eyebrow { color:var(--acc
 .character-filter-row input { width:100%; padding:.55rem .7rem; border:1px solid var(--line); border-radius:.4rem; background:var(--surface); color:var(--ink); }
 .filter-result-status { color:var(--muted); font-weight:700; margin:.9rem 0 0; }
 .community-reference-list { overflow-wrap:anywhere; }
-@media (max-width:620px) { .character-filter-row { grid-template-columns:1fr; }.character-filter-row button { width:100%; } }
+.sidebar a:hover,.sidebar a[aria-current="page"],.sidebar a[aria-current="location"] { background:color-mix(in srgb,var(--accent) 14%,transparent); color:var(--accent); }
+.character-nav-heading { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:.25rem; }
+.character-nav-toggle { width:2rem; height:2rem; overflow:hidden; padding:0; border:1px solid var(--line); border-radius:.35rem; background:var(--surface); color:var(--ink); font-size:0; }
+.character-nav-toggle::before { content:"＋"; font-size:1rem; }
+.character-nav-toggle[aria-expanded="true"]::before { content:"−"; }
+.sidebar .character-detail-navigation { margin:.25rem 0 .5rem .75rem; padding-left:.5rem; border-left:2px solid var(--line); }
+.sidebar .character-detail-navigation a { padding:.28rem .45rem; font-size:.9rem; }
+.breadcrumbs { display:flex; flex-wrap:wrap; gap:.35rem; margin-bottom:1rem; color:var(--muted); font-size:.9rem; }
+.character-detail { display:grid; gap:1rem; }
+.character-detail-overview .character-portrait img { max-height:34rem; }
+.character-detail-section ol,.character-detail-section ul { padding-left:1.4rem; }
+.table-scroll { max-width:100%; overflow-x:auto; }
+.technique-table { width:100%; min-width:32rem; border-collapse:collapse; }
+.technique-table caption { text-align:left; font-weight:800; padding:0 0 .6rem; }
+.technique-table th,.technique-table td { border:1px solid var(--line); padding:.55rem .65rem; text-align:left; vertical-align:top; }
+.technique-table thead th { background:color-mix(in srgb,var(--accent) 12%,var(--surface)); }
+.technique-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(16rem,22rem); gap:1rem; align-items:start; }
+.technique-media-gallery { display:grid; gap:1rem; }
+.technique-media-gallery figure { margin:0; padding:.75rem; border:1px solid var(--line); border-radius:.5rem; background:var(--bg); }
+.technique-media-gallery h3 { margin:0 0 .6rem; }
+.technique-media-frames { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.35rem; }
+.technique-media-frames img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line); border-radius:.25rem; }
+.technique-media-gallery figcaption { margin-top:.55rem; color:var(--muted); font-size:.8rem; line-height:1.4; overflow-wrap:anywhere; }
+.source-note { margin:.65rem 0 0; color:var(--muted); font-size:.9rem; overflow-wrap:anywhere; }
+.character-detail-pager { display:flex; justify-content:space-between; gap:1rem; padding:.75rem 0; }
+.character-detail-pager a { display:inline-block; padding:.55rem .75rem; border:1px solid var(--line); border-radius:.4rem; background:var(--surface); text-decoration:none; }
+.character-link { text-decoration-thickness:.08em; text-underline-offset:.16em; }
+.character-preview-card { position:fixed; z-index:20; display:grid; grid-template-columns:7rem minmax(0,1fr); gap:.8rem; max-width:calc(100vw - 1.5rem); padding:.75rem; border:1px solid var(--line); border-radius:.6rem; background:var(--surface); color:var(--ink); box-shadow:0 .75rem 2rem rgb(0 0 0 / .24); pointer-events:none; }
+.character-preview-card[hidden] { display:none; }
+.character-preview-card img { display:block; width:7rem; height:7rem; border-radius:.4rem; object-fit:contain; background:#111; }
+.character-preview-card strong,.character-preview-card span { display:block; }
+.character-preview-card span { color:var(--muted); font-size:.85rem; }
+.character-preview-card p { margin:.4rem 0 0; font-size:.9rem; line-height:1.45; }
+@media (max-width:1000px) { .technique-layout { grid-template-columns:1fr; } }
+@media (max-width:620px) { .character-filter-row { grid-template-columns:1fr; }.character-filter-row button { width:100%; }.character-detail-pager { flex-direction:column; }.technique-table { min-width:34rem; }.character-preview-card { grid-template-columns:5rem minmax(0,1fr); }.character-preview-card img { width:5rem; height:5rem; }.character-preview-card p { display:none; } }

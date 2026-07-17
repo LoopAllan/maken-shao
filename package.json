@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.js",
+    "generate:characters": "node scripts/generate-character-pages.js",
     "validate:data": "node scripts/validate-data.js",
     "check:links": "node scripts/check-links.js",
-    "check:js": "node --check assets/js/app.js && node --check assets/js/data-loader.js && node --check assets/js/validator.js && node --check scripts/validate-data.js && node --check scripts/check-links.js"
+    "check:js": "node --check assets/js/app.js && node --check assets/js/character-links.js && node --check assets/js/data-loader.js && node --check assets/js/validator.js && node --check scripts/generate-character-pages.js && node --check scripts/validate-data.js && node --check scripts/check-links.js"
   }
 }

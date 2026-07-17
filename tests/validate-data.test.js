@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
-import { datasets, validateCharacterReferences, validateDataset, validateWalkthroughReferences } from '../scripts/validate-data.js';
+import { datasets, validateCharacterDetailReferences, validateCharacterReferences, validateDataset, validateTechniqueMediaFiles, validateWalkthroughReferences } from '../scripts/validate-data.js';
 
 const validSource = {
   id: 'demo-source',
@@ -53,6 +53,38 @@ test('accepts a valid placeholder record and existing source reference', () => {
     type: 'character'
   });
   assert.deepEqual(errors, []);
+});
+
+test('rejects hostless or malformed HTTP URI values while accepting valid URLs', () => {
+  const schema = {
+    type: 'object',
+    additionalProperties: false,
+    required: ['id', 'url'],
+    properties: {
+      id: { type: 'string', minLength: 1 },
+      url: { type: 'string', format: 'uri' }
+    }
+  };
+  const validateUrl = (url) => validateDataset({ fileName: 'uri-probe.json', records: [{ id: 'probe', url }], sourceIds: new Set(), type: 'source', schema });
+  assert.deepEqual(validateUrl('https://example.com/path?x=1#section'), []);
+  assert.deepEqual(validateUrl('http://127.0.0.1:8080/path'), []);
+  for (const invalid of [
+    'https://',
+    'http:///path',
+    'https://?query',
+    'javascript:alert(1)',
+    'not-a-url',
+    'https://trusted.example\n@evil.example/path',
+    'https://trusted.example\r@evil.example/path',
+    'https://trusted.example\t@evil.example/path',
+    'https://example.com/path\u0085segment',
+    'https://trusted.example\\@evil.example/path',
+    'https://trusted.example@evil.example/path',
+    'https://@evil.example/path',
+    'https://:@evil.example/path'
+  ]) {
+    assert.match(validateUrl(invalid).join('\n'), /must be an absolute http\(s\) URI/i, JSON.stringify(invalid));
+  }
 });
 
 test('reports missing fields, invalid enum, duplicate IDs, unknown sources, and invalid dates', () => {
@@ -117,7 +149,7 @@ test('requires v0.4 character identity, taxonomy, provenance, and community refe
     readFile(path.join(root, 'data', 'characters.json'), 'utf8').then(JSON.parse),
     readFile(path.join(root, 'data', 'sources.json'), 'utf8').then(JSON.parse)
   ]);
-  for (const field of ['nameJa', 'nameLatin', 'nameZhHant', 'nameEn', 'nameEnStatus', 'imagePath', 'imageAlt', 'imageKind', 'imageSourceId', 'imageOriginalUrl', 'imageDownloadUrl', 'imageSha256', 'imageFilePageUrl', 'imageUploader', 'imageUploadedAt', 'imageSourceSha1', 'imageSourceMime', 'imageSourceWidth', 'imageSourceHeight', 'imageSourceBytes', 'imageSourceVerification', 'imageLocalMime', 'imageUnderlyingSource', 'imageArtist', 'imageLicense', 'imageReuseStatus', 'imageContentType', 'imageRightsNote', 'imageVersionNote', 'role', 'characterType', 'characterGroup', 'wikiNavigationGroup', 'wikiLinkedCharacterIds', 'tags', 'age', 'occupation', 'communityReferences', 'affiliations', 'brainJackStatus', 'firstAppearanceWalkthroughId', 'relatedWalkthroughIds']) {
+  for (const field of ['nameJa', 'nameLatin', 'nameZhHant', 'nameEn', 'nameEnStatus', 'linkAliases', 'imagePath', 'imageAlt', 'imageKind', 'imageSourceId', 'imageOriginalUrl', 'imageDownloadUrl', 'imageSha256', 'imageFilePageUrl', 'imageUploader', 'imageUploadedAt', 'imageSourceSha1', 'imageSourceMime', 'imageSourceWidth', 'imageSourceHeight', 'imageSourceBytes', 'imageSourceVerification', 'imageLocalMime', 'imageUnderlyingSource', 'imageArtist', 'imageLicense', 'imageReuseStatus', 'imageContentType', 'imageRightsNote', 'imageVersionNote', 'role', 'characterType', 'characterGroup', 'wikiNavigationGroup', 'wikiLinkedCharacterIds', 'tags', 'age', 'occupation', 'communityReferences', 'affiliations', 'brainJackStatus', 'firstAppearanceWalkthroughId', 'relatedWalkthroughIds']) {
     assert.ok(schema.required.includes(field), `character schema requires ${field}`);
   }
   assert.deepEqual(schema.properties.characterGroup.enum, ['main', 'fukenshi', 'hakke', 'hostile', 'npc', 'other']);
@@ -172,6 +204,17 @@ test('ships all 28 MegaTen Wiki MX-navigation characters with PS2 scope and trac
   assert.ok(characters.every((record) => record.sourceIds.every((id) => sourceMap.has(id))));
   assert.ok(characters.every((record) => record.sourceIds.includes('megaten-wiki-maken-x-characters')));
   assert.ok(characters.every((record) => record.nameZhHant && record.nameJa && record.nameEn && record.tags.length > 0));
+  assert.ok(characters.every((record) => record.linkAliases.includes(record.nameZhHant) && record.linkAliases.includes(record.nameJa) && record.linkAliases.includes(record.nameEn)));
+  assert.ok(characters.every((record) => new Set(record.linkAliases).size === record.linkAliases.length));
+  const aliasOwners = new Map();
+  characters.forEach((record) => record.linkAliases.forEach((alias) => {
+    const key = alias.normalize('NFKC').toLocaleLowerCase('en');
+    if (!aliasOwners.has(key)) aliasOwners.set(key, new Set());
+    aliasOwners.get(key).add(record.id);
+  }));
+  assert.ok([...aliasOwners.entries()].every(([, owners]) => owners.size === 1), 'every character alias has exactly one owner');
+  assert.ok(byId.get('rei').linkAliases.includes('八卦雷') && byId.get('rei').linkAliases.includes('雷'));
+  assert.ok(byId.get('lee-fei-shan').linkAliases.includes('飛扇'));
   assert.ok(characters.every((record) => record.communityReferences.length === 1 && record.communityReferences[0].revisionId > 0));
   assert.ok(characters.every((record) => ['official', 'romanized', 'community'].includes(record.nameEnStatus)));
   assert.ok(characters.every((record) => record.imagePath && record.imageAlt && record.imageSourceId === 'megaten-wiki-maken-x-characters'));
@@ -231,6 +274,124 @@ test('character page declares category tabs, query, and multi-tag filters', asyn
   assert.match(app, /沒有符合篩選條件的資料/);
   assert.match(home, /完整 28 名角色資料/);
   assert.doesNotMatch(home, /22 筆|17 張可追溯官方角色圖/);
+});
+
+test('ships one validated detail record and static page for every character', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const [characters, details, walkthrough, sources, schema, app, generator, pageFiles] = await Promise.all([
+    readFile(path.join(root, 'data', 'characters.json'), 'utf8').then(JSON.parse),
+    readFile(path.join(root, 'data', 'character-details.json'), 'utf8').then(JSON.parse),
+    readFile(path.join(root, 'data', 'walkthrough.json'), 'utf8').then(JSON.parse),
+    readFile(path.join(root, 'data', 'sources.json'), 'utf8').then(JSON.parse),
+    readFile(path.join(root, 'schemas', 'character-detail.schema.json'), 'utf8').then(JSON.parse),
+    readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8'),
+    readFile(path.join(root, 'scripts', 'generate-character-pages.js'), 'utf8'),
+    readdir(path.join(root, 'pages', 'characters'))
+  ]);
+  assert.deepEqual(datasets['character-details.json'], { schema: 'character-detail.schema.json', type: 'character-detail' });
+  assert.equal(details.length, 28);
+  assert.deepEqual(details.map((record) => record.id).sort(), characters.map((record) => record.id).sort());
+  assert.deepEqual(validateCharacterDetailReferences(details, characters, walkthrough), []);
+  const sourceIds = new Set(sources.map((source) => source.id));
+  assert.deepEqual(validateDataset({ fileName: 'character-details.json', records: details, sourceIds, type: 'character-detail', schema }), []);
+  assert.deepEqual(validateTechniqueMediaFiles(details, root), []);
+  const missingArchiveBytes = structuredClone(details);
+  delete missingArchiveBytes.find((record) => record.id === 'kei-sagami').techniques.find((technique) => technique.nameJa === '寿星突き').media[0].archiveBytes;
+  assert.match(validateDataset({ fileName: 'character-details.json', records: missingArchiveBytes, sourceIds, type: 'character-detail', schema }).join('\n'), /missing required field "archiveBytes"/i);
+  const invalidArchiveBytes = structuredClone(details);
+  invalidArchiveBytes.find((record) => record.id === 'kei-sagami').techniques.find((technique) => technique.nameJa === '寿星突き').media[0].archiveBytes = 0;
+  assert.match(validateDataset({ fileName: 'character-details.json', records: invalidArchiveBytes, sourceIds, type: 'character-detail', schema }).join('\n'), /archiveBytes.*must be at least 1/i);
+  assert.match(validateTechniqueMediaFiles(invalidArchiveBytes, root).join('\n'), /archiveBytes 0 does not match local file length 21787/i);
+  for (const invalidUrl of ['https://', 'http:///path', 'https://trusted.example\n@evil.example/path', 'https://trusted.example\t@evil.example/path']) {
+    const invalidArchiveUrl = structuredClone(details);
+    invalidArchiveUrl.find((record) => record.id === 'kei-sagami').techniques.find((technique) => technique.nameJa === '寿星突き').media[0].archiveUrl = invalidUrl;
+    assert.match(validateDataset({ fileName: 'character-details.json', records: invalidArchiveUrl, sourceIds, type: 'character-detail', schema }).join('\n'), /archiveUrl.*must be an absolute http\(s\) URI/i, invalidUrl);
+  }
+  assert.equal(pageFiles.filter((file) => file.endsWith('.html')).length, 28);
+  for (const character of characters) {
+    const html = await readFile(path.join(root, 'pages', 'characters', `${character.id}.html`), 'utf8');
+    assert.match(html, new RegExp(`data-character-detail-id="${character.id}"`));
+    assert.match(html, /data-base="\.\.\/\.\."/);
+    assert.match(html, /href="\.\.\/\.\.\/assets\/css\/style\.css"/);
+    assert.match(html, /href="\.\.\/characters\.html" aria-current="location"/);
+    assert.match(html, /src="\.\.\/\.\.\/assets\/js\/character-links\.js"/);
+  }
+  assert.match(app, /characterDetailHref\(item\.id\)/);
+  assert.match(app, /className = 'character-nav-toggle'/);
+  assert.match(app, /className = 'character-detail-navigation'/);
+  assert.match(app, /data-character-detail-id/);
+  assert.match(generator, /Generated \$\{characters\.length\} character detail pages/);
+});
+
+test('provides sourced acquisition routes and 81 synchronization-gated moves for all 18 confirmed hosts', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const [characters, details, sources] = await Promise.all(['characters.json', 'character-details.json', 'sources.json'].map((file) => readFile(path.join(root, 'data', file), 'utf8').then(JSON.parse)));
+  const confirmedIds = new Set(characters.filter((record) => record.brainJackStatus === 'confirmed-host').map((record) => record.id));
+  const playableDetails = details.filter((record) => confirmedIds.has(record.id));
+  const unsupportedDetails = details.filter((record) => !confirmedIds.has(record.id));
+  assert.equal(playableDetails.length, 18);
+  assert.equal(unsupportedDetails.length, 10);
+  assert.ok(unsupportedDetails.every((record) => record.acquisition === null && record.techniques.length === 0 && record.techniqueSources.length === 0));
+  assert.ok(playableDetails.every((record) => record.acquisition && record.acquisition.steps.length > 0 && record.acquisition.sourceIds.length > 0));
+  assert.ok(playableDetails.every((record) => record.techniques.length > 0 && record.techniqueSources.length === 2));
+  assert.ok(playableDetails.every((record) => record.techniques.some((technique) => technique.acquisitionRatePercent === 0) && record.techniques.some((technique) => technique.acquisitionRatePercent === 100)));
+  assert.equal(playableDetails.reduce((total, record) => total + record.techniques.length, 0), 81);
+  assert.ok(playableDetails.flatMap((record) => record.techniques).every((technique) => Number.isInteger(technique.acquisitionRatePercent) && technique.acquisitionRatePercent >= 0 && technique.acquisitionRatePercent <= 100 && technique.nameJa && technique.typeJa && technique.command && Array.isArray(technique.media)));
+  const keiMedia = details.find((record) => record.id === 'kei-sagami').techniques.filter((technique) => technique.media.length);
+  assert.deepEqual(keiMedia.map((technique) => [technique.nameJa, technique.media.length]), [['寿星突き', 1]]);
+  const keiMediaFiles = keiMedia.flatMap((technique) => technique.media);
+  assert.ok(keiMediaFiles.every((media) => media.sourceId === 'atlus-maken-shao-system-page3-archive' && media.kind === 'official-technique-action-frame' && /^[a-f0-9]{64}$/.test(media.sha256)));
+  for (const media of keiMediaFiles) {
+    const bytes = await readFile(path.join(root, media.path));
+    assert.equal(bytes.length, media.archiveBytes, `${media.path} archive byte length matches`);
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), media.sha256, `${media.path} checksum matches`);
+    assert.equal(bytes.subarray(0, 2).toString('hex'), 'ffd8');
+  }
+  assert.ok(playableDetails.every((record) => record.sourceIds.includes('atlus-maken-shao-system-page3-archive')));
+  assert.deepEqual(new Set(playableDetails.flatMap((record) => record.techniqueSources.map((source) => source.sourceId)).filter((id) => id.startsWith('gamehyoron-maken-shao-characters-'))), new Set(['gamehyoron-maken-shao-characters-1', 'gamehyoron-maken-shao-characters-2', 'gamehyoron-maken-shao-characters-3', 'gamehyoron-maken-shao-characters-4']));
+  assert.ok(['三段斬り', 'マキナクオーク'].every((name) => details.find((record) => record.id === 'kei-sagami').techniques.some((technique) => technique.nameJa === name)));
+  assert.equal(details.find((record) => record.id === 'dal').techniques.find((technique) => technique.acquisitionRatePercent === 100).nameJa, 'ウラドウィルス');
+  assert.equal(details.find((record) => record.id === 'smith').techniques.find((technique) => technique.nameJa === 'ローリングスミス').command, '□＋×～□□□□');
+  assert.match(sources.find((source) => source.id === 'atlus-maken-shao-system-page3-archive').notes, /支配率.*シンクロ率/);
+});
+
+test('rejects missing, duplicate, and inconsistent character detail references', () => {
+  const characters = [{ id: 'one' }, { id: 'two' }];
+  const walkthrough = [{ id: 'route-one' }];
+  const details = [{ id: 'one', sourceIds: ['source-one'], acquisition: { walkthroughIds: ['missing-route'], sourceIds: ['missing-source'] }, techniques: [{ nameJa: '技', media: [{ sourceId: 'missing-media' }] }], techniqueSources: [] }, { id: 'one', sourceIds: [], acquisition: null, techniques: [], techniqueSources: [] }];
+  const output = validateCharacterDetailReferences(details, characters, walkthrough).join('\n');
+  assert.match(output, /duplicate detail record "one"/i);
+  assert.match(output, /unknown acquisition walkthroughId "missing-route"/i);
+  assert.match(output, /acquisition sourceId "missing-source" must also appear in sourceIds/i);
+  assert.match(output, /techniques require techniqueSources/i);
+  assert.match(output, /media sourceId "missing-media" must also appear in sourceIds/i);
+  assert.match(output, /missing detail record for character "two"/i);
+});
+
+test('loads character mention links and accessible previews across every site entry page', async () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const pageNames = ['introduction.html', 'systems.html', 'walkthrough.html', 'characters.html', 'knowledge.html', 'endings.html', 'bosses.html', 'references.html'];
+  const htmlFiles = [path.join(root, 'index.html'), ...pageNames.map((name) => path.join(root, 'pages', name))];
+  for (const file of htmlFiles) {
+    const html = await readFile(file, 'utf8');
+    assert.match(html, /character-links\.js/);
+    assert.ok(html.indexOf('character-links.js') < html.indexOf('app.js'), `${path.basename(file)} loads mention helper before app`);
+  }
+  const app = await readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8');
+  assert.match(app, /linkCharacterMentions/);
+  assert.match(app, /魔剣爻.*Maken X/);
+  assert.match(app, /excluded = .*\.metadata/);
+  assert.match(app, /character-preview-card/);
+  assert.match(app, /technique-media-gallery/);
+  assert.match(app, /media\.archiveUrl/);
+  assert.match(app, /media\.archiveBytes/);
+  assert.match(app, /media\.sha256/);
+  assert.match(app, /media\.originalUrl/);
+  assert.match(app, /media\.path/);
+  assert.match(app, /aria-describedby/);
+  assert.match(app, /pointerenter/);
+  assert.match(app, /focusin/);
+  assert.match(app, /Escape/);
 });
 
 test('keeps character-only UI out of walkthrough cards and preserves sequence order', async () => {
@@ -337,6 +498,7 @@ test('ships only sourced PS2 walkthrough records in v0.3', async () => {
   assert.ok(walkthrough.every((record) => record.gameVersion === 'maken-shao-ps2' && record.region === 'JP'));
   assert.ok(walkthrough.every((record) => record.isPlaceholder === false && record.verificationStatus === 'partially-verified'));
   assert.ok(walkthrough.every((record) => record.sourceIds.every((id) => id !== 'demo-source' && sourceIds.has(id))));
+  assert.doesNotMatch(JSON.stringify(walkthrough), /尚未連到角色圖鑑|待 v0\.4 建立正式角色 ID|角色名稱翻譯.*待 v0\.4/);
   assert.deepEqual(validateWalkthroughReferences(walkthrough), []);
 });
 

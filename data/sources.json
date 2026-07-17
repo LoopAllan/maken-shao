@@ -63,7 +63,7 @@
     "url": "https://web.archive.org/web/20021222112830/http://www.atlus.co.jp/cs/game/pstation2/shao/gmsys3.html",
     "publicationDate": null,
     "accessedDate": "2026-07-16",
-    "notes": "Atlus 系統頁的 Internet Archive 保存版。可查證 Image Point、同步率、技能與 Brain Jack 所需點數；原始 Atlus URL 已失效。"
+    "notes": "Atlus 系統頁的 Internet Archive 保存版。原文明記『支配率（シンクロ率）』，並說明同步率上升會習得各角色的技能；相模桂在 100% 習得マキナクオーク。原始 Atlus URL 已失效。"
   },
   {
     "id": "game-watch-maken-shao-2001-02-23",
@@ -207,5 +207,49 @@
     "publicationDate": null,
     "accessedDate": "2026-07-16",
     "notes": "由 Kei Sagami 頁面底部 MX 導航模板與 Category:Maken X Characters 透過 MediaWiki API 展開，共取得 28 個角色頁。社群頁同時涵蓋 Dreamcast《Maken X》與 PS2《Maken Shao》，只作補充與交叉核對，不視為 Atlus 官方來源。角色圖逐一記錄原始 URL、Fandom 檔案頁、上傳者、MediaWiki SHA-1、本地 SHA-256 與版本警語。Fandom 檔案頁未提供結構化圖像授權 metadata；本站不主張自由再散布授權。社群文字依 Fandom 站點條款歸屬，個別遊戲圖像可能另受 Atlus 或其他權利人著作權保護。"
+  },
+  {
+    "id": "gamehyoron-maken-shao-characters-1",
+    "title": "「魔剣爻」の攻略（プレイヤーが操作できるキャラの紹介その1）",
+    "sourceType": "other",
+    "publisherOrAuthor": "ゲーム瓢論",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20160616134923id_/http://gamehyoron.com/kouryaku/maken/maken-c1.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-17",
+    "notes": "PS2 日版社群角色攻略第 1 頁；表頭明列技名、習得支配率、類型、威力與指令。精確百分比屬社群攻略資料；同步率機制定義另以 Atlus 官方系統頁交叉確認。"
+  },
+  {
+    "id": "gamehyoron-maken-shao-characters-2",
+    "title": "「魔剣爻」の攻略（プレイヤーが操作できるキャラの紹介その2）",
+    "sourceType": "other",
+    "publisherOrAuthor": "ゲーム瓢論",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20160616134942id_/http://gamehyoron.com/kouryaku/maken/maken-c2.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-17",
+    "notes": "PS2 日版社群角色攻略第 2 頁；表頭明列技名、習得支配率、類型、威力與指令。精確百分比屬社群攻略資料；同步率機制定義另以 Atlus 官方系統頁交叉確認。"
+  },
+  {
+    "id": "gamehyoron-maken-shao-characters-3",
+    "title": "「魔剣爻」の攻略（プレイヤーが操作できるキャラの紹介その3）",
+    "sourceType": "other",
+    "publisherOrAuthor": "ゲーム瓢論",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20160616115554id_/http://gamehyoron.com/kouryaku/maken/maken-c3.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-17",
+    "notes": "PS2 日版社群角色攻略第 3 頁；表頭明列技名、習得支配率、類型、威力與指令。精確百分比屬社群攻略資料；同步率機制定義另以 Atlus 官方系統頁交叉確認。"
+  },
+  {
+    "id": "gamehyoron-maken-shao-characters-4",
+    "title": "「魔剣爻」の攻略（プレイヤーが操作できるキャラの紹介その4）",
+    "sourceType": "other",
+    "publisherOrAuthor": "ゲーム瓢論",
+    "sourceLevel": "community",
+    "url": "https://web.archive.org/web/20160616134947id_/http://gamehyoron.com/kouryaku/maken/maken-c4.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-17",
+    "notes": "PS2 日版社群角色攻略第 4 頁；表頭明列技名、習得支配率、類型、威力與指令。精確百分比屬社群攻略資料；同步率機制定義另以 Atlus 官方系統頁交叉確認。"
   }
 ]
