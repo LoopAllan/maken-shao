@@ -22,15 +22,6 @@
     setTheme(theme);
   });
 
-  document.querySelectorAll('[data-spoiler-toggle]').forEach((button) => button.addEventListener('click', () => {
-    const target = document.getElementById(button.dataset.spoilerToggle);
-    if (!target) return;
-    const hidden = target.hidden;
-    target.hidden = !hidden;
-    button.setAttribute('aria-expanded', String(hidden));
-    button.textContent = hidden ? '收合劇透內容' : '展開劇透內容';
-  }));
-
   function badge(text) {
     const item = document.createElement('li');
     item.className = 'badge';
@@ -38,7 +29,7 @@
     return item;
   }
 
-  function sourceLinks(item, sourceMap, isMajor) {
+  function sourceLinks(item, sourceMap) {
     const sources = document.createElement('p');
     sources.append('來源：');
     item.sourceIds.forEach((id, index) => {
@@ -52,7 +43,7 @@
       link.href = source.url;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      link.textContent = isMajor && source.sourceLevel === 'community' ? `社群流程來源 ${index + 1}` : source.title;
+      link.textContent = source.title;
       sources.append(link);
     });
     return sources;
@@ -75,9 +66,12 @@
     });
     const note = document.createElement('p');
     note.className = 'name-source-note';
-    note.textContent = item.nameEnStatus === 'official'
-      ? '英文名：官方角色圖可讀的拉丁字樣。'
-      : '英文名：依日文名整理的羅馬字／英文字形，並非已查得的官方英語在地化名稱。';
+    const nameNotes = {
+      official: '英文名：官方角色圖可讀的拉丁字樣。',
+      romanized: '英文名：依日文名整理的羅馬字／英文字形，並非已查得的官方英語在地化名稱。',
+      community: '英文名：MegaTen Wiki 社群頁名；不是已查得的 PS2 日版官方英文名。'
+    };
+    note.textContent = nameNotes[item.nameEnStatus] || nameNotes.community;
     return { identity, note };
   }
 
@@ -98,29 +92,35 @@
     const caption = document.createElement('figcaption');
     if (item.imageKind === 'official-source') {
       caption.append('圖像：Atlus《魔剣爻》官方角色介紹保存頁；© ATLUS，僅作本離線資料庫的來源識別與引用。');
-      if (item.imageOriginalUrl) {
-        caption.append(' ');
-        const sourceAsset = document.createElement('a');
-        sourceAsset.href = item.imageOriginalUrl;
-        sourceAsset.target = '_blank';
-        sourceAsset.rel = 'noopener noreferrer';
-        sourceAsset.textContent = '原始圖片資產';
-        caption.append(sourceAsset);
-      }
     } else {
-      caption.textContent = '圖像：站內中性佔位圖；現有來源未提供可確證且可下載的角色圖，不代表角色外觀。';
+      caption.append('圖像：MegaTen Wiki / Fandom 角色頁的本地縮圖；本站不主張圖像著作權或自由再散布授權。');
     }
+    const assetUrl = item.imageFilePageUrl || item.imageOriginalUrl;
+    if (assetUrl) {
+      caption.append(' ');
+      const sourceAsset = document.createElement('a');
+      sourceAsset.href = assetUrl;
+      sourceAsset.target = '_blank';
+      sourceAsset.rel = 'noopener noreferrer';
+      sourceAsset.textContent = item.imageFilePageUrl ? '圖片檔案頁與來源資訊' : '原始圖片資產';
+      caption.append(sourceAsset);
+    }
+    if (item.imageUploader || item.imageUploadedAt) caption.append(` 上傳記錄：${item.imageUploader || '未列'}／${item.imageUploadedAt || '未列'}。`);
+    if (item.imageSourceMime && item.imageSourceWidth && item.imageSourceHeight && item.imageSourceBytes) caption.append(` Wiki 原始資產：${item.imageSourceMime}、${item.imageSourceWidth}×${item.imageSourceHeight}、${item.imageSourceBytes.toLocaleString('zh-Hant')} bytes；本站下載縮圖：${item.imageLocalMime || '格式未列'}。`);
+    if (item.imageSourceVerification) caption.append(` 原始資產驗證：${item.imageSourceVerification}。`);
+    if (item.imageVersionNote) caption.append(` 版本註記：${item.imageVersionNote}`);
+    if (item.imageRightsNote) caption.append(` 權利註記：${item.imageRightsNote}`);
     figure.append(image, caption);
     return figure;
   }
 
-  function renderContentCard(item, sourceMap, contentType) {
+  function renderContentCard(item, sourceMap, contentType, itemMap) {
     const article = document.createElement('article');
     article.className = 'card';
+    article.dataset.recordId = item.id;
     const isCharacter = contentType === 'characters';
-    const isMajor = item.spoilerLevel === 'major';
-    const isMinor = item.spoilerLevel === 'minor';
-    const title = document.createElement(isMajor ? 'h3' : 'h2');
+    if (isCharacter && item.characterGroup) article.dataset.characterGroup = item.characterGroup;
+    const title = document.createElement('h2');
     title.textContent = item.title;
     const summary = document.createElement('p');
     summary.textContent = item.summary;
@@ -134,29 +134,26 @@
       badge(`查證狀態：${item.verificationStatus}`),
       badge(`最後查證：${item.lastVerified}`)
     );
+    if (item.characterGroup) meta.append(badge(`分類：${item.characterGroup}`));
+    if (item.wikiNavigationGroup) meta.append(badge(`Wiki 導覽：${item.wikiNavigationGroup === 'playable' ? 'Playable' : 'Non-playable'}`));
     if (item.characterType) meta.append(badge(`角色類型：${item.characterType}`));
     if (item.brainJackStatus) meta.append(badge(`Brain Jack：${item.brainJackStatus}`));
+    if (Number.isInteger(item.age)) meta.append(badge(`社群頁年齡：${item.age}`));
+    if (item.occupation) meta.append(badge(`社群頁身分／職業：${item.occupation}`));
     if (Array.isArray(item.affiliations) && item.affiliations.length) meta.append(badge(`所屬：${item.affiliations.join('、')}`));
+    if (Array.isArray(item.tags)) item.tags.forEach((tag) => meta.append(badge(`#${tag}`)));
     if (Number.isInteger(item.sequence)) meta.prepend(badge(`順序：${item.sequence}`));
     if (item.area) meta.append(badge(`區域：${item.area}`));
     if (item.routeId) meta.append(badge(`路線：${item.routeTitle || item.routeId}`));
     if (item.missable === true) meta.append(badge('可錯過'));
 
-    const details = document.createElement('details');
-    details.className = 'spoiler-content';
-    if (!isMajor && !isMinor) details.open = true;
-    const control = document.createElement('summary');
-    const detailLabel = isCharacter ? '角色細節與查證資料' : '內容細節與查證資料';
-    control.textContent = isMajor ? '展開重大劇透內容' : (isMinor ? `展開${detailLabel}（輕微劇透）` : `收合${detailLabel}`);
-    const body = document.createElement('div');
-    body.className = 'card-detail-body';
-    body.append(summary);
-    if (isCharacter) body.append(characterImage(item));
+    article.append(title, summary);
+    if (isCharacter) article.append(characterImage(item));
     if (isCharacter && item.nameJa && item.nameZhHant && item.nameEn) {
       const { identity, note } = characterIdentity(item);
-      body.append(identity, note);
+      article.append(identity, note);
     }
-    body.append(content, meta);
+    article.append(content, meta);
     if (Array.isArray(item.objectives) && item.objectives.length) {
       const heading = document.createElement('h3');
       heading.textContent = '已查證目標';
@@ -166,23 +163,43 @@
         row.textContent = objective;
         list.append(row);
       });
-      body.append(heading, list);
+      article.append(heading, list);
     }
-    body.append(sourceLinks(item, sourceMap, isMajor));
+    if (isCharacter && Array.isArray(item.wikiLinkedCharacterIds) && item.wikiLinkedCharacterIds.length) {
+      const heading = document.createElement('h3');
+      heading.textContent = 'Wiki 內文明示連結角色';
+      const list = document.createElement('ul');
+      item.wikiLinkedCharacterIds.forEach((id) => {
+        const target = itemMap?.get(id);
+        const row = document.createElement('li');
+        row.textContent = target ? `${target.nameZhHant}｜${target.nameEn}` : id;
+        list.append(row);
+      });
+      article.append(heading, list);
+    }
+    if (isCharacter && Array.isArray(item.communityReferences) && item.communityReferences.length) {
+      const heading = document.createElement('h3');
+      heading.textContent = '角色頁交叉參考';
+      const list = document.createElement('ul');
+      list.className = 'community-reference-list';
+      item.communityReferences.forEach((reference) => {
+        const row = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = reference.pageUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = `${reference.pageTitle}（revision ${reference.revisionId}）`;
+        row.append(link, `；查閱 ${reference.accessedDate}。${reference.note}`);
+        list.append(row);
+      });
+      article.append(heading, list);
+    }
+    article.append(sourceLinks(item, sourceMap));
     if (item.verificationNote) {
       const verification = document.createElement('p');
       verification.className = 'verification-note';
       verification.textContent = `查證註記：${item.verificationNote}`;
-      body.append(verification);
-    }
-    if (isMajor) {
-      details.append(control, title, body);
-      const hiddenTitle = document.createElement('h2');
-      hiddenTitle.textContent = '重大劇透內容（已隱藏）';
-      article.append(hiddenTitle, details);
-    } else {
-      details.append(control, body);
-      article.append(title, details);
+      article.append(verification);
     }
     return article;
   }
@@ -208,13 +225,8 @@
         article.className = 'card';
         const heading = document.createElement('h3');
         const description = document.createElement('p');
-        if (item.spoiler === true) {
-          heading.textContent = `[${type}｜${item.gameVersion}] 劇透結果（標題已隱藏）`;
-          description.textContent = '此結果包含劇透；標題、摘要與內容已隱藏，請至對應頁面主動展開。';
-        } else {
-          heading.textContent = `[${type}｜${item.gameVersion}] ${item.title}`;
-          description.textContent = item.summary;
-        }
+        heading.textContent = `[${type}｜${item.gameVersion}] ${item.title}`;
+        description.textContent = item.summary;
         article.append(heading, description);
         results.append(article);
       });
@@ -238,16 +250,20 @@
         window.MakenData.loadJson(basePath, 'sources.json')
       ]);
       const sourceMap = new Map(sources.map((source) => [source.id, source]));
+      const itemMap = new Map(items.map((item) => [item.id, item]));
+      const contentType = file.replace(/\.json$/, '');
       const routeFilter = document.querySelector('[data-route-filter]');
-      const spoilerRouteToggle = document.querySelector('[data-spoiler-route-toggle]');
       const statusFilter = document.querySelector('[data-status-filter]');
-      const characterTypeFilter = document.querySelector('[data-character-type-filter]');
-      const brainJackFilter = document.querySelector('[data-brain-jack-filter]');
+      const tabList = document.querySelector('[data-character-tabs]');
+      const tagList = document.querySelector('[data-character-tag-list]');
+      const characterQuery = document.querySelector('[data-character-query]');
+      const characterReset = document.querySelector('[data-character-reset]');
+      const resultStatus = document.querySelector('[data-character-result-status]');
+      let activeGroup = 'all';
+      const selectedTags = new Set();
       const routes = new Map();
       items.forEach((item) => {
-        if (!item.routeId) return;
-        const current = routes.get(item.routeId);
-        routes.set(item.routeId, { label: item.routeTitle || item.routeId, isMajor: (current?.isMajor ?? true) && item.spoilerLevel === 'major' });
+        if (item.routeId) routes.set(item.routeId, item.routeTitle || item.routeId);
       });
       const populateRoutes = () => {
         if (!routeFilter) return;
@@ -258,28 +274,39 @@
         all.textContent = '全部路線';
         routeFilter.append(all);
         [...routes.entries()]
-          .filter(([, route]) => spoilerRouteToggle?.checked || !route.isMajor)
-          .sort((a, b) => a[1].label.localeCompare(b[1].label, 'zh-Hant'))
-          .forEach(([routeId, route]) => {
+          .sort((a, b) => a[1].localeCompare(b[1], 'zh-Hant'))
+          .forEach(([routeId, label]) => {
             const option = document.createElement('option');
             option.value = routeId;
-            option.textContent = route.label;
+            option.textContent = label;
             routeFilter.append(option);
           });
         routeFilter.value = [...routeFilter.options].some((option) => option.value === selected) ? selected : 'all';
       };
+      const setActiveTab = (group) => {
+        activeGroup = group;
+        let selectedTab = null;
+        tabList?.querySelectorAll('[role="tab"]').forEach((tab) => {
+          const selected = tab.dataset.characterGroup === group;
+          tab.setAttribute('aria-selected', String(selected));
+          tab.tabIndex = selected ? 0 : -1;
+          if (selected) selectedTab = tab;
+        });
+        if (selectedTab) contentTarget.setAttribute('aria-labelledby', selectedTab.id);
+      };
       const render = () => {
         const route = routeFilter?.value || 'all';
         const status = statusFilter?.value || 'all';
-        const characterType = characterTypeFilter?.value || 'all';
-        const brainJackStatus = brainJackFilter?.value || 'all';
-        const contentType = file.replace(/\.json$/, '');
-        const visible = items.filter((item) => (
-          (route === 'all' || item.routeId === route)
-          && (status === 'all' || item.verificationStatus === status)
-          && (characterType === 'all' || item.characterType === characterType)
-          && (brainJackStatus === 'all' || item.brainJackStatus === brainJackStatus)
-        )).sort((a, b) => {
+        const query = characterQuery?.value.trim().toLocaleLowerCase('zh-Hant') || '';
+        const visible = items.filter((item) => {
+          const searchable = [item.title, item.summary, item.content, item.nameZhHant, item.nameJa, item.nameEn, item.role, item.occupation, ...(item.affiliations || []), ...(item.tags || [])]
+            .filter(Boolean).join(' ').toLocaleLowerCase('zh-Hant');
+          return (route === 'all' || item.routeId === route)
+            && (status === 'all' || item.verificationStatus === status)
+            && (contentType !== 'characters' || activeGroup === 'all' || item.characterGroup === activeGroup)
+            && (contentType !== 'characters' || [...selectedTags].every((tag) => item.tags?.includes(tag)))
+            && (contentType !== 'characters' || !query || searchable.includes(query));
+        }).sort((a, b) => {
           if (contentType === 'walkthrough') {
             const sequenceDifference = (a.sequence ?? Number.MAX_SAFE_INTEGER) - (b.sequence ?? Number.MAX_SAFE_INTEGER);
             if (sequenceDifference) return sequenceDifference;
@@ -287,19 +314,74 @@
           return a.title.localeCompare(b.title, 'zh-Hant');
         });
         contentTarget.replaceChildren();
+        if (resultStatus) resultStatus.textContent = `顯示 ${visible.length}／${items.length} 名角色。`;
         if (!visible.length) {
           contentTarget.textContent = '沒有符合篩選條件的資料。';
           return;
         }
-        visible.forEach((item) => contentTarget.append(renderContentCard(item, sourceMap, contentType)));
+        visible.forEach((item) => contentTarget.append(renderContentCard(item, sourceMap, contentType, itemMap)));
       };
+      if (contentType === 'characters' && tabList) {
+        const groupLabels = new Map([['all', '全部'], ['main', '主要角色'], ['fukenshi', '封劍士'], ['hakke', '八卦'], ['hostile', '敵對'], ['npc', 'NPC'], ['other', '其他']]);
+        const groups = ['all', 'main', 'fukenshi', 'hakke', 'hostile', 'npc', 'other'].filter((group) => group === 'all' || items.some((item) => item.characterGroup === group));
+        tabList.replaceChildren();
+        groups.forEach((group, index) => {
+          const tab = document.createElement('button');
+          const count = group === 'all' ? items.length : items.filter((item) => item.characterGroup === group).length;
+          tab.type = 'button';
+          tab.setAttribute('role', 'tab');
+          tab.id = `character-tab-${group}`;
+          tab.dataset.characterGroup = group;
+          tab.setAttribute('aria-controls', 'character-results');
+          tab.setAttribute('aria-selected', String(index === 0));
+          tab.tabIndex = index === 0 ? 0 : -1;
+          tab.textContent = `${groupLabels.get(group)} ${count}`;
+          tab.addEventListener('click', () => { setActiveTab(group); render(); });
+          tabList.append(tab);
+        });
+        tabList.addEventListener('keydown', (event) => {
+          const tabs = [...tabList.querySelectorAll('[role="tab"]')];
+          const current = tabs.indexOf(document.activeElement);
+          if (current < 0) return;
+          let next = current;
+          if (event.key === 'ArrowRight') next = (current + 1) % tabs.length;
+          else if (event.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = tabs.length - 1;
+          else return;
+          event.preventDefault();
+          tabs[next].click();
+          tabs[next].focus();
+        });
+      }
+      if (contentType === 'characters' && tagList) {
+        const tags = [...new Set(items.flatMap((item) => item.tags || []))].sort((a, b) => a.localeCompare(b, 'zh-Hant'));
+        tagList.replaceChildren();
+        tags.forEach((tag) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'tag-filter';
+          button.dataset.characterTag = tag;
+          button.setAttribute('aria-pressed', 'false');
+          button.textContent = `#${tag}`;
+          button.addEventListener('click', () => {
+            if (selectedTags.has(tag)) selectedTags.delete(tag); else selectedTags.add(tag);
+            button.setAttribute('aria-pressed', String(selectedTags.has(tag)));
+            render();
+          });
+          tagList.append(button);
+        });
+      }
       populateRoutes();
-      [routeFilter, spoilerRouteToggle, statusFilter, characterTypeFilter, brainJackFilter]
-        .filter(Boolean)
-        .forEach((control) => control.addEventListener('change', () => {
-          if (control === spoilerRouteToggle) populateRoutes();
-          render();
-        }));
+      [routeFilter, statusFilter].filter(Boolean).forEach((control) => control.addEventListener('change', render));
+      characterQuery?.addEventListener('input', render);
+      characterReset?.addEventListener('click', () => {
+        selectedTags.clear();
+        tagList?.querySelectorAll('[aria-pressed="true"]').forEach((button) => button.setAttribute('aria-pressed', 'false'));
+        if (characterQuery) characterQuery.value = '';
+        setActiveTab('all');
+        render();
+      });
       render();
     } catch (error) {
       contentTarget.textContent = '資料無法載入。直接以 file:// 開啟時，請改用本機靜態伺服器。';
@@ -313,7 +395,7 @@
     try {
       const sources = await window.MakenData.loadJson(basePath, 'sources.json');
       sourceList.replaceChildren();
-      sources.filter((source) => source.id !== 'demo-source').forEach((source, index) => {
+      sources.filter((source) => source.id !== 'demo-source').forEach((source) => {
         const article = document.createElement('article');
         article.className = 'card';
         const title = document.createElement('h2');
@@ -328,17 +410,7 @@
         metadata.append(badge(`來源層級：${source.sourceLevel}`), badge(`最後查閱：${source.accessedDate}`));
         const description = document.createElement('p');
         description.textContent = source.notes;
-        if (source.sourceLevel === 'community') {
-          const hiddenTitle = document.createElement('h2');
-          hiddenTitle.textContent = `社群流程來源 ${index + 1}（書目資訊已隱藏）`;
-          const disclosure = document.createElement('details');
-          const control = document.createElement('summary');
-          control.textContent = '展開可能包含流程劇透的來源名稱與說明';
-          disclosure.append(control, title, metadata, description);
-          article.append(hiddenTitle, disclosure);
-        } else {
-          article.append(title, metadata, description);
-        }
+        article.append(title, metadata, description);
         sourceList.append(article);
       });
     } catch (error) {

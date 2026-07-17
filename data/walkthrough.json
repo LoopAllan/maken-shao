@@ -15,7 +15,6 @@
     "verificationNote": "兩份獨立 PS2 日版社群流程一致；官方網站僅證實分歧概念，未提供可讀關卡順序表。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "sequence": 1,
     "area": "金澤研究所",
     "routeId": "common-opening",
@@ -33,7 +32,6 @@
       "andrei"
     ],
     "missable": false,
-    "spoilerLevel": "minor",
     "routeTitle": "共同開局",
     "anyOfPrerequisites": []
   },
@@ -53,7 +51,6 @@
     "verificationNote": "分歧由兩份社群攻略交叉印證；Brain Jack 對象尚未連到角色圖鑑，待 v0.4 建立正式角色 ID。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 2,
     "area": "林卡頓（リンカードン）",
     "routeId": "common-opening",
@@ -73,7 +70,6 @@
       "inaba-go"
     ],
     "missable": false,
-    "spoilerLevel": "major",
     "routeTitle": "共同開局",
     "anyOfPrerequisites": []
   },
@@ -94,7 +90,6 @@
     "verificationNote": "解鎖關係由兩份社群流程一致支持；委託文字、逐場戰鬥與精確操作尚未實機複驗。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 3,
     "area": "香港",
     "routeId": "early-hong-kong",
@@ -111,10 +106,9 @@
     ],
     "bossIds": [],
     "brainJackTargetIds": [
-      "lee-feichao"
+      "lee-fei-shan"
     ],
     "missable": true,
-    "spoilerLevel": "major",
     "routeTitle": "香港早期分支",
     "anyOfPrerequisites": []
   },
@@ -135,7 +129,6 @@
     "verificationNote": "直接進入限制、莫斯科後開啟香港及李飛扇重訪流程由兩份 PS2 社群流程交叉支持；區域內逐步戰鬥仍待實機驗證。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 4,
     "area": "泰姬瑪哈陵（タージマハル）",
     "routeId": "early-taj-mahal",
@@ -153,7 +146,6 @@
       "sharja"
     ],
     "missable": true,
-    "spoilerLevel": "major",
     "routeTitle": "泰姬瑪哈陵早期分支",
     "anyOfPrerequisites": [
       "route-opening-lincardon",
@@ -178,7 +170,6 @@
     "verificationNote": "莫斯科後開啟伊斯坦堡、倫敦，以及未造訪時補開香港，由ゲーム瓢論與 Kentaro 兩份 PS2 日版流程一致支持。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 5,
     "area": "莫斯科",
     "routeId": "common-midgame",
@@ -194,7 +185,6 @@
     "bossIds": [],
     "brainJackTargetIds": [],
     "missable": false,
-    "spoilerLevel": "major",
     "routeTitle": "莫斯科匯合",
     "anyOfPrerequisites": [
       "route-early-hong-kong",
@@ -218,7 +208,6 @@
     "verificationNote": "中盤解鎖鏈與阿納基斯條件由兩個社群站點交叉支持；尚未以官方攻略本內頁或實機旗標複驗。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 6,
     "area": "伊斯坦堡 → 雅典 → 梵蒂岡（首次）",
     "routeId": "mid-istanbul",
@@ -239,7 +228,6 @@
       "barlinka"
     ],
     "missable": false,
-    "spoilerLevel": "major",
     "routeTitle": "伊斯坦堡方向",
     "anyOfPrerequisites": []
   },
@@ -260,7 +248,6 @@
     "verificationNote": "倫敦／阿姆斯特丹／里昂鏈與維也納條件由兩個社群站點一致支持；逐步操作與戰鬥尚未實機複驗。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 6,
     "area": "倫敦 → 阿姆斯特丹",
     "routeId": "mid-london",
@@ -280,7 +267,6 @@
       "ramrod"
     ],
     "missable": false,
-    "spoilerLevel": "major",
     "routeTitle": "倫敦方向",
     "anyOfPrerequisites": []
   },
@@ -301,7 +287,6 @@
     "verificationNote": "支線解鎖條件由兩份社群流程交叉支持；角色正式 ID、區域內步驟與報酬待後續階段。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 7,
     "area": "特蘭西瓦尼亞（トランシルバニア）",
     "routeId": "optional-transylvania",
@@ -319,7 +304,6 @@
       "dal"
     ],
     "missable": true,
-    "spoilerLevel": "major",
     "routeTitle": "特蘭西瓦尼亞支線",
     "anyOfPrerequisites": []
   },
@@ -340,7 +324,6 @@
     "verificationNote": "開啟條件由兩份社群流程一致支持；實機旗標與所有替代進入方式尚未驗證。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 7,
     "area": "維也納（ウィーン）",
     "routeId": "optional-vienna",
@@ -357,7 +340,6 @@
       "margarete"
     ],
     "missable": true,
-    "spoilerLevel": "major",
     "routeTitle": "維也納支線",
     "anyOfPrerequisites": []
   },
@@ -378,7 +360,6 @@
     "verificationNote": "Kentaro 明記首次梵蒂岡與阿姆斯特丹都完成後進入里昂；里斯本解鎖及西西里支線由兩個社群站點交叉支持，可選支線不作主線前置。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 8,
     "area": "里昂 → 里斯本",
     "routeId": "common-endgame-entry",
@@ -400,7 +381,6 @@
       "badelaire"
     ],
     "missable": false,
-    "spoilerLevel": "major",
     "routeTitle": "里昂匯合",
     "anyOfPrerequisites": []
   },
@@ -420,7 +400,6 @@
     "verificationNote": "兩份社群流程交叉支持支線鏈；角色名稱翻譯、旗標與區域內具體步驟待 v0.4／v0.5。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 9,
     "area": "倫敦（重訪）→ 西西里 → 梵蒂岡（追加）",
     "routeId": "optional-sicily",
@@ -442,7 +421,6 @@
       "rei"
     ],
     "missable": true,
-    "spoilerLevel": "major",
     "routeTitle": "西西里支線",
     "anyOfPrerequisites": []
   },
@@ -464,7 +442,6 @@
     "verificationNote": "Atlus 官方僅確認選擇導致多種終局；具體終盤節點由兩份社群流程交叉支持，精確回答組合仍待實機驗證。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 10,
     "area": "里斯本 → 麥加／巴西／華盛頓",
     "routeId": "endgame-branch",
@@ -482,7 +459,6 @@
       "kati"
     ],
     "missable": false,
-    "spoilerLevel": "major",
     "routeTitle": "里斯本終盤分歧",
     "anyOfPrerequisites": [
       "route-convergence-lyon",
@@ -506,7 +482,6 @@
     "verificationNote": "巴西的多個入口及其華盛頓／紫禁城出口由社群終盤表交叉支持；旗標仍待實機驗證。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 11,
     "area": "巴西",
     "routeId": "endgame-brazil",
@@ -528,8 +503,7 @@
     "brainJackTargetIds": [
       "kou-yamashiro"
     ],
-    "missable": false,
-    "spoilerLevel": "major"
+    "missable": false
   },
   {
     "id": "route-endgame-mecca",
@@ -548,7 +522,6 @@
     "verificationNote": "兩份社群站點支持麥加為條件節點；精確回答與陣營計數仍待實機驗證。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 11,
     "area": "麥加（メッカ）",
     "routeId": "endgame-mecca",
@@ -570,8 +543,7 @@
     "brainJackTargetIds": [
       "yusuf"
     ],
-    "missable": true,
-    "spoilerLevel": "major"
+    "missable": true
   },
   {
     "id": "route-endgame-washington",
@@ -590,7 +562,6 @@
     "verificationNote": "華盛頓入口與紫禁城出口由兩份社群流程支持；不可反推所有紫禁城路線都必經華盛頓。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 12,
     "area": "華盛頓",
     "routeId": "endgame-washington",
@@ -611,8 +582,7 @@
     "brainJackTargetIds": [
       "william"
     ],
-    "missable": true,
-    "spoilerLevel": "major"
+    "missable": true
   },
   {
     "id": "route-ending-konron",
@@ -631,7 +601,6 @@
     "verificationNote": "兩份社群來源交叉確認崑崙為獨立終點；精確旗標、結局名稱與 Boss 資料待實機／官方攻略本正文。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 12,
     "area": "麥加 → 崑崙（コンロン）",
     "routeId": "ending-konron",
@@ -646,7 +615,6 @@
     "bossIds": [],
     "brainJackTargetIds": [],
     "missable": true,
-    "spoilerLevel": "major",
     "routeTitle": "崑崙終點",
     "anyOfPrerequisites": []
   },
@@ -667,7 +635,6 @@
     "verificationNote": "紫禁城的兩種入口家族與終點區隔由社群終盤表交叉支持；精確旗標、結局名稱與戰鬥策略保留至 v0.5。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": true,
     "sequence": 13,
     "area": "紫禁城",
     "routeId": "ending-forbidden-city",
@@ -680,7 +647,6 @@
     "bossIds": [],
     "brainJackTargetIds": [],
     "missable": false,
-    "spoilerLevel": "major",
     "routeTitle": "紫禁城終點",
     "anyOfPrerequisites": [
       "route-endgame-brazil",

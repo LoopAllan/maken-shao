@@ -1,10 +1,41 @@
 <!doctype html>
 <html lang="zh-Hant" data-base="..">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="PS2 日版《魔剣爻》可驗證角色圖鑑 v0.4"><title>角色圖鑑｜Maken Shao Complete Guide</title><link rel="stylesheet" href="../assets/css/style.css"></head>
-<body><a class="skip-link" href="#main-content">跳至主要內容</a><header class="site-header"><button class="menu-button" type="button" data-menu-toggle aria-controls="site-nav" aria-expanded="false">選單</button><a class="brand" href="../index.html">Maken Shao Complete Guide</a><div class="header-actions"><button class="icon-button" type="button" data-theme-toggle aria-label="切換深色模式">◐</button></div></header>
-<div class="layout"><nav class="sidebar" id="site-nav" aria-label="主要導覽"><h2>目錄</h2><ul><li><a href="../index.html">首頁</a></li><li><a href="introduction.html">遊戲介紹</a></li><li><a href="systems.html">系統</a></li><li><a href="walkthrough.html">流程攻略</a></li><li><a href="characters.html" aria-current="page">角色圖鑑</a></li><li><a href="knowledge.html">Knowledge</a></li><li><a href="endings.html">結局</a></li><li><a href="bosses.html">Boss</a></li><li><a href="references.html">參考資料</a></li></ul></nav>
-<main id="main-content"><p class="eyebrow">v0.4｜PS2 日版角色圖鑑</p><h1>角色圖鑑</h1><p class="lead">收錄 17 筆 Atlus 官方頁具名角色與其保存角色圖，並以兩套獨立 PS2 日文資料交叉確認 18 名可操作／Brain Jack 分類角色；每筆資料統一呈現繁中、日文、英文名。</p>
-<aside class="notice"><strong>名稱、圖片、版本與劇透政策：</strong>繁中名為本站整理的顯示譯名；英文欄僅在註明「官方」時是來源圖中的拉丁字樣，其他皆為日文名的羅馬字／英文字形，並非推定的官方在地化。17 張角色圖由 Atlus 官方保存頁下載並隨 Git 保存；僅由社群資料交叉確認的 5 筆路線角色，因找不到可確證歸屬的來源角色圖，使用明確標示且不代表外觀的站內中性佔位圖。重大劇透角色會整張預設收合，搜尋亦只顯示中性提示。</aside>
-<section class="filter-bar" aria-label="角色篩選"><label>角色類型<select data-character-type-filter><option value="all">全部類型</option><option value="core">核心角色</option><option value="brain-jack-host">Brain Jack 宿主</option><option value="supporting">支援角色</option><option value="faction-member">組織成員</option><option value="unknown">待分類</option></select></label><label>Brain Jack 狀態<select data-brain-jack-filter><option value="all">全部狀態</option><option value="player-entity">玩家主體</option><option value="confirmed-host">已確認宿主</option><option value="not-a-host">非宿主</option><option value="not-verified">尚未查證</option></select></label><label>查證狀態<select data-status-filter><option value="all">全部狀態</option><option value="verified">已查證</option><option value="partially-verified">部分查證</option><option value="conflicting">資料衝突</option><option value="not-verified">尚未查證</option></select></label></section>
-<section class="grid" data-content-file="characters.json" aria-live="polite"><p>正在載入角色資料……</p></section></main></div>
-<button class="back-to-top" type="button" data-back-to-top aria-label="返回頁面頂端">↑ 頂端</button><footer class="site-footer">v0.4 角色資料｜正式內容保留來源、PS2 版本與查證狀態。</footer><script defer src="../assets/js/data-loader.js"></script><script defer src="../assets/js/validator.js"></script><script defer src="../assets/js/app.js"></script></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PS2《魔剣爻》角色圖鑑：三語姓名、分類 tabs、標籤過濾與可追溯來源">
+  <title>角色圖鑑｜Maken Shao Complete Guide</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+  <header class="site-header"><button class="menu-button" type="button" data-menu-toggle aria-controls="site-nav" aria-expanded="false">選單</button><a class="brand" href="../index.html">Maken Shao Complete Guide</a><div class="header-actions"><button class="icon-button" type="button" data-theme-toggle aria-label="切換深色模式">◐</button></div></header>
+  <div class="layout">
+    <nav class="sidebar" id="site-nav" aria-label="主要導覽"><h2>目錄</h2><ul><li><a href="../index.html">首頁</a></li><li><a href="introduction.html">遊戲介紹</a></li><li><a href="systems.html">系統</a></li><li><a href="walkthrough.html">流程攻略</a></li><li><a href="characters.html" aria-current="page">角色圖鑑</a></li><li><a href="knowledge.html">Knowledge</a></li><li><a href="endings.html">結局</a></li><li><a href="bosses.html">Boss</a></li><li><a href="references.html">參考資料</a></li></ul></nav>
+    <main id="main-content">
+      <p class="eyebrow">v0.4｜PS2 日版角色圖鑑</p>
+      <h1>角色圖鑑</h1>
+      <p class="lead">收錄 MegaTen Wiki「MX」導覽與角色分類中的 28 名角色，並保留 Atlus PS2 官方頁及兩套日文流程資料的交叉查證。每張卡完整顯示繁中、日文、英文名、角色圖、身分、關係、標籤與來源。</p>
+      <aside class="notice"><strong>完整顯示、版本與圖片政策：</strong>本站不使用任何防劇透、標題遮蔽或收合機制，所有資料預設直接顯示。MegaTen Wiki 是社群來源，頁面同時混寫 Dreamcast《Maken X》、PS2《Maken Shao》、PAL 英文版及漫畫；日版姓名、路線與 Brain Jack 判定必須另以 Atlus 或 PS2 日文攻略交叉核對，不能只憑 Wiki 倒灌。圖片優先採指定 Wiki 角色頁的最大 640px 本地 WebP 縮圖；檔名中的「(Shao)」只作版本線索，不是官方來源或權利證明。每張圖逐一保留檔案頁、上傳者、原始 MIME／尺寸、Fandom SHA-1、本地 SHA-256，以及 Artist／Source／License 未提供的警語；本站不主張圖像著作權或再散布授權。</aside>
+
+      <section class="character-browser" aria-label="角色分類與標籤過濾">
+        <h2>角色分類</h2>
+        <div class="character-tabs" role="tablist" aria-label="角色分類" data-character-tabs><span>正在載入分類…</span></div>
+        <div class="character-filter-row">
+          <label for="character-query">查詢角色</label>
+          <input id="character-query" type="search" data-character-query placeholder="搜尋姓名、身分、所屬或標籤" autocomplete="off">
+          <button type="button" data-character-reset>清除篩選</button>
+        </div>
+        <h3>標籤（多選時需同時符合）</h3>
+        <div class="character-tags" data-character-tag-list aria-label="角色標籤"><span>正在載入標籤…</span></div>
+        <p class="filter-result-status" data-character-result-status aria-live="polite">正在載入角色資料…</p>
+      </section>
+
+      <section id="character-results" data-content-file="characters.json" role="tabpanel" aria-labelledby="character-tab-all" aria-live="polite"><p>正在載入角色資料…</p></section>
+    </main>
+  </div>
+  <button class="back-to-top" type="button" data-back-to-top aria-label="返回頁面頂端">↑ 頂端</button>
+  <footer class="site-footer">v0.4 角色圖鑑｜28 名角色均保留版本、來源、圖片 provenance 與查證狀態。</footer>
+  <script defer src="../assets/js/data-loader.js"></script><script defer src="../assets/js/validator.js"></script><script defer src="../assets/js/app.js"></script>
+</body>
+</html>

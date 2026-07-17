@@ -196,5 +196,16 @@
     "publicationDate": null,
     "accessedDate": "2026-07-16",
     "notes": "PS2《魔剣爻》社群角色頁，明列 18 名「ブレインジャックキャラクター」。只用於和其他 PS2 流程交叉確認可操作／Brain Jack 分類；不視為官方羅馬字或自由取得條件。"
+  },
+  {
+    "id": "megaten-wiki-maken-x-characters",
+    "title": "MegaTen Wiki — Maken X Characters category and linked character pages",
+    "sourceType": "community-wiki",
+    "publisherOrAuthor": "MegaTen Wiki / Fandom community editors",
+    "sourceLevel": "community",
+    "url": "https://megamitensei.fandom.com/wiki/Category:Maken_X_Characters",
+    "publicationDate": null,
+    "accessedDate": "2026-07-16",
+    "notes": "由 Kei Sagami 頁面底部 MX 導航模板與 Category:Maken X Characters 透過 MediaWiki API 展開，共取得 28 個角色頁。社群頁同時涵蓋 Dreamcast《Maken X》與 PS2《Maken Shao》，只作補充與交叉核對，不視為 Atlus 官方來源。角色圖逐一記錄原始 URL、Fandom 檔案頁、上傳者、MediaWiki SHA-1、本地 SHA-256 與版本警語。Fandom 檔案頁未提供結構化圖像授權 metadata；本站不主張自由再散布授權。社群文字依 Fandom 站點條款歸屬，個別遊戲圖像可能另受 Atlus 或其他權利人著作權保護。"
   }
 ]

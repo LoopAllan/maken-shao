@@ -6,13 +6,14 @@
     "content": "Atlus 的官方系統頁明示魔劍玩家必須進入人類腦部並取得身體。官方同時說明：支配的身體不同，可做的事、動作與故事影響也會不同。這是 PS2《魔剣爻》的直接官方說明，不是從 Dreamcast《魔剣X》推定而來。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
-    "sourceIds": ["atlus-maken-shao-system-page1-archive"],
+    "sourceIds": [
+      "atlus-maken-shao-system-page1-archive"
+    ],
     "confidence": "official",
     "verificationStatus": "verified",
     "verificationNote": "Atlus PS2 官方「ゲームの特徴 Page1」的 Internet Archive 保存版。此條目不延伸官方頁未列出的可切換時機或完整角色清單。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "systemArea": "brain-jack"
   },
   {
@@ -22,13 +23,15 @@
     "content": "Atlus 的官方系統頁說明，擊敗敵人可獲得「イマージュポイント」，無傷擊倒時數值更高。點數可提升已支配角色的支配率／同步率並帶來技能；官方也明示點數不足時不能進行 Brain Jack。已取得的頁面沒有列出所有角色技能或所需數值，因此本網站不補填門檻表。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
-    "sourceIds": ["atlus-maken-shao-system-page3-archive", "game-watch-maken-shao-2001-02-23"],
+    "sourceIds": [
+      "atlus-maken-shao-system-page3-archive",
+      "game-watch-maken-shao-2001-02-23"
+    ],
     "confidence": "cross-verified",
     "verificationStatus": "verified",
     "verificationNote": "Atlus PS2 官方「ゲームの特徴 Page3」直接說明；2001 年 GAME Watch 報導獨立記載擊倒敵人、Image 累積與技能。Image Point 不應與世界觀術語 Image（イマージュ）混同。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "systemArea": "image-point"
   },
   {
@@ -38,13 +41,15 @@
     "content": "Atlus 官方系統頁稱採用可從玩家角色後方持續操作的後方視點。GAME Watch 的同期報導也明確寫出，Dreamcast 版的玩家視點改為 PS2 版從角色後方觀看的客觀視點。此條目只記錄已交叉驗證的視角差異。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
-    "sourceIds": ["atlus-maken-shao-system-page2-archive", "game-watch-maken-shao-2001-02-23"],
+    "sourceIds": [
+      "atlus-maken-shao-system-page2-archive",
+      "game-watch-maken-shao-2001-02-23"
+    ],
     "confidence": "cross-verified",
     "verificationStatus": "verified",
     "verificationNote": "Atlus PS2 官方「ゲームの特徴 Page2」與 2001 年 GAME Watch 同期報導交叉印證。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "systemArea": "perspective"
   },
   {
@@ -54,13 +59,14 @@
     "content": "Atlus 以鎖定敵人為中心移動的說明，描述在面對敵人時觀察間距、躲避攻擊並抓住空檔反擊的操作感。官方頁沒有在已取得文字中提供按鍵配置，因此本條目不列出日版的精確按鍵。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
-    "sourceIds": ["atlus-maken-shao-system-page2-archive"],
+    "sourceIds": [
+      "atlus-maken-shao-system-page2-archive"
+    ],
     "confidence": "official",
     "verificationStatus": "verified",
     "verificationNote": "Atlus PS2 官方「ゲームの特徴 Page2」的 Internet Archive 保存版。僅採用官方頁明示的鎖定與戰鬥描述。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "systemArea": "combat"
   },
   {
@@ -70,13 +76,15 @@
     "content": "此條目是版本防混淆註記，不是宣稱 PSI 不存在。已取得的 PS2 Atlus 系統資料明示 Image Point 與同步率，並沒有把 PSI 作為 Brain Jack 所需資源。因 Dreamcast《魔剣X》的二級資料常提及 PSI，本網站在取得 PS2 手冊或其他直接證據前不會將其寫成 PS2 規則。",
     "gameVersion": "maken-shao-ps2",
     "region": "JP",
-    "sourceIds": ["atlus-maken-shao-system-page1-archive", "atlus-maken-shao-system-page3-archive"],
+    "sourceIds": [
+      "atlus-maken-shao-system-page1-archive",
+      "atlus-maken-shao-system-page3-archive"
+    ],
     "confidence": "official",
     "verificationStatus": "not-verified",
     "verificationNote": "這是基於已取得 PS2 官方頁面之證據缺口標記；不能由未提及 PSI 推論 PSI 絕對不存在。待 PS2 手冊或可定位的一手資料確認。",
     "lastVerified": "2026-07-16",
     "isPlaceholder": false,
-    "spoiler": false,
     "systemArea": "psi"
   }
 ]
