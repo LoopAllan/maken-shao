@@ -51,22 +51,37 @@
   async function linkMapMentions(root) {
     if (!root || !window.MakenMaps) return;
     const context = await getMapContext();
-    const excluded = 'a, button, input, select, textarea, script, style, code, pre, .metadata, [data-no-map-links], [data-map-title]';
+    const excluded = 'a, button, input, select, textarea, script, style, code, pre, [data-no-map-links], [data-map-title]';
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     const nodes = [];
     while (walker.nextNode()) {
       const node = walker.currentNode;
       if (node.nodeValue.trim() && !node.parentElement?.closest(excluded)) nodes.push(node);
     }
+    const textContextFor = (node) => {
+      const root = node.parentElement;
+      if (!root) return { text: node.nodeValue, offset: 0 };
+      const textWalker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      let offset = 0;
+      while (textWalker.nextNode()) {
+        const current = textWalker.currentNode;
+        if (current === node) return { text: root.textContent, offset };
+        offset += current.nodeValue.length;
+      }
+      return { text: node.nodeValue, offset: 0 };
+    };
     nodes.forEach((node) => {
       const segments = window.MakenMaps.segmentMapMentions(node.nodeValue, context.aliases);
       if (!segments.some((segment) => segment.mapId)) return;
       const ownMapId = node.parentElement?.closest('.map-card[data-map-id]')?.dataset.mapId;
+      const mentionContext = textContextFor(node);
       const fragment = document.createDocumentFragment();
       let offset = 0;
       segments.forEach((segment) => {
         const end = offset + segment.text.length;
-        if (!window.MakenMaps.shouldLinkMapMention(node.nodeValue, segment.mapId, ownMapId, offset, end)) {
+        const contextStart = mentionContext.offset + offset;
+        const contextEnd = mentionContext.offset + end;
+        if (!window.MakenMaps.shouldLinkMapMention(mentionContext.text, segment.mapId, ownMapId, contextStart, contextEnd)) {
           fragment.append(segment.text);
           offset = end;
           return;
@@ -400,17 +415,18 @@
       image.loading = 'lazy';
       image.decoding = 'async';
       const caption = document.createElement('figcaption');
-      const kindLabels = { 'globe-marker': '地球儀上的地圖點', 'map-structure': '地圖構造', 'landmark-gameplay': '標誌性遊戲畫面' };
+      const kindLabels = { 'globe-marker': '地球儀上的地圖點', 'map-structure': '地圖構造', 'landmark-gameplay': '標誌性遊戲畫面', 'location-card': '地點卡片' };
       const scope = document.createElement('div');
       scope.className = 'metadata';
       scope.textContent = `${kindLabels[media.kind] || media.kind}｜版本範圍：${media.gameVersionScope}`;
       caption.append(scope);
       const sourceLine = document.createElement('div');
       const sourceLink = document.createElement('a');
-      sourceLink.href = media.sourcePageUrl;
+      sourceLink.href = media.associationPageUrl;
       sourceLink.target = '_blank';
       sourceLink.rel = 'noopener noreferrer';
-      sourceLink.textContent = `${sourceMap.get(media.sourceId)?.title || '圖片來源頁'}（地圖頁 revision ${media.mapPageRevisionId}）`;
+      const associationLabel = media.associationMethod === 'file-title-series' ? '檔名系列關聯頁' : '地圖關聯頁';
+      sourceLink.textContent = `${sourceMap.get(media.sourceId)?.title || '圖片來源頁'}（${associationLabel} revision ${media.associationPageRevisionId}）`;
       sourceLine.append('來源：', sourceLink);
       const fileLine = document.createElement('div');
       const fileLink = document.createElement('a');
@@ -621,44 +637,96 @@
     return article;
   }
 
-  async function search() {
-    const searchInput = document.querySelector('[data-search-input]');
-    const results = document.querySelector('[data-search-results]');
-    if (!searchInput || !results) return;
-    const query = searchInput.value.trim().toLocaleLowerCase('zh-Hant');
+  const searchPageMeta = {
+    world: ['遊戲介紹', 'pages/introduction.html'], systems: ['系統', 'pages/systems.html'],
+    walkthrough: ['流程攻略', 'pages/walkthrough.html'], characters: ['角色圖鑑', 'pages/characters.html'],
+    maps: ['地圖圖鑑', 'pages/maps.html'], knowledge: ['Knowledge', 'pages/knowledge.html'],
+    endings: ['結局', 'pages/endings.html'], bosses: ['Boss', 'pages/bosses.html']
+  };
+
+  function plainText(value) {
+    if (value === null || value === undefined) return '';
+    if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') return String(value);
+    if (Array.isArray(value)) return value.map(plainText).join(' ');
+    return Object.values(value).map(plainText).join(' ');
+  }
+
+  function searchHref(type, item) {
+    if (type === 'character-details') return `${basePath}/pages/characters/${encodeURIComponent(item.id)}.html#main-content`;
+    if (type === 'sources') return `${basePath}/pages/references.html#record-source-${encodeURIComponent(item.id)}`;
+    const [, page] = searchPageMeta[type];
+    return `${basePath}/${page}#record-${encodeURIComponent(item.id)}`;
+  }
+
+  function snippetFor(text, query) {
+    const normalized = text.replace(/\s+/g, ' ').trim();
+    const at = normalized.toLocaleLowerCase('zh-Hant').indexOf(query);
+    if (at < 0) return normalized.slice(0, 180);
+    return `${at > 55 ? '…' : ''}${normalized.slice(Math.max(0, at - 55), at + query.length + 110)}${at + query.length + 110 < normalized.length ? '…' : ''}`;
+  }
+
+  async function search(query) {
+    const results = document.querySelector('[data-global-search-results]');
+    if (!results) return;
     results.replaceChildren();
-    if (!query) {
-      results.textContent = '請輸入關鍵字。';
-      return;
-    }
+    results.hidden = false;
+    if (!query) { results.textContent = '請輸入關鍵字。'; return; }
     try {
-      const data = await window.MakenData.loadAllContent(basePath);
-      const hits = Object.entries(data).flatMap(([type, items]) => items
-        .filter((item) => `${item.title} ${item.summary} ${item.content} ${item.nameZhHant || ''} ${item.nameJa || ''} ${item.nameEn || ''}`.toLocaleLowerCase('zh-Hant').includes(query))
-        .map((item) => [type, item]));
-      results.textContent = `找到 ${hits.length} 筆結果。`;
-      hits.forEach(([type, item]) => {
+      const [data, details, sources] = await Promise.all([
+        window.MakenData.loadAllContent(basePath),
+        window.MakenData.loadJson(basePath, 'character-details.json'),
+        window.MakenData.loadJson(basePath, 'sources.json')
+      ]);
+      const characterById = new Map(data.characters.map((item) => [item.id, item]));
+      const records = [
+        ...Object.entries(data).flatMap(([type, items]) => items.map((item) => ({ type, item, title: item.title, text: plainText(item) }))),
+        ...details.map((item) => ({ type: 'character-details', item, title: `${characterById.get(item.id)?.title || item.id}｜角色詳細資料`, text: plainText(item) })),
+        ...sources.filter((item) => item.id !== 'demo-source').map((item) => ({ type: 'sources', item, title: item.title, text: plainText(item) }))
+      ];
+      const normalizedQuery = query.toLocaleLowerCase('zh-Hant');
+      const hits = records.filter((record) => record.text.toLocaleLowerCase('zh-Hant').includes(normalizedQuery)).slice(0, 50);
+      const status = document.createElement('strong');
+      status.className = 'global-search-status';
+      status.textContent = hits.length === 50 ? '找到超過 50 筆結果，顯示前 50 筆。' : `找到 ${hits.length} 個頁面區塊。`;
+      results.append(status);
+      hits.forEach((record) => {
         const article = document.createElement('article');
-        article.className = 'card';
-        const heading = document.createElement('h3');
+        article.className = 'global-search-result';
+        const heading = document.createElement('h2');
+        const link = document.createElement('a');
+        link.href = searchHref(record.type, record.item);
+        link.textContent = record.title || record.item.id;
+        heading.append(link);
+        const pageLabel = document.createElement('div');
+        pageLabel.className = 'search-page-label';
+        pageLabel.textContent = record.type === 'character-details' ? '角色詳細頁' : (searchPageMeta[record.type]?.[0] || '參考資料');
         const description = document.createElement('p');
-        heading.textContent = `[${type}｜${item.gameVersion}] ${item.title}`;
-        description.textContent = item.summary;
-        article.append(heading, description);
+        description.textContent = snippetFor(record.text, normalizedQuery);
+        article.append(heading, pageLabel, description);
         results.append(article);
       });
-      await linkCharacterMentions(results);
-      await linkMapMentions(results);
     } catch (error) {
-      results.textContent = '資料無法載入。直接以 file:// 開啟時，請改用本機靜態伺服器。';
+      results.textContent = '搜尋資料無法載入。直接以 file:// 開啟時，請改用本機靜態伺服器。';
       console.warn(error);
     }
   }
 
-  document.querySelector('[data-search-submit]')?.addEventListener('click', search);
-  document.querySelector('[data-search-input]')?.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') search();
-  });
+  function initializeGlobalSearch() {
+    const form = document.querySelector('[data-global-search]');
+    const input = document.querySelector('[data-global-search-input]');
+    const results = document.querySelector('[data-global-search-results]');
+    if (!form || !input || !results) return;
+    form.addEventListener('submit', (event) => { event.preventDefault(); search(input.value.trim()); });
+    input.addEventListener('search', () => { if (!input.value) results.hidden = true; });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') results.hidden = true; });
+    document.addEventListener('pointerdown', (event) => { if (!form.contains(event.target)) results.hidden = true; });
+  }
+
+  function scrollToHashTarget() {
+    if (!location.hash) return;
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) target.scrollIntoView({ block: 'start' });
+  }
 
   async function loadCharacterSidebar() {
     const encyclopediaLink = [...document.querySelectorAll('.sidebar a')].find((link) => link.getAttribute('href')?.endsWith('characters.html'));
@@ -711,9 +779,10 @@
     if (!target) return;
     const id = target.dataset.characterDetailId;
     try {
-      const [context, walkthrough, sources] = await Promise.all([
+      const [context, walkthrough, maps, sources] = await Promise.all([
         getCharacterContext(),
         window.MakenData.loadJson(basePath, 'walkthrough.json'),
+        window.MakenData.loadJson(basePath, 'maps.json'),
         window.MakenData.loadJson(basePath, 'sources.json')
       ]);
       const { characters, details } = context;
@@ -767,6 +836,40 @@
           routes.append(row);
         });
         section.append(heading, method, steps, routesHeading, routes, sourceLinks(detail.acquisition, sourceMap));
+        target.append(section);
+      }
+
+      const acquisitionMaps = maps.filter((map) => map.obtainableCharacterIds.includes(id));
+      if (acquisitionMaps.length) {
+        const section = document.createElement('section');
+        section.className = 'card character-detail-section';
+        const heading = document.createElement('h2');
+        heading.textContent = '同一地圖可獲得角色';
+        const explanation = document.createElement('p');
+        explanation.textContent = '以下依地圖資料列出可在與本角色相同地圖中獲得的角色；這是地圖的可獲得角色清單，不表示可在任意時點同時取得。';
+        section.append(heading, explanation);
+        acquisitionMaps.forEach((map) => {
+          const mapHeading = document.createElement('h3');
+          const mapLink = document.createElement('a');
+          mapLink.href = mapHref(map.id);
+          mapLink.textContent = map.title;
+          decorateMapLink(mapLink, map.id);
+          mapHeading.append(mapLink);
+          const list = document.createElement('ul');
+          map.obtainableCharacterIds.forEach((characterId) => {
+            const listedCharacter = characters.find((item) => item.id === characterId);
+            const row = document.createElement('li');
+            if (listedCharacter) {
+              const link = document.createElement('a');
+              link.href = characterDetailHref(listedCharacter.id);
+              link.textContent = listedCharacter.title;
+              decorateCharacterLink(link, listedCharacter.id);
+              row.append(link);
+            } else row.textContent = characterId;
+            list.append(row);
+          });
+          section.append(mapHeading, list);
+        });
         target.append(section);
       }
 
@@ -894,6 +997,7 @@
       target.append(navigation);
       await linkCharacterMentions(target);
       await linkMapMentions(target);
+      requestAnimationFrame(scrollToHashTarget);
     } catch (error) {
       target.replaceChildren();
       console.warn(error);
@@ -983,7 +1087,7 @@
         visible.forEach((item) => contentTarget.append(contentType === 'maps'
           ? renderMapCard(item, sourceMap, itemMap, characterMap)
           : renderContentCard(item, sourceMap, contentType, itemMap)));
-        linkCharacterMentions(contentTarget).then(() => linkMapMentions(contentTarget));
+        linkCharacterMentions(contentTarget).then(() => linkMapMentions(contentTarget)).then(() => requestAnimationFrame(scrollToHashTarget));
       };
       if (contentType === 'characters' && tabList) {
         const groupLabels = new Map([['all', '全部'], ['main', '主要角色'], ['fukenshi', '封劍士'], ['hakke', '八卦'], ['hostile', '敵對'], ['npc', 'NPC'], ['other', '其他']]);
@@ -1062,6 +1166,7 @@
       sources.filter((source) => source.id !== 'demo-source').forEach((source) => {
         const article = document.createElement('article');
         article.className = 'card';
+        article.id = `record-source-${source.id}`;
         const title = document.createElement('h2');
         const link = document.createElement('a');
         link.href = source.url;
@@ -1079,6 +1184,7 @@
       });
       await linkCharacterMentions(sourceList);
       await linkMapMentions(sourceList);
+      requestAnimationFrame(scrollToHashTarget);
     } catch (error) {
       sourceList.textContent = '來源清單無法載入。直接以 file:// 開啟時，請改用本機靜態伺服器。';
       console.warn(error);
@@ -1087,6 +1193,8 @@
 
   initializeCharacterPreviews();
   initializeMapPreviews();
+  initializeGlobalSearch();
+  requestAnimationFrame(scrollToHashTarget);
   linkCharacterMentions(document.querySelector('main')).then(() => linkMapMentions(document.querySelector('main')));
   loadCharacterSidebar();
   loadCharacterDetail();

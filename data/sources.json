@@ -126,10 +126,11 @@
     "sourceType": "other",
     "publisherOrAuthor": "ゲーム瓢論",
     "sourceLevel": "community",
-    "url": "https://web.archive.org/web/20150709025813/http://gamehyoron.com/kouryaku/maken/maken-s2.htm",
+    "url": "http://gamehyoron.com/kouryaku/maken/maken-s2.htm",
     "publicationDate": null,
     "accessedDate": "2026-07-16",
-    "notes": "PS2 日版社群中盤關卡攻略；與分歧表共同支持伊斯坦堡／雅典／梵蒂岡／里昂及倫敦／阿姆斯特丹兩條解鎖鏈。"
+    "notes": "現行原站可存取的 PS2 日版社群中盤關卡攻略；與分歧表共同支持伊斯坦堡／雅典／梵蒂岡／里昂及倫敦／阿姆斯特丹兩條解鎖鏈。",
+    "archiveUrl": "https://web.archive.org/web/20150709025813id_/http://gamehyoron.com/kouryaku/maken/maken-s2.htm"
   },
   {
     "id": "gamehyoron-maken-shao-endgame",
@@ -137,10 +138,11 @@
     "sourceType": "other",
     "publisherOrAuthor": "ゲーム瓢論",
     "sourceLevel": "community",
-    "url": "https://web.archive.org/web/20150709025813/http://gamehyoron.com/kouryaku/maken/maken-s3.htm",
+    "url": "http://gamehyoron.com/kouryaku/maken/maken-s3.htm",
     "publicationDate": null,
     "accessedDate": "2026-07-16",
-    "notes": "PS2 日版社群終盤攻略；用於交叉確認紫禁城與崑崙是不同終盤，而非固定線性連續關卡。"
+    "notes": "現行原站可存取的 PS2 日版社群終盤攻略；用於交叉確認紫禁城與崑崙是不同終盤，而非固定線性連續關卡。",
+    "archiveUrl": "https://web.archive.org/web/20150709025813id_/http://gamehyoron.com/kouryaku/maken/maken-s3.htm"
   },
   {
     "id": "kentaro-maken-shao-early-chart",
@@ -159,10 +161,11 @@
     "sourceType": "other",
     "publisherOrAuthor": "kentaro.ifdef.jp",
     "sourceLevel": "community",
-    "url": "https://web.archive.org/web/20050216152732/http://kentaro.ifdef.jp/v_date/maken2.html",
+    "url": "https://kentaro.ifdef.jp/v_date/maken2.html",
     "publicationDate": null,
     "accessedDate": "2026-07-16",
-    "notes": "2005 年 Wayback 保存的 PS2 日版終盤分歧攻略。終盤選項依先前擊倒陣營數量而變化；未實機複驗的精確回答組合不寫成已驗證事實。"
+    "notes": "現行原站可存取；Wayback 另保存的 PS2 日版終盤分歧攻略。終盤選項依先前擊倒陣營數量而變化；未實機複驗的精確回答組合不寫成已驗證事實。",
+    "archiveUrl": "https://web.archive.org/web/20050216152732id_/http://kentaro.ifdef.jp/v_date/maken2.html"
   },
   {
     "id": "shoda-maken-shao-hints",

@@ -48,3 +48,18 @@ test('does not let distant process vocabulary turn a Kanazawa institution refere
   const text = '金澤研究所所長在流程會議發言。';
   assert.equal(shouldLinkMapMention(text, 'kanazawa-research-institute', null, 0, '金澤研究所'.length), false);
 });
+
+test('links explicit Kanazawa stage contexts without leaking across repeated mentions', () => {
+  for (const text of ['在金澤研究所的流程中迎戰敵人。', '在金澤研究所以相模桂開始遊戲。']) {
+    const start = text.indexOf('金澤研究所');
+    assert.equal(shouldLinkMapMention(text, 'kanazawa-research-institute', null, start, start + '金澤研究所'.length), true, text);
+  }
+  const mixed = '金澤研究所所長表示，完成金澤研究所關卡。';
+  const first = mixed.indexOf('金澤研究所');
+  const second = mixed.indexOf('金澤研究所', first + 1);
+  assert.equal(shouldLinkMapMention(mixed, 'kanazawa-research-institute', null, first, first + '金澤研究所'.length), false);
+  assert.equal(shouldLinkMapMention(mixed, 'kanazawa-research-institute', null, second, second + '金澤研究所'.length), true);
+  const metadata = '區域：金澤研究所';
+  const metadataStart = metadata.indexOf('金澤研究所');
+  assert.equal(shouldLinkMapMention(metadata, 'kanazawa-research-institute', null, metadataStart, metadataStart + '金澤研究所'.length), true);
+});
