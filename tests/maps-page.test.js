@@ -94,8 +94,9 @@ test('validates sourced map records and byte-exact local gameplay images', async
   dreamcastImage[0].images[0].gameVersionScope = 'unknown-version';
   assert.match(validateDataset({ fileName: 'maps.json', records: dreamcastImage, sourceIds, type: 'map', schema }).join('\n'), /gameVersionScope.*must equal/i);
 
-  assert.equal(maps.length, 19, 'all image-supported maps are included; Kunlun remains omitted');
-  assert.equal(maps.some((map) => map.id === 'kunlun'), false);
+  assert.equal(maps.length, 20, 'all 20 sourced map records, including Kunlun, are included');
+  assert.equal(maps.some((map) => map.id === 'kunlun'), true);
+  assert.equal(maps.reduce((count, map) => count + map.images.length, 0), 57);
   const mapIds = new Set(maps.map((map) => map.id));
   assert.equal(new Set(maps.map((map) => map.sequence)).size, maps.length, 'map sequence values are unique');
   assert.ok(maps.every((map) => Number.isInteger(map.sequence) && map.sequence > 0), 'maps have positive sequence values');
@@ -108,7 +109,7 @@ test('validates sourced map records and byte-exact local gameplay images', async
     assert.ok(map.obtainableCharacterIds.every((id) => characterIds.has(id)), `${map.id} characters exist`);
     for (const enemy of map.enemies) assert.ok(enemy.sourceIds.every((id) => sourceIds.has(id)), `${map.id}/${enemy.nameJa} enemy sources exist`);
     assert.ok(map.images.some((media) => media.kind === 'map-structure'), `${map.id} has a structure image`);
-    assert.ok(map.images.some((media) => media.kind === 'landmark-gameplay'), `${map.id} has a landmark image`);
+    assert.ok(map.images.some((media) => ['landmark-gameplay', 'location-card'].includes(media.kind)), `${map.id} has a landmark or location-card image`);
     for (const media of map.images) {
       assert.ok(sourceIds.has(media.sourceId), `${map.id} image source exists`);
       assert.equal(media.gameVersionScope, 'maken-x-dreamcast');
@@ -122,7 +123,8 @@ test('validates sourced map records and byte-exact local gameplay images', async
       assert.match(media.sourceSha1, /^[a-f0-9]{40}$/);
       assert.match(media.filePageUrl, /^https:\/\/megamitensei\.fandom\.com\/wiki\/File:/);
       assert.match(media.derivativeUrl, /^https:\/\/static\.wikia\.nocookie\.net\/megamitensei\/images\//);
-      assert.ok(Number.isInteger(media.mapPageRevisionId) && media.mapPageRevisionId > 0);
+      assert.ok(Number.isInteger(media.associationPageRevisionId) && media.associationPageRevisionId > 0);
+      assert.ok(['location-page-image-list', 'file-title-series'].includes(media.associationMethod));
       assert.ok(Number.isInteger(media.fileRevisionId) && media.fileRevisionId > 0);
       const bytes = await readFile(path.join(root, media.path));
       assert.equal(bytes.length, media.bytes, `${media.path} byte length`);

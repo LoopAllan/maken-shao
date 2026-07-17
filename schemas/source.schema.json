@@ -77,6 +77,13 @@
         "null"
       ],
       "maxLength": 2000
+    },
+    "archiveUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
     }
   }
 }

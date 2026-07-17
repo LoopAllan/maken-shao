@@ -241,8 +241,9 @@
           "alt",
           "kind",
           "sourceId",
-          "sourcePageUrl",
-          "mapPageRevisionId",
+          "associationPageUrl",
+          "associationPageRevisionId",
+          "associationMethod",
           "fileTitle",
           "filePageUrl",
           "fileRevisionId",
@@ -279,18 +280,13 @@
             "enum": [
               "globe-marker",
               "map-structure",
-              "landmark-gameplay"
+              "landmark-gameplay",
+              "location-card"
             ]
           },
           "sourceId": {
             "type": "string",
             "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
-          },
-          "sourcePageUrl": {
-            "type": "string",
-            "format": "uri",
-            "maxLength": 500,
-            "pattern": "^https://megamitensei[.]fandom[.]com/wiki/"
           },
           "originalUrl": {
             "type": "string",
@@ -334,10 +330,6 @@
             "type": "string",
             "minLength": 3,
             "maxLength": 1500
-          },
-          "mapPageRevisionId": {
-            "type": "integer",
-            "minimum": 1
           },
           "fileTitle": {
             "type": "string",
@@ -391,6 +383,23 @@
             "format": "uri",
             "pattern": "^https://static[.]wikia[.]nocookie[.]net/megamitensei/images/",
             "maxLength": 500
+          },
+          "associationPageUrl": {
+            "type": "string",
+            "format": "uri",
+            "maxLength": 500,
+            "pattern": "^https://megamitensei[.]fandom[.]com/wiki/"
+          },
+          "associationPageRevisionId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "associationMethod": {
+            "type": "string",
+            "enum": [
+              "location-page-image-list",
+              "file-title-series"
+            ]
           }
         }
       }

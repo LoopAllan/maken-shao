@@ -34,6 +34,17 @@ for (const file of htmlFiles(root)) {
     html = html.replace(appScript, `<script defer src="${match[2]}map-links.js"></script>$1`);
   }
 
+  if (!/data-global-search/.test(html)) {
+    const headerSearch = `<form class="global-search" role="search" data-global-search><label class="visually-hidden" for="global-search-input">全站搜尋</label><input id="global-search-input" data-global-search-input type="search" placeholder="搜尋攻略、角色、地圖…" autocomplete="off"><button type="submit" class="global-search-submit">搜尋</button><div class="global-search-results" data-global-search-results aria-live="polite" hidden></div></form>`;
+    const headerAnchor = /(<a class="brand"[^>]*>Maken Shao Complete Guide<\/a>)(<div class="header-actions">)/;
+    if (!headerAnchor.test(html)) throw new Error(`${path.relative(root, file)}: missing standard header brand`);
+    html = html.replace(headerAnchor, `$1${headerSearch}$2`);
+  }
+
+  if (file === path.join(root, 'index.html')) {
+    html = html.replace(/<section class="search-panel"[\s\S]*?<\/section>/, '');
+  }
+
   if (html !== original) {
     fs.writeFileSync(file, html);
     changed += 1;

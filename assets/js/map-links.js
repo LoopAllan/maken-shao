@@ -64,8 +64,12 @@
     if (mapId !== 'kanazawa-research-institute') return true;
     const value = String(text || '');
     if (!Number.isInteger(start) || !Number.isInteger(end)) return false;
-    const context = value.slice(Math.max(0, start - 8), Math.min(value.length, end + 8));
-    return /(地圖|關卡|攻略|開局|前往|進入|重訪|離開|完成|通關|破關|解鎖)/u.test(context);
+    const before = value.slice(Math.max(0, start - 12), start);
+    const after = value.slice(end, Math.min(value.length, end + 16));
+    const routeActionBefore = /(地圖|關卡|攻略|開局|前往|進入|重訪|離開|完成|通關|破關|解鎖)(?:至|到|了|在|的)?$/u.test(before);
+    const explicitStageSuffix = /^(?:的)?(?:地圖|關卡|攻略|流程)(?:中|內|段落|路線|部分)?(?!會議)/u.test(after);
+    const startsThere = /(?:在|於)$/u.test(before) && /^(?:以.{1,8})?開始(?:遊戲|行動)/u.test(after);
+    return routeActionBefore || explicitStageSuffix || startsThere;
   }
 
   global.MakenMaps = { buildMapAliasEntries, segmentMapMentions, shouldLinkMapMention };
