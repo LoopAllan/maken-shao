@@ -1,6 +1,7 @@
 [
   {
     "id": "kou-yamashiro",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-late-chart",
@@ -65,6 +66,7 @@
   },
   {
     "id": "kei-sagami",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-early-chart",
@@ -139,6 +141,7 @@
   },
   {
     "id": "maken",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],
@@ -146,6 +149,7 @@
   },
   {
     "id": "kati",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-late-chart",
@@ -222,6 +226,7 @@
   },
   {
     "id": "badelaire",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "kentaro-maken-shao-early-chart",
       "atlus-maken-shao-system-page3-archive",
@@ -298,6 +303,7 @@
   },
   {
     "id": "ramrod",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-early-chart",
@@ -375,6 +381,7 @@
   },
   {
     "id": "lee-fu-sho",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],
@@ -382,6 +389,7 @@
   },
   {
     "id": "lee-fei-shan",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "kentaro-maken-shao-early-chart",
       "atlus-maken-shao-system-page3-archive",
@@ -451,6 +459,7 @@
   },
   {
     "id": "lee-feichao",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],
@@ -458,6 +467,7 @@
   },
   {
     "id": "akinas",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-early-chart",
@@ -528,6 +538,7 @@
   },
   {
     "id": "yusuf",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-late-chart",
@@ -606,6 +617,10 @@
   },
   {
     "id": "don-marcala",
+    "prerequisiteCharacterIds": [
+      "badelaire",
+      "smith"
+    ],
     "sourceIds": [
       "kentaro-maken-shao-early-chart",
       "atlus-maken-shao-system-page3-archive",
@@ -681,6 +696,7 @@
   },
   {
     "id": "william",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-late-chart",
@@ -751,6 +767,9 @@
   },
   {
     "id": "andrei",
+    "prerequisiteCharacterIds": [
+      "kei-sagami"
+    ],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-early-chart",
@@ -828,6 +847,9 @@
   },
   {
     "id": "sharja",
+    "prerequisiteCharacterIds": [
+      "lee-fei-shan"
+    ],
     "sourceIds": [
       "kentaro-maken-shao-early-chart",
       "atlus-maken-shao-system-page3-archive",
@@ -903,6 +925,9 @@
   },
   {
     "id": "margarete",
+    "prerequisiteCharacterIds": [
+      "ramrod"
+    ],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-early-chart",
@@ -979,6 +1004,9 @@
   },
   {
     "id": "dal",
+    "prerequisiteCharacterIds": [
+      "barlinka"
+    ],
     "sourceIds": [
       "kentaro-maken-shao-early-chart",
       "atlus-maken-shao-system-page3-archive",
@@ -1046,6 +1074,9 @@
   },
   {
     "id": "rei",
+    "prerequisiteCharacterIds": [
+      "don-marcala"
+    ],
     "sourceIds": [
       "kentaro-maken-shao-early-chart",
       "atlus-maken-shao-system-page3-archive",
@@ -1120,6 +1151,7 @@
   },
   {
     "id": "ryu-kashin",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],
@@ -1127,6 +1159,7 @@
   },
   {
     "id": "pan-gu",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],
@@ -1134,6 +1167,7 @@
   },
   {
     "id": "mr-meteor",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],
@@ -1141,6 +1175,7 @@
   },
   {
     "id": "jj-jones",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],
@@ -1148,6 +1183,9 @@
   },
   {
     "id": "smith",
+    "prerequisiteCharacterIds": [
+      "badelaire"
+    ],
     "sourceIds": [
       "kentaro-maken-shao-early-chart",
       "atlus-maken-shao-system-page3-archive",
@@ -1223,6 +1261,7 @@
   },
   {
     "id": "anne-miller",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],
@@ -1230,6 +1269,9 @@
   },
   {
     "id": "barlinka",
+    "prerequisiteCharacterIds": [
+      "akinas"
+    ],
     "sourceIds": [
       "gamehyoron-maken-shao-route-table",
       "kentaro-maken-shao-early-chart",
@@ -1301,6 +1343,7 @@
   },
   {
     "id": "hiromitsu-sagami",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],
@@ -1308,6 +1351,7 @@
   },
   {
     "id": "inaba-go",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [
       "kentaro-maken-shao-early-chart",
       "atlus-maken-shao-system-page3-archive",
@@ -1384,6 +1428,7 @@
   },
   {
     "id": "dr-dublin-guiness",
+    "prerequisiteCharacterIds": [],
     "sourceIds": [],
     "acquisition": null,
     "techniques": [],

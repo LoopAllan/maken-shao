@@ -4,13 +4,23 @@
   "title": "Maken Shao character detail record",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "sourceIds", "acquisition", "techniques", "techniqueSources"],
+  "required": ["id", "prerequisiteCharacterIds", "sourceIds", "acquisition", "techniques", "techniqueSources"],
   "properties": {
     "id": {
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
       "minLength": 1,
       "maxLength": 80
+    },
+    "prerequisiteCharacterIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "minLength": 1,
+        "maxLength": 80
+      }
     },
     "sourceIds": {
       "type": "array",
