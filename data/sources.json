@@ -110,6 +110,17 @@
     "notes": "PS2《魔剣爻》社群攻略索引，直接列出序盤、中盤與終盤區域清單。清單可證明頁面涵蓋範圍，但不等同官方唯一順序。"
   },
   {
+    "id": "gamehyoron-maken-shao-earlygame",
+    "title": "「魔剣爻」の攻略（序盤ステージ攻略メモ）",
+    "sourceType": "other",
+    "publisherOrAuthor": "ゲーム瓢論",
+    "sourceLevel": "community",
+    "url": "http://gamehyoron.com/kouryaku/maken/maken-s1.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-17",
+    "notes": "日本 PS2《魔剣爻》的序盤逐關攻略；用於金澤研究所、林卡頓、香港、泰姬瑪哈陵與莫斯科的構造、敵人及角色事件。"
+  },
+  {
     "id": "gamehyoron-maken-shao-midgame",
     "title": "「魔剣爻」の攻略（中盤ステージ攻略）",
     "sourceType": "other",
@@ -251,5 +262,27 @@
     "publicationDate": null,
     "accessedDate": "2026-07-17",
     "notes": "PS2 日版社群角色攻略第 4 頁；表頭明列技名、習得支配率、類型、威力與指令。精確百分比屬社群攻略資料；同步率機制定義另以 Atlus 官方系統頁交叉確認。"
+  },
+  {
+    "id": "blue-violet-maken-shao-stage",
+    "title": "魔剣 爻 - ステージ攻略",
+    "sourceType": "other",
+    "publisherOrAuthor": "BLUE VIOLET -蒼紫-",
+    "sourceLevel": "community",
+    "url": "https://blueviolet.ninja-web.net/game/maken/stage.htm",
+    "publicationDate": null,
+    "accessedDate": "2026-07-17",
+    "notes": "日本 PS2《魔剣爻》的關卡流程圖；用於交叉驗證 Brain Jack、Boss、強制角色、重訪與條件分支。寬表格必須保留欄位脈絡，不以扁平文字猜測晚期路線。"
+  },
+  {
+    "id": "megaten-wiki-maken-x-locations",
+    "title": "MegaTen Wiki — Maken X Locations",
+    "sourceType": "community-wiki",
+    "publisherOrAuthor": "MegaTen Wiki / Fandom community editors",
+    "sourceLevel": "community",
+    "url": "https://megamitensei.fandom.com/wiki/Category:Maken_X_Locations",
+    "publicationDate": null,
+    "accessedDate": "2026-07-17",
+    "notes": "Dreamcast《Maken X》地點頁與圖片集合。經使用者明確允許後，只將地球儀位置圖、Stage Preview 與場景畫面作跨版本視覺參考；不據此證明 PS2 日版路線、敵人、劇情或地圖構造。每張本地 WebP 均保留頁面／File revision、原始 PNG metadata、CDN 衍生資產 hash 與權利警語。"
   }
 ]

@@ -26,6 +26,62 @@
     return `${basePath}/pages/characters/${encodeURIComponent(id)}.html`;
   }
 
+  function mapHref(id) {
+    return `${basePath}/pages/maps.html#record-${encodeURIComponent(id)}`;
+  }
+
+  let mapContextPromise;
+  function getMapContext() {
+    if (!mapContextPromise) {
+      mapContextPromise = window.MakenData.loadJson(basePath, 'maps.json').then((maps) => ({
+        maps,
+        mapMap: new Map(maps.map((map) => [map.id, map])),
+        aliases: window.MakenMaps.buildMapAliasEntries(maps)
+      }));
+    }
+    return mapContextPromise;
+  }
+
+  function decorateMapLink(link, mapId) {
+    link.classList.add('map-link');
+    link.dataset.mapId = mapId;
+    return link;
+  }
+
+  async function linkMapMentions(root) {
+    if (!root || !window.MakenMaps) return;
+    const context = await getMapContext();
+    const excluded = 'a, button, input, select, textarea, script, style, code, pre, .metadata, [data-no-map-links], [data-map-title]';
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (node.nodeValue.trim() && !node.parentElement?.closest(excluded)) nodes.push(node);
+    }
+    nodes.forEach((node) => {
+      const segments = window.MakenMaps.segmentMapMentions(node.nodeValue, context.aliases);
+      if (!segments.some((segment) => segment.mapId)) return;
+      const ownMapId = node.parentElement?.closest('.map-card[data-map-id]')?.dataset.mapId;
+      const fragment = document.createDocumentFragment();
+      let offset = 0;
+      segments.forEach((segment) => {
+        const end = offset + segment.text.length;
+        if (!window.MakenMaps.shouldLinkMapMention(node.nodeValue, segment.mapId, ownMapId, offset, end)) {
+          fragment.append(segment.text);
+          offset = end;
+          return;
+        }
+        const link = document.createElement('a');
+        link.href = mapHref(segment.mapId);
+        link.textContent = segment.text;
+        decorateMapLink(link, segment.mapId);
+        fragment.append(link);
+        offset = end;
+      });
+      node.replaceWith(fragment);
+    });
+  }
+
   let characterContextPromise;
   function getCharacterContext() {
     if (!characterContextPromise) {
@@ -138,6 +194,66 @@
     window.addEventListener('resize', () => { if (activeLink) position(activeLink); });
   }
 
+  function initializeMapPreviews() {
+    const preview = document.createElement('aside');
+    preview.id = 'map-preview-card';
+    preview.className = 'map-preview-card';
+    preview.setAttribute('role', 'tooltip');
+    preview.hidden = true;
+    const image = document.createElement('img');
+    const body = document.createElement('div');
+    const title = document.createElement('strong');
+    const names = document.createElement('span');
+    const summary = document.createElement('p');
+    body.append(title, names, summary);
+    preview.append(image, body);
+    document.body.append(preview);
+    let activeLink = null;
+    let context;
+    getMapContext().then((value) => { context = value; }).catch((error) => console.warn(error));
+
+    const position = (link) => {
+      const bounds = link.getBoundingClientRect();
+      const width = Math.min(360, window.innerWidth - 24);
+      preview.style.width = `${width}px`;
+      preview.style.left = `${Math.round(Math.max(12, Math.min(bounds.left, window.innerWidth - width - 12)))}px`;
+      const estimatedHeight = 196;
+      const top = bounds.bottom + estimatedHeight + 12 < window.innerHeight ? bounds.bottom + 8 : Math.max(12, bounds.top - estimatedHeight - 8);
+      preview.style.top = `${Math.round(top)}px`;
+    };
+    const show = async (link) => {
+      context ||= await getMapContext();
+      const map = context.mapMap.get(link.dataset.mapId);
+      const media = map?.images?.[0];
+      if (!map || !media) return;
+      if (activeLink && activeLink !== link) activeLink.removeAttribute('aria-describedby');
+      activeLink = link;
+      image.src = `${basePath}/${media.path}`;
+      image.alt = media.alt;
+      title.textContent = map.nameZhHant;
+      names.textContent = `${map.nameJa}｜${map.nameEn}`;
+      summary.textContent = map.summary;
+      preview.hidden = false;
+      link.setAttribute('aria-describedby', preview.id);
+      position(link);
+    };
+    const hide = (link) => {
+      if (link && activeLink !== link) return;
+      activeLink?.removeAttribute('aria-describedby');
+      activeLink = null;
+      preview.hidden = true;
+      image.removeAttribute('src');
+    };
+    const mapLink = (event) => event.target.closest?.('a.map-link[data-map-id]');
+    document.addEventListener('pointerenter', (event) => { const link = mapLink(event); if (link) show(link); }, true);
+    document.addEventListener('pointerleave', (event) => { const link = mapLink(event); if (link) hide(link); }, true);
+    document.addEventListener('focusin', (event) => { const link = mapLink(event); if (link) show(link); });
+    document.addEventListener('focusout', (event) => { const link = mapLink(event); if (link) hide(link); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hide(); });
+    window.addEventListener('scroll', () => { if (activeLink) position(activeLink); }, { passive: true });
+    window.addEventListener('resize', () => { if (activeLink) position(activeLink); });
+  }
+
   function badge(text) {
     const item = document.createElement('li');
     item.className = 'badge';
@@ -228,6 +344,176 @@
     if (item.imageRightsNote) caption.append(` 權利註記：${item.imageRightsNote}`);
     figure.append(image, caption);
     return figure;
+  }
+
+  function renderMapCard(item, sourceMap, mapMap, characterMap) {
+    const article = document.createElement('article');
+    article.className = 'card map-card';
+    article.id = `record-${item.id}`;
+    article.dataset.mapId = item.id;
+
+    const title = document.createElement('h2');
+    title.dataset.mapTitle = '';
+    const titleLink = document.createElement('a');
+    titleLink.href = mapHref(item.id);
+    titleLink.textContent = item.title;
+    decorateMapLink(titleLink, item.id);
+    title.append(titleLink);
+    const summary = document.createElement('p');
+    summary.className = 'lead';
+    summary.textContent = item.summary;
+    const identity = document.createElement('dl');
+    identity.className = 'character-identity map-identity';
+    identity.dataset.noMapLinks = '';
+    [['中文名', item.nameZhHant], ['日文名', item.nameJa], ['英文名', item.nameEn]].forEach(([label, value]) => {
+      const term = document.createElement('dt');
+      term.textContent = label;
+      const definition = document.createElement('dd');
+      definition.textContent = value;
+      identity.append(term, definition);
+    });
+    const nameNote = document.createElement('p');
+    nameNote.className = 'name-source-note';
+    nameNote.textContent = item.nameEnStatus === 'official-localized'
+      ? '英文名：可讀的官方英語在地化名稱。'
+      : '英文名：依日文地名整理的地理英名／羅馬字，並非 PS2 日版畫面中的官方英文標題。';
+    const meta = document.createElement('ul');
+    meta.className = 'metadata';
+    const mapTypeLabels = { main: '主線', optional: '可選', ending: '終點' };
+    meta.append(
+      badge(`順序：${item.sequence}`),
+      badge(`性質：${mapTypeLabels[item.mapType] || item.mapType}`),
+      badge(item.isMainMap ? '主要地圖' : '非主要地圖'),
+      badge(`版本：${item.gameVersion}`),
+      badge(`可信度：${item.confidence}`),
+      badge(`最後查證：${item.lastVerified}`)
+    );
+    article.append(title, summary, identity, nameNote, meta);
+
+    const gallery = document.createElement('div');
+    gallery.className = 'map-media-gallery';
+    item.images.forEach((media) => {
+      const figure = document.createElement('figure');
+      const image = document.createElement('img');
+      image.src = `${basePath}/${media.path}`;
+      image.alt = media.alt;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      const caption = document.createElement('figcaption');
+      const kindLabels = { 'globe-marker': '地球儀上的地圖點', 'map-structure': '地圖構造', 'landmark-gameplay': '標誌性遊戲畫面' };
+      const scope = document.createElement('div');
+      scope.className = 'metadata';
+      scope.textContent = `${kindLabels[media.kind] || media.kind}｜版本範圍：${media.gameVersionScope}`;
+      caption.append(scope);
+      const sourceLine = document.createElement('div');
+      const sourceLink = document.createElement('a');
+      sourceLink.href = media.sourcePageUrl;
+      sourceLink.target = '_blank';
+      sourceLink.rel = 'noopener noreferrer';
+      sourceLink.textContent = `${sourceMap.get(media.sourceId)?.title || '圖片來源頁'}（地圖頁 revision ${media.mapPageRevisionId}）`;
+      sourceLine.append('來源：', sourceLink);
+      const fileLine = document.createElement('div');
+      const fileLink = document.createElement('a');
+      fileLink.href = media.filePageUrl;
+      fileLink.target = '_blank';
+      fileLink.rel = 'noopener noreferrer';
+      fileLink.textContent = `${media.fileTitle}（revision ${media.fileRevisionId}）`;
+      fileLine.append('Wiki 檔案頁：', fileLink, `；上傳者／時間：${media.sourceUploader}／${media.sourceUploadedAt}`);
+      const originalLine = document.createElement('div');
+      const originalLink = document.createElement('a');
+      originalLink.href = media.originalUrl;
+      originalLink.target = '_blank';
+      originalLink.rel = 'noopener noreferrer';
+      originalLink.textContent = media.originalUrl;
+      originalLine.append('原始資產：', originalLink);
+      const derivativeLine = document.createElement('div');
+      const derivativeLink = document.createElement('a');
+      derivativeLink.href = media.derivativeUrl;
+      derivativeLink.target = '_blank';
+      derivativeLink.rel = 'noopener noreferrer';
+      derivativeLink.textContent = media.derivativeUrl;
+      derivativeLine.append('本地檔對應的 Wiki WebP 輸出：', derivativeLink);
+      const integrity = document.createElement('div');
+      integrity.textContent = `本地 WebP：${media.width}×${media.height}｜${media.bytes.toLocaleString('en-US')} bytes｜SHA-256：${media.sha256}`;
+      const sourceIntegrity = document.createElement('div');
+      sourceIntegrity.textContent = `Wiki 原始資產：${media.sourceMime}｜${media.sourceWidth}×${media.sourceHeight}｜${media.sourceBytes.toLocaleString('en-US')} bytes｜MediaWiki SHA-1：${media.sourceSha1}`;
+      const association = document.createElement('div');
+      association.dataset.noMapLinks = '';
+      association.textContent = `場景對應：${media.associationNote}`;
+      const rights = document.createElement('div');
+      rights.textContent = `權利註記：${media.rightsNote}`;
+      caption.append(sourceLine, fileLine, originalLine, derivativeLine, integrity, sourceIntegrity, association, rights);
+      figure.append(image, caption);
+      gallery.append(figure);
+    });
+    article.append(gallery);
+
+    const appendTextSection = (headingText, text) => {
+      const heading = document.createElement('h3');
+      heading.textContent = headingText;
+      const paragraph = document.createElement('p');
+      paragraph.textContent = text;
+      article.append(heading, paragraph);
+    };
+    appendTextSection('地圖性質與劇情', item.story);
+    appendTextSection('地圖構造', item.structure);
+
+    const appendMapList = (headingText, ids) => {
+      if (!ids.length) return;
+      const heading = document.createElement('h3');
+      heading.textContent = headingText;
+      const list = document.createElement('ul');
+      ids.forEach((id) => {
+        const map = mapMap.get(id);
+        const row = document.createElement('li');
+        if (map) {
+          const link = document.createElement('a');
+          link.href = mapHref(id);
+          link.textContent = map.title;
+          decorateMapLink(link, id);
+          row.append(link);
+        } else row.textContent = id;
+        list.append(row);
+      });
+      article.append(heading, list);
+    };
+    appendMapList('前置地圖（全部必須完成）', item.requiredMapIds);
+    appendMapList('前置地圖（符合其中之一）', item.anyOfRequiredMapIds);
+    if (item.unlockNote) appendTextSection('解鎖條件', item.unlockNote);
+
+    if (item.obtainableCharacterIds.length) {
+      const heading = document.createElement('h3');
+      heading.textContent = '可獲得角色';
+      const list = document.createElement('ul');
+      item.obtainableCharacterIds.forEach((id) => {
+        const character = characterMap.get(id);
+        const row = document.createElement('li');
+        if (character) {
+          const link = document.createElement('a');
+          link.href = characterDetailHref(id);
+          link.textContent = character.title;
+          decorateCharacterLink(link, id);
+          row.append(link);
+        } else row.textContent = id;
+        list.append(row);
+      });
+      article.append(heading, list);
+    }
+
+    if (item.enemies.length) {
+      const heading = document.createElement('h3');
+      heading.textContent = '敵人';
+      const list = document.createElement('ul');
+      const enemyTypeLabels = { 'standard-enemy': '一般敵', boss: 'Boss', 'brain-jack-target': 'Brain Jack 對象', hazard: '危險物' };
+      item.enemies.forEach((enemy) => {
+        const row = document.createElement('li');
+        row.textContent = `${enemy.nameZhHant}｜${enemy.nameJa}${enemy.nameEn ? `｜${enemy.nameEn}` : ''}（${enemyTypeLabels[enemy.type] || enemy.type}）`;
+        list.append(row);
+      });
+      article.append(heading, list);
+    }
+    article.append(sourceLinks(item, sourceMap));
+    return article;
   }
 
   function renderContentCard(item, sourceMap, contentType, itemMap) {
@@ -362,6 +648,7 @@
         results.append(article);
       });
       await linkCharacterMentions(results);
+      await linkMapMentions(results);
     } catch (error) {
       results.textContent = '資料無法載入。直接以 file:// 開啟時，請改用本機靜態伺服器。';
       console.warn(error);
@@ -606,6 +893,7 @@
       });
       target.append(navigation);
       await linkCharacterMentions(target);
+      await linkMapMentions(target);
     } catch (error) {
       target.replaceChildren();
       console.warn(error);
@@ -616,12 +904,14 @@
     if (!contentTarget) return;
     const file = contentTarget.dataset.contentFile;
     try {
-      const [items, sources] = await Promise.all([
+      const [items, sources, characters] = await Promise.all([
         window.MakenData.loadJson(basePath, file),
-        window.MakenData.loadJson(basePath, 'sources.json')
+        window.MakenData.loadJson(basePath, 'sources.json'),
+        window.MakenData.loadJson(basePath, 'characters.json')
       ]);
       const sourceMap = new Map(sources.map((source) => [source.id, source]));
       const itemMap = new Map(items.map((item) => [item.id, item]));
+      const characterMap = new Map(characters.map((character) => [character.id, character]));
       const contentType = file.replace(/\.json$/, '');
       const routeFilter = document.querySelector('[data-route-filter]');
       const statusFilter = document.querySelector('[data-status-filter]');
@@ -678,7 +968,7 @@
             && (contentType !== 'characters' || [...selectedTags].every((tag) => item.tags?.includes(tag)))
             && (contentType !== 'characters' || !query || searchable.includes(query));
         }).sort((a, b) => {
-          if (contentType === 'walkthrough') {
+          if (contentType === 'walkthrough' || contentType === 'maps') {
             const sequenceDifference = (a.sequence ?? Number.MAX_SAFE_INTEGER) - (b.sequence ?? Number.MAX_SAFE_INTEGER);
             if (sequenceDifference) return sequenceDifference;
           }
@@ -690,8 +980,10 @@
           contentTarget.textContent = '沒有符合篩選條件的資料。';
           return;
         }
-        visible.forEach((item) => contentTarget.append(renderContentCard(item, sourceMap, contentType, itemMap)));
-        linkCharacterMentions(contentTarget);
+        visible.forEach((item) => contentTarget.append(contentType === 'maps'
+          ? renderMapCard(item, sourceMap, itemMap, characterMap)
+          : renderContentCard(item, sourceMap, contentType, itemMap)));
+        linkCharacterMentions(contentTarget).then(() => linkMapMentions(contentTarget));
       };
       if (contentType === 'characters' && tabList) {
         const groupLabels = new Map([['all', '全部'], ['main', '主要角色'], ['fukenshi', '封劍士'], ['hakke', '八卦'], ['hostile', '敵對'], ['npc', 'NPC'], ['other', '其他']]);
@@ -786,6 +1078,7 @@
         sourceList.append(article);
       });
       await linkCharacterMentions(sourceList);
+      await linkMapMentions(sourceList);
     } catch (error) {
       sourceList.textContent = '來源清單無法載入。直接以 file:// 開啟時，請改用本機靜態伺服器。';
       console.warn(error);
@@ -793,7 +1086,8 @@
   }
 
   initializeCharacterPreviews();
-  linkCharacterMentions(document.querySelector('main'));
+  initializeMapPreviews();
+  linkCharacterMentions(document.querySelector('main')).then(() => linkMapMentions(document.querySelector('main')));
   loadCharacterSidebar();
   loadCharacterDetail();
   loadPageContent();
