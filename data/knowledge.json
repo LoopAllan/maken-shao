@@ -1,8 +1,280 @@
 [
-{"id":"knowledge-image","title":"Image（イマージュ）","summary":"官方以「自己的鏡像」與已被證明的精神世界說明 Image，並將其連結至人類腦部與通常無法感知的精神性自我。","content":"Image 是作品世界觀術語，不等同於經驗值用的 Image Point。為保留原意，本頁保留日文名稱イマージュ，避免將官方的精神世界說明簡化成單一的「靈魂」概念。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-story-archive"],"confidence":"official","verificationStatus":"verified","verificationNote":"Atlus PS2 官方故事頁保存版直接說明。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"世界觀術語"},
-{"id":"knowledge-maken-project","title":"金澤研究所與魔劍專案","summary":"金澤總合學術研究所研究 Image；魔劍專案對外目標是利用 Image 治療精神疾病。","content":"這是官方故事頁公開的設定前提。來源未直接支持的組織內情、事件因果或人物關係不在本條目推演。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-story-archive"],"confidence":"official","verificationStatus":"verified","verificationNote":"Atlus PS2 官方故事頁保存版直接說明。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"世界觀設定"},
-{"id":"knowledge-brain-jack","title":"Brain Jack（ブレインジャック）","summary":"玩家作為魔劍本身無法直接行動，須侵入人類腦部以取得可發揮力量的身體。","content":"官方明示支配不同身體會改變可做的事、動作與故事影響；這是 PS2 版直接說明，不由 Dreamcast《魔剣X》反推。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-system-page1-archive"],"confidence":"official","verificationStatus":"verified","verificationNote":"Atlus PS2 官方系統頁保存版直接說明。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"核心系統"},
-{"id":"knowledge-image-point","title":"Image Point 與同步率","summary":"擊敗敵人可取得 Image Point；無傷擊倒更多，並與同步率、技能及 Brain Jack 門檻相關。","content":"已取得的官方頁說明點數不足時不能進行 Brain Jack，但沒有完整角色技能或點數門檻表，因此本站不補填未證實數值。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-system-page3-archive","game-watch-maken-shao-2001-02-23"],"confidence":"cross-verified","verificationStatus":"verified","verificationNote":"官方系統頁與同期 GAME Watch 報導交叉支持。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"核心系統"},
-{"id":"knowledge-third-person","title":"第三人稱與鎖定戰鬥","summary":"PS2 版採角色後方視角，並以鎖定、量測間距、閃避與反擊作為戰鬥操作脈絡。","content":"官方頁與同期報導均可確認 PS2 版的後方視角與 Dreamcast 版第一人稱有所區隔；官方頁未提供按鍵配置，故不把按鍵表寫入知識庫。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-system-page2-archive","game-watch-maken-shao-2001-02-23"],"confidence":"cross-verified","verificationStatus":"verified","verificationNote":"官方系統頁與同期 GAME Watch 報導交叉支持。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"戰鬥與視角"},
-{"id":"knowledge-version-boundary","title":"PSI 與版本混用提醒","summary":"現有 PS2 官方資料使用 Image、Image Point 與同步率，未直接證實 PSI 為 PS2 的 Brain Jack 或戰鬥資源。","content":"這不是 PSI 絕對不存在的宣稱，而是證據範圍說明。Dreamcast《魔剣X》的二級資料常提及 PSI；在取得 PS2 手冊或可定位的一手資料前，本站不將其寫成 PS2 規則。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-system-page1-archive","atlus-maken-shao-system-page3-archive"],"confidence":"official","verificationStatus":"not-verified","verificationNote":"已取得 PS2 官方頁未將 PSI 定義為資源；不能由未提及推論絕對不存在。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"版本界線"}
+  {
+    "id": "knowledge-image",
+    "title": "Image（イマージュ）",
+    "summary": "官方以「自己的鏡像」與已被證明的精神世界說明 Image，並將其連結至人類腦部與通常無法感知的精神性自我。",
+    "content": "Image 是作品世界觀術語，不等同於經驗值用的 Image Point。為保留原意，本頁保留日文名稱イマージュ，避免將官方的精神世界說明簡化成單一的「靈魂」概念。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "atlus-maken-shao-story-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方故事頁保存版直接說明。",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false,
+    "category": "世界觀術語"
+  },
+  {
+    "id": "knowledge-maken-project",
+    "title": "金澤研究所與魔劍專案",
+    "summary": "金澤總合學術研究所研究 Image；魔劍專案對外目標是利用 Image 治療精神疾病。",
+    "content": "這是官方故事頁公開的設定前提。來源未直接支持的組織內情、事件因果或人物關係不在本條目推演。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "atlus-maken-shao-story-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方故事頁保存版直接說明。",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false,
+    "category": "世界觀設定"
+  },
+  {
+    "id": "knowledge-brain-jack",
+    "title": "Brain Jack（ブレインジャック）",
+    "summary": "玩家作為魔劍本身無法直接行動，須侵入人類腦部以取得可發揮力量的身體。",
+    "content": "官方明示支配不同身體會改變可做的事、動作與故事影響；這是 PS2 版直接說明，不由 Dreamcast《魔剣X》反推。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "atlus-maken-shao-system-page1-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方系統頁保存版直接說明。",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false,
+    "category": "核心系統"
+  },
+  {
+    "id": "knowledge-image-point",
+    "title": "Image Point 與同步率",
+    "summary": "擊敗敵人可取得 Image Point；無傷擊倒更多，並與同步率、技能及 Brain Jack 門檻相關。",
+    "content": "已取得的官方頁說明點數不足時不能進行 Brain Jack，但沒有完整角色技能或點數門檻表，因此本站不補填未證實數值。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "atlus-maken-shao-system-page3-archive",
+      "game-watch-maken-shao-2001-02-23"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "verified",
+    "verificationNote": "官方系統頁與同期 GAME Watch 報導交叉支持。",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false,
+    "category": "核心系統"
+  },
+  {
+    "id": "knowledge-third-person",
+    "title": "第三人稱與鎖定戰鬥",
+    "summary": "PS2 版採角色後方視角，並以鎖定、量測間距、閃避與反擊作為戰鬥操作脈絡。",
+    "content": "官方頁與同期報導均可確認 PS2 版的後方視角與 Dreamcast 版第一人稱有所區隔；官方頁未提供按鍵配置，故不把按鍵表寫入知識庫。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "atlus-maken-shao-system-page2-archive",
+      "game-watch-maken-shao-2001-02-23"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "verified",
+    "verificationNote": "官方系統頁與同期 GAME Watch 報導交叉支持。",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false,
+    "category": "戰鬥與視角"
+  },
+  {
+    "id": "knowledge-version-boundary",
+    "title": "PSI 與版本混用提醒",
+    "summary": "現有 PS2 官方資料使用 Image、Image Point 與同步率，未直接證實 PSI 為 PS2 的 Brain Jack 或戰鬥資源。",
+    "content": "這不是 PSI 絕對不存在的宣稱，而是證據範圍說明。Dreamcast《魔剣X》的二級資料常提及 PSI；在取得 PS2 手冊或可定位的一手資料前，本站不將其寫成 PS2 規則。",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "sourceIds": [
+      "atlus-maken-shao-system-page1-archive",
+      "atlus-maken-shao-system-page3-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "not-verified",
+    "verificationNote": "已取得 PS2 官方頁未將 PSI 定義為資源；不能由未提及推論絕對不存在。",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false,
+    "category": "版本界線"
+  },
+  {
+    "id": "knowledge-near-future-geopolitics",
+    "title": "近未來世界局勢",
+    "summary": "官方故事頁描寫疾病、污染與恐怖活動削弱歐洲影響力，能源高峰會破局後，中國與美國逐步走向對立。",
+    "content": "這是《魔剣爻》近未來背景的官方開場框架，不是對現實政治的預測。現有頁面沒有提供精確年表，也不足以將每個後續事件直接歸因於高峰會。",
+    "sourceIds": [
+      "atlus-maken-shao-story-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方故事頁保存版直接說明；僅整理頁面明示的世界局勢。",
+    "category": "世界觀設定",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  },
+  {
+    "id": "knowledge-maken-medical-device",
+    "title": "魔劍的醫療裝置定位",
+    "summary": "官方角色頁將魔劍描述為先進精神醫療裝置，用來分離並矯正病變的 Image，內部具有能進行知識、思考與情感活動的人工腦。",
+    "content": "此定位說明魔劍最初並非單純武器。已取得官方文字未提供完整技術規格或全部研發過程，因此本站只保留裝置目的、Image 處理與人工腦三項明示設定。",
+    "sourceIds": [
+      "atlus-maken-shao-characters-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方角色頁保存版直接說明。",
+    "category": "魔劍技術",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  },
+  {
+    "id": "knowledge-maken-hidden-combat-purpose",
+    "title": "魔劍的隱藏戰鬥機能",
+    "summary": "官方角色頁亦記載魔劍藏有戰鬥用途，能向 Brain Jack 宿主的大腦下達指令、促使腎上腺素分泌並引出高度戰鬥能力。",
+    "content": "官方並將魔劍描述為唯一能切斷 Image 的武器。這是設定層級的能力說明，不能直接換算成遊戲數值，也不代表每次 Brain Jack 都以完全相同機制呈現。",
+    "sourceIds": [
+      "atlus-maken-shao-characters-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方角色頁保存版直接說明；未延伸未公開的數值或招式。",
+    "category": "魔劍技術",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  },
+  {
+    "id": "knowledge-kei-fusion-premise",
+    "title": "相模桂與魔劍的融合事故",
+    "summary": "魔劍甦醒時發生事故，相模桂的 Image 與魔劍融合，成為故事行動的核心前提之一。",
+    "content": "本條目只記錄官方角色頁明示的融合事實，不補寫事故責任、完整場面、最終解決方式或特定結局結果。相關人物背景請另見角色詳細頁。",
+    "sourceIds": [
+      "atlus-maken-shao-characters-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方角色頁保存版直接說明。",
+    "category": "角色與事件",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  },
+  {
+    "id": "knowledge-sealed-swordsmen",
+    "title": "封劍士",
+    "summary": "官方資料把封劍士描述為在歷史背後活動、以維持世界平衡為使命的古老家系；現代成員中亦有人對使命絕望或產生疑問。",
+    "content": "封劍士不是單一立場完全一致的群體。本條目不把角色圖鑑中的所有人物自動視為同一陣營，也不推定完整成員名單或路線旗標。",
+    "sourceIds": [
+      "atlus-maken-shao-characters-archive",
+      "atlus-maken-shao-correlation-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方角色與關係頁保存版支持組織定位。",
+    "category": "勢力",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  },
+  {
+    "id": "knowledge-sangyokai",
+    "title": "三業會",
+    "summary": "官方資料將三業會描述為以香港為據點的犯罪組織，也是自封劍士分裂出的勢力，並以易經思想為犯罪活動辯護。",
+    "content": "這是遊戲內虛構組織設定，不應與現實組織混同。現有官方頁足以確認其據點、分裂背景與思想包裝，但不構成完整組織圖。",
+    "sourceIds": [
+      "atlus-maken-shao-characters-archive",
+      "atlus-maken-shao-correlation-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方角色與關係頁保存版交叉支持。",
+    "category": "勢力",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  },
+  {
+    "id": "knowledge-hakke",
+    "title": "八卦與六十四卦",
+    "summary": "八卦是三業會幹部與天尊流星的忠實部下；官方說明共有八人，分散世界各地並率領六十四卦。",
+    "content": "本條目只採官方頁可讀文字，不從圖片標籤或《魔剣X》資料補齊八人名單，也不把角色出場順序寫成固定戰鬥流程。",
+    "sourceIds": [
+      "atlus-maken-shao-characters-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方角色頁保存版直接說明。",
+    "category": "勢力",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  },
+  {
+    "id": "knowledge-image-flare-system",
+    "title": "Image Flare System",
+    "summary": "官方將 Image Point 的成長與消費循環命名為 Image Flare System：擊敗敵人取得點數、提高同步率、解鎖技能，Brain Jack 新宿主時則會消耗點數。",
+    "content": "這套循環使玩家在培養目前宿主與取得新身體之間取捨。官方頁沒有公開所有角色的通用成本公式，因此個別門檻仍以角色招式與取得資料為準。",
+    "sourceIds": [
+      "atlus-maken-shao-system-page3-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方系統頁保存版直接命名並說明此循環。",
+    "category": "核心系統",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  },
+  {
+    "id": "knowledge-spatial-audio",
+    "title": "三種空間音效模式",
+    "summary": "PS2 官方系統頁列出耳機、喇叭與 Dolby Surround 三種空間音效模式。",
+    "content": "本條目只記錄官方頁列出的模式名稱，不推定硬體需求、其他地區版本是否完全相同，亦不延伸至不存在的現代重製版功能。",
+    "sourceIds": [
+      "atlus-maken-shao-system-page1-archive"
+    ],
+    "confidence": "official",
+    "verificationStatus": "verified",
+    "verificationNote": "Atlus PS2 官方系統頁保存版直接列出三種模式。",
+    "category": "影音呈現",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  },
+  {
+    "id": "knowledge-branching-scope",
+    "title": "選擇、Brain Jack 與多重終局",
+    "summary": "Atlus 官方產品頁確認玩家選擇會導向多種終局；同期 GAME Watch 報導進一步說明玩家行動與 Brain Jack 對象會造成故事分歧。",
+    "content": "官方來源沒有公布確切結局數量或完整條件表，因此社群攻略使用的結果標籤不能直接當作官方名稱。本站的結局頁只呈現已交叉支持的終盤路線。",
+    "sourceIds": [
+      "atlus-maken-shao-index-archive",
+      "game-watch-maken-shao-2001-02-23"
+    ],
+    "confidence": "cross-verified",
+    "verificationStatus": "partially-verified",
+    "verificationNote": "官方資料確認多重終局概念；同期報導支持行動與 Brain Jack 對象造成分歧，但未提供完整旗標。",
+    "category": "路線與版本",
+    "gameVersion": "maken-shao-ps2",
+    "region": "JP",
+    "lastVerified": "2026-07-18",
+    "isPlaceholder": false
+  }
 ]
