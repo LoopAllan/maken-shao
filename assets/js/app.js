@@ -322,6 +322,52 @@
     return { identity, note };
   }
 
+  function characterImageAlt(item) {
+    const assetUrl = item.imageFilePageUrl || item.imageOriginalUrl;
+    const sourceNotice = item.imageKind === 'official-source'
+      ? '圖像來源：Atlus《魔剣爻》官方角色介紹保存頁；© ATLUS，僅作來源識別與引用。'
+      : '圖像來源：MegaTen Wiki / Fandom 角色頁的本地縮圖；本站不主張圖像著作權或自由再散布授權。';
+    return [
+      item.imageAlt || `${item.nameZhHant}（${item.nameJa}）角色圖`,
+      sourceNotice,
+      assetUrl && `來源資產：${assetUrl}。`,
+      (item.imageUploader || item.imageUploadedAt) && `上傳記錄：${item.imageUploader || '未列'}／${item.imageUploadedAt || '未列'}。`,
+      item.imageSourceMime && item.imageSourceWidth && item.imageSourceHeight && item.imageSourceBytes && `Wiki 原始資產：${item.imageSourceMime}、${item.imageSourceWidth}×${item.imageSourceHeight}、${item.imageSourceBytes.toLocaleString('zh-Hant')} bytes；本站下載縮圖：${item.imageLocalMime || '格式未列'}。`,
+      item.imageSourceVerification && `原始資產驗證：${item.imageSourceVerification}。`,
+      item.imageVersionNote && `版本註記：${item.imageVersionNote}`,
+      item.imageRightsNote && `權利註記：${item.imageRightsNote}`
+    ].filter(Boolean).join(' ');
+  }
+
+  function mapImageAlt(media, sourceMap) {
+    const kindLabels = { 'globe-marker': '地球儀上的地圖點', 'map-structure': '地圖構造', 'landmark-gameplay': '標誌性遊戲畫面', 'location-card': '地點卡片' };
+    const associationLabel = media.associationMethod === 'file-title-series' ? '檔名系列關聯頁' : '地圖關聯頁';
+    return [
+      media.alt,
+      `${kindLabels[media.kind] || media.kind}；版本範圍：${media.gameVersionScope}。`,
+      `來源：${sourceMap.get(media.sourceId)?.title || '圖片來源頁'}；${associationLabel}：${media.associationPageUrl}；revision ${media.associationPageRevisionId}。`,
+      `Wiki 檔案頁：${media.filePageUrl}；${media.fileTitle}；revision ${media.fileRevisionId}；上傳者／時間：${media.sourceUploader}／${media.sourceUploadedAt}。`,
+      `原始資產：${media.originalUrl}。`,
+      `本地檔對應的 Wiki WebP 輸出：${media.derivativeUrl}。`,
+      `本地 WebP：${media.width}×${media.height}；${media.bytes.toLocaleString('en-US')} bytes；SHA-256：${media.sha256}。`,
+      `Wiki 原始資產：${media.sourceMime}；${media.sourceWidth}×${media.sourceHeight}；${media.sourceBytes.toLocaleString('en-US')} bytes；MediaWiki SHA-1：${media.sourceSha1}。`,
+      `場景對應：${media.associationNote}`,
+      `權利註記：${media.rightsNote}`
+    ].join(' ');
+  }
+
+  function techniqueImageAlt(media, sourceMap) {
+    return [
+      media.alt,
+      `來源關聯：${sourceMap.get(media.sourceId)?.title || '招式畫面來源'}（${media.kind}）。`,
+      `來源頁：${media.sourcePageUrl}。`,
+      `原始資產 URL：${media.originalUrl}。`,
+      `Wayback 保存資產 URL：${media.archiveUrl}。`,
+      `Wayback 保存檔案：${media.archiveBytes.toLocaleString('en-US')} bytes；SHA-256：${media.sha256}。`,
+      `權利註記：${media.rightsNote}`
+    ].join(' ');
+  }
+
   function characterImage(item) {
     if (!item.imagePath) {
       const unavailable = document.createElement('p');
@@ -333,31 +379,10 @@
     figure.className = 'character-portrait';
     const image = document.createElement('img');
     image.src = `${basePath}/${item.imagePath}`;
-    image.alt = item.imageAlt || `${item.nameZhHant}（${item.nameJa}）角色圖`;
+    image.alt = characterImageAlt(item);
     image.loading = 'lazy';
     image.decoding = 'async';
-    const caption = document.createElement('figcaption');
-    if (item.imageKind === 'official-source') {
-      caption.append('圖像：Atlus《魔剣爻》官方角色介紹保存頁；© ATLUS，僅作本離線資料庫的來源識別與引用。');
-    } else {
-      caption.append('圖像：MegaTen Wiki / Fandom 角色頁的本地縮圖；本站不主張圖像著作權或自由再散布授權。');
-    }
-    const assetUrl = item.imageFilePageUrl || item.imageOriginalUrl;
-    if (assetUrl) {
-      caption.append(' ');
-      const sourceAsset = document.createElement('a');
-      sourceAsset.href = assetUrl;
-      sourceAsset.target = '_blank';
-      sourceAsset.rel = 'noopener noreferrer';
-      sourceAsset.textContent = item.imageFilePageUrl ? '圖片檔案頁與來源資訊' : '原始圖片資產';
-      caption.append(sourceAsset);
-    }
-    if (item.imageUploader || item.imageUploadedAt) caption.append(` 上傳記錄：${item.imageUploader || '未列'}／${item.imageUploadedAt || '未列'}。`);
-    if (item.imageSourceMime && item.imageSourceWidth && item.imageSourceHeight && item.imageSourceBytes) caption.append(` Wiki 原始資產：${item.imageSourceMime}、${item.imageSourceWidth}×${item.imageSourceHeight}、${item.imageSourceBytes.toLocaleString('zh-Hant')} bytes；本站下載縮圖：${item.imageLocalMime || '格式未列'}。`);
-    if (item.imageSourceVerification) caption.append(` 原始資產驗證：${item.imageSourceVerification}。`);
-    if (item.imageVersionNote) caption.append(` 版本註記：${item.imageVersionNote}`);
-    if (item.imageRightsNote) caption.append(` 權利註記：${item.imageRightsNote}`);
-    figure.append(image, caption);
+    figure.append(image);
     return figure;
   }
 
@@ -411,55 +436,10 @@
       const figure = document.createElement('figure');
       const image = document.createElement('img');
       image.src = `${basePath}/${media.path}`;
-      image.alt = media.alt;
+      image.alt = mapImageAlt(media, sourceMap);
       image.loading = 'lazy';
       image.decoding = 'async';
-      const caption = document.createElement('figcaption');
-      const kindLabels = { 'globe-marker': '地球儀上的地圖點', 'map-structure': '地圖構造', 'landmark-gameplay': '標誌性遊戲畫面', 'location-card': '地點卡片' };
-      const scope = document.createElement('div');
-      scope.className = 'metadata';
-      scope.textContent = `${kindLabels[media.kind] || media.kind}｜版本範圍：${media.gameVersionScope}`;
-      caption.append(scope);
-      const sourceLine = document.createElement('div');
-      const sourceLink = document.createElement('a');
-      sourceLink.href = media.associationPageUrl;
-      sourceLink.target = '_blank';
-      sourceLink.rel = 'noopener noreferrer';
-      const associationLabel = media.associationMethod === 'file-title-series' ? '檔名系列關聯頁' : '地圖關聯頁';
-      sourceLink.textContent = `${sourceMap.get(media.sourceId)?.title || '圖片來源頁'}（${associationLabel} revision ${media.associationPageRevisionId}）`;
-      sourceLine.append('來源：', sourceLink);
-      const fileLine = document.createElement('div');
-      const fileLink = document.createElement('a');
-      fileLink.href = media.filePageUrl;
-      fileLink.target = '_blank';
-      fileLink.rel = 'noopener noreferrer';
-      fileLink.textContent = `${media.fileTitle}（revision ${media.fileRevisionId}）`;
-      fileLine.append('Wiki 檔案頁：', fileLink, `；上傳者／時間：${media.sourceUploader}／${media.sourceUploadedAt}`);
-      const originalLine = document.createElement('div');
-      const originalLink = document.createElement('a');
-      originalLink.href = media.originalUrl;
-      originalLink.target = '_blank';
-      originalLink.rel = 'noopener noreferrer';
-      originalLink.textContent = media.originalUrl;
-      originalLine.append('原始資產：', originalLink);
-      const derivativeLine = document.createElement('div');
-      const derivativeLink = document.createElement('a');
-      derivativeLink.href = media.derivativeUrl;
-      derivativeLink.target = '_blank';
-      derivativeLink.rel = 'noopener noreferrer';
-      derivativeLink.textContent = media.derivativeUrl;
-      derivativeLine.append('本地檔對應的 Wiki WebP 輸出：', derivativeLink);
-      const integrity = document.createElement('div');
-      integrity.textContent = `本地 WebP：${media.width}×${media.height}｜${media.bytes.toLocaleString('en-US')} bytes｜SHA-256：${media.sha256}`;
-      const sourceIntegrity = document.createElement('div');
-      sourceIntegrity.textContent = `Wiki 原始資產：${media.sourceMime}｜${media.sourceWidth}×${media.sourceHeight}｜${media.sourceBytes.toLocaleString('en-US')} bytes｜MediaWiki SHA-1：${media.sourceSha1}`;
-      const association = document.createElement('div');
-      association.dataset.noMapLinks = '';
-      association.textContent = `場景對應：${media.associationNote}`;
-      const rights = document.createElement('div');
-      rights.textContent = `權利註記：${media.rightsNote}`;
-      caption.append(sourceLine, fileLine, originalLine, derivativeLine, integrity, sourceIntegrity, association, rights);
-      figure.append(image, caption);
+      figure.append(image);
       gallery.append(figure);
     });
     article.append(gallery);
@@ -922,42 +902,13 @@
               link.rel = 'noopener noreferrer';
               const image = document.createElement('img');
               image.src = `${basePath}/${media.path}`;
-              image.alt = media.alt;
+              image.alt = techniqueImageAlt(media, sourceMap);
               image.loading = 'lazy';
               image.decoding = 'async';
               link.append(image);
               frames.append(link);
             });
-            const caption = document.createElement('figcaption');
-            const media = technique.media[0];
-            const appendProvenanceLink = (label, url) => {
-              const line = document.createElement('div');
-              line.append(`${label}：`);
-              const link = document.createElement('a');
-              link.href = url;
-              link.target = '_blank';
-              link.rel = 'noopener noreferrer';
-              link.textContent = url;
-              line.append(link);
-              caption.append(line);
-            };
-            const sourceTitle = document.createElement('div');
-            const source = document.createElement('a');
-            source.href = media.sourcePageUrl;
-            source.target = '_blank';
-            source.rel = 'noopener noreferrer';
-            source.textContent = sourceMap.get(media.sourceId)?.title || '招式畫面來源';
-            sourceTitle.append('來源關聯：', source, `（${media.kind}）`);
-            caption.append(sourceTitle);
-            appendProvenanceLink('來源頁', media.sourcePageUrl);
-            appendProvenanceLink('原始資產 URL', media.originalUrl);
-            appendProvenanceLink('Wayback 保存資產 URL', media.archiveUrl);
-            const integrity = document.createElement('div');
-            integrity.textContent = `Wayback 保存檔案：${media.archiveBytes.toLocaleString('en-US')} bytes｜SHA-256：${media.sha256}`;
-            const rights = document.createElement('div');
-            rights.textContent = `權利註記：${media.rightsNote}`;
-            caption.append(integrity, rights);
-            figure.append(mediaHeading, frames, caption);
+            figure.append(mediaHeading, frames);
             gallery.append(figure);
           });
           layout.append(gallery);
