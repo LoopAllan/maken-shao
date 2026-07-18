@@ -63,6 +63,9 @@ test('models both terminal routes with walkthrough, opponent, evidence, and unsu
   const characterIds = new Set(characters.map((item) => item.id));
   const sourceIds = new Set(sources.map((item) => item.id));
   assert.deepEqual(new Set(endings.map((item) => item.id)), new Set(['ending-konron', 'ending-forbidden-city']));
+  const endingsIndex = await readFile(path.join(root, 'pages', 'endings.html'), 'utf8');
+  assert.match(endingsIndex, /天尊流星戰或社群表標示的「ラスボス戦なし」分支/);
+  assert.doesNotMatch(endingsIndex, /終戰對手為天尊流星/);
   for (const ending of endings) {
     assert.equal(ending.endingType, 'terminal-route');
     assert.ok(walkthroughIds.has(ending.terminalWalkthroughId));
