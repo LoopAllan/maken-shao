@@ -16,12 +16,21 @@ test('renders card tags above a horizontally scrollable source strip', async () 
 
   assert.match(app, /function metadataStrip\(\)/);
   assert.match(app, /metadata\.className = 'card-metadata-strip'/);
+  assert.match(app, /metadata\.tabIndex = 0/);
   assert.match(app, /function tagStrip\(item\)/);
   assert.match(app, /tags\.className = 'card-tag-strip'/);
   assert.match(app, /sources\.className = 'card-source-strip'/);
   assert.match(app, /article\.append\(meta, tagStrip\(item\), sourceLinks\(item, sourceMap\)\)/);
   assert.match(css, /\.card-metadata-strip,\.card-tag-strip,\.card-source-strip[^}]*overflow-x:auto/);
   assert.match(css, /\.card-metadata-strip,\.card-tag-strip,\.card-source-strip[^}]*flex-wrap:nowrap/);
+});
+
+test('migrates static card metadata to the same keyboard-scrollable strip', async () => {
+  const pages = await Promise.all(['bosses.html', 'endings.html', 'knowledge.html'].map((file) => readFile(path.join(root, 'pages', file), 'utf8')));
+  pages.forEach((html) => {
+    assert.doesNotMatch(html, /class="metadata"/);
+    assert.match(html, /class="card-metadata-strip" aria-label="屬性" tabindex="0"/);
+  });
 });
 
 test('keeps character index cards focused and removes obsolete verification and name annotations', async () => {

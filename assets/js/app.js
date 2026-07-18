@@ -280,6 +280,7 @@
     const metadata = document.createElement('ul');
     metadata.className = 'card-metadata-strip';
     metadata.setAttribute('aria-label', '屬性');
+    metadata.tabIndex = 0;
     const label = document.createElement('li');
     label.className = 'card-strip-label';
     label.textContent = '屬性';
