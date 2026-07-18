@@ -347,6 +347,21 @@
     return identity;
   }
 
+  function characterProfileSource(character) {
+    const reference = character.communityReferences?.find((item) => item.pageUrl && item.note);
+    if (!reference) return null;
+    const profileSource = document.createElement('p');
+    profileSource.className = 'character-profile-source';
+    profileSource.textContent = `人物檔案參考：`;
+    const link = document.createElement('a');
+    link.href = reference.pageUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = reference.pageTitle || 'MegaTen Wiki／Fandom 角色頁';
+    profileSource.append(link, `。此人物檔案參考涵蓋《Maken X》與《Maken Shao》的社群資料；除非正文或來源明確標示，不應解讀為 PS2《Maken Shao》獨有設定。${reference.note}`);
+    return profileSource;
+  }
+
   function characterImageAlt(item) {
     const assetUrl = item.imageFilePageUrl || item.imageOriginalUrl;
     const sourceNotice = item.imageKind === 'official-source'
@@ -757,7 +772,10 @@
       const profile = document.createElement('p');
       profile.className = 'character-profile';
       profile.textContent = character.content;
-      overview.append(identity, profile, tagStrip(character), sourceLinks(character, sourceMap));
+      const profileSource = characterProfileSource(character);
+      overview.append(identity, profile);
+      if (profileSource) overview.append(profileSource);
+      overview.append(tagStrip(character), sourceLinks(character, sourceMap));
       target.append(overview);
 
       if (detail.acquisition) {

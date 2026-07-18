@@ -42,7 +42,11 @@ test('keeps character index cards focused and removes obsolete verification and 
   assert.doesNotMatch(app, /查證註記：/);
   assert.doesNotMatch(app, /英文名：官方角色圖可讀的拉丁字樣/);
   assert.doesNotMatch(app, /if \(isCharacter && item\.nameJa && item\.nameZhHant && item\.nameEn\)/);
-  assert.match(app, /overview\.append\(identity, profile, tagStrip\(character\), sourceLinks\(character, sourceMap\)\)/);
+  assert.match(app, /function characterProfileSource\(character\)/);
+  assert.match(app, /profileSource\.className = 'character-profile-source'/);
+  assert.match(app, /profileSource\.textContent = `人物檔案參考：`/);
+  assert.match(app, /此人物檔案參考涵蓋《Maken X》與《Maken Shao》的社群資料；除非正文或來源明確標示，不應解讀為 PS2《Maken Shao》獨有設定/);
+  assert.match(app, /overview\.append\(identity, profile\);[\s\S]*?overview\.append\(profileSource\);[\s\S]*?overview\.append\(tagStrip\(character\), sourceLinks\(character, sourceMap\)\)/);
 });
 
 test('ships a substantive Fandom-backed profile for every character detail page', async () => {
@@ -50,7 +54,7 @@ test('ships a substantive Fandom-backed profile for every character detail page'
   assert.equal(characters.length, 28);
   for (const character of characters) {
     assert.ok(character.content.length >= 80, `${character.id} has a substantive profile`);
-    assert.ok(character.communityReferences?.some((reference) => reference.pageUrl.startsWith('https://megamitensei.fandom.com/wiki/')), `${character.id} links a MegaTen Wiki character source`);
+    assert.ok(character.communityReferences?.some((reference) => reference.pageUrl.startsWith('https://megamitensei.fandom.com/wiki/') && reference.note.includes('同時涵蓋')), `${character.id} exposes a mixed-version boundary note`);
   }
 });
 
