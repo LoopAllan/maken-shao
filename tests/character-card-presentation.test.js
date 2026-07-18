@@ -44,18 +44,41 @@ test('keeps character index cards focused and removes obsolete verification and 
   assert.doesNotMatch(app, /if \(isCharacter && item\.nameJa && item\.nameZhHant && item\.nameEn\)/);
   assert.match(app, /function characterProfileSource\(character\)/);
   assert.match(app, /profileSource\.className = 'character-profile-source'/);
-  assert.match(app, /profileSource\.textContent = `人物檔案參考：`/);
-  assert.match(app, /此人物檔案參考涵蓋《Maken X》與《Maken Shao》的社群資料；除非正文或來源明確標示，不應解讀為 PS2《Maken Shao》獨有設定/);
+  assert.match(app, /heading\.textContent = '人物檔案固定版本來源'/);
+  assert.match(app, /各段落的版本範圍與實際引用 revision 已直接標在正文下方/);
   assert.match(app, /overview\.append\(identity, profile\);[\s\S]*?overview\.append\(profileSource\);[\s\S]*?overview\.append\(tagStrip\(character\), sourceLinks\(character, sourceMap\)\)/);
 });
 
-test('ships a substantive Fandom-backed profile for every character detail page', async () => {
+test('ships a complete, structured Fandom-backed profile for every character detail page', async () => {
   const characters = JSON.parse(await readFile(path.join(root, 'data', 'characters.json'), 'utf8'));
   assert.equal(characters.length, 28);
   for (const character of characters) {
-    assert.ok(character.content.length >= 80, `${character.id} has a substantive profile`);
-    assert.ok(character.communityReferences?.some((reference) => reference.pageUrl.startsWith('https://megamitensei.fandom.com/wiki/') && reference.note.includes('同時涵蓋')), `${character.id} exposes a mixed-version boundary note`);
+    assert.ok(character.profile.introduction.length >= 40, `${character.id} has a substantive introduction`);
+    assert.ok(character.profile.background.length >= 120, `${character.id} has a substantive story background`);
+    assert.ok(character.profile.personality.length >= 60, `${character.id} has a substantive personality account`);
+    assert.ok(character.communityReferences?.[0]?.pageUrl, `${character.id} cites its Fandom character page`);
+    assert.ok(character.communityReferences?.[0]?.revisionId, `${character.id} pins the source revision`);
+    for (const field of ['introduction', 'background', 'personality', 'appearanceAndAbilities']) {
+      const provenance = character.profileProvenance?.[field];
+      assert.ok(provenance?.versionScope?.length >= 12, `${character.id}.${field} declares a visible version scope`);
+      assert.ok(provenance?.referenceTitles?.length >= 1, `${character.id}.${field} cites at least one revision`);
+      for (const title of provenance.referenceTitles) {
+        assert.ok(character.communityReferences.some((reference) => reference.pageTitle === title), `${character.id}.${field} resolves ${title}`);
+      }
+    }
   }
+});
+
+test('renders every profile section directly with revision-pinned citations and no spoiler controls', async () => {
+  const app = await appSource();
+
+  assert.match(app, /characterProfileSection\('角色介紹', character\.profile\.introduction, character\.profileProvenance\.introduction, references\)/);
+  assert.match(app, /characterProfileSection\('故事背景', character\.profile\.background, character\.profileProvenance\.background, references\)/);
+  assert.match(app, /characterProfileSection\('人物個性', character\.profile\.personality, character\.profileProvenance\.personality, references\)/);
+  assert.match(app, /characterProfileSection\('外觀與能力', character\.profile\.appearanceAndAbilities, character\.profileProvenance\.appearanceAndAbilities, references\)/);
+  assert.match(app, /url\.searchParams\.set\('oldid', String\(reference\.revisionId\)\)/);
+  assert.match(app, /provenance\.referenceTitles\.forEach/);
+  assert.doesNotMatch(app, /createElement\('details'\)[\s\S]{0,500}character\.profile/);
 });
 
 test('hides the prerequisite-dependent card when no character requires the current character', async () => {

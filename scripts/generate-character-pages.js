@@ -33,7 +33,7 @@ function page(character) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="${name}的 PS2 日版角色資料、來源與關聯資訊。">
+  <meta name="description" content="${name}的角色介紹、故事背景、人物個性、PS2 日版取得條件與來源。">
   <title>${name}｜角色詳細頁｜Maken Shao Complete Guide</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
@@ -44,13 +44,13 @@ function page(character) {
     <nav class="sidebar" id="site-nav" aria-label="主要導覽"><h2>目錄</h2><ul><li><a href="../../index.html">首頁</a></li><li><a href="../introduction.html">遊戲介紹</a></li><li><a href="../systems.html">系統</a></li><li><a href="../walkthrough.html">流程攻略</a></li><li><a href="../characters.html" aria-current="location">角色圖鑑</a></li><li><a href="../maps.html">地圖圖鑑</a></li><li><a href="../knowledge.html">Knowledge</a></li><li><a href="../endings.html">結局</a></li><li><a href="../bosses.html">Boss</a></li><li><a href="../references.html">參考資料</a></li></ul></nav>
     <main id="main-content">
       <nav class="breadcrumbs" aria-label="麵包屑"><a href="../../index.html">首頁</a><span aria-hidden="true">›</span><a href="../characters.html">角色圖鑑</a><span aria-hidden="true">›</span><span>${name}</span></nav>
-      <p class="eyebrow">角色詳細頁｜PS2 日版</p>
+      <p class="eyebrow">完整人物檔案｜混合版本資料附來源界線</p>
       <h1 data-character-page-title>${name}</h1>
       <div class="character-detail" data-character-detail-id="${id}"><p>正在載入角色資料…</p></div>
     </main>
   </div>
   <button class="back-to-top" type="button" data-back-to-top aria-label="返回頁面頂端">↑ 頂端</button>
-  <footer class="site-footer">PS2 日本版《魔剣爻》角色詳細資料｜獲取流程與同步率保留來源。</footer>
+  <footer class="site-footer">完整角色介紹與故事背景｜混合版本資料附 Fandom revision；PS2 日版取得流程另附攻略來源。</footer>
   <script defer src="../../assets/js/data-loader.js"></script><script defer src="../../assets/js/validator.js"></script><script defer src="../../assets/js/character-links.js"></script><script defer src="../../assets/js/map-links.js"></script><script defer src="../../assets/js/app.js"></script>
 </body>
 </html>

@@ -70,5 +70,12 @@ main { min-width:0; padding:clamp(1.25rem,4vw,3rem); }.eyebrow { color:var(--acc
 .card-metadata-strip .badge,.card-tag-strip .badge { flex:0 0 auto; }
 .card-source-strip a { flex:0 0 auto; }
 .card-strip-label { flex:0 0 auto; color:var(--muted); font-size:.85rem; font-weight:800; }
-.character-profile { margin:1rem 0 0; }
-.character-profile-source { margin:.6rem 0 0; color:var(--muted); font-size:.9rem; line-height:1.55; }
+.character-profile { margin:1rem 0 0; display:grid; gap:1.15rem; }
+.character-profile-section h2 { margin:0 0 .4rem; font-size:1.15rem; }
+.character-profile-section p { margin:0; line-height:1.8; white-space:pre-line; }
+.character-profile-section .character-profile-scope { margin:0 0 .55rem; color:var(--accent-strong); font-size:.9rem; font-weight:800; }
+.character-profile-section .character-profile-citations { margin:.55rem 0 0; color:var(--muted); font-size:.86rem; line-height:1.55; }
+.character-profile-source { margin:.9rem 0 0; color:var(--muted); font-size:.9rem; line-height:1.55; }
+.character-profile-source h2 { margin:0 0 .45rem; color:var(--ink); font-size:1.05rem; }
+.character-profile-source ul { margin:.35rem 0 .65rem; padding-inline-start:1.3rem; }
+.character-profile-source li + li { margin-top:.35rem; }

@@ -347,19 +347,61 @@
     return identity;
   }
 
-  function characterProfileSource(character) {
-    const reference = character.communityReferences?.find((item) => item.pageUrl && item.note);
-    if (!reference) return null;
-    const profileSource = document.createElement('p');
-    profileSource.className = 'character-profile-source';
-    profileSource.textContent = `人物檔案參考：`;
+  function revisionPinnedUrl(reference) {
+    const url = new URL(reference.pageUrl);
+    url.searchParams.set('oldid', String(reference.revisionId));
+    return url.href;
+  }
+
+  function characterReferenceLink(reference) {
     const link = document.createElement('a');
-    link.href = reference.pageUrl;
+    link.href = revisionPinnedUrl(reference);
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.textContent = reference.pageTitle || 'MegaTen Wiki／Fandom 角色頁';
-    profileSource.append(link, `。此人物檔案參考涵蓋《Maken X》與《Maken Shao》的社群資料；除非正文或來源明確標示，不應解讀為 PS2《Maken Shao》獨有設定。${reference.note}`);
+    link.textContent = `${reference.pageTitle || 'MegaTen Wiki／Fandom'}（revision ${reference.revisionId}）`;
+    return link;
+  }
+
+  function characterProfileSource(character) {
+    const references = (character.communityReferences || []).filter((item) => item.pageUrl && item.revisionId);
+    if (!references.length) return null;
+    const profileSource = document.createElement('div');
+    profileSource.className = 'character-profile-source';
+    const heading = document.createElement('h2');
+    heading.textContent = '人物檔案固定版本來源';
+    const list = document.createElement('ul');
+    references.forEach((reference) => {
+      const item = document.createElement('li');
+      item.append(characterReferenceLink(reference), `；查閱 ${reference.accessedDate}。${reference.note}`);
+      list.append(item);
+    });
+    const boundary = document.createElement('p');
+    boundary.textContent = '以上社群資料可能涵蓋《Maken X》與《Maken Shao》；各段落的版本範圍與實際引用 revision 已直接標在正文下方，不應把混合版本內容解讀為 PS2《Maken Shao》獨有設定。';
+    profileSource.append(heading, list, boundary);
     return profileSource;
+  }
+
+  function characterProfileSection(title, text, provenance, references) {
+    const section = document.createElement('section');
+    section.className = 'character-profile-section';
+    const heading = document.createElement('h2');
+    heading.textContent = title;
+    const scope = document.createElement('p');
+    scope.className = 'character-profile-scope';
+    scope.textContent = `版本範圍：${provenance.versionScope}`;
+    const body = document.createElement('p');
+    body.textContent = text;
+    const citations = document.createElement('p');
+    citations.className = 'character-profile-citations';
+    citations.textContent = '本段固定版本來源：';
+    provenance.referenceTitles.forEach((pageTitle, index) => {
+      const reference = references.find((item) => item.pageTitle === pageTitle);
+      if (!reference) return;
+      if (index) citations.append('、');
+      citations.append(characterReferenceLink(reference));
+    });
+    section.append(heading, scope, body, citations);
+    return section;
   }
 
   function characterImageAlt(item) {
@@ -769,9 +811,15 @@
       summary.textContent = character.summary;
       overview.append(summary, characterImage(character));
       const identity = characterIdentity(character);
-      const profile = document.createElement('p');
+      const profile = document.createElement('div');
       profile.className = 'character-profile';
-      profile.textContent = character.content;
+      const references = character.communityReferences || [];
+      profile.append(
+        characterProfileSection('角色介紹', character.profile.introduction, character.profileProvenance.introduction, references),
+        characterProfileSection('故事背景', character.profile.background, character.profileProvenance.background, references),
+        characterProfileSection('人物個性', character.profile.personality, character.profileProvenance.personality, references),
+        characterProfileSection('外觀與能力', character.profile.appearanceAndAbilities, character.profileProvenance.appearanceAndAbilities, references)
+      );
       const profileSource = characterProfileSource(character);
       overview.append(identity, profile);
       if (profileSource) overview.append(profileSource);

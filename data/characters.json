@@ -53,7 +53,7 @@
         "revisionId": 565007,
         "revisionTimestamp": "2025-03-30T16:22:21Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:KouYamashiro(Shao).png",
@@ -83,7 +83,39 @@
       "山城弘",
       "Kou Yamashiro",
       "弘"
-    ]
+    ],
+    "profile": {
+      "introduction": "山城弘是《Maken X》的可操作角色，16 歲，就讀 Bantoh High School，身分為學生，使用竹刀。他出身非常富裕的家庭，也是相模桂最親近的朋友。",
+      "background": "弘的父親長期忙於工作，母親則不喜歡孩子，因此他主要由嚴厲的祖父撫養成人。童年時，他因外貌偏女性化而受到姊妹欺負，還常被強迫化妝、穿華麗服裝；這段經驗使他長大後畏懼女性，只有自幼相識的桂例外。他非常喜歡桂，也會因桂迷戀李飛超而嫉妒。頁面的這些經歷也形塑了他在危機中追蹤桂與魔劍、試圖親自協助她的行動。",
+      "personality": "在祖父嚴格的教養下，弘成為一名樸實、堅強的少年。童年遭姊妹捉弄造成的陰影，使他面對桂以外的女性時缺乏安全感；另一方面，他對桂懷有強烈好感，並明顯在意她對李飛超的感情。",
+      "appearanceAndAbilities": "弘因外貌偏女性化，童年常被姊妹強迫化妝並換上華麗服裝。角色資料列出身高 178 公分、體重 65 公斤，武器為竹刀；圖庫亦分列《Maken X》的基本與可操作形象，以及漫畫《Maken X Another》的普通、惡魔化造型。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Kou Yamashiro"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Kou Yamashiro"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Kou Yamashiro"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Kou Yamashiro"
+        ]
+      }
+    }
   },
   {
     "id": "kei-sagami",
@@ -140,7 +172,7 @@
         "revisionId": 579942,
         "revisionTimestamp": "2025-10-06T12:25:18Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:KeiSagami(Shao).png",
@@ -174,7 +206,39 @@
       "相模桂",
       "Kei Sagami",
       "桂"
-    ]
+    ],
+    "profile": {
+      "introduction": "相模桂是《Maken X》與魔劍並列的主要角色之一。她是 16 歲的中日混血少女、相模廣光之女，母親則是一名姓名未載的封劍士。她就讀 Jyusei High School，對 Image 理論與工程已有相當程度的理解，並希望日後成為像父親一樣的研究者。",
+      "background": "桂前往開發魔劍的研究所探訪時，八卦安德烈發動襲擊。原定接受並使用魔劍的李飛超被殺，桂為營救遭擄的父親而親自握起魔劍，結果自己的 Image 被魔劍吸收。魔劍擊退安德烈後，桂的肉身留在研究所，意識卻出現在魔劍的精神之中，與它共享視野，並成為旅途中唯一持續陪伴和交談的夥伴。旅途中，她詢問魔劍對人類的看法、評論遇見的人物，也會支持或批評玩家所作的決定。與此同時，她的健康因 Image 持續與魔劍融合而惡化，症狀由咳嗽發展至無法站立，最後完全失去意識；其生死此後由魔劍先前與後續的選擇決定。她會在拯救桂、犧牲及 Good 類結局中獲救，其他情況下則可能因 Image 被魔劍完全吸收而死亡；若達成特定條件，她在昏迷前還會承諾帶魔劍環遊世界。在 Saving Sagami 結局，兩者的 Image 已徹底融合，桂的身體成為魔劍的身體。在 Saving Kei 結局，她的 Image 於金澤研究所與魔劍分離，但她會責怪魔劍選擇救她而沒有救父親。犧牲路線中，她的肉身被三業會奪走並封在紫禁城的水晶裡；山城弘持魔劍施行 Reverse Brain Jack，使她復活。她借助魔劍之力擊敗天尊流星，卻只能流淚感謝逐漸崩解的魔劍，並承諾永不忘記它的犧牲。Good 結局中，魔劍返回研究所後，桂由父親救活並與弘慶祝重逢；True Good 尾聲裡，她暗中找到被封印的魔劍，將其釋放，以履行共同環遊世界的約定。",
+      "personality": "桂善良、積極、友善而富有關懷。她從故事初期便真心想了解魔劍並與它成為朋友，也是唯一展現這種意願的人。她感情深厚而富同情心：魔劍若為她犧牲，她會悲痛落淚；True Good 結局中，即使父親反對，她仍履行對魔劍的承諾。她也非常堅定，為救父親不惜冒生命危險使用魔劍，這份意志可能承襲自封劍士母親。她對父親十分忠誠，因此在魔劍只救她而沒有救父親時會表達失望。她基本上相信人性，並同情封劍士等人物付出的犧牲；若魔劍否定人類、缺乏同理心或攻擊封劍士，她會質疑甚至直接斥責。她同時勤奮好學，年紀雖輕，已熟悉 Image 理論與工程。",
+      "appearanceAndAbilities": "桂有棕色眼睛，穿紅色上衣與短裙、紅鞋及黑色長襪，頭髮向右側飄展。《Maken X》的美術及兩個遊戲版本的遊戲內造型將其髮色呈現為深紫色，《Maken Shao》的角色美術則畫成黑色，資料明確區分了版本差異。她能使用魔劍；她也具備 Image 理論與工程知識，能理解魔劍及 Image 融合所牽涉的技術。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Kei Sagami"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Kei Sagami"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Kei Sagami"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Kei Sagami"
+        ]
+      }
+    }
   },
   {
     "id": "maken",
@@ -230,7 +294,7 @@
         "revisionId": 564987,
         "revisionTimestamp": "2025-03-30T15:53:48Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:Maken(Shao).png",
@@ -274,7 +338,39 @@
       "魔剣",
       "Deus Ex Machina",
       "Maken"
-    ]
+    ],
+    "profile": {
+      "introduction": "魔劍（Maken），又名 Deus Ex Machina，是《Maken X》的標題角色兼沉默主角。雖然相模桂是女主角，真正控制所寄宿身體、執行玩家選擇並決定行動的主體是魔劍。它是金澤開發設施中由相模廣光所長率領的小型團隊製造的人工惡魔兼有意識武器。",
+      "background": "魔劍利用相模桂的基因轉化為劍，能直接攻擊作為靈魂的 Image。其 Brain Jack 能覆寫他人的 Image、占據身體並讀取宿主記憶，代價是被覆寫者失去靈魂。甦醒時，桂提議讓魔劍自行選擇名字，J.J. Jones 也同意。覺醒當日，八卦安德烈攻擊研究所；原定使用者李飛超死亡後，桂拿起魔劍試圖營救父親。魔劍擊敗安德烈，卻未能阻止相模所長被擄。其後李護手要求魔劍阻止八卦毀滅世界並前往莫斯科救人；魔劍遂 Brain Jack 被俘的安德烈，將桂的肉身留在研究所。它搭乘私人巨型客機 Rhincodon 前往莫斯科，途中客機遭三業會攻擊而瀕臨墜毀。撤離前，玩家可 Brain Jack 稻葉鄉，利用其飛行知識前往香港；若繼續使用安德烈，則會先抵達印度泰姬瑪哈陵，再轉往香港。沒有被選作宿主的一方推定會隨客機遇難，此後不能再使用。抵達香港貧民區後，魔劍遇見見習封劍士李飛扇。她請求魔劍協助討伐以歌聲吸取印度民眾生命的八卦沙爾嘉：接受便可 Brain Jack 她並開啟對應路線；拒絕後她會留在原地等待改變主意；若拒絕後攻擊她，仍可使她成為 Brain Jack 對象，但前往沙爾嘉的路徑會關閉。到達莫斯科後，卡蒂告知相模所長的 Image 已被天尊流星奪走。天尊流星是八卦幕後主使，也是魔劍所依據的原始人工生命體；它企圖利用相模所長的 Image 知識對全人類實施 Brain Jack，製造一個失去靈魂的世界。卡蒂要求魔劍深入歐洲、協助各地封劍士阻止八卦。歐洲階段中，玩家可尋找或略過封劍士；遇見他們後又可選擇協助或拒絕。接受請求可 Brain Jack 該封劍士，開啟對應城市並挑戰其負責的八卦；拒絕則會被視為可能協助八卦，封劍士會攻擊魔劍。擊敗他們後仍可 Brain Jack，但通往相應八卦的路線會失效。這一階段桂會持續詢問魔劍對人類的看法，卻也逐漸衰弱至昏迷；是否協助封劍士、是否擊敗八卦，以及如何回答桂，共同影響後續路線。進入里斯本後便無法返回歐洲各地。港口中，卡蒂要求魔劍前往麥加討伐引發石油危機、令中美瀕臨戰爭的八卦 Youthfu；弘則請魔劍先去亞馬遜拜訪 Image 理論學者、魔劍前開發成員 Dublin Guiness 博士，因為桂的 Image 正逐漸與魔劍融合，若拖延便無法復原。玩家可支持或拒絕其中一方或雙方，顯著改變後續路線；卡蒂仍會堅稱麥加任務不可延誤，弘則可能退讓，請魔劍先處理 Youthfu 再去找博士。若玩家在歐洲擊敗所有封劍士、放過八卦，並在里斯本承認站在八卦一方且拒絕尋找博士，卡蒂會說服弘為救桂而阻止魔劍；兩人遂成為該關頭目，但戰後只有卡蒂可被 Brain Jack。魔劍其後前往麥加見 Youthfu。一般情況下，Youthfu 宣稱阻止戰爭已太遲，中美軍隊正在推進，日本會被捲入；若魔劍此前與卡蒂、弘交戰，他則試圖招攬魔劍，宣稱正邪立場相對，並透露卡蒂曾故意容許相模所長遭 Brain Jack，以刺激魔劍殺死天尊流星。拒絕招攬會與 Youthfu 戰鬥；接受則被派往崑崙山推翻李護手。八卦路線以外，魔劍可前往亞馬遜找 Guiness 博士，也可去白宮阻止美國總統開戰；True Chaos 路線則會前往美國。博士檢查桂的身體與魔劍後，指出唯一救桂的方法是 Reverse Brain Jack，但魔劍會因此死亡。若魔劍先拒絕卡蒂的阿拉伯任務、尚未阻止 Youthfu，卡蒂會在實驗室外現身並與魔劍交戰；若魔劍其後拒絕犧牲，封劍士會攻入實驗室並殺死博士。若接受犧牲且尚未去阿拉伯，便進入犧牲路線；其他情況下，魔劍繼續前往美國。在白宮地下設施，總統被揭露為八卦 William，整場戰爭也是刻意策劃的；True Chaos 路線中，William 還會比較魔劍與天尊流星的動機。擊敗 William 後，魔劍前往紫禁城，對抗 Brain Jack 中國主席的天尊流星。犧牲路線中，J.J. Jones 與 Anne Miller 原本把桂送往博士實驗室進行 Reverse Brain Jack，但運送她的飛機被三業會劫持，桂的肉身落入天尊流星手中；弘於是持魔劍闖入紫禁城。一般終局裡，魔劍在異空間擊敗以主席身體持劍的天尊流星，對方再化為中國創世神盤古，仍被魔劍擊敗並最終消散。若玩家完全不拜訪博士、只把阻止天尊流星列為優先，便鎖定封劍士路線；弘會在最終房間外因魔劍沒有救桂而憤怒地成為最終頭目，落敗後桂的 Image 會被魔劍完全吸收。若魔劍不願犧牲自己且先前拒絕協助封劍士，天尊流星可能提出停戰，聲稱兩者都在以自己的方式幫助人類；拒絕停戰會與它交戰並進入 Saving Sagami 結局，接受則由它提供拯救桂的方法，進入 Saving Kei 結局。八卦路線中，魔劍前往崑崙山，突破受訓封劍士的阻攔並與對它失望的李護手對峙；可用 人物檔案 至此結束，未交代該對峙後的結果。",
+      "personality": "遊戲中的魔劍是沉默主角，沒有固定而清晰的性格；它的立場主要透過玩家選項及其他人物的回應逐步形成。其決定不只定義自身，也會改變世界與各角色的命運。漫畫《Maken X Another》則給出不同且更具體的描寫：漫畫版魔劍思考單純，容易被其腦部程式設計者 J.J. Jones 操控，極度渴求力量，同時抗拒自己對桂日益加深的依戀。這些漫畫特徵不應回套成遊戲版固定人格。",
+      "appearanceAndAbilities": "魔劍會依目前控制的角色，改變外形並成為該角色使用的武器。其核心是怪異、惡魔般的生物，帶有纖細且能活動的觸手，觸手會在周圍構成類似武器外殼的結構。至少在控制桂時，魔劍的金色眼睛也會反映在宿主身上。它能攻擊 Image、以 Brain Jack 覆寫並占據他人、讀取宿主記憶；受害者會因此失去靈魂。漫畫《Maken X Another》中，Rhincodon 事件之後，魔劍開始在 Image 世界呈現人形，這是漫畫版限定的外觀 敘述。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      }
+    }
   },
   {
     "id": "kati",
@@ -333,7 +429,7 @@
         "revisionId": 564993,
         "revisionTimestamp": "2025-03-30T15:58:17Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:FukenshiKati(Shao).png",
@@ -365,7 +461,39 @@
       "Kati",
       "封劍士卡蒂",
       "封剣士カティ"
-    ]
+    ],
+    "profile": {
+      "introduction": "卡蒂是《Maken X》的可操作封劍士，擔任九天馬戲團團長；該處是修行封劍士的據點。她與封劍士血統相連，自身也接受訓練成為封劍士，武器為焰形刃細劍。",
+      "background": "《Maken Shao》人物檔案將卡蒂描述為魔劍計畫的提案者。她為摧毀企圖控制人類的天尊流星而推動計畫，並推薦弟子李飛超負責喚醒魔劍、擊敗天尊流星；李飛超未能完成使命，相模所長又被天尊流星的部下擄走，使她對推薦飛超一事深感後悔。她在封劍士入門儀式中犧牲了子宮。遊戲事件敘述中，魔劍第一次在莫斯科的一輛拖車內遇見她；她告知相模所長的 Image 已被天尊流星奪走，堅持要求魔劍協助歐洲封劍士，並警告若魔劍違抗命令，她會毫不猶豫地將其摧毀。里斯本部分結束後，她再度出現，要求魔劍討伐力量接近天尊流星的八卦 Youthfu。依玩家先前選擇及是否拒絕要求，她可能轉為敵對並攻擊魔劍。",
+      "personality": "卡蒂以封劍士長久維持世界秩序為傲，堅信人的命運不應由神或惡魔決定。她使命感強、作風嚴厲，會把討伐天尊流星和維持秩序放在首位；對自己推薦李飛超後造成的失敗與傷亡抱有悔意。她對魔劍採取強硬而不妥協的態度，必要時甚至準備親手摧毀不服從的魔劍。",
+      "appearanceAndAbilities": "頁面資料列出她身高 170 公分、體重 54 公斤，使用焰形刃細劍。封劍士入門時犧牲子宮。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Fukenshi Kati"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Fukenshi Kati"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Fukenshi Kati"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Fukenshi Kati"
+        ]
+      }
+    }
   },
   {
     "id": "badelaire",
@@ -423,7 +551,7 @@
         "revisionId": 564990,
         "revisionTimestamp": "2025-03-30T15:53:58Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:FukenshiBadelaire(Shao).png",
@@ -457,7 +585,39 @@
       "バルデール",
       "封劍士巴德萊爾",
       "封剣士バデレール"
-    ]
+    ],
+    "profile": {
+      "introduction": "巴德萊爾是《Maken X》的可操作封劍士，40 歲，職業為記者，駐守里昂並調查八卦馬爾卡拉與歐洲飲水污染事件。他是相模桂母親同父異母的兄弟，使用長矛。",
+      "background": "《Maken Shao》人物檔案記載，巴德萊爾調查天尊流星時，查明里昂被下藥的飲水與對方有關。為追查藥物來源，他成為記者並運用反政府組織的情報網，確認污染由歐洲最大黑手黨所為，也取得首領馬爾卡拉是八卦的證據；然而他找不到馬爾卡拉的藏身處，暫時無法行動。其後，他得知一名曾與馬爾卡拉共謀的前歐盟黨魁被囚於倫敦塔，因而等待魔劍提取該人的記憶。同頁後續資料將囚犯指名為 Samuel Smith，並說明魔劍必須先 Brain Jack 巴德萊爾，才能利用他的能力進入倫敦牢房、取得馬爾卡拉所在地。巴德萊爾在封劍士入門儀式中犧牲右腳。",
+      "personality": "巴德萊爾行事謹慎而有韌性：他長期以記者身分建立情報網，先確認污染來源、黑幫規模與八卦身分，再尋找能突破僵局的記憶線索。即使調查受阻，他仍把阻止馬爾卡拉與拯救受污染威脅的歐洲置於首位。",
+      "appearanceAndAbilities": "他能操縱電力，可直接召喚雷電，也能破壞電子鎖；這項能力是進入倫敦牢房的必要條件。角色資料列出身高 189 公分、體重 82 公斤，武器為長矛，入門儀式代價是右腳。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Fukenshi Badelaire"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Fukenshi Badelaire"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Fukenshi Badelaire"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Fukenshi Badelaire"
+        ]
+      }
+    }
   },
   {
     "id": "ramrod",
@@ -515,7 +675,7 @@
         "revisionId": 564992,
         "revisionTimestamp": "2025-03-30T15:58:15Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:FukenshiRumrod(Shao).png",
@@ -548,13 +708,45 @@
       "Ramrod",
       "封劍士拉姆羅德",
       "封剣士ラムロッド"
-    ]
+    ],
+    "profile": {
+      "introduction": "拉姆羅德在Fandom 名作 Rumrod，是《Maken X》的可操作角色及五大封劍士之一。他 25 歲，職業為 DJ，使用冰刃，並在阿姆斯特丹的地下俱樂部活動。",
+      "background": "《Maken Shao》人物檔案記載，拉姆羅德調查天尊流星時，發現對方在幕後領導歐洲恐怖活動。他調查歐盟期間接觸到聯盟黨魁之妻瑪格麗特並愛上她；瑪格麗特其後被企圖毀滅歐洲的天尊流星轉化為八卦，將丈夫送進監獄後接任黨魁，使恐怖活動日益嚴重。拉姆羅德想阻止她，卻無法獨力完成，只能等待魔劍到來。他在封劍士入門儀式中犧牲雙耳。主線事件中，他在阿姆斯特丹地下俱樂部等候魔劍，說明自己負責制服的八卦正是瑪格麗特；儘管愛她，他仍宣稱封劍士職責優先。玩家若答應協助，魔劍便能 Brain Jack 他，前往維也納面對瑪格麗特；若拒絕，他會為阻止魔劍幫助八卦而主動攻擊，戰敗後仍可被 Brain Jack。維也納劇院入口需要他的知識啟動密碼，因此該路線必須使用他。",
+      "personality": "拉姆羅德深愛瑪格麗特，卻把封劍士職責置於私人感情之上。他明知必須討伐所愛之人，仍準備履行任務；若認為魔劍可能倒向八卦，也會立即以武力阻止。",
+      "appearanceAndAbilities": "角色資料列出他身高 175 公分、體重 58 公斤，武器為冰刃。故事資料顯示他掌握進入維也納劇院所需的密碼知識；入門儀式中犧牲雙耳。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Fukenshi Rumrod"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Fukenshi Rumrod"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Fukenshi Rumrod"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Fukenshi Rumrod"
+        ]
+      }
+    }
   },
   {
     "id": "lee-fu-sho",
     "title": "李護手｜リー・フーシュウ｜Lee Fu Sho",
-    "summary": "海外華商集團首領、金澤研究所贊助者，也是封劍士的領袖。",
-    "content": "李護手在 Fandom 條目中被列為封劍士，且現有資料記錄他是海外華商集團首領、金澤研究所的贊助者，以及李飛超與李飛扇之父。該頁的 Profile 區段沒有進一步人物敘述，並且整頁以《Maken X》為主；因此本條僅保留可與既有 PS2 記錄相容的身分與親屬資訊，不推定其動機或劇情行動。",
+    "summary": "七十八歲的封劍士領袖、李飛超與李飛扇之父；研究所遇襲後向魔劍交代阻止八卦的任務。",
+    "content": "李護手在研究所遇襲後向甦醒的魔劍說明八卦造成的危機，要求它阻止八卦，並以前來襲擊的安德烈作為宿主前往莫斯科追查相模廣光。他把封劍士陣營的世界危機、敵我關係與最初任務直接交給魔劍。",
     "nameJa": "リー・フーシュウ",
     "nameLatin": null,
     "nameZhHant": "李護手",
@@ -594,7 +786,16 @@
         "revisionId": 515148,
         "revisionTimestamp": "2023-12-30T17:51:27Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Maken",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Maken",
+        "revisionId": 564987,
+        "revisionTimestamp": "2025-03-30T15:53:48Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Maken 的固定 revision；僅用於正文所標示的混合版本事件。"
       }
     ],
     "imagePath": "assets/images/characters/lee-fu-sho-fandom.webp",
@@ -632,7 +833,40 @@
       "Lee Fu Sho",
       "封劍士李護手",
       "封剣士リー・フーシュウ"
-    ]
+    ],
+    "profile": {
+      "introduction": "李護手是七十八歲的封劍士領袖，也是李飛超與李飛扇之父；魔劍覺醒後，他向這件有意識的武器說明八卦造成的世界危機，並交付最初的追擊方向。",
+      "background": "研究所遇襲、李飛超犧牲、相模廣光遭擄後，李護手向甦醒的魔劍說明八卦正在威脅世界。他要求魔劍阻止八卦，並以前來襲擊研究所的安德烈作為宿主，先前往莫斯科追查相模所長。這項指示把魔劍從研究所的覺醒事故帶入跨國追蹤，也使李護手成為封劍士陣營最早向魔劍交代敵我關係、世界危機與任務目標的人物。",
+      "personality": "李護手呈現出老練、務實而以大局為先的領導姿態。面對兒子犧牲與研究所失守，他立即整合眼前情報，向魔劍交付阻止八卦與追查相模所長的任務；其判斷顯示他把封劍士的使命與阻止世界危機置於個人悲痛之前。",
+      "appearanceAndAbilities": "角色資料列其年齡為七十八歲，並把他定位為封劍士領袖。他的故事功能在於掌握八卦造成的危機、辨認安德烈可作為最初宿主，並向魔劍交代前往莫斯科的行動方向。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Lee Fu Sho"
+        ]
+      },
+      "background": {
+        "versionScope": "《Maken X》事件；不是 PS2《Maken Shao》獨有設定。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      },
+      "personality": {
+        "versionScope": "《Maken X》事件中直接呈現的領導行為。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "《Maken X》角色資料與事件功能。",
+        "referenceTitles": [
+          "Lee Fu Sho",
+          "Maken"
+        ]
+      }
+    }
   },
   {
     "id": "lee-fei-shan",
@@ -685,7 +919,7 @@
         "revisionId": 564989,
         "revisionTimestamp": "2025-03-30T15:53:56Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imagePath": "assets/images/characters/lee-fei-shan-fandom.webp",
@@ -725,7 +959,39 @@
       "封劍士李飛扇",
       "封剣士李 飛扇",
       "飛扇"
-    ]
+    ],
+    "profile": {
+      "introduction": "李飛扇是《Maken X》的角色，16 歲，出身封劍士名門，是李飛超的妹妹、卡蒂的弟子，也是九天馬戲團成員與尚在受訓的見習封劍士。她使用鋼扇作為武器。",
+      "background": "《Maken Shao: Demon Sword》人物檔案記載，飛扇跟隨兄長學習，努力成為能獨當一面的封劍士。然而後輩接連完成訓練並獲派任務，她自己仍留在九天馬戲團、未能獨立，因此感到屈辱並急於尋找證明能力的機會。她偶然得知控制印度民眾的明星沙爾嘉是八卦，遂打算擊倒對方、獨攬功勞。主線中，她首次在香港貧民區一間黑暗房間裡短暫現身；魔劍走到死路後會進入走廊末端的房間與她會面。她自我介紹，告知師父卡蒂正在莫斯科等待魔劍，也請求魔劍協助討伐以歌聲吸取印度民眾靈魂的寶萊塢明星沙爾嘉。玩家答應後可 Brain Jack 她；若拒絕，她會留在房間等待魔劍改變主意；若拒絕後攻擊她，她也會進入可被 Brain Jack 的狀態，但挑戰沙爾嘉的路線將永久關閉。若選擇協助，泰姬瑪哈陵關卡必須使用飛扇，因為只有她知道岔路密碼，能開啟通往中央區域及沙爾嘉的路徑。",
+      "personality": "飛扇對自己遲遲不能成為獨立封劍士感到不甘，也會因後輩先於自己通過訓練而受挫。她急切想證明能力，甚至打算靠單獨擊倒沙爾嘉取得全部功勞，呈現出強烈的競爭心、功名心與欠缺經驗的一面。當魔劍拒絕時，她仍留在原處等待對方重新考慮。",
+      "appearanceAndAbilities": "角色資料列出她身高 164 公分、體重 58 公斤，武器為鋼扇。她掌握泰姬瑪哈陵岔路的必要密碼，可作為魔劍的 Brain Jack 宿主。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Lee Fei Shan"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Lee Fei Shan"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Lee Fei Shan"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Lee Fei Shan"
+        ]
+      }
+    }
   },
   {
     "id": "lee-feichao",
@@ -783,7 +1049,7 @@
         "revisionId": 487996,
         "revisionTimestamp": "2023-01-21T01:08:32Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:28.jpg",
@@ -817,7 +1083,39 @@
       "封劍士李飛超",
       "封剣士リー・フェイチャオ",
       "飛超"
-    ]
+    ],
+    "profile": {
+      "introduction": "李飛超是《Maken X》的非可操作角色，20 歲，來自香港的留學生，也是相模桂的家庭教師。他是年輕時便通過訓練的精英封劍士，自魔劍計畫初期便參與其中，原本受命把自己的 Image 與魔劍融合並成為其使用者，武器為爪。",
+      "background": "《Maken Shao: Demon Sword》人物檔案記載，李護手命飛超喚醒魔劍並擊敗天尊流星，因此他從計畫開始便一直參與。進行封劍士入門儀式時，他犧牲了內臟。故事開端，他先以桂的家庭教師身分登場，隨後被揭露為負責喚醒魔劍的精英封劍士。他完成喚醒程序後，八卦安德烈闖入研究所發動襲擊。安德烈以飛行手術刀攻擊桂時，飛超捨身替她擋下攻擊；臨死前，他請桂拿起魔劍，前去營救相模所長。",
+      "personality": "李飛超忠於封劍士使命，也對學生相模桂抱有真切保護之情。他年輕便完成嚴苛訓練，願意承擔與魔劍融合、討伐天尊流星的危險；安德烈襲擊時，他更毫不遲疑地替桂擋下致命攻擊，臨終仍以營救相模所長為念，展現勇氣、責任感與自我犧牲。",
+      "appearanceAndAbilities": "角色資料只列出年齡 20 歲、武器為爪。他是能在年輕時完成封劍士訓練的精英，並具備喚醒魔劍、原定與其 Image 融合的資格。入門代價為內臟。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Lee Fei Chao"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Lee Fei Chao"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Lee Fei Chao"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Lee Fei Chao"
+        ]
+      }
+    }
   },
   {
     "id": "akinas",
@@ -874,7 +1172,7 @@
         "revisionId": 564991,
         "revisionTimestamp": "2025-03-30T15:58:13Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:FukenshiAcinaces(Shao).png",
@@ -904,7 +1202,39 @@
       "アナキス",
       "封劍士阿基納斯",
       "封剣士アキナス"
-    ]
+    ],
+    "profile": {
+      "introduction": "阿基納斯Fandom 名作 Acinaces，是《Maken X》的可操作封劍士。她 32 歲，居於希臘雅典，以博物館策展人身分活動，使用鑽頭長矛，並擅長回復與再生能力。",
+      "background": "《Maken Shao》人物檔案記載，阿基納斯調查天尊流星時，發現他在地中海沿岸散播石化病。她為接近大量收治患者的醫院，偽裝成雅典博物館策展人，白天觀察病患、夜間到醫院工作並蒐集石化病資料。調查後，她找出病理學家 Daru 所辨識的病毒與石化病之間的關聯，因而確信 Daru 是八卦；然而 Daru 已失蹤，她不知道其所在地。阿基納斯遂詢問隔離病房中的 Daru 之女 Bahlinka，但對方堅決不肯開口。阿基納斯自己也是一名有女兒的母親，因此認為對 Bahlinka 實施 Brain Jack 在道德上不妥；最後她以拯救世界最重要來說服自己，等待魔劍提取 Bahlinka 的記憶。她在封劍士入門儀式中犧牲右臂。",
+      "personality": "阿基納斯具有強烈的責任感，長期照顧與觀察病患並仔細蒐集資料。她也富有母性與道德顧慮：因自己同樣育有女兒，她無法輕易接受對 Bahlinka 強行 Brain Jack。最終她選擇把拯救世界置於個人不安之上，但來源呈現的是她經過內心掙扎後才接受此手段，而不是毫無保留地認同。",
+      "appearanceAndAbilities": "她擅長回復及再生力量，武器為鑽頭長矛；角色資料列出身高 168 公分、體重 55 公斤。封劍士入門時犧牲右臂。外觀 區段為空，沒有服裝、臉部或義肢造型描述。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Fukenshi Acinaces"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Fukenshi Acinaces"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Fukenshi Acinaces"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Fukenshi Acinaces"
+        ]
+      }
+    }
   },
   {
     "id": "yusuf",
@@ -963,7 +1293,7 @@
         "revisionId": 565004,
         "revisionTimestamp": "2025-03-30T16:18:42Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:HakkeYouthfu(Shao).png",
@@ -996,7 +1326,39 @@
       "Yusuf",
       "八卦優素福",
       "八卦ユースフ"
-    ]
+    ],
+    "profile": {
+      "introduction": "優素福（ユースフ；Fandom 頁名作 Youthfu，英語版《Maken X》稱 Yusuf）是 45 歲的沙烏地阿拉伯石油大亨、OPEC 主席與「八卦」成員，使用彎刃的 shotel。頁首將他列為《Maken X》的可操作角色。",
+      "background": "《Maken Shao》人物檔案記載，優素福為取得法定繼承權，設局讓父親被認定是殺害其兄長的兇手，因而繼承龐大財富與足以左右世界經濟的權力。後來傳出兄長仍然活著的消息，他遂認定身邊的人都站在兄長一方並密謀殺他；天尊流星利用這種疑懼將他轉化為八卦。此後他濫用 OPEC 主席的地位，把石油出口限定給中國，使中國壟斷供應，進而引發全球石油危機及中美衝突。\n同頁後續敘述的後續劇情整理把他定位為代表坤卦（☷）的八卦。卡蒂在里斯本揭露他是天尊流星的共謀，並要求魔劍將他消滅；只有接受這項要求，地圖上才會開放他位於麥加的據點。魔劍會在其石油宮殿深處的阿拉伯迷宮與他相遇。若魔劍先前殺死了歐洲的封劍士，優素福會轉達天尊流星的命令，要求魔劍前往崑崙消滅其餘封劍士；拒絕命令則進入 True Chaos 路線，優素福會因魔劍企圖成為「混沌之主」、威脅天尊流星所追求的理想世界而出手阻止。",
+      "personality": "《Maken Shao》人物檔案直接描述他在聽聞兄長可能仍活著後變得極度多疑，將周遭眾人視為暗殺陰謀的一部分。人物檔案劇情中，他面對魔劍時會哀嘆世界現況；在特定分支則維護天尊流星建立理想世界的目標，並把魔劍自行追求混沌支配視為必須排除的威脅。",
+      "appearanceAndAbilities": "天尊流星把 Image 注入優素福腹部，使大型寄生物能從其腹中伸出並噴火。頁首另列其身高 170 公分、體重 183 公斤，武器為 shotel。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Hakke Youthfu"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Hakke Youthfu"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Hakke Youthfu"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Hakke Youthfu"
+        ]
+      }
+    }
   },
   {
     "id": "don-marcala",
@@ -1056,7 +1418,7 @@
         "revisionId": 564999,
         "revisionTimestamp": "2025-03-30T16:03:08Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:HakkeMalukala(Shao).png",
@@ -1090,7 +1452,39 @@
       "Don Marcala",
       "八卦唐・馬爾卡拉",
       "八卦ドン・マルカラ"
-    ]
+    ],
+    "profile": {
+      "introduction": "唐・馬爾卡拉（マルカラ；Fandom 頁名作 Malukala，亦列 Don Malukala；英語版《Maken X》稱 Hakke Don Regalia）是 35 歲的八卦與跨國黑幫首領，使用斧與可化為炸彈的木偶。頁首將他列為《Maken X》的可操作角色。",
+      "background": "《Maken Shao》人物檔案稱馬爾卡拉掌控全球黑幫，在歐洲經營販毒及各類犯罪，且對政界有強大影響力。他幾乎取得了一切想要的事物，唯獨無法擁有後代；被醫師診斷為不孕後，他陷入絕望，天尊流星遂利用這一點將他轉化為八卦，藉其力量在歐洲製造恐慌。他污染歐洲飲用水，使神祕疾病肆虐；石化病與既有恐怖威脅共同削弱了歐洲。\n同頁後續敘述的後續整理補充，他曾向雷提供毒品，間接促使雷加入八卦，也與歐盟前領袖山繆・史密斯交易毒品並維持政治關係。故事對污染手段另有更具體、但未明標版本的說法：他把手下 Moss Gang 的遺骸磨碎後投入飲水。此支線只有在魔劍答應協助巴德萊爾時才會繼續；否則馬爾卡拉不會再被提及或登場。魔劍以 Brain Jack 從倫敦囚犯史密斯的記憶取得情報，再利用巴德萊爾破解電子鎖的能力進入馬爾卡拉位於西西里的酒窖。馬爾卡拉先祝賀並嘲弄魔劍找到藏身處，隨後退往酒窖深處交戰；戰敗後可被 Brain Jack。若魔劍取得他的身體與知識，便能在梵蒂岡以秘密情報開啟通往雷所在處的告解室。",
+      "personality": "《Maken Shao》檔案明確把無法擁有後代所造成的絕望，列為天尊流星得以利用並轉化他的關鍵。人物檔案劇情則直接呈現他在魔劍找到藏身處後仍會祝賀、嘲弄對方，顯示其面對追捕者時帶有挑釁態度。",
+      "appearanceAndAbilities": "外觀資料描述他體格壯碩，穿黑白西裝、皮鞋、禮帽、黑手套與面具；衣襟飾有白玫瑰，胸前口袋放著戴黑禮帽的木偶。他有紫色皮膚、黃色眼睛及非人的咧嘴笑容。木偶被賦予生命後會化為穿黑色緊身衣與禮帽、配白袖口及紅領帶的人形，其臉部由從 3 開始倒數的電子計時器取代。頁首另列武器為斧及木偶炸彈。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Hakke Malukala"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Hakke Malukala"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Hakke Malukala"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Hakke Malukala"
+        ]
+      }
+    }
   },
   {
     "id": "william",
@@ -1150,7 +1544,7 @@
         "revisionId": 565002,
         "revisionTimestamp": "2025-03-30T16:14:34Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:HakkeWilliam(Shao).png",
@@ -1185,7 +1579,39 @@
       "William",
       "八卦威廉",
       "八卦ウィリアム"
-    ]
+    ],
+    "profile": {
+      "introduction": "威廉（ウィリアム；英語版《Maken X》稱 Hakke Brown）是 41 歲的美國總統與八卦。頁首將他列為《Maken X》的可操作角色，並分別展示總統外形、首個頭目形態及第二個頭目／可操作形態。",
+      "background": "《Maken Shao》人物檔案稱威廉憑藉對中國的強硬態度獲得民意支持，並連任為美國第 29 任總統。遭中國特務暗殺未遂後，他改採和平政策，卻立即失去選民支持。意圖以世界大戰削減人口的天尊流星把他轉化為八卦，利用其總統地位加深中美兩大強權的對立。\n同頁後續敘述的後續劇情整理指出，魔劍直到進入華盛頓的秘密地下設施才正式遇見威廉；他在拳擊台等待魔劍，自稱最後一名八卦，並揭露天尊流星已 Brain Jack 中國領導人劉嘉伸，因此中美戰爭從一開始便是被安排好的局面。若魔劍走 True Chaos 路線，威廉會識破其真正意圖，判斷魔劍與天尊流星並無太大差異。交戰前，他看似扭斷自己的頸部，實際上藉此揭露總統軀體是機械構造，並換上類似其機器護衛的強化身體。第一具身體戰敗爆炸後，內部還會露出更強、更敏捷的黑色形態，開始第二戰；最終戰敗後可被 Brain Jack。在封劍士故事路線結局中，他會與政府成員討論中美停火，聲稱控制中國的「惡魔」已消失、世界將恢復正常，之後才揭露說話者其實已被魔劍 Brain Jack。",
+      "personality": "資料僅直接呈現其政治行動與臨場判斷——他曾以強硬反中立場爭取支持，遇刺後又轉向和平政策；在華盛頓會宣稱戰爭已無法阻止，並能在 True Chaos 分支察覺魔劍另有支配企圖，把它與天尊流星相提並論。這些是 人物檔案 所示立場與行為，不是獨立 Personality 區段所作的完整性格描述。",
+      "appearanceAndAbilities": "外觀資料描述其表面是短棕髮的中年男子，穿藍色雙排扣西裝及帶愛國鷹徽的藍色領帶，但仔細觀察可見金屬頸部與鼻子。第一戰鬥形態近似其機器人護衛，主體為藍色並帶金色鷹徽，頭部造型不同。最終形態較接近人形，覆有純黑色肌肉狀裝甲，腰部橫跨金色鷹徽。雙拳具有傘狀機構：紅色右拳各片末端裝有刀刃，可旋轉及伸長；藍色左拳可摺疊成傘形盾牌。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Hakke William"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Hakke William"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Hakke William"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Hakke William"
+        ]
+      }
+    }
   },
   {
     "id": "andrei",
@@ -1245,7 +1671,34 @@
         "revisionId": 564994,
         "revisionTimestamp": "2025-03-30T15:58:19Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Maken",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Maken",
+        "revisionId": 564987,
+        "revisionTimestamp": "2025-03-30T15:53:48Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Maken 的固定 revision；僅用於正文所標示的混合版本事件。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Kei Sagami",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Kei_Sagami",
+        "revisionId": 579942,
+        "revisionTimestamp": "2025-10-06T12:25:18Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Kei Sagami 的固定 revision；僅用於正文所標示的混合版本事件。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Lee Fei Chao",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Lee_Fei_Chao",
+        "revisionId": 487996,
+        "revisionTimestamp": "2023-01-21T01:08:32Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Lee Fei Chao 的固定 revision；僅用於正文所標示的混合版本事件。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:HakkeAndrey(Shao).png",
@@ -1284,7 +1737,41 @@
       "Andrei",
       "八卦安德烈",
       "八卦アンドレイ"
-    ]
+    ],
+    "profile": {
+      "introduction": "安德烈（アンドレイ；Fandom 名作 Andrey）是三十八歲的俄羅斯特種部隊上校與八卦，使用大型手術刀。他是研究所襲擊的主犯、開場主要敵人，也是魔劍最早能取得的宿主之一；角色圖另收錄《Maken X》與漫畫《Maken X Another》的形象。",
+      "background": "安德烈是八卦派往金澤研究所的突擊者。魔劍覺醒當日，他率眾闖入設施，以飛行手術刀攻擊相模桂，造成替她擋下攻擊的李飛超死亡，並趁混亂擄走相模廣光。桂握起剛甦醒的魔劍追擊，在研究所內擊敗安德烈，卻未能阻止所長被直升機帶走。其後魔劍為追查所長而 Brain Jack 戰敗的安德烈，以他的身體離開研究所並前往莫斯科，令他同時成為開場主要敵人與最初宿主之一。",
+      "personality": "人物資料明確稱安德烈長期受偏執症困擾。他仍有自己的思想，但除了尖叫與痛苦的喊聲外幾乎不說話，可能與嘴部遭改造有關。與魔劍交戰時，他會在衝鋒前做出招手或挑釁動作，這個演出顯示他可能對自身戰鬥能力頗具信心。",
+      "appearanceAndAbilities": "外觀資料描述他穿黑色軍服，袖子、領口及部分俄式毛帽由棕色毛皮構成。注入 Image 使其嘴部畸變，長出尖牙且下顎能大幅張開；他還能從舌頭射出手術刀。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Hakke Andrey"
+        ]
+      },
+      "background": {
+        "versionScope": "《Maken X》研究所襲擊與 Brain Jack 開場事件。",
+        "referenceTitles": [
+          "Maken",
+          "Kei Sagami",
+          "Lee Fei Chao"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Hakke Andrey"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Hakke Andrey"
+        ]
+      }
+    }
   },
   {
     "id": "sharja",
@@ -1344,7 +1831,7 @@
         "revisionId": 564995,
         "revisionTimestamp": "2025-03-30T16:02:16Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:HakkeShajaCombat(Shao).png",
@@ -1378,7 +1865,39 @@
       "Sharja",
       "八卦沙爾嘉",
       "八卦シャージャ"
-    ]
+    ],
+    "profile": {
+      "introduction": "沙爾嘉（シャージャ；Fandom 頁名作 Shaja）是 50 歲的印度電視明星與八卦，武器為刃臂。頁首將他列為《Maken X》的可操作角色，圖集另收錄《Maken X》及漫畫《Maken X Another》造型。",
+      "background": "《Maken Shao》人物檔案記載，沙爾嘉生於富裕家庭，憑歌唱與舞蹈才能成為全國知名的電視明星，之後卻過著空虛而沒有目標的生活。為抑制印度人口增長，天尊流星向他注入 Image、將他轉化為八卦，再利用其歌曲透過電視與收音機傳送特殊波動。聽眾會逐漸失去精神、體力與食慾，最終死亡，導致印度死亡率上升、生產力大幅下降。\n同頁後續敘述的後續劇情整理指出，李飛扇最先向魔劍揭露沙爾嘉假借國民級明星身分，以歌曲抽走民眾靈魂。只有魔劍答應協助飛扇，沙爾嘉才會在泰姬瑪哈陵登場；拒絕則此後不再出現或被提及。兩人在陵墓內的聖所相遇時，沙爾嘉能看出眼前少女實際上是魔劍的宿主。他說明自己成為八卦的動機並表達對人類的厭惡，隨後開戰；戰敗後可被 Brain Jack。",
+      "personality": "《Maken Shao》檔案直接稱他雖富有且成名，卻生活空虛、缺乏目的。人物檔案劇情又明載他在決戰前表達對人類的厭惡，並能識破少女身體內真正行動者是魔劍。",
+      "appearanceAndAbilities": "直接支持的能力是藉歌曲經由電視及廣播發送波動，使聽眾喪失精神、體力與食慾並逐步死亡；人物檔案的後續整理將效果表述為抽走民眾靈魂。頁首另列其戰鬥武器為刃臂。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Hakke Shaja"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Hakke Shaja"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Hakke Shaja"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Hakke Shaja"
+        ]
+      }
+    }
   },
   {
     "id": "margarete",
@@ -1438,7 +1957,25 @@
         "revisionId": 564996,
         "revisionTimestamp": "2025-03-30T16:02:18Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Fukenshi Rumrod",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Fukenshi_Rumrod",
+        "revisionId": 564992,
+        "revisionTimestamp": "2025-03-30T15:58:15Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Fukenshi Rumrod 的固定 revision；僅用於正文所標示的混合版本事件。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Samuel Smith",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Samuel_Smith",
+        "revisionId": 565008,
+        "revisionTimestamp": "2025-03-30T16:51:27Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Samuel Smith 的固定 revision；僅用於正文所標示的混合版本事件。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:HakkeMarguerite(Shao).png",
@@ -1469,7 +2006,42 @@
       "Margarete",
       "八卦瑪格麗特",
       "八卦マルガレーテ"
-    ]
+    ],
+    "profile": {
+      "introduction": "瑪格麗特（マルガレーテ；Fandom 頁名作 Marguerite，英語版《Maken X》稱 Hakke Margaret）是 24 歲的八卦、ECAP／歐洲聯盟領袖，也是 B.S. Reconstruction Soldiers 的成員；居於奧地利維也納，使用光束棒。頁首將她列為《Maken X》的可操作角色。",
+      "background": "瑪格麗特原是歐盟黨魁塞繆爾・史密斯的妻子，也在封劍士拉姆羅德調查歐洲局勢時與他相識，成為拉姆羅德深愛的人。天尊流星將她轉化為八卦後，她把史密斯囚禁於倫敦塔，接掌歐洲聯盟政黨與 ECAP 領導位置，並與持續擴大的恐怖活動相連。拉姆羅德雖無法割捨感情，仍決定履行封劍士職責；魔劍若協助他，便會以他的知識進入維也納劇院，與瑪格麗特對決並取得 Brain Jack 她的機會。",
+      "personality": "瑪格麗特在故事中展現強硬、果斷且不留情面的權力姿態：成為八卦後，她迅速奪取丈夫的政治位置並將其監禁，再以歐洲領袖身分推進天尊流星一方的行動。她與拉姆羅德的關係使這場衝突帶有私人悲劇，但直接敘事只明確交代拉姆羅德的愛與掙扎，不把同等情感擅自歸給她。",
+      "appearanceAndAbilities": "外觀資料描述她留短髮，穿軍官制服，數處裸露皮膚呈現近似骨骼的效果；配戴紅色臂章、刀刃式及膝長靴，以及帶刃狀突起的金屬頸圈。她的黑色先進機械左臂是義肢。日文版《Maken X》造型上的卐字，在《Maken X》非日文版本及所有《Maken Shao》版本均改為漢字「無」；這是頁面唯一明確指出的跨版本設計差異。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Hakke Marguerite"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本跨頁故事；正文關係與事件分別來自相關角色固定 revision。",
+        "referenceTitles": [
+          "Hakke Marguerite",
+          "Fukenshi Rumrod",
+          "Samuel Smith"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本跨頁事件中直接呈現的政治行動。",
+        "referenceTitles": [
+          "Fukenshi Rumrod",
+          "Samuel Smith"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Hakke Marguerite"
+        ]
+      }
+    }
   },
   {
     "id": "dal",
@@ -1529,7 +2101,7 @@
         "revisionId": 578583,
         "revisionTimestamp": "2025-09-07T22:17:50Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:HakkeDaru(Shao).png",
@@ -1560,7 +2132,39 @@
       "Dal",
       "八卦達爾",
       "八卦ダル"
-    ]
+    ],
+    "profile": {
+      "introduction": "達爾（ダル；Fandom 頁名作 Daru，英語版《Maken X》稱 Hakke Dal）是 40 歲的科學家與八卦，使用尖樁狀武器。頁首將他列為《Maken X》的可操作角色。",
+      "background": "《Maken Shao》人物檔案稱達爾因發現特定傳染病的療法及相關理論而獲諾貝爾生理醫學獎。其後他發現該療法會引發另一種疾病；由於害怕真相曝光，他搬到特蘭西瓦尼亞與女兒同住。企圖摧毀歐洲並削減人口的天尊流星將他轉化為八卦，達爾隨後利用原有療法製造石化病病毒，並將病毒散布至全歐洲。由於傳染性極強，人物檔案稱感染人數看來已達數千萬。同一 人物檔案另直接確認他是巴林卡之父，也是肆虐歐洲的石化病發明者。",
+      "personality": "人物檔案 唯一可直接用於描述其心理的內容，是他發現療法會造成新疾病後，因害怕此事曝光而逃往特蘭西瓦尼亞。他選擇隱匿後果、逃離原有環境，顯示恐懼曝光與自我保全壓過公開承擔責任。",
+      "appearanceAndAbilities": "角色資料 僅列他身高 150 公分、體重 50 公斤，武器為尖樁；人物檔案 則直接支持他具有醫學研究能力，能由原有療法製成高傳染性的石化病病毒。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Hakke Daru"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Hakke Daru"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Hakke Daru"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Hakke Daru"
+        ]
+      }
+    }
   },
   {
     "id": "rei",
@@ -1620,7 +2224,7 @@
         "revisionId": 565003,
         "revisionTimestamp": "2025-03-30T16:17:01Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:HakkeRay(Shao).png",
@@ -1655,7 +2259,39 @@
       "Rei",
       "八卦雷",
       "八卦レイ"
-    ]
+    ],
+    "profile": {
+      "introduction": "雷（レイ；Fandom 頁名作 Ray）是 70 歲的大主教、八卦及死神鐮刀使用者。頁首將他列為《Maken X》的可操作角色。",
+      "background": "《Maken Shao: Demon Sword》人物檔案稱雷是彌賽亞教大主教，並被視為下一任教宗人選。他原本是信仰典範，也積極勸人入教，後來卻開始懷疑神是否存在。這份懷疑使他深受折磨，因而向馬爾卡拉購買毒品；聽到天尊流星宣揚「更新、更好的世界」後，他自願接受轉化成為八卦。他開始鼓勵信徒自殺，以便前往天堂；大量被其講道迷惑的信徒因此死亡，造成自殺率上升與世界人口下降。\n同頁後續敘述的其餘劇情整理把他列為代表離卦（☲）的八卦。他在魔劍前往歐洲之初，便透過電視向信徒宣講自殺。後期只有當魔劍控制馬爾卡拉、使用其情報在梵蒂岡告解室輸入秘密密碼時，才會開啟通往大教堂深處的道路並遇見雷。雷得知馬爾卡拉被擊敗後，向魔劍哀嘆世界的不公，並以聖女貞德殉難為例，隨後交戰；戰敗後可被 Brain Jack。",
+      "personality": "《Maken Shao》檔案直接呈現他由熱衷傳教、堪稱信仰典範，轉為懷疑神的存在並因此痛苦；他在聽取天尊流星的主張後是自願轉化，而非被迫。人物檔案的梵蒂岡場景又顯示他強烈關注世界的不公，會以聖女貞德的遭遇為例陳述自己的觀點。",
+      "appearanceAndAbilities": "外觀資料描述他是穿棕色無袖長袍的老人，背後附著一具無頭機械「天使」軀幹；天使用雙手遮住他的眼睛，其翅膀由相互連接的棺材形金屬板構成，每片標有不同羅馬數字。短暫過場中可見他的眼睛完全呈紅色。非日文版《Maken X》把長袍改為紫色，胸前徽記文字改成漢字「空」，翅膀上的羅馬數字也被移除。頁首另列武器為鐮刀。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Hakke Ray"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Hakke Ray"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Hakke Ray"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Hakke Ray"
+        ]
+      }
+    }
   },
   {
     "id": "ryu-kashin",
@@ -1704,7 +2340,7 @@
         "revisionId": 531248,
         "revisionTimestamp": "2024-05-01T02:37:18Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imagePath": "assets/images/characters/ryu-kashin-fandom.webp",
@@ -1741,7 +2377,39 @@
       "劉 嘉伸（リュウ カシン）",
       "Ryu Kashin",
       "劉 嘉伸"
-    ]
+    ],
+    "profile": {
+      "introduction": "劉嘉伸（劉 嘉伸／リュウ カシン；Fandom 頁名 Ryu Kashin，另列 Liu Jiashen；英語版《Maken X》稱 Sectory-General Leung）是 35 歲的中華人民共和國主席，隸屬三業會並被列入八卦。頁首把他定位為《Maken X》角色，資料框另把天尊流星列為其別名與武器，反映兩者的宿主關係。",
+      "background": "《Maken Shao》人物檔案稱劉嘉伸以反對美國帝國主義的立場統御亞洲，三十多歲便登上國家最高位置。由於父親本就是權勢人物，他年輕時已廣受注意，因而被稱為「紅色王子」；檔案敘述者承認他具有魅力，同時嘲諷他是靠父親權勢才當上主席。\n同頁後續敘述的後續整理稱他是中國主席之子，持反美帝國主義立場，年輕時即成為高階政府官員，但在此期間染上毒癮。一次受毒品影響的幻覺中，他接觸天尊流星並遭其 Brain Jack。在天尊流星控制下，他殺死父親，並於一年後篡奪主席職位。天尊流星把劉嘉伸的 Image 吸收進自身後，利用其政治地位，配合美國總統、八卦威廉加劇中美緊張，企圖引發新的世界大戰以削減全球人口。",
+      "personality": "《Maken Shao》檔案直接把他描述為具有魅力、以反美帝國主義為政治立場的人，但同一段也帶有敘述者對其依靠父蔭上位的負面評價。人物檔案另明載他曾染上毒癮。弒父、篡位及挑起戰爭則是在遭天尊流星 Brain Jack 後發生，不能不加區分地視為劉嘉伸本人原有性格。",
+      "appearanceAndAbilities": "角色資料 只提供角色圖、年齡、政治職務與組織身分，並把天尊流星列為其「武器」；人物檔案 支持的特殊狀態是其 Image 被天尊流星吸收、身體與政治身分遭對方利用，而非劉嘉伸自身擁有獨立超自然能力。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Ryu Kashin"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Ryu Kashin"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Ryu Kashin"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Ryu Kashin"
+        ]
+      }
+    }
   },
   {
     "id": "pan-gu",
@@ -1789,7 +2457,16 @@
         "revisionId": 574851,
         "revisionTimestamp": "2025-07-22T01:48:22Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Mr. Meteor",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Mr._Meteor",
+        "revisionId": 455651,
+        "revisionTimestamp": "2022-04-13T00:25:42Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Mr. Meteor 的固定 revision；僅用於正文所標示的混合版本事件。"
       }
     ],
     "imagePath": "assets/images/characters/pan-gu-fandom.webp",
@@ -1824,7 +2501,40 @@
     "linkAliases": [
       "盤古",
       "Pan-Gu"
-    ]
+    ],
+    "profile": {
+      "introduction": "盤古（Pan-Gu）在其 Fandom 直接條目中被概括為系列中的惡魔；資料框另列「盤古蟲／Pan-Gu Bug」、Mr. Meteor，以及《Maken X》英文版名稱 Geist 等別名，並把首次登場標為《Maken X》。",
+      "background": "盤古形態出現在天尊流星終盤戰的第二階段。魔劍先在紫禁城地下的異空間擊敗以劉嘉伸身體揮舞黑劍的天尊流星；天尊流星因仍執著於重建並全面控制世界，隨即轉化為新的盤古化身，再與魔劍展開最後決戰。盤古因此不是獨立展開支線的人類角色，而是天尊流星的意志、創世者意象與最終戰鬥形態匯合後的存在；落敗後，它會短暫回復劍形並崩解消失。",
+      "personality": "盤古形態沒有與天尊流星分離的獨立人格，其行動延續天尊流星對人類的厭倦、重建世界的執念，以及以 Image 統一控制眾人的理念。即使第一階段敗北，這股拒絕放棄支配的意志仍促使它變化並再戰，使盤古成為其控制欲與創世妄想的最終具象。",
+      "appearanceAndAbilities": "資料將它列為由天尊流星變化而成的惡魔，亦使用「盤古蟲」等名稱。終盤中，它是天尊流星第一形態敗北後出現的新盤古化身，能在異空間繼續最終戰；其存在承接天尊流星的 Image 控制、Brain Jack 與變換宿主／形態能力。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Pan-Gu"
+        ]
+      },
+      "background": {
+        "versionScope": "《Maken X》終盤事件；不是 PS2《Maken Shao》獨有設定。",
+        "referenceTitles": [
+          "Mr. Meteor"
+        ]
+      },
+      "personality": {
+        "versionScope": "《Maken X》終盤中天尊流星延續的意志。",
+        "referenceTitles": [
+          "Mr. Meteor"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "《Maken X》角色資料與終盤變化。",
+        "referenceTitles": [
+          "Pan-Gu",
+          "Mr. Meteor"
+        ]
+      }
+    }
   },
   {
     "id": "mr-meteor",
@@ -1873,7 +2583,7 @@
         "revisionId": 455651,
         "revisionTimestamp": "2022-04-13T00:25:42Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imagePath": "assets/images/characters/mr-meteor-fandom.webp",
@@ -1915,7 +2625,39 @@
       "天尊流星（てんそんりゅうせい）",
       "Mr. Meteor",
       "流星"
-    ]
+    ],
+    "profile": {
+      "introduction": "天尊流星（Mr. Meteor）是《Maken X》的主要反派、三業會（Sangyokai）的創立者，也是魔劍 Brain Jack 能力的源頭。條目亦列出「古之劍」、Ryu Kashin、Pan-Gu，以及不同翻譯版本使用的 Geist、Tensonryuusei 等名稱。",
+      "background": "《Maken Shao》人物檔案引文將天尊流星描述為創世者盤古之腦，以及在 Image 世界擁有身體、負責守護盤古所創世界的人類監視者。它曾與封劍士祖先締約，藉封劍士維持秩序；後來厭倦人類，轉而企圖控制全人類的 Image，並在逃避封劍士追捕時不斷更換肉體、以 Image 控制強化部下。同頁後續的《Maken X》敘事則說，它建立三業會、向成員注入 Image，並借助八卦策動政治衝突、資源短缺與災害；它 Brain Jack 劉嘉伸，利用其政治地位升高中美衝突，又因得知魔劍計畫而命安德烈襲擊金澤研究所、擄走相模廣光以奪取其 Image 知識。於《Maken X》終盤，它在紫禁城地下的異空間現身；依玩家路線可能提出以相模廣光的研究交換其理想世界，也可能直接與魔劍交戰。該頁的《Maken X》段落並稱，它敗於第一階段後會因重建並控制世界的意志化為新的盤古形態。",
+      "personality": "《Maken Shao》人物檔案把它的核心思想寫成對人類的厭倦與全面控制欲：它認為削減人口、由自己統一控制人類 Image，反而能使人類幸福。《Maken X》敘事也支持其擅長長期操縱、利用政治人物與部下推動目的，而非只以自身力量正面行動。",
+      "appearanceAndAbilities": "登場資料 區段描述其本體為藏在鋸齒狀黑劍核心的小型蟲狀生物；劍身帶有紅色紋路，與魔劍在自身周圍形成的武器狀護層相似。它 Brain Jack 他人後，宿主的眼睛會轉紅，鞏膜則會變暗。人物檔案另直接支持它能更換肉體、控制 Image、強化部下，以及 Brain Jack 劉嘉伸。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Mr. Meteor"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Mr. Meteor"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Mr. Meteor"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Mr. Meteor"
+        ]
+      }
+    }
   },
   {
     "id": "jj-jones",
@@ -1967,7 +2709,7 @@
         "revisionId": 484609,
         "revisionTimestamp": "2023-01-01T01:36:42Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:Peter_Jones_Art.jpg",
@@ -1997,7 +2739,39 @@
       "J.J. 瓊斯",
       "J.J.ジョーンズ",
       "J.J. Jones"
-    ]
+    ],
+    "profile": {
+      "introduction": "J.J. 瓊斯是《Maken X》的非操作角色，也是參與製造魔劍的金澤研究所研究員。資料框列其為二十七歲的美國人；《Maken X》英文版另使用 Peter Jones 之名。",
+      "background": "《Maken Shao: Demon Sword》人物檔案稱，他負責人工腦控制裝置研究，十八歲便取得生物技術博士學位，之後一度突然停止研究。讀到相模廣光所長的 Image 論文後，他才前往金澤的新國際大學，並在所長邀請下加入魔劍開發。檔案雖不清楚他選擇參與計畫的真正原因，也認為他對心理生物學似乎缺乏興趣，卻明確指出沒有他的貢獻便無法完成魔劍。同頁後續概括他在金澤研究所負責 Plan X 的人工腦系統控制，並與安・米勒相識已久。",
+      "personality": "《Maken Shao》人物檔案把他評為極具天分、聰明過人，但同時粗魯、自私；同頁後續亦直接稱他自我中心。對其研究動機與心理生物學興趣的描述帶有檔案敘述者的疑問，因此只能保留為「動機不明」及「看來興趣不大」，不能寫成確定事實。",
+      "appearanceAndAbilities": "可直接支持的專業能力是生物技術博士背景、人工腦控制裝置研究，以及負責 Plan X 的人工腦系統控制；人物檔案將其工作視為魔劍得以完成的關鍵。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "J.J. Jones"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "J.J. Jones"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "J.J. Jones"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "J.J. Jones"
+        ]
+      }
+    }
   },
   {
     "id": "smith",
@@ -2051,7 +2825,7 @@
         "revisionId": 565008,
         "revisionTimestamp": "2025-03-30T16:51:27Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:SamuelSmith(Shao).png",
@@ -2084,7 +2858,39 @@
       "史密斯議員",
       "スミス",
       "Smith"
-    ]
+    ],
+    "profile": {
+      "introduction": "塞繆爾・史密斯是《Maken X》的可操作角色。資料框列他四十五歲、曾任歐洲聯盟領袖，武器為鐵球鎖鏈；《Maken Shao》人物檔案進一步將他稱為歐盟前黨魁及現任黨魁瑪格麗特之夫。",
+      "background": "《Maken Shao》人物檔案稱，史密斯透過與馬爾卡拉的非法交易登上歐盟黨魁之位；即使已擁有權力、財富及比自己年輕二十歲的妻子，他仍持續與馬爾卡拉交易毒品和武器。瑪格麗特成為八卦後奪取其地位，並把他囚禁在倫敦塔，使他每天過著潦倒生活。同頁後續劇情指出，封劍士巴德萊爾希望魔劍 Brain Jack 史密斯，以從其記憶找出馬爾卡拉的祕密藏身處；魔劍若以巴德萊爾抵達倫敦塔牢房，便能取得馬爾卡拉藏在西西里的情報。",
+      "personality": "人物檔案直接把史密斯描述為極度貪婪：他已擁有多數人渴望的事物，仍不斷追求更多，最終反而失去一切。入獄後他長期沉浸在悲慘處境中；人物檔案推測他可能已不在意死亡，依據是遭 Brain Jack 時完全沒有反抗。由於原文使用推測語氣，不能把求死意圖寫成確定心理狀態。",
+      "appearanceAndAbilities": "外觀資料描述他為身材高大的中年男子，穿米色囚服，手腕與腳踝均戴著鐐銬，身上仍佩戴戒指等昂貴珠寶。角色資料 另列其武器為鐵球鎖鏈。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Samuel Smith"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Samuel Smith"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Samuel Smith"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Samuel Smith"
+        ]
+      }
+    }
   },
   {
     "id": "anne-miller",
@@ -2136,7 +2942,7 @@
         "revisionId": 484608,
         "revisionTimestamp": "2023-01-01T01:36:32Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:AnneMiller_Render.png",
@@ -2167,7 +2973,39 @@
       "安・米勒",
       "アン・ミラー",
       "Anne Miller"
-    ]
+    ],
+    "profile": {
+      "introduction": "安・米勒是《Maken X》的非操作角色，也是參與製造魔劍的金澤研究所研究員。資料框列其為二十七歲的美國人。",
+      "background": "《Maken Shao: Demon Sword》人物檔案稱，她負責 Image 的基因演算法研究。學生時代，她曾向擔任大學講師的相模廣光學習 Image，從此對該領域十分著迷；由於專門研究 Image 的機構很少，她先從事人類基因組分析，直到相模廣光邀請她加入研究所，便立刻辭去原職投入魔劍計畫。同頁後續說明她負責 Plan X 的 PSI 基因演算法，與 J.J. 瓊斯相識已久，對相模桂則像姊姊一般。",
+      "personality": "《Maken Shao》人物檔案直接評她認真、頗為友善，但也有些古怪；對 Image 的高度投入則由她求學後持續鑽研、收到邀請便轉職等經歷支持。檔案中關於她可能想製造人工男友的話只是敘述者的玩笑式猜測，沒有當作人物動機採用。",
+      "appearanceAndAbilities": "其專業能力限於 Image 基因演算法、人類基因組分析，以及 Plan X 的 PSI 基因演算法研究。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Anne Miller"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Anne Miller"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Anne Miller"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Anne Miller"
+        ]
+      }
+    }
   },
   {
     "id": "barlinka",
@@ -2223,7 +3061,7 @@
         "revisionId": 565006,
         "revisionTimestamp": "2025-03-30T16:21:46Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:Bahlinka(Shao).png",
@@ -2255,7 +3093,39 @@
       "バーリンカ",
       "Barlinka",
       "Bahlinka"
-    ]
+    ],
+    "profile": {
+      "introduction": "巴林卡（Fandom 頁名作 Bahlinka）是十三歲、來自特蘭西瓦尼亞的角色，資料框列其武器為短柄斧。《Maken X》角色資料 稱她為可操作角色，而頁面的 登場資料 清單同時把她列為《Maken X》與《Maken Shao》的次要、可操作角色。",
+      "background": "《Maken Shao》人物檔案稱，巴林卡是諾貝爾獎學者達爾之女，曾與父親在特蘭西瓦尼亞古堡生活多年。原本慈祥的父親後來為研發石化病病毒，反覆進行人體實驗；她因害怕父親而帶著疫苗逃走，卻也感染石化病，最後住進伊斯坦堡的隔離病房。同頁後續同樣概括她試圖反抗達爾、偷走疫苗並染病，封劍士阿基納斯因而要求魔劍 Brain Jack 她，以查出達爾的所在地。",
+      "personality": "巴林卡既恐懼父親以人體實驗製造石化病，又仍深愛著曾經慈祥的父親。她偷走疫苗、逃離古堡，顯示她願意反抗錯誤並阻止災難；但她不願達爾死亡，也拒絕輕易交出其位置，使她的選擇同時帶有勇氣、親情、恐懼與道德矛盾。",
+      "appearanceAndAbilities": "巴林卡使用短柄斧作戰；石化病使她無法正常說話。登場資料同時把她列為《Maken X》與《Maken Shao》的次要、可操作角色，年齡十三歲，身高 134 公分、體重 36 公斤。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Bahlinka"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Bahlinka"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Bahlinka"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Bahlinka"
+        ]
+      }
+    }
   },
   {
     "id": "hiromitsu-sagami",
@@ -2308,7 +3178,7 @@
         "revisionId": 456660,
         "revisionTimestamp": "2022-04-19T22:50:25Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:Chief_Hiro_Sagami.jpg",
@@ -2341,7 +3211,39 @@
       "相模廣光",
       "相模広光",
       "Hiromitsu Sagami"
-    ]
+    ],
+    "profile": {
+      "introduction": "相模廣光是《Maken X》角色，資料框列其四十三歲，並以「相模所長」及《Maken X》英文版名稱 Hiro Sagami 作為別稱。",
+      "background": "人物檔案將他描述為相模桂之父、金澤研究所所長，以及先進精神醫學與 Image 技術的權威；他負責開發魔劍，以及把 Image 與魔劍融合的實驗。其妻是封劍士，在生下桂後返回中國繼續執行任務，後遭天尊流星殺害。這件事促使廣光與都柏林・吉尼斯博士展開 Image 研究，試圖打造能消滅天尊流星的武器，並最終成立金澤研究所。故事開始時，他監督魔劍覺醒，卻在三業會襲擊研究所期間遭安德烈擄上軍用直升機；即使魔劍以桂的身體擊敗安德烈，他仍被帶往不明地點，Image 也被天尊流星奪走，以取得他掌握的 Image 知識。",
+      "personality": "相模廣光兼具研究者的執著與父親的責任感。妻子遭天尊流星殺害後，他沒有放棄 Image 研究，而是與吉尼斯博士尋找反制手段並主導魔劍開發；對桂而言，他既是研究權威也是她冒險營救的父親。其長期投入顯示理性、毅力與保護家人的動機彼此交織。",
+      "appearanceAndAbilities": "故事資料顯示他在先進精神醫學、Image 技術、魔劍開發及 Image 融合實驗方面的專業地位；其角色能力集中於研究、開發與 Image 融合技術。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Hiromitsu Sagami"
+        ]
+      },
+      "background": {
+        "versionScope": "混合版本故事資料；本節明示為混合版本，具名版本以正文與固定 revision 為準。",
+        "referenceTitles": [
+          "Hiromitsu Sagami"
+        ]
+      },
+      "personality": {
+        "versionScope": "混合版本人物資料；僅整理正文直接呈現的性格、動機與行為。",
+        "referenceTitles": [
+          "Hiromitsu Sagami"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "混合版本外觀與能力資料；已知版本差異均在正文內明示。",
+        "referenceTitles": [
+          "Hiromitsu Sagami"
+        ]
+      }
+    }
   },
   {
     "id": "inaba-go",
@@ -2395,7 +3297,16 @@
         "revisionId": 575229,
         "revisionTimestamp": "2025-07-25T22:29:41Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Maken",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Maken",
+        "revisionId": 564987,
+        "revisionTimestamp": "2025-03-30T15:53:48Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Maken 的固定 revision；僅用於正文所標示的混合版本事件。"
       }
     ],
     "imageFilePageUrl": "https://megamitensei.fandom.com/wiki/File:GouInaba(Shao).png",
@@ -2426,13 +3337,46 @@
       "稻葉鄉",
       "稲葉郷",
       "Inaba Go"
-    ]
+    ],
+    "profile": {
+      "introduction": "稻葉鄉（Fandom 羅馬字順序作 Gou Inaba）是《Maken X》的可操作角色。資料框列其三十歲，職業為飛行員，武器為電擊槍與電擊棒。",
+      "background": "稻葉鄉是巨型客機 Rhincodon 上的飛行員。魔劍以安德烈身體搭機前往莫斯科途中，客機遭三業會攻擊並失去繼續航行的能力；魔劍必須穿越機艙抵達補給甲板的逃生區。撤離前，玩家可選擇 Brain Jack 稻葉，利用他的航空知識控制飛行與撤離方向，從而抵達香港；若繼續使用安德烈，路線則會先轉往印度的泰姬瑪哈陵。這項選擇也使未被選作宿主的人物此後無法再使用。",
+      "personality": "稻葉鄉的角色核心是專業型宿主：他的飛行員訓練與航空器知識在 Rhincodon 瀕臨墜毀時直接改變魔劍的逃生路線。劇情著重他的職業能力而非長篇台詞，因此人物形象主要由危機中的技術價值、冷靜操作需求與宿主選擇所建立。",
+      "appearanceAndAbilities": "他三十歲，職業為飛行員，使用電擊槍與電擊棒作戰。作為 Brain Jack 宿主，他最關鍵的專長是飛行與航空器操作知識，能在 Rhincodon 事故後協助魔劍改變航線並前往香港。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Gou Inaba"
+        ]
+      },
+      "background": {
+        "versionScope": "《Maken X》Rhincodon 分歧事件。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      },
+      "personality": {
+        "versionScope": "《Maken X》事件中直接呈現的職業功能；不外推未載人格。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "《Maken X》角色資料與 Rhincodon 事件。",
+        "referenceTitles": [
+          "Gou Inaba",
+          "Maken"
+        ]
+      }
+    }
   },
   {
     "id": "dr-dublin-guiness",
     "title": "都柏林・吉尼斯博士｜ダブリン・ギネス｜Dr. Dublin Guiness",
-    "summary": "Image 工程研究先驅與金澤研究所首任所長，曾反對把魔劍投入開發。",
-    "content": "都柏林・吉尼斯博士在 Fandom 資料框中列為六十五歲、隸屬金澤研究所的人物；現有資料也將他與相模廣光並列為推動 Image 研究、試圖打造能對抗天尊流星武器的人。Fandom 的 Profile 區段為空，條目本身又以《Maken X》為主，因此本條僅保留研究所關聯與既有的保守合作定位，不推定其在 PS2《Maken Shao》的具體行動或性格。",
+    "summary": "六十五歲的 Image 研究者、相模廣光早期的合作夥伴，掌握能解開桂與魔劍融合的 Reverse Brain Jack。",
+    "content": "吉尼斯博士曾與相模廣光合作研究對抗天尊流星的武器，後來在亞馬遜研究設施為相模桂與魔劍檢查 Image 融合狀態。他提出能救回桂、卻會犧牲魔劍的 Reverse Brain Jack，使玩家必須在生命代價與路線選擇間作出決定。",
     "nameJa": "ダブリン・ギネス",
     "nameLatin": null,
     "nameZhHant": "都柏林・吉尼斯博士",
@@ -2471,7 +3415,25 @@
         "revisionId": 472785,
         "revisionTimestamp": "2022-09-21T02:21:19Z",
         "accessedDate": "2026-07-16",
-        "note": "社群角色頁同時涵蓋《Maken X》與《Maken Shao》；本站僅採可明確對應 PS2 的身分、關係或頁面所標示的 PS2 登場資訊。"
+        "note": "此固定 revision 用於本角色的身分、關係、外觀與直接人物敘述；內容可能來自《Maken X》、《Maken Shao》或兩者共通設定，實際版本範圍依各人物區段的可見標示判讀。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Maken",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Maken",
+        "revisionId": 564987,
+        "revisionTimestamp": "2025-03-30T15:53:48Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Maken 的固定 revision；僅用於正文所標示的混合版本事件。"
+      },
+      {
+        "sourceId": "megaten-wiki-maken-x-characters",
+        "pageTitle": "Hiromitsu Sagami",
+        "pageUrl": "https://megamitensei.fandom.com/wiki/Hiromitsu_Sagami",
+        "revisionId": 456660,
+        "revisionTimestamp": "2022-04-19T22:50:25Z",
+        "accessedDate": "2026-07-16",
+        "note": "此人物檔案的跨頁背景亦參考 Hiromitsu Sagami 的固定 revision；僅用於正文所標示的混合版本事件。"
       }
     ],
     "imagePath": "assets/images/characters/dr-dublin-guiness-fandom.webp",
@@ -2507,6 +3469,39 @@
       "吉尼斯博士",
       "ギネス博士",
       "Dublin Guinness"
-    ]
+    ],
+    "profile": {
+      "introduction": "都柏林・吉尼斯博士是《Maken X》角色。資料框列其六十五歲、隸屬金澤研究所；《Maken X》英文版另使用 David Guiness 之名。",
+      "background": "都柏林・吉尼斯博士是 Image 研究者，也是相模廣光早期的合作夥伴；廣光妻子遭天尊流星殺害後，兩人共同研究能對抗它的武器。後來博士居於亞馬遜的研究設施。當相模桂的 Image 持續與魔劍融合、生命瀕危時，山城弘主張前往巴西尋求他的協助。博士檢查桂與魔劍後提出 Reverse Brain Jack：可把桂的 Image 送回肉身，但魔劍會因此犧牲。玩家是否尋找博士、是否接受這項代價，會改變後續路線。",
+      "personality": "吉尼斯博士以審慎而重視代價的研究者姿態出現。面對桂的危機，他沒有給出廉價承諾，而是清楚說明 Reverse Brain Jack 能救回桂、卻會犧牲魔劍。這種作風呈現他把技術可行性、生命代價與當事人的選擇一併納入判斷。",
+      "appearanceAndAbilities": "他六十五歲，隸屬金澤研究所體系。其專業能力包括檢查桂與魔劍的 Image 融合狀態、評估生命風險，以及提出能把桂的 Image 送回肉身的 Reverse Brain Jack 方法；人物功能以研究與診斷為主。"
+    },
+    "profileProvenance": {
+      "introduction": {
+        "versionScope": "《Maken X》人物頁身分；正文明示的《Maken Shao》資料另行區分。",
+        "referenceTitles": [
+          "Dr. Dublin Guiness"
+        ]
+      },
+      "background": {
+        "versionScope": "《Maken X》跨頁故事資料；不是 PS2《Maken Shao》獨有設定。",
+        "referenceTitles": [
+          "Maken",
+          "Hiromitsu Sagami"
+        ]
+      },
+      "personality": {
+        "versionScope": "《Maken X》事件中直接呈現的研究判斷與選擇。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      },
+      "appearanceAndAbilities": {
+        "versionScope": "《Maken X》事件所呈現的研究與 Reverse Brain Jack 能力。",
+        "referenceTitles": [
+          "Maken"
+        ]
+      }
+    }
   }
 ]

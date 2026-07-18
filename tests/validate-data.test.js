@@ -156,7 +156,7 @@ test('requires v0.4 character identity, taxonomy, provenance, and community refe
     readFile(path.join(root, 'data', 'characters.json'), 'utf8').then(JSON.parse),
     readFile(path.join(root, 'data', 'sources.json'), 'utf8').then(JSON.parse)
   ]);
-  for (const field of ['nameJa', 'nameLatin', 'nameZhHant', 'nameEn', 'nameEnStatus', 'linkAliases', 'imagePath', 'imageAlt', 'imageKind', 'imageSourceId', 'imageOriginalUrl', 'imageDownloadUrl', 'imageSha256', 'imageFilePageUrl', 'imageUploader', 'imageUploadedAt', 'imageSourceSha1', 'imageSourceMime', 'imageSourceWidth', 'imageSourceHeight', 'imageSourceBytes', 'imageSourceVerification', 'imageLocalMime', 'imageUnderlyingSource', 'imageArtist', 'imageLicense', 'imageReuseStatus', 'imageContentType', 'imageRightsNote', 'imageVersionNote', 'role', 'characterType', 'characterGroup', 'wikiNavigationGroup', 'wikiLinkedCharacterIds', 'tags', 'age', 'occupation', 'communityReferences', 'affiliations', 'brainJackStatus', 'firstAppearanceWalkthroughId', 'relatedWalkthroughIds']) {
+  for (const field of ['profile', 'profileProvenance', 'nameJa', 'nameLatin', 'nameZhHant', 'nameEn', 'nameEnStatus', 'linkAliases', 'imagePath', 'imageAlt', 'imageKind', 'imageSourceId', 'imageOriginalUrl', 'imageDownloadUrl', 'imageSha256', 'imageFilePageUrl', 'imageUploader', 'imageUploadedAt', 'imageSourceSha1', 'imageSourceMime', 'imageSourceWidth', 'imageSourceHeight', 'imageSourceBytes', 'imageSourceVerification', 'imageLocalMime', 'imageUnderlyingSource', 'imageArtist', 'imageLicense', 'imageReuseStatus', 'imageContentType', 'imageRightsNote', 'imageVersionNote', 'role', 'characterType', 'characterGroup', 'wikiNavigationGroup', 'wikiLinkedCharacterIds', 'tags', 'age', 'occupation', 'communityReferences', 'affiliations', 'brainJackStatus', 'firstAppearanceWalkthroughId', 'relatedWalkthroughIds']) {
     assert.ok(schema.required.includes(field), `character schema requires ${field}`);
   }
   assert.deepEqual(schema.properties.characterGroup.enum, ['main', 'fukenshi', 'hakke', 'hostile', 'npc', 'other']);
@@ -168,6 +168,11 @@ test('requires v0.4 character identity, taxonomy, provenance, and community refe
   assert.match(tooOldErrors.join('\n'), /age-too-high.*age.*must be at most 99999/i);
   const maximumAgeErrors = validateDataset({ fileName: 'characters.json', records: [{ ...characters[0], id: 'age-at-maximum', age: 99999 }], sourceIds, type: 'character', schema });
   assert.doesNotMatch(maximumAgeErrors.join('\n'), /age-at-maximum.*age/i);
+  const unresolvedProfileReference = structuredClone(characters[0]);
+  unresolvedProfileReference.id = 'unresolved-profile-reference';
+  unresolvedProfileReference.profileProvenance.background.referenceTitles = ['Unknown Fandom Page'];
+  const unresolvedErrors = validateDataset({ fileName: 'characters.json', records: [unresolvedProfileReference], sourceIds, type: 'character', schema });
+  assert.match(unresolvedErrors.join('\n'), /unresolved-profile-reference.*profileProvenance\.background.*unknown community reference title "Unknown Fandom Page"/i);
 });
 
 test('rejects unknown and inconsistent character walkthrough references', () => {
@@ -222,7 +227,7 @@ test('ships all 28 MegaTen Wiki MX-navigation characters with PS2 scope and trac
   assert.ok([...aliasOwners.entries()].every(([, owners]) => owners.size === 1), 'every character alias has exactly one owner');
   assert.ok(byId.get('rei').linkAliases.includes('八卦雷') && byId.get('rei').linkAliases.includes('雷'));
   assert.ok(byId.get('lee-fei-shan').linkAliases.includes('飛扇'));
-  assert.ok(characters.every((record) => record.communityReferences.length === 1 && record.communityReferences[0].revisionId > 0));
+  assert.ok(characters.every((record) => record.communityReferences.length >= 1 && record.communityReferences.every((reference) => reference.revisionId > 0)));
   assert.ok(characters.every((record) => ['official', 'romanized', 'community'].includes(record.nameEnStatus)));
   assert.ok(characters.every((record) => record.imagePath && record.imageAlt && record.imageSourceId === 'megaten-wiki-maken-x-characters'));
   assert.ok(characters.every((record) => record.imageKind.startsWith('community-source-')));
