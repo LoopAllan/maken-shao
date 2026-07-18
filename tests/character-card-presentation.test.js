@@ -14,12 +14,14 @@ test('renders card tags above a horizontally scrollable source strip', async () 
   const app = await appSource();
   const css = await readFile(path.join(root, 'assets', 'css', 'style.css'), 'utf8');
 
+  assert.match(app, /function metadataStrip\(\)/);
+  assert.match(app, /metadata\.className = 'card-metadata-strip'/);
   assert.match(app, /function tagStrip\(item\)/);
   assert.match(app, /tags\.className = 'card-tag-strip'/);
   assert.match(app, /sources\.className = 'card-source-strip'/);
-  assert.match(app, /article\.append\(tagStrip\(item\), sourceLinks\(item, sourceMap\)\)/);
-  assert.match(css, /\.card-tag-strip,\.card-source-strip[^}]*overflow-x:auto/);
-  assert.match(css, /\.card-tag-strip,\.card-source-strip[^}]*flex-wrap:nowrap/);
+  assert.match(app, /article\.append\(meta, tagStrip\(item\), sourceLinks\(item, sourceMap\)\)/);
+  assert.match(css, /\.card-metadata-strip,\.card-tag-strip,\.card-source-strip[^}]*overflow-x:auto/);
+  assert.match(css, /\.card-metadata-strip,\.card-tag-strip,\.card-source-strip[^}]*flex-wrap:nowrap/);
 });
 
 test('keeps character index cards focused and removes obsolete verification and name annotations', async () => {

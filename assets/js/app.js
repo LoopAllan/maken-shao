@@ -123,7 +123,7 @@
   async function linkCharacterMentions(root) {
     if (!root) return;
     const context = await getCharacterContext();
-    const excluded = 'a, button, input, select, textarea, script, style, code, pre, .metadata, [data-no-character-links], [data-character-page-title], .technique-table';
+    const excluded = 'a, button, input, select, textarea, script, style, code, pre, .card-metadata-strip, [data-no-character-links], [data-character-page-title], .technique-table';
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     const nodes = [];
     while (walker.nextNode()) {
@@ -276,6 +276,17 @@
     return item;
   }
 
+  function metadataStrip() {
+    const metadata = document.createElement('ul');
+    metadata.className = 'card-metadata-strip';
+    metadata.setAttribute('aria-label', '屬性');
+    const label = document.createElement('li');
+    label.className = 'card-strip-label';
+    label.textContent = '屬性';
+    metadata.append(label);
+    return metadata;
+  }
+
   function sourceLinks(item, sourceMap) {
     const sources = document.createElement('div');
     sources.className = 'card-source-strip';
@@ -425,8 +436,7 @@
       definition.textContent = value;
       identity.append(term, definition);
     });
-    const meta = document.createElement('ul');
-    meta.className = 'metadata';
+    const meta = metadataStrip();
     const mapTypeLabels = { main: '主線', optional: '可選', ending: '終點' };
     meta.append(
       badge(`順序：${item.sequence}`),
@@ -436,7 +446,7 @@
       badge(`可信度：${item.confidence}`),
       badge(`最後查證：${item.lastVerified}`)
     );
-    article.append(title, summary, identity, meta);
+    article.append(title, summary, identity);
 
     const gallery = document.createElement('div');
     gallery.className = 'map-media-gallery';
@@ -516,7 +526,7 @@
       });
       article.append(heading, list);
     }
-    article.append(tagStrip(item), sourceLinks(item, sourceMap));
+    article.append(meta, tagStrip(item), sourceLinks(item, sourceMap));
     return article;
   }
 
@@ -541,8 +551,7 @@
     summary.textContent = item.summary;
     const content = document.createElement('p');
     content.textContent = item.content;
-    const meta = document.createElement('ul');
-    meta.className = 'metadata';
+    const meta = metadataStrip();
     meta.append(
       badge(`版本：${item.gameVersion}`),
       badge(`可信度：${item.confidence}`),
@@ -563,7 +572,7 @@
 
     article.append(title, summary);
     if (isCharacter) article.append(characterImage(item));
-    article.append(content, meta);
+    article.append(content);
     if (Array.isArray(item.objectives) && item.objectives.length) {
       const heading = document.createElement('h3');
       heading.textContent = '已查證目標';
@@ -575,7 +584,7 @@
       });
       article.append(heading, list);
     }
-    article.append(tagStrip(item), sourceLinks(item, sourceMap));
+    article.append(meta, tagStrip(item), sourceLinks(item, sourceMap));
     return article;
   }
 
@@ -1079,12 +1088,11 @@
         link.rel = 'noopener noreferrer';
         link.textContent = source.title;
         title.append(link);
-        const metadata = document.createElement('ul');
-        metadata.className = 'metadata';
+        const metadata = metadataStrip();
         metadata.append(badge(`來源層級：${source.sourceLevel}`), badge(`最後查閱：${source.accessedDate}`));
         const description = document.createElement('p');
         description.textContent = source.notes;
-        article.append(title, metadata, description);
+        article.append(title, description, metadata);
         sourceList.append(article);
       });
       await linkCharacterMentions(sourceList);

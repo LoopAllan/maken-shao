@@ -408,7 +408,7 @@ test('loads character mention links and accessible previews across every site en
   const app = await readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8');
   assert.match(app, /linkCharacterMentions/);
   assert.match(app, /魔剣爻.*Maken X/);
-  assert.match(app, /excluded = .*\.metadata/);
+  assert.match(app, /excluded = .*\.card-metadata-strip/);
   assert.match(app, /character-preview-card/);
   assert.match(app, /technique-media-gallery/);
   assert.match(app, /media\.archiveUrl/);
@@ -443,8 +443,9 @@ test('renders every title, body, route, and source without disclosure or hiding 
   assert.doesNotMatch(app, /createElement\('details'\)|hiddenTitle|spoilerRouteToggle|data-spoiler/);
   assert.doesNotMatch(`${walkthrough}${references}${endings}`, /<details|<summary|data-spoiler|spoiler-toggle|spoiler-content/);
   assert.match(app, /article\.append\(title, summary\)/);
-  assert.match(app, /article\.append\(content, meta\)/);
-  assert.match(app, /article\.append\(title, metadata, description\)/);
+  assert.match(app, /article\.append\(content\)/);
+  assert.match(app, /article\.append\(meta, tagStrip\(item\), sourceLinks\(item, sourceMap\)\)/);
+  assert.match(app, /article\.append\(title, description, metadata\)/);
 });
 
 test('removes spoiler control fields from every data file and schema', async () => {
