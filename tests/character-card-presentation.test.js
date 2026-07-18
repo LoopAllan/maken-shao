@@ -26,7 +26,7 @@ test('renders card tags above a horizontally scrollable source strip', async () 
 });
 
 test('migrates static card metadata to the same keyboard-scrollable strip', async () => {
-  const pages = await Promise.all(['bosses.html', 'endings.html', 'knowledge.html'].map((file) => readFile(path.join(root, 'pages', file), 'utf8')));
+  const pages = await Promise.all(['endings.html', 'knowledge.html'].map((file) => readFile(path.join(root, 'pages', file), 'utf8')));
   pages.forEach((html) => {
     assert.doesNotMatch(html, /class="metadata"/);
     assert.match(html, /class="card-metadata-strip" aria-label="屬性" tabindex="0"/);

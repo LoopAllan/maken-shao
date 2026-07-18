@@ -5,10 +5,18 @@
   const themeButton = document.querySelector('[data-theme-toggle]');
   const contentTarget = document.querySelector('[data-content-file]');
 
+  function setMobileMenuOffset() {
+    if (!sidebar) return;
+    const headerBottom = document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0;
+    sidebar.style.setProperty('--mobile-menu-top', `${Math.max(0, Math.round(headerBottom))}px`);
+  }
+
   menuButton?.addEventListener('click', () => {
+    setMobileMenuOffset();
     const open = sidebar.classList.toggle('is-open');
     menuButton.setAttribute('aria-expanded', String(open));
   });
+  window.addEventListener('resize', setMobileMenuOffset);
 
   function setTheme(theme) {
     document.documentElement.dataset.theme = theme;
@@ -650,7 +658,7 @@
     world: ['遊戲介紹', 'pages/introduction.html'], systems: ['系統', 'pages/systems.html'],
     walkthrough: ['流程攻略', 'pages/walkthrough.html'], characters: ['角色圖鑑', 'pages/characters.html'],
     maps: ['地圖圖鑑', 'pages/maps.html'], knowledge: ['Knowledge', 'pages/knowledge.html'],
-    endings: ['結局', 'pages/endings.html'], bosses: ['Boss', 'pages/bosses.html']
+    endings: ['結局', 'pages/endings.html']
   };
 
   function plainText(value) {

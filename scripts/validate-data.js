@@ -130,6 +130,29 @@ export function validateDataset({ fileName, records, sourceIds, type, schema }) 
   });
   return errors;
 }
+
+export function validateEndingReferences(endings, walkthrough, characters, sourceIds) {
+  if (!Array.isArray(endings)) return [];
+  const walkthroughIds = new Set((walkthrough || []).filter((item) => item && typeof item.id === 'string').map((item) => item.id));
+  const characterIds = new Set((characters || []).filter((item) => item && typeof item.id === 'string').map((item) => item.id));
+  const registeredSourceIds = sourceIds instanceof Set ? sourceIds : new Set();
+  const errors = [];
+  for (const ending of endings) {
+    if (!ending || typeof ending.id !== 'string') continue;
+    const prefix = `endings.json [${ending.id}]`;
+    if (!walkthroughIds.has(ending.terminalWalkthroughId)) errors.push(`${prefix}: unknown terminalWalkthroughId "${ending.terminalWalkthroughId}"`);
+    for (const id of Array.isArray(ending.entryWalkthroughIds) ? ending.entryWalkthroughIds : []) {
+      if (!walkthroughIds.has(id)) errors.push(`${prefix}: unknown entryWalkthroughIds reference "${id}"`);
+    }
+    if (!characterIds.has(ending.finalOpponentCharacterId)) errors.push(`${prefix}: unknown finalOpponentCharacterId "${ending.finalOpponentCharacterId}"`);
+    for (const [index, evidence] of (Array.isArray(ending.conditionEvidence) ? ending.conditionEvidence : []).entries()) {
+      if (!registeredSourceIds.has(evidence?.sourceId)) errors.push(`${prefix}: conditionEvidence[${index}] has unknown sourceId "${evidence?.sourceId}"`);
+      else if (!Array.isArray(ending.sourceIds) || !ending.sourceIds.includes(evidence.sourceId)) errors.push(`${prefix}: conditionEvidence[${index}].sourceId must also appear in sourceIds`);
+    }
+  }
+  return errors;
+}
+
 function loadJson(filePath) { return JSON.parse(fs.readFileSync(filePath, 'utf8')); }
 export function validateWalkthroughReferences(records) {
   if (!Array.isArray(records)) return [];
@@ -364,6 +387,7 @@ export function validateProject() {
   errors.push(...validateTechniqueMediaFiles(recordsByFile.get('character-details.json')));
   errors.push(...validateMapReferences(recordsByFile.get('maps.json'), recordsByFile.get('characters.json'), recordsByFile.get('walkthrough.json'), sources));
   errors.push(...validateMapMediaFiles(recordsByFile.get('maps.json')));
+  errors.push(...validateEndingReferences(recordsByFile.get('endings.json'), recordsByFile.get('walkthrough.json'), recordsByFile.get('characters.json'), sourceIds));
   return errors;
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
