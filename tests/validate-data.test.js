@@ -272,11 +272,12 @@ test('character page declares category tabs, query, and multi-tag filters', asyn
   assert.match(html, /role="tabpanel" aria-labelledby="character-tab-all"/);
   assert.match(app, /ArrowRight/);
   assert.match(app, /nameZhHant/);
-  assert.match(app, /nameEnStatus/);
   assert.match(app, /character-portrait/);
   assert.match(app, /imageFilePageUrl/);
-  assert.match(app, /角色頁交叉參考/);
-  assert.match(app, /Wiki 內文明示連結角色/);
+  assert.doesNotMatch(app, /角色頁交叉參考/);
+  assert.doesNotMatch(app, /查證註記：/);
+  assert.match(app, /card-tag-strip/);
+  assert.match(app, /card-source-strip/);
   assert.match(app, /Wiki 導覽/);
   assert.match(app, /沒有符合篩選條件的資料/);
   assert.match(home, /完整 28 名角色資料/);

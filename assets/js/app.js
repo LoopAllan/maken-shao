@@ -277,11 +277,16 @@
   }
 
   function sourceLinks(item, sourceMap) {
-    const sources = document.createElement('p');
-    sources.append('來源：');
+    const sources = document.createElement('div');
+    sources.className = 'card-source-strip';
+    sources.setAttribute('aria-label', '來源');
+    const label = document.createElement('span');
+    label.className = 'card-strip-label';
+    label.textContent = '來源';
+    sources.append(label);
     item.sourceIds.forEach((id, index) => {
       const source = sourceMap.get(id);
-      if (index) sources.append('；');
+      if (index) sources.append('｜');
       if (!source?.url) {
         sources.append(id);
         return;
@@ -294,6 +299,22 @@
       sources.append(link);
     });
     return sources;
+  }
+
+  function tagStrip(item) {
+    const tags = document.createElement('ul');
+    tags.className = 'card-tag-strip';
+    tags.setAttribute('aria-label', '標籤');
+    if (!Array.isArray(item.tags) || !item.tags.length) {
+      tags.hidden = true;
+      return tags;
+    }
+    const label = document.createElement('li');
+    label.className = 'card-strip-label';
+    label.textContent = '標籤';
+    tags.append(label);
+    item.tags.forEach((tag) => tags.append(badge(`#${tag}`)));
+    return tags;
   }
 
   function characterIdentity(item) {
@@ -311,15 +332,7 @@
       definition.textContent = value;
       identity.append(term, definition);
     });
-    const note = document.createElement('p');
-    note.className = 'name-source-note';
-    const nameNotes = {
-      official: '英文名：官方角色圖可讀的拉丁字樣。',
-      romanized: '英文名：依日文名整理的羅馬字／英文字形，並非已查得的官方英語在地化名稱。',
-      community: '英文名：MegaTen Wiki 社群頁名；不是已查得的 PS2 日版官方英文名。'
-    };
-    note.textContent = nameNotes[item.nameEnStatus] || nameNotes.community;
-    return { identity, note };
+    return identity;
   }
 
   function characterImageAlt(item) {
@@ -412,11 +425,6 @@
       definition.textContent = value;
       identity.append(term, definition);
     });
-    const nameNote = document.createElement('p');
-    nameNote.className = 'name-source-note';
-    nameNote.textContent = item.nameEnStatus === 'official-localized'
-      ? '英文名：可讀的官方英語在地化名稱。'
-      : '英文名：依日文地名整理的地理英名／羅馬字，並非 PS2 日版畫面中的官方英文標題。';
     const meta = document.createElement('ul');
     meta.className = 'metadata';
     const mapTypeLabels = { main: '主線', optional: '可選', ending: '終點' };
@@ -428,7 +436,7 @@
       badge(`可信度：${item.confidence}`),
       badge(`最後查證：${item.lastVerified}`)
     );
-    article.append(title, summary, identity, nameNote, meta);
+    article.append(title, summary, identity, meta);
 
     const gallery = document.createElement('div');
     gallery.className = 'map-media-gallery';
@@ -508,7 +516,7 @@
       });
       article.append(heading, list);
     }
-    article.append(sourceLinks(item, sourceMap));
+    article.append(tagStrip(item), sourceLinks(item, sourceMap));
     return article;
   }
 
@@ -548,7 +556,6 @@
     if (Number.isInteger(item.age)) meta.append(badge(`社群頁年齡：${item.age}`));
     if (item.occupation) meta.append(badge(`社群頁身分／職業：${item.occupation}`));
     if (Array.isArray(item.affiliations) && item.affiliations.length) meta.append(badge(`所屬：${item.affiliations.join('、')}`));
-    if (Array.isArray(item.tags)) item.tags.forEach((tag) => meta.append(badge(`#${tag}`)));
     if (Number.isInteger(item.sequence)) meta.prepend(badge(`順序：${item.sequence}`));
     if (item.area) meta.append(badge(`區域：${item.area}`));
     if (item.routeId) meta.append(badge(`路線：${item.routeTitle || item.routeId}`));
@@ -556,10 +563,6 @@
 
     article.append(title, summary);
     if (isCharacter) article.append(characterImage(item));
-    if (isCharacter && item.nameJa && item.nameZhHant && item.nameEn) {
-      const { identity, note } = characterIdentity(item);
-      article.append(identity, note);
-    }
     article.append(content, meta);
     if (Array.isArray(item.objectives) && item.objectives.length) {
       const heading = document.createElement('h3');
@@ -590,30 +593,7 @@
       });
       article.append(heading, list);
     }
-    if (isCharacter && Array.isArray(item.communityReferences) && item.communityReferences.length) {
-      const heading = document.createElement('h3');
-      heading.textContent = '角色頁交叉參考';
-      const list = document.createElement('ul');
-      list.className = 'community-reference-list';
-      item.communityReferences.forEach((reference) => {
-        const row = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = reference.pageUrl;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = `${reference.pageTitle}（revision ${reference.revisionId}）`;
-        row.append(link, `；查閱 ${reference.accessedDate}。${reference.note}`);
-        list.append(row);
-      });
-      article.append(heading, list);
-    }
-    article.append(sourceLinks(item, sourceMap));
-    if (item.verificationNote) {
-      const verification = document.createElement('p');
-      verification.className = 'verification-note';
-      verification.textContent = `查證註記：${item.verificationNote}`;
-      article.append(verification);
-    }
+    article.append(tagStrip(item), sourceLinks(item, sourceMap));
     return article;
   }
 
@@ -781,11 +761,11 @@
       summary.className = 'lead';
       summary.textContent = character.summary;
       overview.append(summary, characterImage(character));
-      const { identity, note } = characterIdentity(character);
-      overview.append(identity, note);
+      const identity = characterIdentity(character);
       const profile = document.createElement('p');
+      profile.className = 'character-profile';
       profile.textContent = character.content;
-      overview.append(profile, sourceLinks(character, sourceMap));
+      overview.append(identity, profile, tagStrip(character), sourceLinks(character, sourceMap));
       target.append(overview);
 
       if (detail.acquisition) {
@@ -814,19 +794,19 @@
           row.append(link);
           routes.append(row);
         });
-        section.append(heading, method, steps, routesHeading, routes, sourceLinks(detail.acquisition, sourceMap));
+        section.append(heading, method, steps, routesHeading, routes, tagStrip(detail.acquisition), sourceLinks(detail.acquisition, sourceMap));
         target.append(section);
       }
 
       const prerequisiteDependents = details.filter((candidate) => candidate.prerequisiteCharacterIds.includes(id));
-      const prerequisiteSection = document.createElement('section');
-      prerequisiteSection.className = 'card character-detail-section';
-      const prerequisiteHeading = document.createElement('h2');
-      prerequisiteHeading.textContent = '需要此角色作為前置的角色';
-      const prerequisiteExplanation = document.createElement('p');
-      prerequisiteExplanation.textContent = '以下反向列出取得條件中明確把本角色列為直接前置的角色；只表示直接前置，不代表角色位於同一地圖。';
-      prerequisiteSection.append(prerequisiteHeading, prerequisiteExplanation);
       if (prerequisiteDependents.length) {
+        const prerequisiteSection = document.createElement('section');
+        prerequisiteSection.className = 'card character-detail-section';
+        const prerequisiteHeading = document.createElement('h2');
+        prerequisiteHeading.textContent = '需要此角色作為前置的角色';
+        const prerequisiteExplanation = document.createElement('p');
+        prerequisiteExplanation.textContent = '以下反向列出取得條件中明確把本角色列為直接前置的角色；只表示直接前置，不代表角色位於同一地圖。';
+        prerequisiteSection.append(prerequisiteHeading, prerequisiteExplanation);
         const list = document.createElement('ul');
         prerequisiteDependents.forEach((dependentDetail) => {
           const dependentCharacter = characters.find((candidate) => candidate.id === dependentDetail.id);
@@ -841,12 +821,8 @@
           list.append(row);
         });
         prerequisiteSection.append(list);
-      } else {
-        const empty = document.createElement('p');
-        empty.textContent = '目前沒有已查證角色以此角色作為直接前置。';
-        prerequisiteSection.append(empty);
+        target.append(prerequisiteSection);
       }
-      target.append(prerequisiteSection);
 
       if (detail.techniques.length) {
         const section = document.createElement('section');
@@ -925,6 +901,7 @@
           citation.append(link, `｜${source.scope}`);
           section.append(citation);
         });
+        section.append(tagStrip(detail), sourceLinks(detail, sourceMap));
         target.append(section);
       }
 
