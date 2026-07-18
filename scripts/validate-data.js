@@ -110,10 +110,18 @@ export function validateDataset({ fileName, records, sourceIds, type, schema }) 
       if (!record.imageOriginalUrl || !record.imageFilePageUrl || !record.imageUploader || !record.imageUploadedAt || !record.imageSourceSha1) errors.push(`${prefix}: community image requires complete Fandom provenance`);
     }
     if (type === 'character' && Array.isArray(record.communityReferences)) {
+      const referenceTitleCounts = new Map();
       record.communityReferences.forEach((reference, referenceIndex) => {
         if (!reference || !sourceIds.has(reference.sourceId)) errors.push(`${prefix}: communityReferences[${referenceIndex}] has an unknown sourceId`);
         else if (!Array.isArray(record.sourceIds) || !record.sourceIds.includes(reference.sourceId)) errors.push(`${prefix}: communityReferences[${referenceIndex}].sourceId must also appear in sourceIds`);
+        if (reference && typeof reference.pageTitle === 'string') referenceTitleCounts.set(reference.pageTitle, (referenceTitleCounts.get(reference.pageTitle) || 0) + 1);
       });
+      for (const [pageTitle, count] of referenceTitleCounts) if (count > 1) errors.push(`${prefix}: duplicate community reference title "${pageTitle}"`);
+      for (const [field, provenance] of Object.entries(record.profileProvenance || {})) {
+        for (const pageTitle of Array.isArray(provenance?.referenceTitles) ? provenance.referenceTitles : []) {
+          if (referenceTitleCounts.get(pageTitle) !== 1) errors.push(`${prefix}: profileProvenance.${field} has an unknown community reference title "${pageTitle}"`);
+        }
+      }
     }
     if (type === 'character' && record.imageKind === 'no-attributable-source') {
       if (record.imageSourceId !== null) errors.push(`${prefix}: no-attributable-source requires null imageSourceId`);

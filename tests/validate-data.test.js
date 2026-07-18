@@ -156,7 +156,7 @@ test('requires v0.4 character identity, taxonomy, provenance, and community refe
     readFile(path.join(root, 'data', 'characters.json'), 'utf8').then(JSON.parse),
     readFile(path.join(root, 'data', 'sources.json'), 'utf8').then(JSON.parse)
   ]);
-  for (const field of ['nameJa', 'nameLatin', 'nameZhHant', 'nameEn', 'nameEnStatus', 'linkAliases', 'imagePath', 'imageAlt', 'imageKind', 'imageSourceId', 'imageOriginalUrl', 'imageDownloadUrl', 'imageSha256', 'imageFilePageUrl', 'imageUploader', 'imageUploadedAt', 'imageSourceSha1', 'imageSourceMime', 'imageSourceWidth', 'imageSourceHeight', 'imageSourceBytes', 'imageSourceVerification', 'imageLocalMime', 'imageUnderlyingSource', 'imageArtist', 'imageLicense', 'imageReuseStatus', 'imageContentType', 'imageRightsNote', 'imageVersionNote', 'role', 'characterType', 'characterGroup', 'wikiNavigationGroup', 'wikiLinkedCharacterIds', 'tags', 'age', 'occupation', 'communityReferences', 'affiliations', 'brainJackStatus', 'firstAppearanceWalkthroughId', 'relatedWalkthroughIds']) {
+  for (const field of ['profile', 'profileProvenance', 'nameJa', 'nameLatin', 'nameZhHant', 'nameEn', 'nameEnStatus', 'linkAliases', 'imagePath', 'imageAlt', 'imageKind', 'imageSourceId', 'imageOriginalUrl', 'imageDownloadUrl', 'imageSha256', 'imageFilePageUrl', 'imageUploader', 'imageUploadedAt', 'imageSourceSha1', 'imageSourceMime', 'imageSourceWidth', 'imageSourceHeight', 'imageSourceBytes', 'imageSourceVerification', 'imageLocalMime', 'imageUnderlyingSource', 'imageArtist', 'imageLicense', 'imageReuseStatus', 'imageContentType', 'imageRightsNote', 'imageVersionNote', 'role', 'characterType', 'characterGroup', 'wikiNavigationGroup', 'wikiLinkedCharacterIds', 'tags', 'age', 'occupation', 'communityReferences', 'affiliations', 'brainJackStatus', 'firstAppearanceWalkthroughId', 'relatedWalkthroughIds']) {
     assert.ok(schema.required.includes(field), `character schema requires ${field}`);
   }
   assert.deepEqual(schema.properties.characterGroup.enum, ['main', 'fukenshi', 'hakke', 'hostile', 'npc', 'other']);
@@ -168,6 +168,11 @@ test('requires v0.4 character identity, taxonomy, provenance, and community refe
   assert.match(tooOldErrors.join('\n'), /age-too-high.*age.*must be at most 99999/i);
   const maximumAgeErrors = validateDataset({ fileName: 'characters.json', records: [{ ...characters[0], id: 'age-at-maximum', age: 99999 }], sourceIds, type: 'character', schema });
   assert.doesNotMatch(maximumAgeErrors.join('\n'), /age-at-maximum.*age/i);
+  const unresolvedProfileReference = structuredClone(characters[0]);
+  unresolvedProfileReference.id = 'unresolved-profile-reference';
+  unresolvedProfileReference.profileProvenance.background.referenceTitles = ['Unknown Fandom Page'];
+  const unresolvedErrors = validateDataset({ fileName: 'characters.json', records: [unresolvedProfileReference], sourceIds, type: 'character', schema });
+  assert.match(unresolvedErrors.join('\n'), /unresolved-profile-reference.*profileProvenance\.background.*unknown community reference title "Unknown Fandom Page"/i);
 });
 
 test('rejects unknown and inconsistent character walkthrough references', () => {
@@ -222,7 +227,7 @@ test('ships all 28 MegaTen Wiki MX-navigation characters with PS2 scope and trac
   assert.ok([...aliasOwners.entries()].every(([, owners]) => owners.size === 1), 'every character alias has exactly one owner');
   assert.ok(byId.get('rei').linkAliases.includes('八卦雷') && byId.get('rei').linkAliases.includes('雷'));
   assert.ok(byId.get('lee-fei-shan').linkAliases.includes('飛扇'));
-  assert.ok(characters.every((record) => record.communityReferences.length === 1 && record.communityReferences[0].revisionId > 0));
+  assert.ok(characters.every((record) => record.communityReferences.length >= 1 && record.communityReferences.every((reference) => reference.revisionId > 0)));
   assert.ok(characters.every((record) => ['official', 'romanized', 'community'].includes(record.nameEnStatus)));
   assert.ok(characters.every((record) => record.imagePath && record.imageAlt && record.imageSourceId === 'megaten-wiki-maken-x-characters'));
   assert.ok(characters.every((record) => record.imageKind.startsWith('community-source-')));
@@ -272,11 +277,12 @@ test('character page declares category tabs, query, and multi-tag filters', asyn
   assert.match(html, /role="tabpanel" aria-labelledby="character-tab-all"/);
   assert.match(app, /ArrowRight/);
   assert.match(app, /nameZhHant/);
-  assert.match(app, /nameEnStatus/);
   assert.match(app, /character-portrait/);
   assert.match(app, /imageFilePageUrl/);
-  assert.match(app, /角色頁交叉參考/);
-  assert.match(app, /Wiki 內文明示連結角色/);
+  assert.doesNotMatch(app, /角色頁交叉參考/);
+  assert.doesNotMatch(app, /查證註記：/);
+  assert.match(app, /card-tag-strip/);
+  assert.match(app, /card-source-strip/);
   assert.match(app, /Wiki 導覽/);
   assert.match(app, /沒有符合篩選條件的資料/);
   assert.match(home, /完整 28 名角色資料/);
@@ -407,7 +413,7 @@ test('loads character mention links and accessible previews across every site en
   const app = await readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8');
   assert.match(app, /linkCharacterMentions/);
   assert.match(app, /魔剣爻.*Maken X/);
-  assert.match(app, /excluded = .*\.metadata/);
+  assert.match(app, /excluded = .*\.card-metadata-strip/);
   assert.match(app, /character-preview-card/);
   assert.match(app, /technique-media-gallery/);
   assert.match(app, /media\.archiveUrl/);
@@ -428,7 +434,7 @@ test('keeps character-only UI out of walkthrough cards and preserves sequence or
   assert.match(app, /if \(isCharacter\) article\.append\(characterImage\(item\)\)/);
   assert.match(app, /if \(contentType === 'walkthrough' \|\| contentType === 'maps'\)/);
   assert.match(app, /a\.sequence \?\? Number\.MAX_SAFE_INTEGER/);
-  assert.match(app, /renderContentCard\(item, sourceMap, contentType, itemMap\)/);
+  assert.match(app, /renderContentCard\(item, sourceMap, contentType\)/);
 });
 
 test('renders every title, body, route, and source without disclosure or hiding controls', async () => {
@@ -442,8 +448,9 @@ test('renders every title, body, route, and source without disclosure or hiding 
   assert.doesNotMatch(app, /createElement\('details'\)|hiddenTitle|spoilerRouteToggle|data-spoiler/);
   assert.doesNotMatch(`${walkthrough}${references}${endings}`, /<details|<summary|data-spoiler|spoiler-toggle|spoiler-content/);
   assert.match(app, /article\.append\(title, summary\)/);
-  assert.match(app, /article\.append\(content, meta\)/);
-  assert.match(app, /article\.append\(title, metadata, description\)/);
+  assert.match(app, /article\.append\(content\)/);
+  assert.match(app, /article\.append\(meta, tagStrip\(item\), sourceLinks\(item, sourceMap\)\)/);
+  assert.match(app, /article\.append\(title, description, metadata\)/);
 });
 
 test('removes spoiler control fields from every data file and schema', async () => {

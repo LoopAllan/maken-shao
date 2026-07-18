@@ -64,3 +64,18 @@ main { min-width:0; padding:clamp(1.25rem,4vw,3rem); }.eyebrow { color:var(--acc
 .visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .global-search { position:relative; display:flex; flex:1 1 25rem; max-width:38rem; gap:.35rem; margin-left:auto; }.global-search input { width:100%; min-width:8rem; padding:.42rem .65rem; border:1px solid var(--line); border-radius:.4rem; background:var(--bg); color:var(--ink); }.global-search-submit { border:1px solid var(--accent); border-radius:.4rem; background:var(--accent); color:var(--surface); padding:.4rem .7rem; white-space:nowrap; }.global-search-results { position:absolute; top:calc(100% + .5rem); right:0; width:min(42rem,calc(100vw - 2rem)); max-height:min(70vh,42rem); overflow:auto; padding:.75rem; border:1px solid var(--line); border-radius:.6rem; background:var(--surface); color:var(--ink); box-shadow:0 .75rem 2rem rgb(0 0 0 / .18); }.global-search-status { display:block; color:var(--muted); margin-bottom:.5rem; }.global-search-result { padding:.7rem 0; border-top:1px solid var(--line); }.global-search-result:first-of-type { border-top:0; }.global-search-result h2 { margin:0; font-size:1rem; }.global-search-result p { margin:.25rem 0 0; color:var(--muted); font-size:.9rem; }.global-search-result .search-page-label { color:var(--muted); font-size:.8rem; }.card,[id^="record-"] { scroll-margin-top:5.5rem; }
 @media (max-width:760px) { .global-search { order:3; flex-basis:100%; margin-left:0; }.global-search-results { left:0; right:auto; width:100%; }.header-actions { margin-left:0; } }
+
+.card-metadata-strip,.card-tag-strip,.card-source-strip { display:flex; flex-wrap:nowrap; gap:.4rem; align-items:center; min-width:0; margin:1rem 0 0; padding:.15rem 0 .35rem; overflow-x:auto; overscroll-behavior-inline:contain; scrollbar-width:thin; white-space:nowrap; }
+.card-metadata-strip,.card-tag-strip { list-style:none; }
+.card-metadata-strip .badge,.card-tag-strip .badge { flex:0 0 auto; }
+.card-source-strip a { flex:0 0 auto; }
+.card-strip-label { flex:0 0 auto; color:var(--muted); font-size:.85rem; font-weight:800; }
+.character-profile { margin:1rem 0 0; display:grid; gap:1.15rem; }
+.character-profile-section h2 { margin:0 0 .4rem; font-size:1.15rem; }
+.character-profile-section p { margin:0; line-height:1.8; white-space:pre-line; }
+.character-profile-section .character-profile-scope { margin:0 0 .55rem; color:var(--accent-strong); font-size:.9rem; font-weight:800; }
+.character-profile-section .character-profile-citations { margin:.55rem 0 0; color:var(--muted); font-size:.86rem; line-height:1.55; }
+.character-profile-source { margin:.9rem 0 0; color:var(--muted); font-size:.9rem; line-height:1.55; }
+.character-profile-source h2 { margin:0 0 .45rem; color:var(--ink); font-size:1.05rem; }
+.character-profile-source ul { margin:.35rem 0 .65rem; padding-inline-start:1.3rem; }
+.character-profile-source li + li { margin-top:.35rem; }
