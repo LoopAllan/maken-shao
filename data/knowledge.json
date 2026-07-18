@@ -1,19 +1,8 @@
 [
-  {
-    "title": "示範資料，非正式攻略內容：Knowledge",
-    "summary": "示範資料，非正式攻略內容",
-    "content": "示範資料，非正式攻略內容。不得視為真實遊戲資訊或攻略。",
-    "gameVersion": "maken-shao-ps2",
-    "region": "unknown",
-    "sourceIds": [
-      "demo-source"
-    ],
-    "confidence": "unverified",
-    "verificationStatus": "not-verified",
-    "verificationNote": "示範資料，非正式攻略內容；目前尚未查證。",
-    "lastVerified": "2026-07-15",
-    "isPlaceholder": true,
-    "id": "demo-knowledge",
-    "category": null
-  }
+{"id":"knowledge-image","title":"Image（イマージュ）","summary":"官方以「自己的鏡像」與已被證明的精神世界說明 Image，並將其連結至人類腦部與通常無法感知的精神性自我。","content":"Image 是作品世界觀術語，不等同於經驗值用的 Image Point。為保留原意，本頁保留日文名稱イマージュ，避免將官方的精神世界說明簡化成單一的「靈魂」概念。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-story-archive"],"confidence":"official","verificationStatus":"verified","verificationNote":"Atlus PS2 官方故事頁保存版直接說明。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"世界觀術語"},
+{"id":"knowledge-maken-project","title":"金澤研究所與魔劍專案","summary":"金澤總合學術研究所研究 Image；魔劍專案對外目標是利用 Image 治療精神疾病。","content":"這是官方故事頁公開的設定前提。來源未直接支持的組織內情、事件因果或人物關係不在本條目推演。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-story-archive"],"confidence":"official","verificationStatus":"verified","verificationNote":"Atlus PS2 官方故事頁保存版直接說明。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"世界觀設定"},
+{"id":"knowledge-brain-jack","title":"Brain Jack（ブレインジャック）","summary":"玩家作為魔劍本身無法直接行動，須侵入人類腦部以取得可發揮力量的身體。","content":"官方明示支配不同身體會改變可做的事、動作與故事影響；這是 PS2 版直接說明，不由 Dreamcast《魔剣X》反推。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-system-page1-archive"],"confidence":"official","verificationStatus":"verified","verificationNote":"Atlus PS2 官方系統頁保存版直接說明。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"核心系統"},
+{"id":"knowledge-image-point","title":"Image Point 與同步率","summary":"擊敗敵人可取得 Image Point；無傷擊倒更多，並與同步率、技能及 Brain Jack 門檻相關。","content":"已取得的官方頁說明點數不足時不能進行 Brain Jack，但沒有完整角色技能或點數門檻表，因此本站不補填未證實數值。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-system-page3-archive","game-watch-maken-shao-2001-02-23"],"confidence":"cross-verified","verificationStatus":"verified","verificationNote":"官方系統頁與同期 GAME Watch 報導交叉支持。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"核心系統"},
+{"id":"knowledge-third-person","title":"第三人稱與鎖定戰鬥","summary":"PS2 版採角色後方視角，並以鎖定、量測間距、閃避與反擊作為戰鬥操作脈絡。","content":"官方頁與同期報導均可確認 PS2 版的後方視角與 Dreamcast 版第一人稱有所區隔；官方頁未提供按鍵配置，故不把按鍵表寫入知識庫。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-system-page2-archive","game-watch-maken-shao-2001-02-23"],"confidence":"cross-verified","verificationStatus":"verified","verificationNote":"官方系統頁與同期 GAME Watch 報導交叉支持。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"戰鬥與視角"},
+{"id":"knowledge-version-boundary","title":"PSI 與版本混用提醒","summary":"現有 PS2 官方資料使用 Image、Image Point 與同步率，未直接證實 PSI 為 PS2 的 Brain Jack 或戰鬥資源。","content":"這不是 PSI 絕對不存在的宣稱，而是證據範圍說明。Dreamcast《魔剣X》的二級資料常提及 PSI；在取得 PS2 手冊或可定位的一手資料前，本站不將其寫成 PS2 規則。","gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-system-page1-archive","atlus-maken-shao-system-page3-archive"],"confidence":"official","verificationStatus":"not-verified","verificationNote":"已取得 PS2 官方頁未將 PSI 定義為資源；不能由未提及推論絕對不存在。","lastVerified":"2026-07-18","isPlaceholder":false,"category":"版本界線"}
 ]

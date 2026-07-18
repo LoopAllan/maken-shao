@@ -27,6 +27,8 @@ for (const file of htmlFiles(root)) {
     html = html.replace(characterItem, `$1<li><a href="${mapHref}">地圖圖鑑</a></li>`);
   }
 
+  html = html.replace(/\s*<li><a href="[^"]*bosses\.html"[^>]*>Boss<\/a><\/li>/g, '');
+
   if (!/map-links\.js/.test(html)) {
     const appScript = /(<script defer src="([^"]*)app\.js"><\/script>)/;
     const match = html.match(appScript);

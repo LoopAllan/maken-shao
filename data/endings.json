@@ -1,19 +1,16 @@
 [
   {
-    "title": "示範資料，非正式攻略內容：結局",
-    "summary": "示範資料，非正式攻略內容",
-    "content": "示範資料，非正式攻略內容。不得視為真實遊戲資訊或攻略。",
-    "gameVersion": "maken-shao-ps2",
-    "region": "unknown",
-    "sourceIds": [
-      "demo-source"
-    ],
-    "confidence": "unverified",
-    "verificationStatus": "not-verified",
-    "verificationNote": "示範資料，非正式攻略內容；目前尚未查證。",
-    "lastVerified": "2026-07-15",
-    "isPlaceholder": true,
-    "id": "demo-ending",
-    "endingType": null
+    "id":"ending-konron","title":"崑崙終局","summary":"里斯本後進入麥加，並在符合既有路線狀態與回答條件的分支選擇崑崙方向，可抵達與紫禁城不同的終點。",
+    "content":"崑崙是終盤的獨立去向，而非紫禁城的別稱或前置區域。現有兩份社群終盤流程都將此路線與李護手的終戰相連；官方產品頁則只確認選擇會導向多種終局。",
+    "triggerFlow":["完成里斯本終盤分歧。","進入麥加終盤節點。","依先前路線狀態、陣營擊倒數與麥加回答進入崑崙方向；精確旗標與回答組合尚未由實機逐項複驗。","完成崑崙終點路線與李護手的終戰。"],
+    "narrativeContext":"這條線把玩家的選擇收束在崑崙，而不是經由華盛頓前往紫禁城。已取得來源足以確認其作為獨立終點與終戰對手，但不足以逐格重述結局演出、旁白或各角色後日談；本頁因此不把未能查證的劇情細節寫成事實。",
+    "gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-index-archive","gamehyoron-maken-shao-route-table","gamehyoron-maken-shao-endgame","kentaro-maken-shao-late-chart"],"confidence":"cross-verified","verificationStatus":"partially-verified","verificationNote":"官方資料確認多重終局；崑崙分支、入口節點與終戰對手由兩份社群終盤表交叉支持。精確條件與結局演出仍待 PS2 實機或攻略本正文。","lastVerified":"2026-07-18","isPlaceholder":false,"endingType":"崑崙路線"
+  },
+  {
+    "id":"ending-forbidden-city","title":"紫禁城終局","summary":"由麥加或巴西分支進入華盛頓後前往紫禁城，或由符合條件的巴西分支直接進入紫禁城，抵達另一個獨立終點。",
+    "content":"紫禁城線與崑崙線分開。社群終盤流程記錄兩個入口家族：華盛頓後前往紫禁城，以及巴西直接前往紫禁城；兩份資料皆把此處終戰對手記為天尊流星。",
+    "triggerFlow":["完成里斯本終盤分歧後，經麥加或巴西進入後續節點。","從麥加或巴西分支進入華盛頓，再前往紫禁城；或在符合條件的巴西分支直接前往紫禁城。","完成紫禁城終點路線與天尊流星的終戰。"],
+    "narrativeContext":"紫禁城不是所有終盤流程都必經華盛頓的固定終點；巴西亦存在直達入口。這條線將終盤衝突收束於紫禁城及天尊流星的終戰，並與崑崙／李護手的路線區隔。取得的來源沒有提供可逐段核對的結局影片台詞或後日談，故本頁只呈現已交叉支持的路線脈絡。",
+    "gameVersion":"maken-shao-ps2","region":"JP","sourceIds":["atlus-maken-shao-index-archive","gamehyoron-maken-shao-route-table","gamehyoron-maken-shao-endgame","kentaro-maken-shao-late-chart"],"confidence":"cross-verified","verificationStatus":"partially-verified","verificationNote":"官方資料確認多重終局；紫禁城的兩種入口家族與終戰對手由兩份社群終盤表交叉支持。精確旗標與結局演出仍待 PS2 實機或攻略本正文。","lastVerified":"2026-07-18","isPlaceholder":false,"endingType":"紫禁城路線"
   }
 ]

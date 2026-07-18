@@ -403,7 +403,7 @@ test('rejects missing, duplicate, and inconsistent character detail references',
 
 test('loads character mention links and accessible previews across every site entry page', async () => {
   const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-  const pageNames = ['introduction.html', 'systems.html', 'walkthrough.html', 'characters.html', 'knowledge.html', 'endings.html', 'bosses.html', 'references.html'];
+  const pageNames = ['introduction.html', 'systems.html', 'walkthrough.html', 'characters.html', 'knowledge.html', 'endings.html', 'references.html'];
   const htmlFiles = [path.join(root, 'index.html'), ...pageNames.map((name) => path.join(root, 'pages', name))];
   for (const file of htmlFiles) {
     const html = await readFile(file, 'utf8');
