@@ -45,6 +45,15 @@ test('keeps character index cards focused and removes obsolete verification and 
   assert.match(app, /overview\.append\(identity, profile, tagStrip\(character\), sourceLinks\(character, sourceMap\)\)/);
 });
 
+test('ships a substantive Fandom-backed profile for every character detail page', async () => {
+  const characters = JSON.parse(await readFile(path.join(root, 'data', 'characters.json'), 'utf8'));
+  assert.equal(characters.length, 28);
+  for (const character of characters) {
+    assert.ok(character.content.length >= 80, `${character.id} has a substantive profile`);
+    assert.ok(character.communityReferences?.some((reference) => reference.pageUrl.startsWith('https://megamitensei.fandom.com/wiki/')), `${character.id} links a MegaTen Wiki character source`);
+  }
+});
+
 test('hides the prerequisite-dependent card when no character requires the current character', async () => {
   const app = await appSource();
 
