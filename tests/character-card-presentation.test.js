@@ -26,6 +26,8 @@ test('keeps character index cards focused and removes obsolete verification and 
   const app = await appSource();
 
   assert.doesNotMatch(app, /角色頁交叉參考/);
+  assert.doesNotMatch(app, /Wiki 內文明示連結角色/);
+  assert.doesNotMatch(app, /wikiLinkedCharacterIds/);
   assert.doesNotMatch(app, /查證註記：/);
   assert.doesNotMatch(app, /英文名：官方角色圖可讀的拉丁字樣/);
   assert.doesNotMatch(app, /if \(isCharacter && item\.nameJa && item\.nameZhHant && item\.nameEn\)/);

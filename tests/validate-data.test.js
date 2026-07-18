@@ -429,7 +429,7 @@ test('keeps character-only UI out of walkthrough cards and preserves sequence or
   assert.match(app, /if \(isCharacter\) article\.append\(characterImage\(item\)\)/);
   assert.match(app, /if \(contentType === 'walkthrough' \|\| contentType === 'maps'\)/);
   assert.match(app, /a\.sequence \?\? Number\.MAX_SAFE_INTEGER/);
-  assert.match(app, /renderContentCard\(item, sourceMap, contentType, itemMap\)/);
+  assert.match(app, /renderContentCard\(item, sourceMap, contentType\)/);
 });
 
 test('renders every title, body, route, and source without disclosure or hiding controls', async () => {

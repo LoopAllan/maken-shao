@@ -520,7 +520,7 @@
     return article;
   }
 
-  function renderContentCard(item, sourceMap, contentType, itemMap) {
+  function renderContentCard(item, sourceMap, contentType) {
     const article = document.createElement('article');
     article.className = 'card';
     article.id = `record-${item.id}`;
@@ -571,24 +571,6 @@
       item.objectives.forEach((objective) => {
         const row = document.createElement('li');
         row.textContent = objective;
-        list.append(row);
-      });
-      article.append(heading, list);
-    }
-    if (isCharacter && Array.isArray(item.wikiLinkedCharacterIds) && item.wikiLinkedCharacterIds.length) {
-      const heading = document.createElement('h3');
-      heading.textContent = 'Wiki 內文明示連結角色';
-      const list = document.createElement('ul');
-      item.wikiLinkedCharacterIds.forEach((id) => {
-        const target = itemMap?.get(id);
-        const row = document.createElement('li');
-        if (target) {
-          const link = document.createElement('a');
-          link.href = characterDetailHref(target.id);
-          link.textContent = `${target.nameZhHant}｜${target.nameEn}`;
-          decorateCharacterLink(link, target.id);
-          row.append(link);
-        } else row.textContent = id;
         list.append(row);
       });
       article.append(heading, list);
@@ -1009,7 +991,7 @@
         }
         visible.forEach((item) => contentTarget.append(contentType === 'maps'
           ? renderMapCard(item, sourceMap, itemMap, characterMap)
-          : renderContentCard(item, sourceMap, contentType, itemMap)));
+          : renderContentCard(item, sourceMap, contentType)));
         linkCharacterMentions(contentTarget).then(() => linkMapMentions(contentTarget)).then(() => requestAnimationFrame(scrollToHashTarget));
       };
       if (contentType === 'characters' && tabList) {
