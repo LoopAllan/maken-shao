@@ -38,7 +38,7 @@ test('keeps an opened mobile navigation fixed and independently scrollable benea
   assert.match(app, /document\.body\.classList\.toggle\('mobile-menu-open', open\)/);
   assert.match(app, /document\.body\.classList\.remove\('mobile-menu-open'\)/);
   assert.match(css, /body\.mobile-menu-open \{ overflow:hidden; \}/);
-  assert.match(css, /\.sidebar\.is-open \{[^}]*position:fixed;[^}]*top:var\(--mobile-menu-top\);[^}]*bottom:0;[^}]*overflow-y:auto;[^}]*overscroll-behavior-y:contain;[^}]*touch-action:pan-y;/);
+  assert.match(css, /\.sidebar\.is-open \{[^}]*position:fixed;[^}]*top:var\(--mobile-menu-top\);[^}]*height:calc\(100dvh - var\(--mobile-menu-top\)\);[^}]*min-height:0;[^}]*overflow-x:hidden;[^}]*overflow-y:scroll;[^}]*overscroll-behavior-y:contain;[^}]*touch-action:pan-y;/);
 });
 
 test('ships complete sourced Knowledge records without placeholders', async () => {
