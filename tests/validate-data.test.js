@@ -4,7 +4,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
-import { datasets, validateCharacterDetailReferences, validateCharacterReferences, validateDataset, validateTechniqueMediaFiles, validateWalkthroughReferences } from '../scripts/validate-data.js';
+import { datasets, validateCharacterDetailReferences, validateCharacterReferences, validateDataset, validateEndingReferences, validateTechniqueMediaFiles, validateWalkthroughReferences } from '../scripts/validate-data.js';
 
 const validSource = {
   id: 'demo-source',
@@ -106,6 +106,31 @@ test('reports missing fields, invalid enum, duplicate IDs, unknown sources, and 
   assert.match(output, /unknown sourceId "missing-source"/i);
   assert.match(output, /duplicate id "duplicate"/i);
   assert.match(output, /lastVerified: must be a real YYYY-MM-DD date/i);
+});
+
+test('rejects unknown and unscoped ending relationship references', () => {
+  const base = {
+    id: 'ending-probe',
+    terminalWalkthroughId: 'route-missing-terminal',
+    entryWalkthroughIds: ['route-missing-entry'],
+    finalOpponentCharacterId: 'missing-opponent',
+    sourceIds: ['declared-source'],
+    conditionEvidence: [
+      { sourceId: 'unknown-source' },
+      { sourceId: 'registered-but-undeclared' }
+    ]
+  };
+  const errors = validateEndingReferences(
+    [base],
+    [{ id: 'route-existing' }],
+    [{ id: 'existing-character' }],
+    new Set(['declared-source', 'registered-but-undeclared'])
+  ).join('\n');
+  assert.match(errors, /unknown terminalWalkthroughId "route-missing-terminal"/);
+  assert.match(errors, /unknown entryWalkthroughIds reference "route-missing-entry"/);
+  assert.match(errors, /unknown finalOpponentCharacterId "missing-opponent"/);
+  assert.match(errors, /conditionEvidence\[0\] has unknown sourceId "unknown-source"/);
+  assert.match(errors, /conditionEvidence\[1\]\.sourceId must also appear in sourceIds/);
 });
 
 test('rejects incomplete character image metadata', () => {
@@ -403,7 +428,7 @@ test('rejects missing, duplicate, and inconsistent character detail references',
 
 test('loads character mention links and accessible previews across every site entry page', async () => {
   const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-  const pageNames = ['introduction.html', 'systems.html', 'walkthrough.html', 'characters.html', 'knowledge.html', 'endings.html', 'bosses.html', 'references.html'];
+  const pageNames = ['introduction.html', 'systems.html', 'walkthrough.html', 'characters.html', 'knowledge.html', 'endings.html', 'references.html'];
   const htmlFiles = [path.join(root, 'index.html'), ...pageNames.map((name) => path.join(root, 'pages', name))];
   for (const file of htmlFiles) {
     const html = await readFile(file, 'utf8');
