@@ -3,6 +3,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const ga4MeasurementId = 'G-T37QS0HH08';
+const ga4Tag = `<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${ga4MeasurementId}');</script>`;
 const characters = JSON.parse(fs.readFileSync(path.join(root, 'data', 'characters.json'), 'utf8'));
 const details = JSON.parse(fs.readFileSync(path.join(root, 'data', 'character-details.json'), 'utf8'));
 const outputDirectory = path.join(root, 'pages', 'characters');
@@ -31,6 +33,7 @@ function page(character) {
   return `<!doctype html>
 <html lang="zh-Hant" data-base="../..">
 <head>
+  ${ga4Tag}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${name}的角色介紹、故事背景、人物個性、PS2 日版取得條件與來源。">
