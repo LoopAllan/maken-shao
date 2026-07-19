@@ -29,14 +29,16 @@ test('removes the Boss page and every shipped navigation link to it', async () =
   assert.match(generators[1], /bosses\\\.html/);
 });
 
-test('keeps an opened mobile navigation fixed beneath the sticky header', async () => {
+test('keeps an opened mobile navigation fixed and independently scrollable beneath the sticky header', async () => {
   const [app, css] = await Promise.all([
     readFile(path.join(root, 'assets', 'js', 'app.js'), 'utf8'),
     readFile(path.join(root, 'assets', 'css', 'style.css'), 'utf8')
   ]);
   assert.match(app, /function setMobileMenuOffset\(\)/);
-  assert.match(app, /sidebar\.style\.setProperty\('--mobile-menu-top'/);
-  assert.match(css, /\.sidebar\.is-open \{ display:block; position:fixed; top:var\(--mobile-menu-top\);/);
+  assert.match(app, /document\.body\.classList\.toggle\('mobile-menu-open', open\)/);
+  assert.match(app, /document\.body\.classList\.remove\('mobile-menu-open'\)/);
+  assert.match(css, /body\.mobile-menu-open \{ overflow:hidden; \}/);
+  assert.match(css, /\.sidebar\.is-open \{[^}]*position:fixed;[^}]*top:var\(--mobile-menu-top\);[^}]*bottom:0;[^}]*overflow-y:auto;[^}]*overscroll-behavior-y:contain;[^}]*touch-action:pan-y;/);
 });
 
 test('ships complete sourced Knowledge records without placeholders', async () => {
