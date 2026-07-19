@@ -14,9 +14,18 @@
   menuButton?.addEventListener('click', () => {
     setMobileMenuOffset();
     const open = sidebar.classList.toggle('is-open');
+    document.body.classList.toggle('mobile-menu-open', open);
     menuButton.setAttribute('aria-expanded', String(open));
   });
-  window.addEventListener('resize', setMobileMenuOffset);
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) {
+      sidebar?.classList.remove('is-open');
+      document.body.classList.remove('mobile-menu-open');
+      menuButton?.setAttribute('aria-expanded', 'false');
+      return;
+    }
+    if (sidebar?.classList.contains('is-open')) setMobileMenuOffset();
+  });
 
   function setTheme(theme) {
     document.documentElement.dataset.theme = theme;
