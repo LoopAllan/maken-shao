@@ -3,6 +3,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const ga4MeasurementId = 'G-T37QS0HH08';
+const ga4Tag = `<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${ga4MeasurementId}');</script>`;
 
 function htmlFiles(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -17,6 +19,10 @@ let changed = 0;
 for (const file of htmlFiles(root)) {
   let html = fs.readFileSync(file, 'utf8');
   const original = html;
+  if (!html.includes(`gtag/js?id=${ga4MeasurementId}`)) {
+    if (!html.includes('<head>')) throw new Error(`${path.relative(root, file)}: missing head element`);
+    html = html.replace('<head>', `<head>${ga4Tag}`);
+  }
   const base = html.match(/<html[^>]+data-base="([^"]+)"/)?.[1];
   if (!base) throw new Error(`${path.relative(root, file)}: missing html[data-base]`);
 
